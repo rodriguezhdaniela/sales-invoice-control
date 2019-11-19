@@ -47,7 +47,7 @@ class SellerController extends Controller
     {
         Seller::create($request->validated());
 
-        return redirect()->route('sellers.index');
+        return redirect()->route('sellers.index')->withSuccess(__('Seller created successfully'));
 
     }
 
@@ -78,7 +78,7 @@ class SellerController extends Controller
     {
         $seller->update($request->validated());
 
-        return redirect()->route('sellers.index');
+        return redirect()->route('sellers.index')->withSuccess(__('Seller updated successfully'));
     }
 
     /**
@@ -93,7 +93,7 @@ class SellerController extends Controller
 
         $seller->delete();
 
-        return redirect()->route('sellers.index');
+        return redirect()->route('sellers.index')->withSuccess(__('Seller deleted successfully'));
     }
 
 

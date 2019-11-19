@@ -9,6 +9,7 @@
             </div>
         </div>
         <table class="table">
+            @include('partials.__alerts')
             <thead>
             <tr>
                 <th>Expedition date</th>

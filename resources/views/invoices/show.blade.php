@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="card card-default">
+    @include('partials.__alerts')
     <div class="card-header d-flex justify-content-between">
         <h5 class="mb-0">{{ __('Sale Invoice n°') }} {{ $invoice->id }}</h5>
         <div>
@@ -120,7 +121,7 @@
                              <td></td>
                          </tr>
                          <tr>
-                             <th scope="row">>{{ __('Total') }}</th>
+                             <th scope="row">{{ __('Total') }}</th>
                              <td colspan="2">{{ number_format($invoice->total) }}</td>
                              <td></td>
                          </tr>

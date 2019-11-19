@@ -53,7 +53,7 @@ class DetailController extends Controller
         $invoice->save();
 
 
-        return redirect()->route('invoices.show', $invoice);
+        return redirect()->route('invoices.show', $invoice)->withSuccess(__('Detail created successfully'));;
     }
 
 
@@ -84,7 +84,7 @@ class DetailController extends Controller
     {
         $invoice->products()->updateExistingPivot($product->id, $request->validated());
 
-        return redirect()->route('invoices.show', $invoice);
+        return redirect()->route('invoices.show', $invoice)->withSuccess(__('Detail updated sucessfully'));;
     }
 
     /**
@@ -111,7 +111,7 @@ class DetailController extends Controller
         $invoice->save();
 
 
-        return redirect()->route('invoices.show', $invoice);
+        return redirect()->route('invoices.show', $invoice)->withSuccess(__('Detail deleted sucessfully'));
     }
 
 

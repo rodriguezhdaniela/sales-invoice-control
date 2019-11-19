@@ -58,7 +58,7 @@ class InvoiceController extends Controller
 
         $invoice = Invoice::create($request->validated());
 
-        return redirect()->route('invoices.show', $invoice);
+        return redirect()->route('invoices.show', $invoice)->withSuccess(__('Invoice created sucessfully'));
     }
 
     /**
@@ -103,7 +103,7 @@ class InvoiceController extends Controller
     {
         $invoice->update($request->validated());
 
-        return redirect()->route('invoices.show', $invoice);
+        return redirect()->route('invoices.show', $invoice)->withSuccess(__('Invoice updated sucessfully'));
 
     }
 
@@ -111,14 +111,15 @@ class InvoiceController extends Controller
      * Remove the specified resource from storage.
      *
      * @param Invoice $invoice
+     * @param Product $product
      * @return void
-     * @throws \Exception
      */
-    public function destroy(Invoice $invoice)
+    public function destroy(Invoice $invoice, product $product)
     {
+        $invoice->products()->detach($product->id);
         $invoice->delete();
 
-        return redirect()->route('invoices.index');
+        return redirect()->route('invoices.index')->withSuccess(__('Invoice deleted sucessfully'));
     }
 
 

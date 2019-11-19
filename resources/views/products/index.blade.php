@@ -9,6 +9,7 @@
             </div>
         </div>
         <div class="container">
+            @include('partials.__alerts')
             <table class="table">
                 <thead>
                     <tr>
