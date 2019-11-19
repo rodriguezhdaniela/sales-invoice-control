@@ -2,11 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c73f6a82-04bb-426f-b554-b0dbbd33250b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_11_19_205005_create_table_sales_invoices.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_11_19_212002_create_table_products_invoices.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/clientController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/invoiceStateController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/productController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/saleInvoiceController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/sellerController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/client.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/invoiceState.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/product.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/saleInvoice.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/seller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layout/base.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/saleinvoices/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_19_152049_create_table_invoices_state.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_19_152049_create_table_invoices_state.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_19_152438_create_table_products.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_19_152438_create_table_products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_19_144000_create_table_clients.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_19_144000_create_table_clients.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_19_151423_create_table_sellers.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_19_151423_create_table_sellers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -149,7 +160,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574172525317</updated>
-      <workItem from="1574172526472" duration="24183000" />
+      <workItem from="1574172526472" duration="29754000" />
     </task>
     <servers />
   </component>

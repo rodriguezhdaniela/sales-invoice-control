@@ -16,11 +16,11 @@ class CreateTableSellers extends Migration
         Schema::create('sellers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('type_id');
-            $table->integer('personal_id')->unique();
+            $table->string('personal_id')->unique();
             $table->string('name');
             $table->string('last_name');
             $table->string('address');
-            $table->integer('phone_number');
+            $table->string('phone_number');
             $table->string('e-mail')->unique();
             $table->timestamps();
         });
