@@ -13,7 +13,7 @@ class CreateTableInvoicesState extends Migration
      */
     public function up()
     {
-        Schema::create('table_invoices_state', function (Blueprint $table) {
+        Schema::create('invoices_state', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('state');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateTableInvoicesState extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_invoices_state');
+        Schema::dropIfExists('invoices_state');
     }
 }
