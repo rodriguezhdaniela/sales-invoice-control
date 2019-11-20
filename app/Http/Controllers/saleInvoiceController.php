@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\saleInvoice;
 use Illuminate\Http\Request;
 
 class saleInvoiceController extends Controller
@@ -13,7 +14,9 @@ class saleInvoiceController extends Controller
      */
     public function index()
     {
-        //
+        return view('salesInvoices.index', [
+            'salesInvoices' => saleInvoice::all()
+        ]);
     }
 
     /**
@@ -23,7 +26,7 @@ class saleInvoiceController extends Controller
      */
     public function create()
     {
-        //
+        return view('salesInvoices.create');
     }
 
     /**

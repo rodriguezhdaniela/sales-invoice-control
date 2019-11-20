@@ -15,4 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('\sales_invoices','saleInvoiceController');
+Route::resource('/sales_invoices','saleInvoiceController');
+
+Route::resource('/clients','clientController');

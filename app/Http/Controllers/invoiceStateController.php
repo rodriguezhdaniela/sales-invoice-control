@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\saleInvoice;
 use Illuminate\Http\Request;
 
 class invoiceStateController extends Controller

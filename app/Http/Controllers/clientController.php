@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\client;
 use Illuminate\Http\Request;
 
 class clientController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $clients = client::all();
+        return view('clients.index', compact('clients'));
     }
 
     /**
@@ -23,7 +24,7 @@ class clientController extends Controller
      */
     public function create()
     {
-        //
+        return view('clients.create');
     }
 
     /**
