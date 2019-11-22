@@ -16,12 +16,11 @@
             <table class="table">
                 @foreach($clients as $client)
                     <tr>
-                        <td>{{$client->type_identity}}</td>
-                        <td>{{$client->personal_id}}</td>
+                        <td>{{$client->type_id}}</td>
+                        <td><a href="/clients/{{ $client->id }}">{{ $client->personal_id }}</a></td>
                         <td>{{$client->name}} {{$client->last_name}}</td>
-                        <td>{{$client->address}}</td>
-                        <td>{{$client->phone_number}}</td>
-                        <td>{{$client->e_mail}}</td>
+                        <td><a href="/clients/{{ $client->id }}/edit">Edit</a></td>
+                        <td><a href="/clients/{{ $client->id }}/confirmDelete">Delete</a></td>
                     </tr>
                 @endforeach
             </table>

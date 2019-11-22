@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::resource('/sales_invoices','saleInvoiceController');
 
 Route::resource('/clients','clientController');
+
+Route::get('/clients/{id}/confirmDelete', 'clientController@confirmDelete');

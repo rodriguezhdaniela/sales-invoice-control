@@ -16,12 +16,13 @@
             <table class="table">
                 @foreach($sellers as $seller)
                     <tr>
-                        <td>{{$seller->type_identity}}</td>
+                        <td>{{$seller->type_id}}</td>
                         <td>{{$seller->personal_id}}</td>
                         <td>{{$seller->name}} {{$client->last_name}}</td>
                         <td>{{$seller->address}}</td>
                         <td>{{$seller->phone_number}}</td>
                         <td>{{$seller->e_mail}}</td>
+                        <td><a href="/sellers/{{ $seller->id }}/edit">Edit</td>
                     </tr>
                 @endforeach
             </table>

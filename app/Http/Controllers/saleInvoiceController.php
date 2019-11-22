@@ -37,7 +37,8 @@ class saleInvoiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $report = new saleInvoice();
+
     }
 
     /**

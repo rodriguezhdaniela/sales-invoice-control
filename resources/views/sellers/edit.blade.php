@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col">
-            <h1>New Seller</h1>
+            <h1>Edit Seller {{ $seller->id }}</h1>
         </div>
     </div>
     <div class="row">
@@ -13,8 +13,9 @@
     </div>
     <div class="row">
         <div class="col">
-            <form action="/sellers" method="POST">
+            <form action="/sellers/{{ $seller->id }}" method="POST">
                 @csrf
+                @method('put')
                 <div class="form-group">
                     <label for="type_id">ID Type:</label>
                     <input type="text" class="form-control" id="type_id" name="type_id" placeholder="ID Type">

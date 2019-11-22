@@ -2,24 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c73f6a82-04bb-426f-b554-b0dbbd33250b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/clients/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/clients/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/products/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/products/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/salesInvoices/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/salesInvoices/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/sellers/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/sellers/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ClientDetails.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_11_22_153553_create_client_details_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/clients/confirmDelete.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/clients/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/clients/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/sellers/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/clientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/clientController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/invoiceStateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/invoiceStateController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/productController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/productController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/saleInvoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/saleInvoiceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/saleInvoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/saleInvoice.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_19_144000_create_table_clients.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_19_144000_create_table_clients.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_19_151423_create_table_sellers.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_19_151423_create_table_sellers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_19_152438_create_table_products.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_19_152438_create_table_products.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/base.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/saleinvoices/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/sellerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/sellerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/client.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/seller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/seller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/clients/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/clients/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/clients/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/clients/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sellers/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sellers/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sellers/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sellers/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,6 +32,9 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="invoices" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -133,7 +135,13 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../challenge" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/clients" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\laragon\www\invoices\resources\views\clients" />
+      <recent name="D:\laragon\www\invoices\resources\views\sellers" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -165,7 +173,9 @@
       <updated>1574172525317</updated>
       <workItem from="1574172526472" duration="31603000" />
       <workItem from="1574243702388" duration="9813000" />
-      <workItem from="1574268633129" duration="11110000" />
+      <workItem from="1574268633129" duration="11702000" />
+      <workItem from="1574346278304" duration="27863000" />
+      <workItem from="1574435608460" duration="1426000" />
     </task>
     <servers />
   </component>

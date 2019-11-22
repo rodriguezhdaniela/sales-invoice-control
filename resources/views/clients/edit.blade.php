@@ -3,23 +3,24 @@
 @section('content')
     <div class="row">
         <div class="col">
-            <h1>New Seller</h1>
+            <h1>Edit Client {{ $client->id }}</h1>
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <a class="btn btn-secondary" href="/sellers">Back</a>
+            <a class="btn btn-secondary" href="/clients">Back</a>
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <form action="/sellers" method="POST">
+            <form action="/clients/{{ $client->id }}" method="POST">
                 @csrf
+                @method('put')
                 <div class="form-group">
                     <label for="type_id">ID Type:</label>
                     <input type="text" class="form-control" id="type_id" name="type_id" placeholder="ID Type">
                     <label for="personal_id">ID Number:</label>
-                    <input type="text" class="form-control" id="personal_id" name="personal_id" placeholder="number id">
+                    <input type="text" class="form-control" id="personal_id" name="personal_id" placeholder="personal_id">
                     <label for="name">Name:</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="name">
                     <label for="last_name">Last Name:</label>
