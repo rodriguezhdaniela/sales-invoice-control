@@ -6,5 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class product extends Model
 {
-    //
+
+
+/**
+ * Relationship between product and product_invoice
+ * @return belongsTo
+ */
+public function product_invoice(): belongsTo
+{
+    return $this->belongsTo(product_invoice::class);
+}
 }

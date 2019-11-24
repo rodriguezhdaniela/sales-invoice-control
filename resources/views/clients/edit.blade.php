@@ -17,8 +17,13 @@
                 @csrf
                 @method('put')
                 <div class="form-group">
-                    <label for="type_id">ID Type:</label>
-                    <input type="text" class="form-control" id="type_id" name="type_id" placeholder="ID Type">
+                    <label for="type_id">Type ID:</label>
+                    <select  class="form-control" name="type_id" id="type_id" value="{{ old('type_id') }}">
+                        <option value="Card ID" selected>Card ID</option>
+                        <option value="Foreign ID">Foreign ID</option>
+                        <option value="Passport">Passport</option>
+                        <option value="Other">Other</option>
+                    </select>
                     <label for="personal_id">ID Number:</label>
                     <input type="text" class="form-control" id="personal_id" name="personal_id" placeholder="personal_id">
                     <label for="name">Name:</label>
@@ -32,7 +37,7 @@
                     <label for="e_mail">E-mail:</label>
                     <input type="text" class="form-control" id="e_mail" name="e_mail" placeholder="e-mail address">
                 </div>
-                <button class="btn btn-primary" type="submit">Submit</button>
+                <button class="btn btn-primary" type="submit">Update</button>
             </form>
         </div>
     </div>

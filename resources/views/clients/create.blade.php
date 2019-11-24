@@ -22,11 +22,16 @@
                     </ul>
                 </div>>
             @endif
-            <form action="/clients" method="POST">
+            <form method="POST" action="{{ route('clients.store') }}">
                 @csrf
                 <div class="form-group">
-                    <label for="type_id">ID Type:</label>
-                    <input type="text" class="form-control" id="type_id" name="type_id" placeholder="ID Type" value="{{ old('type_id') }}">
+                    <label for="type_id">Type ID:</label>
+                    <select name="type_id" id="type_id" class="form-control" value="{{ old('type_id') }}">
+                        <option value="Card ID" selected>Card ID</option>
+                        <option value="Foreign ID">Foreign ID</option>
+                        <option value="Passport">Passport</option>
+                        <option value="Other">Other</option>
+                    </select>
                     <label for="personal_id">ID Number:</label>
                     <input type="text" class="form-control" id="personal_id" name="personal_id" placeholder="personal_id" value="{{ old('personal_id') }}">
                     <label for="name">Name:</label>

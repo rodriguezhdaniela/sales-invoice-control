@@ -36,26 +36,18 @@ class clientController extends Controller
     public function store(Request $request, client $client)
     {
         $validDate = $request->validate([
-            'type_id' => 'required|in:Card ID, Foreign ID, Passport, Other',
+            'type_id' => 'required',
             'personal_id' => 'required',
             'name' => 'required|string|max:20',
             'last_name' => 'required',
             'address' => 'required',
             'phone_number' => 'required|min:7|numeric',
-            'e_mail' => 'required|e_mail|unique:clients,e_mail,'.$client->id,
+            'e_mail' => 'required|email|unique:clients,e_mail,'.$client->id,
         ]);
 
-        $client = new client();
-        $client->type_id = $validDate['type_id'];
-        $client->personal_id = $validDate['personal_id'];
-        $client->name = $validDate['name'];
-        $client->last_name = $validDate['last_name'];
-        $client->address = $validDate['address'];
-        $client->phone_number = $validDate['phone_number'];
-        $client->e_mail = $validDate['e_mail'];
-        $client->save();
+        client::create($valiDate);
 
-        return redirect('/clients');
+        return redirect()->route('clients');
     }
 
     /**

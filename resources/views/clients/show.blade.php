@@ -12,6 +12,20 @@
         </div>
     </div>
     <div class="row">
-        Details...
+        <div class="col">
+            <h3>Details</h3>
+            <table class="table">
+               @foreach($client as $clients)
+                    <tr>
+                        <td>{{ $client->type_id }}</td>
+                        <td>{{ $client->personal_id }}</td>
+                        <td>{{ $client->name }} {{ $client->last_name }}</td>
+                        <td>{{ $client->address }}</td>
+                        <td>{{ $client->phone_number }}</td>
+                        <td>{{ $client->e_mail }}</td>
+                    </tr>
+                @endforeach
+            </table>
+        </div>
     </div>
 @endsection
