@@ -33,9 +33,9 @@ class clientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, client $client)
+    public function store(client $client)
     {
-        $validDate = $request->validate([
+        $valiDate = request()->validate([
             'type_id' => 'required',
             'personal_id' => 'required',
             'name' => 'required|string|max:20',
@@ -47,7 +47,7 @@ class clientController extends Controller
 
         client::create($valiDate);
 
-        return redirect()->route('clients');
+        return redirect()->action('clientController@index');
     }
 
     /**
@@ -56,11 +56,9 @@ class clientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(client $client)
+    public function show($id)
     {
-        return view('clients.show', [
-            'client' => $client
-        ]);
+       //
     }
 
     /**
@@ -75,6 +73,7 @@ class clientController extends Controller
         return view('clients.edit', [
             'client' => $client
         ]);
+
     }
 
     /**
@@ -88,7 +87,7 @@ class clientController extends Controller
     {
         $client->update($request->all());
 
-        return redirect('/clients');
+        return redirect()->action('clientController@update');
     }
 
     /**
@@ -102,10 +101,11 @@ class clientController extends Controller
         $client = client::find($id);
         $client->delete();
 
-        return redirect('/clients');
+        return redirect()->action('clientController@index');
     }
 
-    public function confirmDelete($id) {
+    public function confirmDelete($id)
+    {
         $client = client::find($id);
         return view('clients.confirmDelete', [
             'client' => $client

@@ -9,7 +9,6 @@ class sellerController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -34,19 +33,21 @@ class sellerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(seller $seller)
     {
-        $seller = new seller();
-        $seller->type_id = $request->get('type_id');
-        $seller->personal_id = $request->get('personal_id');
-        $seller->name = $request->get('name');
-        $seller->last_name = $request->get('last_name');
-        $seller->address = $request->get('address');
-        $seller->phone_number = $request->get('phone_number');
-        $seller->e_mail = $request->get('e_mail');
-        $seller->save();
+        $valiDate = request()->validate([
+            'type_id' => 'required',
+            'personal_id' => 'required',
+            'name' => 'required|string|max:20',
+            'last_name' => 'required',
+            'address' => 'required',
+            'phone_number' => 'required|min:7|numeric',
+            'e_mail' => 'required|email|unique:sellers,e_mail,'.$seller->id,
+        ]);
 
-        return redirect('/sellers');
+        seller::create($valiDate);
+
+        return redirect()->action('sellerController@index');
     }
 
     /**
@@ -68,18 +69,12 @@ class sellerController extends Controller
      */
     public function edit($id)
     {
-        $seller = seller::find($id);
+        $seller = seller::findOrFail($id);
         return view('sellers.edit', [
             'seller' => $seller
         ]);
     }
 
-    //public function edit(seller $seller)
-    //    {
-    //        return view('sellers.edit', [
-    //            'seller' => $seller
-    //        ]);
-    //    }
     /**
      * Update the specified resource in storage.
      *
@@ -87,20 +82,14 @@ class sellerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, seller $seller)
     {
-        $seller = seller::find($id);
-        $seller->type_id = $request->get('type_id');
-        $seller->personal_id = $request->get('personal_id');
-        $seller->name = $request->get('name');
-        $seller->last_name = $request->get('last_name');
-        $seller->address = $request->get('address');
-        $seller->phone_number = $request->get('phone_number');
-        $seller->e_mail = $request->get('e_mail');
-        $seller->save();
+        $seller->update($request->all());
 
-        return redirect('/sellers');
+        return redirect()->action('sellerController@index');
     }
+
+
 
     /**
      * Remove the specified resource from storage.
@@ -110,6 +99,19 @@ class sellerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $seller = seller::find($id);
+        $seller->delete();
+
+        return redirect()->action('sellerController@index');
     }
+
+    public function confirmDelete($id)
+    {
+        $seller = seller::find($id);
+        return view('sellers.confirmDelete', [
+            'seller' => $seller
+        ]);
+    }
+
+
 }

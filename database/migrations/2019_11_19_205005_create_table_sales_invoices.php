@@ -13,9 +13,10 @@ class CreateTableSalesInvoices extends Migration
      */
     public function up()
     {
-        Schema::create('sales_invoices', function (Blueprint $table) {
+        Schema::create('sale_invoices', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
+            $table->string('cod_product');
             $table->timestamp('expedition_date');
             $table->date('expiration_date');
             $table->date('invoice_date');
@@ -42,6 +43,6 @@ class CreateTableSalesInvoices extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sales_invoices');
+        Schema::dropIfExists('sale_invoices');
     }
 }

@@ -14,9 +14,8 @@ class saleInvoiceController extends Controller
      */
     public function index()
     {
-        return view('salesInvoices.index', [
-            'salesInvoices' => saleInvoice::all()
-        ]);
+        $salesInvoices = saleInvoice::all();
+        return view('salesInvoices.index', compact('salesInvoices'));
     }
 
     /**

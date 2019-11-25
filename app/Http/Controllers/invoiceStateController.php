@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\saleInvoice;
 use Illuminate\Http\Request;
 
 class invoiceStateController extends Controller
@@ -13,7 +14,8 @@ class invoiceStateController extends Controller
      */
     public function index()
     {
-        return saleInvoice::all();
+        $saleInvoice = saleInvoice::all();
+        return view('salesInvoices.index', compact('invoices'));
     }
 
     /**

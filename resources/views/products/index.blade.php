@@ -6,12 +6,7 @@
             <h1>Products</h1>
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <a class="btn btn-primary" href="/products/create">sold products</a>
-        </div>
-    </div>
-    <div class="row">
+        <div class="row">
         <div class="col">
             <table class="table">
                 @foreach($products as $product)

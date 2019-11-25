@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col">
-            <h1>Edit Client {{ $client->id }}</h1>
+            <h1>Edit Client {{ $client->name }} {{ $client->last_name }</h1>
         </div>
     </div>
     <div class="row">
@@ -25,17 +25,17 @@
                         <option value="Other">Other</option>
                     </select>
                     <label for="personal_id">ID Number:</label>
-                    <input type="text" class="form-control" id="personal_id" name="personal_id" placeholder="personal_id">
+                    <input type="text" class="form-control" id="personal_id" name="personal_id" placeholder="personal_id" value="{{ $client->personal_id }}">
                     <label for="name">Name:</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="name">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="name" value="{{ $client->name }}">
                     <label for="last_name">Last Name:</label>
-                    <input type="text" class="form-control" id="last_name" name="last_name" placeholder="last_name">
+                    <input type="text" class="form-control" id="last_name" name="last_name" placeholder="last_name" value="{{ $client->last_name }}">
                     <label for="address">Address:</label>
-                    <input type="text" class="form-control" id="address" name="address" placeholder="address">
+                    <input type="text" class="form-control" id="address" name="address" placeholder="address" value="{{ $client->address }}">
                     <label for="phone_number">Phone Number:</label>
-                    <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="phone number">
+                    <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="phone number" value="{{ $client->phone_number }}">
                     <label for="e_mail">E-mail:</label>
-                    <input type="text" class="form-control" id="e_mail" name="e_mail" placeholder="e-mail address">
+                    <input type="text" class="form-control" id="e_mail" name="e_mail" placeholder="e-mail address" value="{{ $client->e_mail }}">
                 </div>
                 <button class="btn btn-primary" type="submit">Update</button>
             </form>
