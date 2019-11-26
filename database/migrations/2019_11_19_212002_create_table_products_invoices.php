@@ -16,12 +16,14 @@ class CreateTableProductsInvoices extends Migration
         Schema::create('products_invoices', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
+            $table->integer('unit_price');
+            $table->integer('quantity');
 
             $table->bigInteger('products_id')->unsigned();
             $table->foreign('products_id')->references('id')->on('products');
 
-            $table->bigInteger('sales_invoices_id')->unsigned();
-            $table->foreign('sales_invoices_id')->references('id')->on('sales_invoices');
+            $table->bigInteger('sale_invoices_id')->unsigned();
+            $table->foreign('sale_invoices_id')->references('id')->on('sale_invoices');
 
             $table->timestamps();
         });

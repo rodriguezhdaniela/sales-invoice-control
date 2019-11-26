@@ -87,7 +87,7 @@ class clientController extends Controller
     {
         $client->update($request->all());
 
-        return redirect()->action('clientController@update');
+        return redirect()->action('clientController@index');
     }
 
     /**
@@ -107,8 +107,9 @@ class clientController extends Controller
     public function confirmDelete($id)
     {
         $client = client::find($id);
+
         return view('clients.confirmDelete', [
-            'client' => $client
+        'client' => $client
         ]);
     }
 }

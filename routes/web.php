@@ -25,4 +25,6 @@ Route::resource('/sellers','sellerController');
 
 Route::get('/sellers/{id}/confirmDelete', 'sellerController@confirmDelete');
 
+Route::resource('/products','productController');
 
+Route::get('/products/{id}/confirmDelete', 'productController@confirmDelete');

@@ -20,7 +20,7 @@
                             <li>{{ $error }}</li>
                         @endforeach
                     </ul>
-                </div>>
+                </div>
             @endif
             <form method="POST" action="{{ route('sellers.store') }}">
                 @csrf

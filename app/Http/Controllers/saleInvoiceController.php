@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\saleInvoice;
+use App\seller;
 use Illuminate\Http\Request;
 
 class saleInvoiceController extends Controller
@@ -25,7 +26,8 @@ class saleInvoiceController extends Controller
      */
     public function create()
     {
-        return view('salesInvoices.create');
+        $sellers = seller::all();
+        return view('salesInvoices.create', compact('sellers'));
     }
 
     /**
@@ -37,6 +39,7 @@ class saleInvoiceController extends Controller
     public function store(Request $request)
     {
         $report = new saleInvoice();
+
 
     }
 

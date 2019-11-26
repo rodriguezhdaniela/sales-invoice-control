@@ -14,7 +14,8 @@ class productController extends Controller
      */
     public function index()
     {
-        //
+        $products = product::all();
+        return view('products.index', compact('products'));
     }
 
     /**
@@ -24,7 +25,7 @@ class productController extends Controller
      */
     public function create()
     {
-        //
+        return view('products.create');
     }
 
     /**
@@ -33,9 +34,17 @@ class productController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(product $product)
     {
-        //
+        $valiDate = request()->validate([
+            'product_id' => 'required',
+            'name' => 'required',
+            'description' => 'required',
+        ]);
+
+        product::create($valiDate);
+
+        return redirect()->action('productController@index');
     }
 
     /**
@@ -57,7 +66,10 @@ class productController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = product::findOrFail($id);
+        return view('products.edit', [
+            'product' => $product
+        ]);
     }
 
     /**
@@ -67,9 +79,11 @@ class productController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, product $product)
     {
-        //
+        $product->update($request->all());
+
+        return redirect()->action('clientController@index');
     }
 
     /**
@@ -80,6 +94,17 @@ class productController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = product::find($id);
+        $product->delete();
+
+        return redirect()->action('productController@index');
+    }
+
+    public function confirmDelete($id)
+    {
+        $product = product::find($id);
+        return view('products.confirmDelete', [
+            'product' => $product
+        ]);
     }
 }

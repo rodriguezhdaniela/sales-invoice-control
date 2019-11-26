@@ -20,6 +20,8 @@ class CreateTableSalesInvoices extends Migration
             $table->timestamp('expedition_date');
             $table->date('expiration_date');
             $table->date('invoice_date');
+            $table->integer('quantity');
+            $table->integer('amount');
             $table->integer('IVA');
             $table->integer('total');
 

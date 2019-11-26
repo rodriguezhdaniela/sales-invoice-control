@@ -18,12 +18,23 @@
                 <div class="form-group">
                     <label for="id">Invoice number:</label>
                     <input type="text" class="form-control" id="invoice_number" name="invoice_number" placeholder="Invoice's number">
-                    <label for="invoice_date">Invoice date:</label>
+                    <label for="invoice_date">Invoice date received:</label>
                     <input type="datetime-local" class="form-control" id="invoice_date" name="invoice_date" placeholder="invoice date">
                     <label for="expiration_date">Expiration date:</label>
                     <input type="date" class="form-control" id="expiration_date" name="expiration_date" placeholder="Expiration date">
 
+                    <label for="personal_id" class="form-control">Seller</label>
+
                     <h4>Seller</h4>
+                    <select type="text" name="seller_id" id="personal_id" class="form-control">
+                        <option value="">Select Client</option>
+                        @foreach($sellers as $seller)
+                            <option value="{{ $seller->personal_id }}">{{ $seller->personal_id }}
+                                {{ $seller->name }}
+                            </option>
+                        @endforeach
+                    </select>
+
                     <label for="personal_id">ID Number:</label>
                     <input type="text" class="form-control" id="personal_id" name="personal_id" placeholder="personal_id" value="{{ old('personal_id') }}">
                     <label for="name">Name:</label>
