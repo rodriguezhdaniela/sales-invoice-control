@@ -28,3 +28,11 @@ Route::get('/sellers/{id}/confirmDelete', 'sellerController@confirmDelete');
 Route::resource('/products','productController');
 
 Route::get('/products/{id}/confirmDelete', 'productController@confirmDelete');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

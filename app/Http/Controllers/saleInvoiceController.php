@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\saleInvoice;
 use App\seller;
+Use App\client;
+use App\invoiceState;
+use App\productInvoice;
 use Illuminate\Http\Request;
 
 class saleInvoiceController extends Controller
@@ -15,9 +18,12 @@ class saleInvoiceController extends Controller
      */
     public function index()
     {
-        $salesInvoices = saleInvoice::all();
+        $salesInvoices = SaleInvoice::all()->paginate();
+
         return view('salesInvoices.index', compact('salesInvoices'));
     }
+
+    //$salesInvoices = saleInvoice::with(['client','seller'])->paginate();
 
     /**
      * Show the form for creating a new resource.
@@ -26,8 +32,8 @@ class saleInvoiceController extends Controller
      */
     public function create()
     {
-        $sellers = seller::all();
-        return view('salesInvoices.create', compact('sellers'));
+        $salesInvoices = SaleInvoice::all();
+        return view('salesInvoices.create', compact('salesInvoices'));
     }
 
     /**
@@ -38,7 +44,17 @@ class saleInvoiceController extends Controller
      */
     public function store(Request $request)
     {
-        $report = new saleInvoice();
+        $saleInvoice = new SaleInvoice;
+        $saleInvoice->client_id = $request->input('client');
+        $saleInvoice->seller_id = $request->input('seller');
+        $saleInvoice->invoice_date =
+        $saleInvoice->expiration_date =
+        $saleInvoice->
+
+
+        $saleInvoice->save();
+
+        return redirect()->route('saleInvoice.index')->withSuccess(__('saleInvoice created succesfully'));
 
 
     }
@@ -49,9 +65,11 @@ class saleInvoiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(SaleInvoice $saleInvoice)
     {
-        //
+        $saleInvoice->load('client','seller');
+
+        return view('saleInvoice.show')->withSaleinvoce($saleinvoice);
     }
 
     /**
@@ -62,7 +80,7 @@ class saleInvoiceController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('saleInvoice.edit', compact('saleInvoice'));
     }
 
     /**
@@ -72,9 +90,16 @@ class saleInvoiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, SaleInvoice $saleInvoice)
     {
-        //
+        $saleInvoice->client_id = $request->input('client');
+        $saleInvoice->seller_id = $request->input('seller');
+        $saleInvoice->invoice_date =
+        $saleInvoice->expiration_date = $saleInvoice->
+
+        $saleInvoice->save();
+
+        return redirect()->route('saleInvoice.index')->withSuccess(__('saleInvoice created succesfully'));
     }
 
     /**
@@ -83,8 +108,10 @@ class saleInvoiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(SaleInvoice $saleInvoice)
     {
-        //
+        $saleInvoice->delete();
+
+        return redirect()->route('saleInvoice.index')->withSuccess(__('saleInvoice created succesfully'));
     }
 }

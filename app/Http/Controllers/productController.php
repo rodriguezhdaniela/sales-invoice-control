@@ -34,17 +34,16 @@ class productController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(product $product)
+    public function store(Request $request)
     {
-        $valiDate = request()->validate([
-            'product_id' => 'required',
-            'name' => 'required',
-            'description' => 'required',
-        ]);
+        $product = new Product;
+        $product->product_id = $request->input('product_id');
+        $product->name = $request->input('name');
+        $product->description = $request->input('description');
 
-        product::create($valiDate);
+       $product->save();
 
-        return redirect()->action('productController@index');
+        return redirect()->route('products.index')->withSuccess(__('Product'));
     }
 
     /**
@@ -66,10 +65,21 @@ class productController extends Controller
      */
     public function edit($id)
     {
-        $product = product::findOrFail($id);
-        return view('products.edit', [
-            'product' => $product
-        ]);
+
+        $product = Product::find($id);
+        return view('products.edit', compact('product'));
+
+
+
+
+
+        //public function edit($id)
+        //{
+        //$product = product::findOrFail($id);
+        //return view('products.edit', [
+            //'product' => $product
+        //]);
+
     }
 
     /**
@@ -81,9 +91,13 @@ class productController extends Controller
      */
     public function update(Request $request, product $product)
     {
-        $product->update($request->all());
+        $product->product_id = $request->input('product_id');
+        $product->name = $request->input('name');
+        $product->description = $request->input('description');
 
-        return redirect()->action('clientController@index');
+        $product->save();
+
+        return redirect()->route('products.index')->withSuccess(__('Product'));
     }
 
     /**

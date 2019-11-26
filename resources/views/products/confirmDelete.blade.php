@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.app')
 
 @section('content')
     <div class="row">
@@ -13,7 +13,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <form action="/products/{{ $products->id }}" method="POST">
+            <form action="/products/{{ $product->id }}" method="POST">
                 @csrf
                 @method('delete')
                 <button class="btn btn-primary" type="submit">Delete</button>

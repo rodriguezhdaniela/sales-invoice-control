@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.app')
 
 @section('content')
     <div class="row">
@@ -25,12 +25,12 @@
             <form method="POST" action="{{ route('products.store') }}">
                 @csrf
                 <div class="form-group">
-                    <label for="product_id">ID Product:</label>
-                    <input type="text" class="form-control" id="product_id" name="Product_id" placeholder="ID product" value="{{ old('product_id') }}">
+                    <label for="product_id">Product ID:</label>
+                    <input type="product_id" class="form-control" id="product_id" name="product_id" placeholder="Product ID" value="{{ old('product_id') }}">
                     <label for="name">Name:</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="Name" value="{{ old('name') }}">
                     <label for="description">Description:</label>
-                    <input type="text" class="form-control" id="description" name="Description" placeholder="description" value="{{ old('description') }}">
+                    <input type="text" class="form-control" id="description" name="description" placeholder="Description" value="{{ old('description') }}">
                 </div>
                 <button class="btn btn-primary" type="submit">Submit</button>
             </form>

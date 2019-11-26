@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.app')
 
 @section('content')
     <div class="row">
@@ -34,17 +34,17 @@
                     </select>
 
                     <label for="personal_id">ID Number:</label>
-                    <input type="text" class="form-control" id="personal_id" name="personal_id" placeholder="number id" value="{{ old('personal_id') }}">
+                    <input type="text" class="form-control" id="personal_id" name="personal_id" placeholder="Number id" value="{{ old('personal_id') }}">
                     <label for="name">Name:</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="name" value="{{ old('name') }}>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" value="{{ old('name') }}">
                     <label for="last_name">Last Name:</label>
-                    <input type="text" class="form-control" id="last_name" name="last_name" placeholder="last_name" value="{{ old('last_name') }}">
+                    <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last_name" value="{{ old('last_name') }}">
                     <label for="address">Address:</label>
-                    <input type="text" class="form-control" id="address" name="address" placeholder="address" value="{{ old('address') }}">
+                    <input type="text" class="form-control" id="address" name="address" placeholder="Address" value="{{ old('address') }}">
                     <label for="phone_number">Phone Number:</label>
-                    <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="phone number" value="{{ old('phone_number') }}">
+                    <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Phone number" value="{{ old('phone_number') }}">
                     <label for="e_mail">E-mail:</label>
-                    <input type="text" class="form-control" id="e_mail" name="e_mail" placeholder="e-mail address" value="{{ old('e_mail') }}">
+                    <input type="text" class="form-control" id="e_mail" name="e_mail" placeholder="E-mail address" value="{{ old('e_mail') }}">
                 </div>
                 <button class="btn btn-primary" type="submit">Submit</button>
             </form>

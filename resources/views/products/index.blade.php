@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.app')
 
 @section('content')
     <div class=”row”>
@@ -16,14 +16,12 @@
             <table class="table">
                 @foreach($products as $product)
                     <tr>
-                        <td>{{$product->id_product}}</td>
+                        <td>{{$product->product_id}}</td>
                         <td>{{$product->name}}</td>
                         <td>{{$product->description}}</td>
                         <td>{{$product->unit_price}}</td>
-                        <td>{{$product->quantity}}</td>
-                        <td>{{$product->amount}}</td>
-                        <td><a href="/sellers/{{ $product->id }}/edit">Edit</td>
-                        <td><a href="/sellers/{{ $product->id }}/confirmDelete">Delete</a></td>
+                        <td><a href="/products/{{ $product->id }}/edit">Edit</td>
+                        <td><a href="/products/{{ $product->id }}/confirmDelete">Delete</a></td>
                     </tr>
                 @endforeach
             </table>
