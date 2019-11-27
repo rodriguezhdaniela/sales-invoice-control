@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class saleInvoice extends Model
 {
+
     /**
      * Relationship between saleInvoice and client
      * @return belongsTo

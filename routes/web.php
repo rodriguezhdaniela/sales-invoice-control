@@ -10,12 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::resource('/sales_invoices','saleInvoiceController');
 
 Route::resource('/clients','clientController');
 
@@ -36,3 +33,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('/sales_invoices','saleInvoiceController');
+
+Route::get('/sales_invoices/{id}/confirmDelete', 'saleInvoiceController@confirmDelete');

@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class invoiceState extends Model
 {
 
-
     /**
      * Relation between city and collaborators
      * @return HasMany

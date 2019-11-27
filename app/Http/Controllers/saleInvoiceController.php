@@ -11,6 +11,12 @@ use Illuminate\Http\Request;
 
 class saleInvoiceController extends Controller
 {
+
+    public function search(Request $request)
+    {
+        $posts = Post::where('title', 'LIKE', '%'.$request->search.'%')->get();
+        return \response()->json($posts);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +24,7 @@ class saleInvoiceController extends Controller
      */
     public function index()
     {
-        $salesInvoices = SaleInvoice::all()->paginate();
+        $salesInvoices = SaleInvoice::all();
 
         return view('salesInvoices.index', compact('salesInvoices'));
     }
@@ -32,8 +38,9 @@ class saleInvoiceController extends Controller
      */
     public function create()
     {
-        $salesInvoices = SaleInvoice::all();
-        return view('salesInvoices.create', compact('salesInvoices'));
+        return view('salesInvoices.create', [
+            'invoice' => new saleInvoice,
+        ]);
     }
 
     /**
