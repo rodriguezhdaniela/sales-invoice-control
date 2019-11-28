@@ -2,9 +2,10 @@
 
 namespace App\Http\Requests;
 
+use App\seller;
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateInvoiceRequest extends FormRequest
+class ProductInvoiceRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +14,7 @@ class CreateInvoiceRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +25,11 @@ class CreateInvoiceRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'product_id' => 'required',
+            'name' => 'required|string|max:50',
+            'description' => 'required| max:225',
+            'unit_price' => 'required|numeric|min:50|max:9999999999',
+
         ];
     }
 }

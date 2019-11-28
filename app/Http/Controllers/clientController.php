@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\client;
+use App\Http\Requests\ClientInvoiceRequest;
 use Illuminate\Http\Request;
+
 
 class clientController extends Controller
 {
@@ -33,18 +35,10 @@ class clientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(client $client)
+    public function store(ClientinvoiceRequest $request)
     {
-        $valiDate = request()->validate([
-            'type_id' => 'required',
-            'personal_id' => 'required',
-            'name' => 'required|string|max:20',
-            'address' => 'required',
-            'phone_number' => 'required|min:7|numeric',
-            'e_mail' => 'required|email|unique:clients,e_mail,'.$client->id,
-        ]);
 
-        client::create($valiDate);
+        client::create($request->validated());
 
         return redirect()->action('clientController@index');
     }
@@ -82,9 +76,9 @@ class clientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Client $client)
+    public function update(ClientInvoiceRequest $request, Client $client)
     {
-        $client->update($request->all());
+        $client->update($request->validated());
 
         return redirect()->action('clientController@index');
     }

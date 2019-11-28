@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\product;
+use App\Http\Requests\ProductInvoiceRequest;
 use Illuminate\Http\Request;
 
 class productController extends Controller
@@ -34,28 +35,14 @@ class productController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(productInvoiceRequest $request)
     {
-        $product = new Product;
-        $product->product_id = $request->input('product_id');
-        $product->name = $request->input('name');
-        $product->description = $request->input('description');
+        product::create($request->validated());
 
-       $product->save();
-
-        return redirect()->route('products.index')->withSuccess(__('Product'));
+        return redirect()->route('products.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -70,16 +57,6 @@ class productController extends Controller
         return view('products.edit', compact('product'));
 
 
-
-
-
-        //public function edit($id)
-        //{
-        //$product = product::findOrFail($id);
-        //return view('products.edit', [
-            //'product' => $product
-        //]);
-
     }
 
     /**
@@ -89,15 +66,11 @@ class productController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, product $product)
+    public function update(ProductInvoiceRequest $request, product $product)
     {
-        $product->product_id = $request->input('product_id');
-        $product->name = $request->input('name');
-        $product->description = $request->input('description');
+        $product->update($request->validated());
 
-        $product->save();
-
-        return redirect()->route('products.index')->withSuccess(__('Product'));
+        return redirect()->route('products.index');
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\seller;
+use App\Http\Requests\SellerinvoiceRequest;
 use Illuminate\Http\Request;
 
 class sellerController extends Controller
@@ -33,21 +34,15 @@ class sellerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(seller $seller)
-    {
-        $valiDate = request()->validate([
-            'type_id' => 'required',
-            'personal_id' => 'required',
-            'name' => 'required|string|max:20',
-            'address' => 'required',
-            'phone_number' => 'required|min:7|numeric',
-            'e_mail' => 'required|email|unique:sellers,e_mail,'.$seller->id,
-        ]);
 
-        seller::create($valiDate);
+    public function store(SellerinvoiceRequest $request)
+    {
+        seller::create($request->validated());
 
         return redirect()->action('sellerController@index');
+
     }
+
 
     /**
      * Display the specified resource.
@@ -81,14 +76,12 @@ class sellerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, seller $seller)
+    public function update(SellerinvoiceRequest $request, seller $seller)
     {
-        $seller->update($request->all());
+        $seller->update($request->validated());
 
         return redirect()->action('sellerController@index');
     }
-
-
 
     /**
      * Remove the specified resource from storage.
