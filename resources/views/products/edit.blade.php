@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col">
-            <h1>Edit Product {{ $product->name }}{{ $product->last_name }}</h1>
+            <h1>Edit Product {{ $product->name }}</h1>
         </div>
     </div>
     <div class="row">
@@ -18,11 +18,13 @@
                 @method('put')
                 <div class="form-group">
                     <label for="product_id">ID Product:</label>
-                    <input type="text" class="form-control" id="product_id" name="product_id" placeholder="ID product" value="{{ $product->product_id }}">
+                    <input type="text" class="form-control" id="product_id" name="product_id" placeholder="ID product" value=" {{ old('unit_price') }} {{ $product->product_id }}">
                     <label for="name">Name:</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="name" value="{{ $product->name }}">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="name" value=" {{ old('unit_price') }} {{ $product->name }}">
                     <label for="description">Description:</label>
-                    <input type="text" class="form-control" id="description" name="description" placeholder="description" value="{{ $product->description }}">
+                    <input type="text" class="form-control" id="description" name="description" placeholder="description" value=" {{ old('unit_price') }} {{ $product->description }}">
+                    <label for="unit_price">Unit Price:</label>
+                    <input type="text" class="form-control" id="unit_price" name="unit_price" placeholder="Unit Price" value="{{ old('unit_price') }} {{ $product->description }}">
                 </div>
                 <button class="btn btn-primary" type="submit">Update</button>
             </form>

@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col">
-            <h1>Delete Seller {{ $seller->name }} {{ $seller->last_name }}</h1>
+            <h1>Delete Seller {{ $seller->name }} </h1>
         </div>
     </div>
     <div class="row">

@@ -14,6 +14,12 @@
     <div class="row">
         <div class="col">
             <table class="table">
+                <tr>
+                    <td><strong>Code</strong></td>
+                    <td><strong>Name</strong></td>
+                    <td><strong>Description</strong></td>
+                    <td><strong>Unit Price</strong></td>
+                </tr>
                 @foreach($products as $product)
                     <tr>
                         <td>{{$product->product_id}}</td>

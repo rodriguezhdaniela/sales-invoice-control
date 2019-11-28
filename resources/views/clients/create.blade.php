@@ -33,11 +33,9 @@
                         <option value="Other">Other</option>
                     </select>
                     <label for="personal_id">ID Number:</label>
-                    <input type="text" class="form-control" id="personal_id" name="personal_id" placeholder="personal_id" value="{{ old('personal_id') }}">
+                    <input type="text" class="form-control" id="personal_id" name="personal_id" placeholder="ID number" value="{{ old('personal_id') }}">
                     <label for="name">Name:</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="name" value="{{ old('name') }}">
-                    <label for="last_name">Last Name:</label>
-                    <input type="text" class="form-control" id="last_name" name="last_name" placeholder="last_name" value="{{ old('last_name') }}">
                     <label for="address">Address:</label>
                     <input type="text" class="form-control" id="address" name="address" placeholder="address" value="{{ old('address') }}">
                     <label for="phone_number">Phone Number:</label>

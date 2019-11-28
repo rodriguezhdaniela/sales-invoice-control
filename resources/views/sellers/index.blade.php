@@ -14,11 +14,18 @@
     <div class="row">
         <div class="col">
             <table class="table">
+                <tr>
+                    <td><strong>Type ID</strong></td>
+                    <td><strong>ID Number</strong></td>
+                    <td><strong>Names</strong></td>
+                    <td><strong>Address</strong></td>
+                    <td><strong>Phone Number</strong></td>
+                    <td><strong>Email</strong></td>
                 @foreach($sellers as $seller)
                     <tr>
                         <td>{{$seller->type_id}}</td>
                         <td>{{$seller->personal_id}}</td>
-                        <td>{{$seller->name}} {{$seller->last_name}}</td>
+                        <td>{{$seller->name}}</td>
                         <td>{{$seller->address}}</td>
                         <td>{{$seller->phone_number}}</td>
                         <td>{{$seller->e_mail}}</td>

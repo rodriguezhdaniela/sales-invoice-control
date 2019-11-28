@@ -16,7 +16,6 @@ class CreateTableProductsInvoices extends Migration
         Schema::create('products_invoices', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
-            $table->integer('unit_price');
             $table->integer('quantity');
 
             $table->bigInteger('products_id')->unsigned();

@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col">
-            <h1>Edit Seller {{ $seller->name }} {{ $seller->last_name }}</h1>
+            <h1>Edit Seller {{ $seller->name }}</h1>
         </div>
     </div>
     <div class="row">
@@ -28,8 +28,6 @@
                     <input type="text" class="form-control" id="personal_id" name="personal_id" placeholder="number id" value="{{ $seller->personal_id }}">
                     <label for="name">Name:</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="name" value="{{ $seller->name }}">
-                    <label for="last_name">Last Name:</label>
-                    <input type="text" class="form-control" id="last_name" name="last_name" placeholder="last_name" value="{{ $seller->last_name }}">
                     <label for="address">Address:</label>
                     <input type="text" class="form-control" id="address" name="address" placeholder="address" value="{{ $seller->address }}">
                     <label for="phone_number">Phone Number:</label>

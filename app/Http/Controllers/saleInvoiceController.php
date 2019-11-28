@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\product;
 use App\saleInvoice;
 use App\seller;
 Use App\client;
@@ -12,11 +13,7 @@ use Illuminate\Http\Request;
 class saleInvoiceController extends Controller
 {
 
-    public function search(Request $request)
-    {
-        $posts = Post::where('title', 'LIKE', '%'.$request->search.'%')->get();
-        return \response()->json($posts);
-    }
+
     /**
      * Display a listing of the resource.
      *
@@ -39,7 +36,10 @@ class saleInvoiceController extends Controller
     public function create()
     {
         return view('salesInvoices.create', [
-            'invoice' => new saleInvoice,
+            'saleInvoice' => new saleInvoice,
+            'clients' => Client::all(),
+            'sellers' => Seller::all(),
+            'products' => product::all()
         ]);
     }
 
@@ -51,15 +51,7 @@ class saleInvoiceController extends Controller
      */
     public function store(Request $request)
     {
-        $saleInvoice = new SaleInvoice;
-        $saleInvoice->client_id = $request->input('client');
-        $saleInvoice->seller_id = $request->input('seller');
-        $saleInvoice->invoice_date =
-        $saleInvoice->expiration_date =
-        $saleInvoice->
 
-
-        $saleInvoice->save();
 
         return redirect()->route('saleInvoice.index')->withSuccess(__('saleInvoice created succesfully'));
 
@@ -121,4 +113,12 @@ class saleInvoiceController extends Controller
 
         return redirect()->route('saleInvoice.index')->withSuccess(__('saleInvoice created succesfully'));
     }
+
+
+
+
+
+
+
+
 }

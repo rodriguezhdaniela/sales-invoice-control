@@ -15,15 +15,15 @@
         <div class="col">
             <table class="table">
                 <tr>
-                    <td>Code</td>
-                    <td>Expedition date</td>
-                    <td>Expiration date</td>
-                    <td>Client ID</td>
-                    <td>Client</td>
-                    <td>Seller ID</td>
-                    <td>Seller</td>
-                    <td>Total</td>
-                    <td>state</td>
+                    <td><strong>Code</strong></td>
+                    <td><strong>Expedition date</strong></td>
+                    <td><strong>Expiration date</strong></td>
+                    <td><strong>Client ID</strong></td>
+                    <td><strong>Client</strong></td>
+                    <td><strong>Seller ID</strong></td>
+                    <td><strong>Seller</strong></td>
+                    <td><strong>Total</strong></td>
+                    <td><strong>state</strong></td>
                 </tr>
                @foreach($salesInvoices as $saleInvoice)
                     <tr>

@@ -22,7 +22,6 @@ class CreateTableSalesInvoices extends Migration
             $table->date('invoice_date');
             $table->integer('quantity');
             $table->integer('amount');
-            $table->integer('IVA');
             $table->integer('total');
 
             $table->bigInteger('client_id')->unsigned();

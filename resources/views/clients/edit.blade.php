@@ -28,8 +28,6 @@
                     <input type="text" class="form-control" id="personal_id" name="personal_id" placeholder="personal_id" value="{{ $client->personal_id }}">
                     <label for="name">Name:</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="name" value="{{ $client->name }}">
-                    <label for="last_name">Last Name:</label>
-                    <input type="text" class="form-control" id="last_name" name="last_name" placeholder="last_name" value="{{ $client->last_name }}">
                     <label for="address">Address:</label>
                     <input type="text" class="form-control" id="address" name="address" placeholder="address" value="{{ $client->address }}">
                     <label for="phone_number">Phone Number:</label>

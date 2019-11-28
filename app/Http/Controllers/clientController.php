@@ -39,7 +39,6 @@ class clientController extends Controller
             'type_id' => 'required',
             'personal_id' => 'required',
             'name' => 'required|string|max:20',
-            'last_name' => 'required',
             'address' => 'required',
             'phone_number' => 'required|min:7|numeric',
             'e_mail' => 'required|email|unique:clients,e_mail,'.$client->id,

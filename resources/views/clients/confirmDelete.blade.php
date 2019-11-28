@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col">
-            <h1>Delete Client {{ $client->name }} {{ $client->last_name }}</h1>
+            <h1>Delete Client {{ $client->name }}</h1>
         </div>
     </div>
     <div class="row">

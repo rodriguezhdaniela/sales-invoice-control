@@ -13,11 +13,19 @@
     <div class="row">
         <div class="col">
             <table class="table">
+                <tr>
+                    <td><strong>Type ID</strong></td>
+                    <td><strong>ID Number</strong></td>
+                    <td><strong>Names</strong></td>
+                    <td><strong>Address</strong></td>
+                    <td><strong>Phone Number</strong></td>
+                    <td><strong>Email</strong></td>
+                </tr>
                 @foreach($clients as $client)
                     <tr>
                         <td>{{$client->type_id}}</td>
                         <td>{{$client->personal_id}}</td>
-                        <td>{{$client->name}} {{$client->last_name}}</td>
+                        <td>{{$client->name}}</td>
                         <td>{{$client->address}}</td>
                         <td>{{$client->phone_number}}</td>
                         <td>{{$client->e_mail}}</td>
