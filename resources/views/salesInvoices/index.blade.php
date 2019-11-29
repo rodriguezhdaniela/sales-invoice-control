@@ -18,9 +18,7 @@
                     <td><strong>Code</strong></td>
                     <td><strong>Expedition date</strong></td>
                     <td><strong>Expiration date</strong></td>
-                    <td><strong>Client ID</strong></td>
                     <td><strong>Client</strong></td>
-                    <td><strong>Seller ID</strong></td>
                     <td><strong>Seller</strong></td>
                     <td><strong>Total</strong></td>
                     <td><strong>state</strong></td>

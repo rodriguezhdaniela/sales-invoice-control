@@ -1,7 +1,10 @@
 
 @extends('layouts.app')
 @section('content')
-<div class="row">
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+
+    <div class="row">
     <div class="col">
         <h1>New invoice</h1>
     </div>
@@ -11,6 +14,7 @@
         <a class="btn btn-secondary" href="/sales_invoices">Back</a>
     </div>
 </div>
+<br>
     <div class="row">
         <div class="col">
             @if($errors->any())
@@ -20,20 +24,31 @@
                             <li>{{ $error }}</li>
                         @endforeach
                     </ul>
-            <form method="POST" action="{{ route('sales_invoices.store') }}">
+                </div>
+            @endif
+            <form class="needs-validation" novalidate method="POST" action="{{ route('sales_invoices.store') }}">
                 @csrf
-                <div class="form-group">
-                    <label for="id" class="required">Invoice number:</label>
-                    <input type="text" class="form-control" id="invoice_number" name="invoice_number" placeholder="Invoice number" value="{{ old('invoice_number') }}">
-                    <label for="invoice_date">Invoice date received:</label>
-                    <input type="datetime-local" class="form-control" id="invoice_date" name="invoice_date" placeholder="invoice date">
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="id" class="required">Invoice number:</label>
+                        <input type="text" class="form-control" id="invoice_number" name="invoice_number" placeholder="Invoice number" value="{{ old('invoice_number') }}">
+                        <div class="invalid-feedback">
+                            Please provide a valid invoice number
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="invoice_date">Invoice date received:</label>
+                        <input type="datetime-local" class="form-control" id="invoice_date" name="invoice_date" placeholder="invoice date">
+                    </div>
+                    <div class="col-md-4 mb-3">
                     <label for="expiration_date">Expiration date:</label>
                     <input type="date" class="form-control" id="expiration_date" name="expiration_date" placeholder="Expiration date">
+                    </div>
                 </div>
-                <br />
-                <div>
-                    <h4>Estado</h4>
-                    <label for="invoiceState" class="required"></label>
+
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                    <label for="invoiceState" class="required">Invoice State</label>
                     <select type="text" id="invoiceState" name="invoiceState"  class="form-control" placeholder="invoiceState" value="{{ old('invoiceState') }}">
                         <option value="">Select State</option>
                         <option value="new">New</option>
@@ -42,54 +57,145 @@
                         <option value="paid">Paid</option>
                     </select>
                 </div>
-                <br />
-                <div>
-                    <h4>Seller</h4>
-                    <label for="name" class="required">Name</label>
-                    <select type="name" name="name" id="name" class="form-control" placeholder="name">
-                        <option value="">Select seller</option>
+                <div class="col-md-4 mb-3">
+                    <label for="name" class="required">Seller</label>
+                    <select type="name" name="name" id="name" class="form-control">
+                        <option value="">Select name</option>
                         @foreach ($sellers as $seller)
                             <option value="{{  $seller->id }}" {{ old('personal_id', $saleInvoice->seller_id) == $seller->id ? 'select' : '' }}> {{ $seller->name }}
                             </option>
                         @endforeach
                     </select>
                 </div>
-            <br/>
-                <div>
-                    <h4>Client</h4>
-                    <label for="name" class="required">Name</label>
-                    <select type="text" id="name" name="name"  class="form-control">
-                        <option value="">Select client</option>
-                        @foreach ($clients as $client)
-                            <option value="{{  $client->id }}" {{ old('personal_id', $saleInvoice->client_id) == $seller->id ? 'select' : '' }}> {{ $client->name }}
-                            </option>
-                        @endforeach
-                    </select>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="name" class="required">Client</label>
+                        <select type="text" id="name" name="name"  class="form-control">
+                            <option value="">Select client</option>
+                            @foreach ($clients as $client)
+                                <option value="{{  $client->id }}" {{ old('personal_id', $saleInvoice->client_id) == $seller->id ? 'select' : '' }}> {{ $client->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
-                <br />
-                <div>
-                    <h4>Sold products</h4>
-                    <label for="name" class="required">Name:</label>
-                    <select type="text" id="name" class="form-control" name="name">
+                    <br>
+                        <h4>Sold products</h4>
+
+                    <div class="row">
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-3 mb-3">
+                        <label for="name" class="required">Name:</label>
+                        <select type="text" id="name" class="form-control" name="name">
                         <option value="">Select product</option>
                         @foreach ($products as $product)
                             <option value="{{  $product->id }}" {{ old('product_id', $product->product_id) == $product->id ? 'select' : '' }}> {{ $product->name }}
                             </option>
                         @endforeach
-                    </select>
-                    <label for="description">Description:</label>
-                    <input type="text" class="form-control" id="description" name="description" placeholder="description" value="{{ old('description') }}">
-                    <label for="Unit_price">valor:</label>
-                    <input type="text" class="form-control" id=Unit_price name=Unit_price placeholder=Unit price value="{{ old('Unit_price') }}">
-                    <label for="quantity">Quantity:</label>
-                    <input type="number" class="form-control" id="quantity" name="quantity" placeholder="quantity" value="{{ old('quantity') }}">
-                    <label for="Amount">Amount:</label>
-                    <input type="number" class="form-control" id="Amount" name="Amount" placeholder="Amount" value="{{ old('Amount') }}">
-                    <label for="iva">IVA:</label>
-                    <input type="number" class="form-control" id="iva" name="iva" placeholder="IVA" value="{{ old('IVA') }}">
-                </div>
-                <button class="btn btn-primary" type="submit">Submit</button>
+                        </select>
+                    </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="description">Description:</label>
+                            <input type="text" class="form-control" id="description" name="description" placeholder="description" value="{{ old('description') }}">
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <label for="Unit_price">Unit price:</label>
+                            <input type="text" class="form-control" id=Unit_price name=Unit_price placeholder="Unit price" value="{{ old('Unit_price') }}">
+                            @foreach ($products as $product)
+                                <option value="{{  $product->id }}" {{ old('unit_price', $product->unit_price) == $product->id ? 'select' : '' }}> {{ $product->unit_price }}
+                                </option>
+                            @endforeach
+
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <label for="quantity">Quantity:</label>
+                            <input type="number" class="form-control" id="quantity" name="quantity" placeholder="quantity" value="{{ old('quantity') }}">
+                        </div>
+                        <div>
+                            <label>Add</label><br>
+                            <button id="aditional" name="aditional" type="button" class="btn btn-dark"> + </button>
+                        </div>
+                        <br>
+                        <div class="col-1">
+                            <label>Omit</label><br>
+                            <button id="aditional" name="aditional" type="button" class="btn btn-dark"> - </button>
+                        </div>
+
+
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3 mb-3">
+                                <select type="text" id="name" class="form-control" name="name">
+                                    <option value="">Select product</option>
+                                    @foreach ($products as $product)
+                                        <option value="{{  $product->id }}" {{ old('product_id', $product->product_id) == $product->id ? 'select' : '' }}> {{ $product->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <input type="text" class="form-control" id="description" name="description" placeholder="description" value="{{ old('description') }}">
+                            </div>
+                            <div class="col-md-2 mb-3">
+                                <input type="text" class="form-control" id=Unit_price name=Unit_price placeholder="Unit price" value="{{ old('Unit_price') }}">
+                                @foreach ($products as $product)
+                                    <option value="{{  $product->id }}" {{ old('unit_price', $product->unit_price) == $product->id ? 'select' : '' }}> {{ $product->unit_price }}
+                                    </option>
+                                @endforeach
+
+                            </div>
+                            <div class="col-md-2 mb-3">
+                                <input type="number" class="form-control" id="quantity" name="quantity" placeholder="quantity" value="{{ old('quantity') }}">
+                            </div>
+                            <div>
+                                <button id="aditional" name="aditional" type="button" class="btn btn-dark"> + </button>
+                            </div>
+                            <br>
+                            <div class="col-1">
+                                <button id="aditional" name="aditional" type="button" class="btn btn-dark"> - </button>
+                            </div>
+
+                        </div>
+                            <div class="form-row">
+                                <div class="col-md-3 mb-3">
+                                    <select type="text" id="name" class="form-control" name="name">
+                                        <option value="">Select product</option>
+                                        @foreach ($products as $product)
+                                            <option value="{{  $product->id }}" {{ old('product_id', $product->product_id) == $product->id ? 'select' : '' }}> {{ $product->name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <input type="text" class="form-control" id="description" name="description" placeholder="description" value="{{ old('description') }}">
+                                </div>
+                                <div class="col-md-2 mb-3">
+                                    <input type="text" class="form-control" id=Unit_price name=Unit_price placeholder="Unit price" value="{{ old('Unit_price') }}">
+                                    @foreach ($products as $product)
+                                        <option value="{{  $product->id }}" {{ old('unit_price', $product->unit_price) == $product->id ? 'select' : '' }}> {{ $product->unit_price }}
+                                        </option>
+                                    @endforeach
+
+                                </div>
+                                <div class="col-md-2 mb-3">
+                                    <input type="number" class="form-control" id="quantity" name="quantity" placeholder="quantity" value="{{ old('quantity') }}">
+                                </div>
+                                <div>
+                                    <button id="aditional" name="aditional" type="button" class="btn btn-dark"> + </button>
+                                </div>
+                                <br>
+                                <div class="col-1">
+                                    <button id="aditional" name="aditional" type="button" class="btn btn-dark"> - </button>
+                                </div>
+                                <button class="btn btn-primary" type="submit">Submit</button>
+                            </div>
+                        </div>
             </form>
+
+
+
         </div>
     </div>
 @endsection
+

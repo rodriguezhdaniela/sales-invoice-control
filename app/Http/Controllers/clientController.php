@@ -35,7 +35,7 @@ class clientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ClientinvoiceRequest $request)
+    public function store(ClientInvoiceRequest $request)
     {
 
         client::create($request->validated());

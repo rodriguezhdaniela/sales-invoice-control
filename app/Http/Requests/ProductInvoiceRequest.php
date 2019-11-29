@@ -25,8 +25,8 @@ class ProductInvoiceRequest extends FormRequest
     public function rules()
     {
         return [
-            'product_id' => 'required',
-            'name' => 'required|string|max:50',
+            'product_id' => 'required|unique',
+            'name' => 'required|unique|string|max:50',
             'description' => 'required| max:225',
             'unit_price' => 'required|numeric|min:50|max:9999999999',
 

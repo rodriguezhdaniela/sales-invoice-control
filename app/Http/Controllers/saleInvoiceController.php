@@ -8,11 +8,11 @@ use App\seller;
 Use App\client;
 use App\invoiceState;
 use App\productInvoice;
+use App\Http\Request\SaleInvoiceRequest;
 use Illuminate\Http\Request;
 
 class saleInvoiceController extends Controller
 {
-
 
     /**
      * Display a listing of the resource.
@@ -49,11 +49,26 @@ class saleInvoiceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store( Request $request)
     {
+        $SaleInvoice = new SaleInvoice;
+        $SaleInvoice->invoice_number = $request->input('invoice_number');
+        $SaleInvoice->invoice_date = $request->input('invoice_date');
+        $SaleInvoice->expiration_date = $request->input('expiration_date');
+        $SaleInvoice->invoice_state = $request->input('invoice_state');
+        $SaleInvoice->client_id = $request->input('name');
+        $SaleInvoice->seller_id = $request->input('name');
+        $SaleInvoice->product_id = $request->input('name');
+        $SaleInvoice->product_id = $request->input('description');
+        $SaleInvoice->product_id = $request->input('unit_price');
 
 
-        return redirect()->route('saleInvoice.index')->withSuccess(__('saleInvoice created succesfully'));
+
+        $salesInvoices = SaleInvoice::all();
+
+        return view('salesInvoices.index', compact('salesInvoices'));
+
+
 
 
     }
@@ -66,7 +81,7 @@ class saleInvoiceController extends Controller
      */
     public function show(SaleInvoice $saleInvoice)
     {
-        $saleInvoice->load('client','seller');
+        $saleInvoice->load('client','seller','product', 'invoice_state');
 
         return view('saleInvoice.show')->withSaleinvoce($saleinvoice);
     }
