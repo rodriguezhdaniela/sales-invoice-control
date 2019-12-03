@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Products;
 
-use App\seller;
 use Illuminate\Foundation\Http\FormRequest;
 
-class ProductInvoiceRequest extends FormRequest
+class StoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,7 +28,6 @@ class ProductInvoiceRequest extends FormRequest
             'name' => 'required|unique:products,name|string|max:50',
             'description' => 'required|max:225',
             'unit_price' => 'required|numeric|min:50|max:9999999999',
-
         ];
     }
 }

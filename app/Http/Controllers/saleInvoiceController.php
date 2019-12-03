@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\product;
+use App\Product;
 use App\saleInvoice;
 use App\seller;
 Use App\client;
-use App\invoiceState;
-use App\productInvoice;
 use App\Http\Request\SaleInvoiceRequest;
 use Illuminate\Http\Request;
 
@@ -39,7 +37,7 @@ class saleInvoiceController extends Controller
             'saleInvoice' => new saleInvoice,
             'clients' => Client::all(),
             'sellers' => Seller::all(),
-            'products' => product::all()
+            'products' => Product::all()
         ]);
     }
 

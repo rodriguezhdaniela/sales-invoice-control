@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Products;
 
-use App\seller;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
-class ProductInvoiceRequest extends FormRequest
+class UpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,11 +25,17 @@ class ProductInvoiceRequest extends FormRequest
     public function rules()
     {
         return [
-            'product_id' => 'required|unique:products,product_id',
-            'name' => 'required|unique:products,name|string|max:50',
+            'product_id' => [
+                'required',
+                Rule::unique('products', 'product_id')->ignore($this->route('product')),
+            ],
+            'name' => [
+                'required',
+                'max:50',
+                Rule::unique('products', 'name')->ignore($this->route('product')),
+            ],
             'description' => 'required|max:225',
             'unit_price' => 'required|numeric|min:50|max:9999999999',
-
         ];
     }
 }
