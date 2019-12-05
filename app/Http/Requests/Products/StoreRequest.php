@@ -24,10 +24,9 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'product_id' => 'required|unique:products,product_id',
             'name' => 'required|unique:products,name|string|max:50',
             'description' => 'required|max:225',
-            'unit_price' => 'required|numeric|min:50|max:9999999999',
+            'price' => 'required|numeric|min:50|max:9999999999',
         ];
     }
 }

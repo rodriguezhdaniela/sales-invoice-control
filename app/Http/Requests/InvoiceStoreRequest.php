@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Products;
+namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class UpdateRequest extends FormRequest
+class InvoiceStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,13 +24,12 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => [
-                'required',
-                'max:50',
-                Rule::unique('products', 'name')->ignore($this->route('product')),
-            ],
-            'description' => 'required|max:225',
-            'price' => 'required|numeric|min:50|max:9999999999',
+            //'expedition_date' => 'required|date',
+            //'invoice_date' => 'required|date',
+            //'expiration_date' => 'required|after:invoice_date',
+            //'state' => 'required',
+            //'client_id' => 'required',
+            //'seller_id' => 'required',
         ];
     }
 }

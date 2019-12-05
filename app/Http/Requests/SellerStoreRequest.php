@@ -2,10 +2,10 @@
 
 namespace App\Http\Requests;
 
-use App\client;
+use App\seller;
 use Illuminate\Foundation\Http\FormRequest;
 
-class ClientInvoiceRequest extends FormRequest
+class SellerStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -20,17 +20,18 @@ class ClientInvoiceRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
+     * @param seller $seller
      * @return array
      */
-    public function rules(Client $client)
+    public function rules(Seller $seller)
     {
         return [
             'type_id' => 'required',
-            'personal_id' => 'required|min:8',
+            'personal_id' => 'required|unique:sellers,personal_id|min:8',
             'name' => 'required|string|max:50',
             'address' => 'required',
             'phone_number' => 'required|min:7|numeric',
-            'e_mail' => 'required|email|unique:clients,e_mail,'.$client->id,
+            'e_mail' => 'required|email|unique:clients,e_mail,'.$seller->id,
         ];
     }
 }

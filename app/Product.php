@@ -3,17 +3,18 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class product extends Model
+class Product extends Model
 {
     protected $guarded = [];
 
-/**
- * Relationship between product and product_invoice
- * @return belongsTo
- */
-    public function product_invoice(): belongsTo
+    /**
+     * Relationship between product and product_invoice
+     * @return HasMany
+     */
+    public function invoice(): belongsToMany
     {
-        return $this->belongsTo(product_invoice::class);
+        return $this->belongsToMany(Invoice::class);
     }
 }

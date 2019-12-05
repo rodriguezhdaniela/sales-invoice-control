@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\saleInvoice;
+use App\Http\Requests\InvoiceStoreRequest;
 use Illuminate\Http\Request;
+use App\Invoice;
+use App\Seller;
+Use App\Client;
+Use App\Product;
 
-class invoiceStateController extends Controller
+
+class InvoiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +19,10 @@ class invoiceStateController extends Controller
      */
     public function index()
     {
-        $saleInvoice = saleInvoice::all();
-        return view('salesInvoices.index', compact('invoices'));
+        $invoices = Invoice::with(['client', 'seller'])->paginate();
+
+        return view('Invoices.index', compact('invoices'));
+
     }
 
     /**
@@ -25,18 +32,34 @@ class invoiceStateController extends Controller
      */
     public function create()
     {
-        //
+        return view('invoices.create', [
+            'invoice' => new Invoice,
+            'clients' => Client::all(),
+            'sellers' => Seller::all(),
+            'products' => Product::all()
+        ]);
+
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param InvoiceStoreRequest $request
+     * @return void
      */
-    public function store(Request $request)
+    public function store(InvoiceStoreRequest $request)
     {
-        //
+      $invoice = new Invoice;
+      $invoice->expedition_date = $request->input('expedition_date');
+      $invoice->invoice_date = $request->input('invoice_date');
+      $invoice->expiration_date = $request->input('expiration_date');
+      $invoice->state = $request->input('state');
+      $invoice->client_id = $request->input('name');
+      $invoice->seller_id = $request->input('name');
+
+      $invoice->save();
+
+      return redirect()->route('invoice.index');
     }
 
     /**

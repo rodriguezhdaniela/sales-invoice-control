@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Products\StoreRequest;
 use App\Http\Requests\Products\UpdateRequest;
 use App\Product;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class ProductController extends Controller
@@ -29,13 +28,15 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        $product = new product;
+
+        return view('products.create', compact('product'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Request  $request
+     * @param StoreRequest $request
      * @return Response
      */
     public function store(StoreRequest $request)

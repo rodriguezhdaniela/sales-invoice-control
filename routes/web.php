@@ -16,11 +16,7 @@ Route::get('/', function () {
 
 Route::resource('/clients','clientController');
 
-Route::get('/clients/{id}/confirmDelete', 'clientController@confirmDelete');
-
 Route::resource('/sellers','sellerController');
-
-Route::get('/sellers/{id}/confirmDelete', 'sellerController@confirmDelete');
 
 Route::resource('/products','ProductController');
 
@@ -32,6 +28,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('/sales_invoices','saleInvoiceController');
+Route::resource('/invoices','InvoiceController');
 
-Route::get('/sales_invoices/{id}/confirmDelete', 'saleInvoiceController@confirmDelete');

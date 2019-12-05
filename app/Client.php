@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class client extends Model
+class Client extends Model
 {
     protected $guarded = [];
 
@@ -12,8 +12,8 @@ class client extends Model
      * Relationship between client and sale invoice
      * @return HasMany
      */
-    public function saleInvoice(): HasMany
+    public function invoice(): HasMany
     {
-        return $this->hasMany(saleInvoice::class);
+        return $this->hasMany(Invoice::class);
     }
 }

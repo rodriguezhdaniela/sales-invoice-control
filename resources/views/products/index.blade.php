@@ -11,7 +11,6 @@
         <table class="table">
             <thead>
             <tr>
-                <th>Code</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Unit Price</th>
@@ -21,10 +20,9 @@
             <tbody>
             @foreach($products as $product)
                 <tr>
-                    <td>{{$product->product_id}}</td>
                     <td>{{$product->name}}</td>
                     <td>{{$product->description}}</td>
-                    <td>{{$product->Unit_price}}</td>
+                    <td>{{$product->price}}</td>
                     <td class="text-right">
                         <div class="btn-group btn-group-sm">
                             <a href="{{ route('products.edit', $product) }}" class="btn btn-link">
