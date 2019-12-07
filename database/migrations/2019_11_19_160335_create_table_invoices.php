@@ -20,9 +20,8 @@ class CreateTableInvoices extends Migration
             $table->date('invoice_date');
             $table->date('expiration_date');
             $table->string('state');
-            $table->integer('quantity');
-            $table->integer('amount');
-            $table->integer('total');
+            $table->integer('amount')->nullable();
+            $table->integer('total')->nullable();
 
             $table->unsignedBigInteger('client_id');
             $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');

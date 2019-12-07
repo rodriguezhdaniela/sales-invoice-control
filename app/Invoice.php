@@ -7,29 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Invoice extends Model
 {
+    protected $guarded = [];
 
-    /**
-     * Relationship between invoice and client
-     * @return belongsTo
-     */
-    public function client(): belongsTo
+    public function client()
     {
         return $this->belongsTo(Client::class);
     }
 
-    /**
-     *  Relationship between invoice and seller
-     * @return belongsTo
-     */
-    public function seller(): belongsTo
+
+    public function seller()
     {
         return $this->belongsTo(Seller::class);
     }
 
-    /**
-     * @return belongsToMany
-     */
-    public function product(): belongsToMany
+
+    public function product()
     {
         return $this->belongsToMany(Product::class)->withPivot(['quantity']);
     }

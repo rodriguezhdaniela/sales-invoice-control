@@ -13,7 +13,7 @@ class InvoiceUpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,12 @@ class InvoiceUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'expedition_date' => 'required|date',
+            'invoice_date' => 'required|date',
+            'expiration_date' => 'required|after:invoice_date',
+            'state' => 'required',
+            'client_id' => 'required',
+            'seller_id' => 'required',
         ];
     }
 }

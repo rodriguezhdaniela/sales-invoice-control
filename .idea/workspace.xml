@@ -6,60 +6,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c73f6a82-04bb-426f-b554-b0dbbd33250b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Iseba.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/ClientUpdateRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/SellerUpdateRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Invoice.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/function.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/detail-modal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Invoices/__form.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Invoices/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/clients/__form.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/partials/__details_invoice_modal.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/partials/__invalid_feedback.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/products/__form.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/sellers/__form.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/DetailController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/invoices/details/__form.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/invoices/details/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/invoices/details/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/invoices/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/clientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/invoiceStateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/saleInvoiceController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/sellerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SellerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ClientInvoiceRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ClientStoreRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ProductInvoiceRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/InvoiceUpdateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Products/StoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Products/StoreRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Products/UpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Products/UpdateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/SaleInvoiceRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/InvoiceStoreRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/SellerInvoiceRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/SellerStoreRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/client.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Client.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/invoiceState.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/productInvoice.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/saleInvoice.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/seller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Seller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_19_152049_create_table_invoices_state.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_05_161804_create_table_invoicesproducts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_19_152438_create_table_products.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_19_152438_create_table_products.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_19_205005_create_table_sales_invoices.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_19_160335_create_table_invoices.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_19_212002_create_table_products_invoices.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/delete-modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/delete-modal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/clients/confirmDelete.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/clients/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/clients/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/clients/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/clients/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/clients/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/clients/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/products/confirmDelete.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/products/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/InvoiceStoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/InvoiceStoreRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/InvoiceUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/InvoiceUpdateRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Invoice.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_19_160335_create_table_invoices.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_19_160335_create_table_invoices.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/detail-modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/detail-modal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Invoices/__form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/__form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Invoices/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Invoices/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Invoices/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/clients/__form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/clients/__form.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/salesInvoices/confirmDelete.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/salesInvoices/create.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/salesInvoices/create2.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/salesInvoices/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Invoices/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/salesInvoices/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Invoices/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/sellers/confirmDelete.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/sellers/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sellers/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/sellers/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sellers/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/sellers/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sellers/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -193,22 +157,22 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/Invoices" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/invoices/details" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Daniela\laragon\www\invoices\resources\views\Invoices" />
-      <recent name="D:\Daniela\laragon\www\invoices\public\js" />
-      <recent name="D:\Daniela\laragon\www\invoices\resources\js" />
-      <recent name="D:\Daniela\laragon\www\invoices\resources\views\partials" />
-      <recent name="D:\Daniela\laragon\www\invoices\resources\views\products" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Daniela\laragon\www\invoices\app\Http\Requests" />
       <recent name="D:\Daniela\laragon\www\invoices\app\Http\Requests\Clients" />
       <recent name="D:\Daniela\laragon\www\invoices\app\Http\Requests\Sellers" />
       <recent name="D:\Daniela\laragon\www\invoices\app\Http\Requests\Invoices" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Daniela\laragon\www\invoices\resources\views\invoices\details" />
+      <recent name="D:\Daniela\laragon\www\invoices\resources\views\Invoices" />
+      <recent name="D:\Daniela\laragon\www\invoices\public\js" />
+      <recent name="D:\Daniela\laragon\www\invoices\resources\js" />
+      <recent name="D:\Daniela\laragon\www\invoices\resources\views\partials" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -267,7 +231,9 @@
       <workItem from="1575472168110" duration="16218000" />
       <workItem from="1575490752265" duration="266000" />
       <workItem from="1575492212884" duration="10829000" />
-      <workItem from="1575550190824" duration="21314000" />
+      <workItem from="1575550190824" duration="23975000" />
+      <workItem from="1575580641214" duration="2756000" />
+      <workItem from="1575638936095" duration="37175000" />
     </task>
     <servers />
   </component>

@@ -21,38 +21,37 @@
 <div class="row">
     <div class="col form-group">
         <label for="state">{{__('State')}} </label>
-        <select type="text" id="state" name="state"  class="form-control {{ $errors->has('state') ? 'is-invalid' : '' }}"  value="{{ old('state', $invoice->state) }}" required>
+        <select type="text" id="state" name="state"  class="form-control {{ $errors->has('state') ? 'is-invalid' : '' }}" required>
             <option value="">Select State</option>
-            <option value="new">New</option>
-            <option value="send">Send</option>
-            <option value="received">Received</option>
-            <option value="paid">Paid</option>
+            <option value="New" {{ old( 'state', $invoice->state) == "New" ? 'selected' : ''}}">New</option>
+            <option value="Send" {{ old( 'state', $invoice->state) == "Send" ? 'selected' : ''}}">Send</option>
+            <option value="Receipt" {{ old( 'state', $invoice->state) == "Receipt" ? 'selected' : ''}}">Receipt</option>
+            <option value="Paid" {{ old( 'state', $invoice->state) == "Paid" ? 'selected' : ''}}">Paid</option>
         </select>
         @includeWhen($errors->has('state'), 'partials.__invalid_feedback', ['feedback' => $errors->first('state')])
     </div>
 
     <div class="col form-group">
-        <label for="seller">{{ __('Seller') }}</label>
-        <select type="seller" name="seller" id="seller" class="form-control {{ $errors->has('seller') ? 'is-invalid' : '' }}" required>
+        <label for="seller_id">{{ __('Seller') }}</label>
+        <select type="seller_id" name="seller_id" id="seller_id" class="form-control {{ $errors->has('seller_id') ? 'is-invalid' : '' }}" required>
             <option value="">Select name</option>
             @foreach ($sellers as $seller)
-                <option value="{{  $seller->id }}" {{ old('personal_id', $invoice->seller_id) == $seller->id ? 'select' : '' }}> {{ $seller->name }}
+                <option value="{{  $seller->id }}" {{ old('seller_id', $invoice->seller_id) == $seller->id ? 'selected' : '' }}> {{ $seller->name }}
                 </option>
             @endforeach
         </select>
-        @includeWhen($errors->has('seller'), 'partials.__invalid_feedback', ['feedback' => $errors->first('seller')])
+        @includeWhen($errors->has('seller_id'), 'partials.__invalid_feedback', ['feedback' => $errors->first('seller_id')])
     </div>
 
     <div class="col form-group">
-        <label for="client">{{ __('Client') }}</label>
-        <select type="client" name="client" id="client" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" required>
+        <label for="client_id">{{ __('Client') }}</label>
+        <select type="client_id" name="client_id" id="client_id" class="form-control {{ $errors->has('client_id') ? 'is-invalid' : '' }}" required>
             <option value="">Select name</option>
             @foreach ($clients as $client)
-                <option value="{{  $client->id }}" {{ old('personal_id', $invoice->client_id) == $client->id ? 'select' : '' }}> {{ $client->name }}
+                <option value="{{  $client->id }}" {{ old('client_id', $invoice->client_id) == $client->id ? 'selected' : '' }}> {{ $client->name }}
                 </option>
             @endforeach
         </select>
-        @includeWhen($errors->has('client'), 'partials.__invalid_feedback', ['feedback' => $errors->first('client')])
+        @includeWhen($errors->has('client_id'), 'partials.__invalid_feedback', ['feedback' => $errors->first('client_id')])
     </div>
 </div>
-

@@ -26,18 +26,22 @@
                 <tr>
                     <td>{{ $invoice->expedition_date }}</td>
                     <td>{{ $invoice->expiration_date }}</td>
-                    <td>{{ $client->name }}</td>
-                    <td>{{ $seller->name }}</td>
+                    <td>{{ $invoice->client->name }}</td>
+                    <td>{{ $invoice->seller->name }}</td>
                     <td>{{ $invoice->total }}</td>
                     <td>{{ $invoice->state }}</td>
                     <td class="text-right">
                         <div class="btn-group btn-group-sm">
-                            <a href="{{ route('invoices.edit', $invoices) }}" class="btn btn-link">
+                            <a href="{{ route('invoices.show', $invoice) }}" class="btn btn-link">
+                                <i class="fas fa-eye"></i> view
+                            </a>
+                            <a href="{{ route('invoices.edit', $invoice) }}" class="btn btn-link">
                                 <i class="fas fa-edit"></i> Edit
                             </a>
                             <button type="button" class="btn btn-link text-danger" data-route="{{ route('invoices.destroy', $invoice) }}" data-toggle="modal" data-target="#confirmDeleteModal" title="{{ __('Delete') }}">
                                 <i class="fas fa-trash"></i> Delete
                             </button>
+
                         </div>
                     </td>
                 </tr>

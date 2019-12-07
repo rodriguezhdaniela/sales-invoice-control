@@ -2,22 +2,23 @@
 @section('content')
     <div class="card card-default">
         <div class="card-header pb-0">
-            <h4 class="card-title">{{ __('Edit Product') }}</h4>
+            <h4 class="card-title">{{ __('Edit detail') }}</h4>
         </div>
         <div class="card-body">
-            <form method="POST" action="{{ route('products.update', $product) }}" id="products-form">
+            <form method="POST" action="{{ route('invoices.update', $invoice) }}" id="invoices-form">
                 @csrf
                 @method('PATCH')
-                @include('products.__form')
+                @include('invoices.__form')
             </form>
         </div>
         <div class="card-footer d-flex justify-content-between">
-            <a href="{{ route('products.index') }}" class="btn btn-danger">
+            <a href="{{ route('invoices.index', $invoice) }}" class="btn btn-danger">
                 <i class="fas fa-arrow-left"></i> {{ __('Cancel') }}
             </a>
-            <button type="submit" class="btn btn-success" form="products-form">
+            <button type="submit" class="btn btn-success" form="invoices-form">
                 <i class="fas fa-edit"></i> {{ __('Update') }}
             </button>
         </div>
     </div>
 @endsection
+

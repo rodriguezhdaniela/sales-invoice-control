@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\InvoiceStoreRequest;
-use Illuminate\Http\Request;
+use App\Http\Requests\InvoiceUpdateRequest;
 use App\Invoice;
 use App\Seller;
 Use App\Client;
 Use App\Product;
+
 
 
 class InvoiceController extends Controller
@@ -21,7 +22,7 @@ class InvoiceController extends Controller
     {
         $invoices = Invoice::with(['client', 'seller'])->paginate();
 
-        return view('Invoices.index', compact('invoices'));
+        return view('invoices.index', compact('invoices'));
 
     }
 
@@ -36,7 +37,6 @@ class InvoiceController extends Controller
             'invoice' => new Invoice,
             'clients' => Client::all(),
             'sellers' => Seller::all(),
-            'products' => Product::all()
         ]);
 
     }
@@ -49,61 +49,75 @@ class InvoiceController extends Controller
      */
     public function store(InvoiceStoreRequest $request)
     {
-      $invoice = new Invoice;
-      $invoice->expedition_date = $request->input('expedition_date');
-      $invoice->invoice_date = $request->input('invoice_date');
-      $invoice->expiration_date = $request->input('expiration_date');
-      $invoice->state = $request->input('state');
-      $invoice->client_id = $request->input('name');
-      $invoice->seller_id = $request->input('name');
 
-      $invoice->save();
+        Invoice::create($request->validated());
 
-      return redirect()->route('invoice.index');
+        return redirect()->route('invoices.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Invoice $invoice
+     * @return void
      */
-    public function show($id)
+    public function show(Invoice $invoice)
     {
-        //
+        return view('invoices.show', [
+            'invoice' => $invoice
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Invoice $invoice
+     * @return void
      */
-    public function edit($id)
+    public function edit(Invoice $invoice)
     {
-        //
+        return view('invoices.edit', [
+            'invoice' => $invoice,
+            'clients' => Client::all(),
+            'sellers' => Seller::all(),
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param InvoiceUpdateRequest $request
+     * @param Invoice $invoice
+     * @return void
      */
-    public function update(Request $request, $id)
+    public function update(InvoiceUpdateRequest $request, Invoice $invoice)
     {
-        //
+        $invoice->update($request->validated());
+
+        return redirect()->route('invoices.show', $invoice);
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Invoice $invoice
+     * @return void
+     * @throws \Exception
      */
-    public function destroy($id)
+    public function destroy(Invoice $invoice)
     {
-        //
+        $invoice->delete();
+
+        return redirect()->route('invoices.index');
+    }
+
+    public function storeDetail(Invoice $invoice)
+    {
+        $invoice->products()->attach(request('product_id'), [
+            'quantity' => request('quantity'),
+            'price' => request('price'),
+            'amount' => request('quantity') * request('price')
+        ]);
     }
 }
