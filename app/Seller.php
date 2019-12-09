@@ -8,7 +8,7 @@ class seller extends Model
 {
     protected $guarded = [];
 
-    public function invoice(): HasMany
+    public function invoices()
     {
         return $this->hasMany(Invoice::class);
     }

@@ -23,10 +23,10 @@
         <label for="state">{{__('State')}} </label>
         <select type="text" id="state" name="state"  class="form-control {{ $errors->has('state') ? 'is-invalid' : '' }}" required>
             <option value="">Select State</option>
-            <option value="New" {{ old( 'state', $invoice->state) == "New" ? 'selected' : ''}}">New</option>
-            <option value="Send" {{ old( 'state', $invoice->state) == "Send" ? 'selected' : ''}}">Send</option>
-            <option value="Receipt" {{ old( 'state', $invoice->state) == "Receipt" ? 'selected' : ''}}">Receipt</option>
-            <option value="Paid" {{ old( 'state', $invoice->state) == "Paid" ? 'selected' : ''}}">Paid</option>
+            <option value="New"> {{ old( 'state', $invoice->state) == "New" ? 'selected' : ''}} New</option>
+            <option value="Send"> {{ old( 'state', $invoice->state) == "Send" ? 'selected' : ''}} Send</option>
+            <option value="Receipt"> {{ old( 'state', $invoice->state) == "Receipt" ? 'selected' : ''}} Receipt</option>
+            <option value="Paid"> {{ old( 'state', $invoice->state) == "Paid" ? 'selected' : ''}} Paid</option>
         </select>
         @includeWhen($errors->has('state'), 'partials.__invalid_feedback', ['feedback' => $errors->first('state')])
     </div>

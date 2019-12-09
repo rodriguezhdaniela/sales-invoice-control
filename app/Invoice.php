@@ -21,9 +21,21 @@ class Invoice extends Model
     }
 
 
-    public function product()
+    public function products()
     {
         return $this->belongsToMany(Product::class)->withPivot(['quantity']);
     }
+
+    /*public function getSubtotalAttribute()
+    {
+        $subtotal = 0;
+
+        foreach ($this->products as $product){
+
+            $subtotal += $product->price * $product->pivot->quantity;
+        }
+        return $subtotal;
+        */
+
 
 }

@@ -30,5 +30,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/invoices','InvoiceController');
 
-Route::resource('/invoices/{invoice}/detail', 'DetailController');
+Route::resource('/invoices/{invoice}/details', 'DetailController');
 

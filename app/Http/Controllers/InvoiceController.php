@@ -6,8 +6,8 @@ use App\Http\Requests\InvoiceStoreRequest;
 use App\Http\Requests\InvoiceUpdateRequest;
 use App\Invoice;
 use App\Seller;
-Use App\Client;
-Use App\Product;
+use App\Client;
+
 
 
 
@@ -112,12 +112,5 @@ class InvoiceController extends Controller
         return redirect()->route('invoices.index');
     }
 
-    public function storeDetail(Invoice $invoice)
-    {
-        $invoice->products()->attach(request('product_id'), [
-            'quantity' => request('quantity'),
-            'price' => request('price'),
-            'amount' => request('quantity') * request('price')
-        ]);
-    }
+
 }

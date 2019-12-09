@@ -17,7 +17,6 @@
                 <th>Seller</th>
                 <th>Total</th>
                 <th>State</th>
-                <th>State</th>
                 <th></th>
             </tr>
             </thead>
@@ -41,7 +40,6 @@
                             <button type="button" class="btn btn-link text-danger" data-route="{{ route('invoices.destroy', $invoice) }}" data-toggle="modal" data-target="#confirmDeleteModal" title="{{ __('Delete') }}">
                                 <i class="fas fa-trash"></i> Delete
                             </button>
-
                         </div>
                     </td>
                 </tr>

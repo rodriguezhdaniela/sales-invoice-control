@@ -9,11 +9,8 @@ class Product extends Model
 {
     protected $guarded = [];
 
-    /**
-     * Relationship between product and product_invoice
-     * @return HasMany
-     */
-    public function invoice(): belongsToMany
+
+    public function invoices()
     {
         return $this->belongsToMany(Invoice::class);
     }

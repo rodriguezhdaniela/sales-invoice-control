@@ -81,59 +81,68 @@
                     <h4 class="card-title mb-0"> Details</h4>
                     <div>
                         <div class="btn-group btn-group-sm">
-                            <a href="{{ route('detail.create', $invoice) }}" class="btn btn-success">
+                            <a href="{{ route('details.create', $invoice) }}" class="btn btn-success">
                                 <i class="fas fa-plus"></i> {{ __('Add product') }}
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="card-body">
-                    <table class="table table-condensed">
-                        <thead>
-                        <tr>
-                            <th class="">ID</th>
-                            <th class="">Name</th>
-                            <th class="">Description</th>
-                            <th class="">Price</th>
-                            <th class="">Quantity</th>
-                            <th class="">Amount</th>
-                        </tr>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">Name</th>
+                        <th class="text-center">Description</th>
+                        <th class="text-center">Price</th>
+                        <th class="text-center">Quantity</th>
+                        <th class="text-center">Amount</th>
+                        <th class="text-center"></th>
+                    </tr>
                         </thead>
                         <tbody>
-                   {{-- @foreach($invoice->products as $product)
-                    <tr>
-                        <td class="text-center">{{ $product->id }}</td>
-                        <td class="text-center">{{ $product->name }}</td>
-                        <td class="text-center">{{ $product->description }}</td>
-                        <td class="text-center">{{ $product->price }}</td>
-                    <tr>
-                    @endforeach--}}
+                        @foreach($invoice->products as $product)
+                            <tr>
+                                <td class="text-center">{{ $product->id }}</td>
+                                <td class="text-center">{{ $product->name }}</td>
+                                <td class="text-center">{{ $product->description }}</td>
+                                <td class="text-center">{{ $product->price }}</td>
+                                <td class="text-center">{{ $product->pivot->quantity }}</td>
+                                <td class="text-center">{{ number_format($product->price * $product->pivot->quantity) }}</td>
+                                <td class="td-button">
+                                    <div class="btn-group btn-group-sm">
+                                        <button type="button" class="btn btn-link text-danger" data-route="{{ route('details.destroy', [$invoice, $product]) }}" data-toggle="modal" data-target="#confirmDeleteModal" title="{{ __('Delete') }}">
+                                            <i class="fas fa-trash"></i> Delete
+                                        </button>
+                                    </div>
+                                </td>
+                            <tr>
+                        @endforeach
                         </tbody>
                     </table>
                         <div class="row">
                             <div class="col-lg-4 col-sm-5 ml-auto">
                                 <table class="table table-clear">
                                     <tbody>
-                                    <tr>
+                                   {{-- <tr>
                                         <td class="left">
                                             <strong>{{ __('Subtotal') }}</strong>
                                         </td>
-                                        <td class="right">function</td>
+                                        <td class="text-right">{{ number_format($invoice->getSubtotalAttribute) }}</td>
                                     </tr>
                                     <tr>
                                         <td class="left">
                                             <strong>{{ __('IVA (19%)') }}</strong>
                                         </td>
-                                        <td class="right">function</td>
+                                        <td class="right">{{ number_format($invoice->getIvaAttribute) }}</td>
                                     </tr>
                                     <tr>
                                         <td class="left">
                                             <strong>{{ __('Total') }}</strong>
                                         </td>
                                         <td class="right">
-                                            <strong>function</strong>
+                                            <strong>{{ number_format($invoice->getTotalAttribute()) }}</strong>
                                         </td>
-                                    </tr>
+                                    </tr>--}}
                                     </tbody>
                             </table>
                         </div>
@@ -142,13 +151,7 @@
             </div>
         </div>
     </div>
-        <div class="card-footer"></div>
-
-
-
-
-
-
+            <div class="card-footer"></div>
 @endsection
 @push('modals')
     @include('partials.__confirm_delete_modal')
