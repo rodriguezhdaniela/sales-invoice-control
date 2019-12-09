@@ -8,19 +8,20 @@
                 <a class="btn btn-primary btn-sm" href="{{ route('clients.create') }}"><i class="fas fa-plus"></i> Create</a>
             </div>
         </div>
-        <table class="table">
-            <thead>
-            <tr>
-                <th>Type ID</th>
-                <th>ID Number</th>
-                <th>Names</th>
-                <th>Address</th>
-                <th>Phone Number</th>
-                <th>Email</th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody>
+        <div class="container">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Type ID</th>
+                    <th>ID Number</th>
+                    <th>Names</th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
+                    <th>Email</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
                 @foreach($clients as $client)
                     <tr>
                         <td>{{$client->type_id}}</td>
@@ -41,8 +42,9 @@
                         </td>
                     </tr>
                 @endforeach
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
         <div class="card-footer"></div>
     </div>
 @endsection

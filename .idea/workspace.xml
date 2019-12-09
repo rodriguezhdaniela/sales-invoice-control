@@ -6,25 +6,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c73f6a82-04bb-426f-b554-b0dbbd33250b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/DetailStoreRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/DetailUpdateRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_08_042119_create_invoice_product_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/invoices/details/edit2.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/ClientFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/InvoiceFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/ProductFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/SellerFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/ClientTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/InvoiceTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/ProductTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/SellerTableSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DetailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DetailController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SellerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SellerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Invoice.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Seller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Seller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_05_161804_create_table_invoicesproducts.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/invoices/__form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/__form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/invoices/details/__form.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/invoices/details/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/details/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/invoices/details/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/details/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/clients/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/clients/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/invoices/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/invoices/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sellers/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sellers/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -238,7 +240,8 @@
       <workItem from="1575732471749" duration="16624000" />
       <workItem from="1575776538713" duration="13157000" />
       <workItem from="1575818636187" duration="15038000" />
-      <workItem from="1575873717611" duration="605000" />
+      <workItem from="1575873717611" duration="20315000" />
+      <workItem from="1575897055330" duration="1545000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Invoice;
 
 class InvoiceTableSeeder extends Seeder
 {
@@ -11,6 +12,6 @@ class InvoiceTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(Invoice::class,10)->create();
     }
 }

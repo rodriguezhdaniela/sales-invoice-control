@@ -7,12 +7,18 @@ use App\Http\Requests\InvoiceUpdateRequest;
 use App\Invoice;
 use App\Seller;
 use App\Client;
+use App\Product;
 
 
 
 
 class InvoiceController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -59,10 +65,13 @@ class InvoiceController extends Controller
      * Display the specified resource.
      *
      * @param Invoice $invoice
+     * @param Product $product
      * @return void
      */
-    public function show(Invoice $invoice)
+    public function show(Invoice $invoice, Product $product)
     {
+
+
         return view('invoices.show', [
             'invoice' => $invoice
         ]);
