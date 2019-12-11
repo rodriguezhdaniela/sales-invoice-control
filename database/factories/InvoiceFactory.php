@@ -12,7 +12,7 @@ $factory->define(Invoice::class, function (Faker $faker) {
         'expedition_date' => $faker->dateTime,
         'invoice_date' => $faker->date(),
         'expiration_date' => $faker->date(),
-        'state' => $faker->numberBetween(1,3),
+        'state' => $faker->randomElement(['New','Send', 'Receipt', 'Paid']),
         'amount' => $faker->numberBetween(50,9999999999),
         'total' => $faker->numberBetween(50,9999999999),
 

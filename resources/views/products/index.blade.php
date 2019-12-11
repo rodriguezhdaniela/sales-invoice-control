@@ -3,7 +3,7 @@
 @section('content')
     <div class="card card-default">
         <div class="card-header d-flex justify-content-between">
-            <h5 class="card-title mb-0">Products</h5>
+            <h3 class="card-title mb-0">Products</h3>
             <div class="btn-group btn-group-sm">
                 <a class="btn btn-primary btn-sm" href="{{ route('products.create') }}"><i class="fas fa-plus"></i> Create</a>
             </div>
@@ -38,6 +38,9 @@
                     @endforeach
                 </tbody>
             </table>
+        </div>
+        <div class="mt-3 d-flex justify-content-center">
+        {!! $products->render() !!}
         </div>
         <div class="card-footer"></div>
     </div>

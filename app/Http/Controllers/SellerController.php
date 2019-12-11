@@ -20,7 +20,7 @@ class sellerController extends Controller
      */
     public function index()
     {
-        $sellers = seller::all();
+        $sellers = seller::paginate(10);
 
         return view('sellers.index', compact('sellers'));
     }

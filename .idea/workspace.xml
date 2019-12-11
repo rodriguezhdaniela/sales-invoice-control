@@ -6,29 +6,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c73f6a82-04bb-426f-b554-b0dbbd33250b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/factories/ClientFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/InvoiceFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/ProductFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/SellerFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/ClientTableSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/InvoiceTableSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/ProductTableSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/SellerTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/invoices.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/invoices.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DetailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DetailController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SellerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SellerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Invoice.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/ClientFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ClientFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/InvoiceFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/InvoiceFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/SellerFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/SellerFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/clients/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/clients/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/invoices/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/invoices/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/sellers/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sellers/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -154,12 +147,18 @@
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/invoices/details" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
@@ -177,23 +176,23 @@
       <recent name="D:\Daniela\laragon\www\invoices\resources\views\partials" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -242,6 +241,8 @@
       <workItem from="1575818636187" duration="15038000" />
       <workItem from="1575873717611" duration="20315000" />
       <workItem from="1575897055330" duration="1545000" />
+      <workItem from="1576003477119" duration="6288000" />
+      <workItem from="1576082687202" duration="7069000" />
     </task>
     <servers />
   </component>
@@ -263,5 +264,19 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1173" y="338" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1576090842308">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1173" y="338" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1576090842308" />
+    <state x="1285" y="436" key="NewPhpFileDialog" timestamp="1576090876695">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1285" y="436" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576090876695" />
+    <state x="1003" y="309" key="com.intellij.ide.util.TipDialog" timestamp="1576082688763">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1003" y="309" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576082688763" />
   </component>
 </project>

@@ -22,7 +22,7 @@ class clientController extends Controller
      */
     public function index()
     {
-        $clients = client::all();
+        $clients = client::paginate(10);
 
         return view('clients.index', compact('clients'));
     }
