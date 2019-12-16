@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\SellerStoreRequest;
 use App\Http\Requests\SellerUpdateRequest;
 use App\seller;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 
@@ -14,13 +15,20 @@ class sellerController extends Controller
     {
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
-     * @return Response
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
-        $sellers = seller::paginate(10);
+        $name = $request->get('name');
+        $personal_id = $request->get('personal_id');
+
+        $sellers = seller::name($name)
+            ->personal_id($personal_id)
+            ->paginate(10);
 
         return view('sellers.index', compact('sellers'));
     }

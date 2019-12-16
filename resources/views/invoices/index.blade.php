@@ -8,6 +8,26 @@
                 <a class="btn btn-primary btn-sm" href="{{ route('invoices.create') }}"><i class="fas fa-plus"></i> Create</a>
             </div>
         </div>
+        <div class="container">
+            <nav class="navbar navbar-light justify-content-lg-end">
+                <form method='GET' action="{{ route('invoices.index')}}" class="form-inline">
+                    <select name="type" class="form-control mr-sm-2"  id="ControlSelect">
+                        <option>Search by type</option>
+                        <option>Expedition date</option>
+                        <option>Expiration date</option>
+                        <option>Client</option>
+                        <option>Seller</option>
+                        <option>Total</option>
+                        <option>State</option>
+                    </select>
+
+                    <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search">
+
+                    <div class="btn-group-sm">
+                        <button class="btn btn-success" type="submit"><i class="fas fa-search"></i> {{ __('Search') }}</button>
+                    </div>
+                </form>
+            </nav>
         <table class="table">
             <thead>
             <tr>
@@ -15,6 +35,7 @@
                 <th>Expiration date</th>
                 <th>Client</th>
                 <th>Seller</th>
+                <th>Total</th>
                 <th>State</th>
                 <th></th>
             </tr>
@@ -26,6 +47,7 @@
                     <td>{{ $invoice->expiration_date }}</td>
                     <td>{{ $invoice->client->name }}</td>
                     <td>{{ $invoice->seller->name }}</td>
+                    <td></td>
                     <td>{{ $invoice->state }}</td>
                     <td class="text-right">
                         <div class="btn-group btn-group-sm">

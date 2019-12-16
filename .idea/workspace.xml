@@ -6,19 +6,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c73f6a82-04bb-426f-b554-b0dbbd33250b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/invoices.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/invoices.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Client.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SellerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SellerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Invoice.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Seller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Seller.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/factories/ClientFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ClientFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/InvoiceFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/InvoiceFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/SellerFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/SellerFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/clients/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/clients/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/invoices/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/invoices/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/sellers/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sellers/index.blade.php" afterDir="false" />
     </list>
@@ -242,7 +242,9 @@
       <workItem from="1575873717611" duration="20315000" />
       <workItem from="1575897055330" duration="1545000" />
       <workItem from="1576003477119" duration="6288000" />
-      <workItem from="1576082687202" duration="7069000" />
+      <workItem from="1576082687202" duration="13041000" />
+      <workItem from="1576170144450" duration="9369000" />
+      <workItem from="1576501040546" duration="13687000" />
     </task>
     <servers />
   </component>
@@ -274,9 +276,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1285" y="436" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576090876695" />
-    <state x="1003" y="309" key="com.intellij.ide.util.TipDialog" timestamp="1576082688763">
+    <state width="623" height="498" key="SwitcherDM" timestamp="1576173533056">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1003" y="309" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576082688763" />
+    <state width="623" height="498" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1576173533056" />
+    <state x="1003" y="309" key="com.intellij.ide.util.TipDialog" timestamp="1576501042029">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1003" y="309" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576501042029" />
   </component>
 </project>

@@ -10,13 +10,11 @@
         </div>
         <div class="container">
             <nav class="navbar navbar-light justify-content-lg-end">
-                <form method="GET" action="{{ route('clients.index') }}" class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="ID Number">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Names">
-                    <div class="btn-group btn-group-sm">
-                        <a href="{{ route('clients.index') }}" class="btn btn-success">
-                            <i class="fas fa-search"></i> {{ __('Search') }}
-                        </a>
+                <form method='GET' action="{{ route('clients.index')}}" class="form-inline">
+                    <input type="text" class="form-control mr-sm-2" name="personal_id" placeholder="ID Number">
+                    <input type="text" class="form-control mr-sm-2" name="name" placeholder="Name">
+                    <div class="btn-group-sm">
+                        <button class="btn btn-success" type="submit"><i class="fas fa-search"></i> {{ __('Search') }}</button>
                     </div>
                 </form>
             </nav>

@@ -8,8 +8,7 @@ use App\Invoice;
 use App\Seller;
 use App\Client;
 use App\Product;
-
-
+use Illuminate\Http\Request;
 
 
 class InvoiceController extends Controller
@@ -19,14 +18,21 @@ class InvoiceController extends Controller
     {
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $invoices = Invoice::with(['client', 'seller'])->paginate(10);
+        $search = $request->get('search');
+        $type = $request->get('type');
+
+        $invoices = Invoice::with(['client', 'seller'])
+            ->search($type, $search)
+            ->paginate(10);
 
         return view('invoices.index', compact('invoices'));
 
