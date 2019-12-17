@@ -118,31 +118,6 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="container">
-                        <div class="col-lg-5 col-sm-4 ml-auto">
-                            <table class="table table-hover">
-                                <tbody>
-                                <tr>
-                                    <th scope="row">Subtotal</th>
-                                    <td class="right">Mark</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">IVA (19%)</th>
-                                    <td>Jacob</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Total</th>
-                                    <td colspan="2">Total</td>
-                                    <td></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
