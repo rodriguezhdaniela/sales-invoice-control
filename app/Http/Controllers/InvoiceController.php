@@ -56,9 +56,9 @@ class InvoiceController extends Controller
     public function store(InvoiceStoreRequest $request)
     {
 
-        Invoice::create($request->validated());
+        $invoice = Invoice::create($request->validated());
 
-        return redirect()->route('invoices.index');
+        return redirect()->route('invoices.show', $invoice);
     }
 
     /**

@@ -16,12 +16,12 @@ class CreateTableInvoices extends Migration
         Schema::create('invoices', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
-            $table->dateTime('expedition_date');
-            $table->date('invoice_date');
+            $table->date('receipt_date')->nullable();
             $table->date('expiration_date');
-            $table->string('state');
-            $table->integer('amount')->nullable();
-            $table->integer('total')->nullable();
+            $table->enum('status', ['new', 'received', 'paid', 'cancelled']);
+            $table->integer('tax')->default(0);
+            $table->integer('amount')->default(0);
+            $table->integer('total')->default(0);
 
             $table->unsignedBigInteger('client_id');
             $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');

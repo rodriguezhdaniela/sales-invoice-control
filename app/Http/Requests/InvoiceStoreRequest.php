@@ -24,12 +24,9 @@ class InvoiceStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'expedition_date' => 'required|date',
-            'invoice_date' => 'required|date',
-            'expiration_date' => 'required|after:invoice_date',
-            'state' => 'required',
-            'client_id' => 'required',
-            'seller_id' => 'required',
+            'expiration_date' => 'required|after:today',
+            'client_id' => 'required|numeric|exists:clients,id',
+            'seller_id' => 'required|numeric|exists:sellers,id',
         ];
     }
 }

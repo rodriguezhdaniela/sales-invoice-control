@@ -15,6 +15,8 @@
                 <th>Expiration date</th>
                 <th>Client</th>
                 <th>Seller</th>
+                <th>Tax</th>
+                <th>Amount</th>
                 <th>Total</th>
                 <th>State</th>
                 <th></th>
@@ -23,12 +25,14 @@
             <tbody>
             @foreach($invoices as $invoice)
                 <tr>
-                    <td>{{ $invoice->expedition_date }}</td>
+                    <td>{{ $invoice->created_at->toDateString() }}</td>
                     <td>{{ $invoice->expiration_date }}</td>
                     <td>{{ $invoice->client->name }}</td>
                     <td>{{ $invoice->seller->name }}</td>
-                    <td></td>
-                    <td>{{ $invoice->state }}</td>
+                    <td>{{ $invoice->tax }}</td>
+                    <td>{{$invoice->amount }}</td>
+                    <td>{{ $invoice->total }}</td>
+                    <td>{{ $invoice->status }}</td>
                     <td class="text-right">
                         <div class="btn-group btn-group-sm">
                             <a href="{{ route('invoices.show', $invoice) }}" class="btn btn-link">

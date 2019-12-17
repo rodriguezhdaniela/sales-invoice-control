@@ -29,7 +29,7 @@
                         <td>{{$seller->name}}</td>
                         <td>{{$seller->address}}</td>
                         <td>{{$seller->phone_number}}</td>
-                        <td>{{$seller->e_mail}}</td>
+                        <td>{{$seller->email}}</td>
 
                         <td class="text-right">
                             <div class="btn-group btn-group-sm">

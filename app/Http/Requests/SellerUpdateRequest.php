@@ -28,14 +28,14 @@ class SellerUpdateRequest extends FormRequest
             'personal_id' => [
                 'required',
                 'min:8',
-                Rule::unique('sellers', 'personal_id')->ignore($this->route('seller')),
+                Rule::unique('sellers', 'personal_id')->ignore($this->route('seller')->id),
             ],
             'name' => 'required|string|max:50',
             'address' => 'required',
             'phone_number' => 'required|min:7|numeric',
-            'e_mail' => ['required',
+            'email' => ['required',
                 'email',
-                Rule::unique('clients', 'e_mail')->ignore($this->route('seller')->id),
+                Rule::unique('sellers', 'email')->ignore($this->route('seller')->id),
             ]
         ];
     }

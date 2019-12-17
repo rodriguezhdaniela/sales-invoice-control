@@ -29,7 +29,7 @@
                         <td>{{$client->name}}</td>
                         <td>{{$client->address}}</td>
                         <td>{{$client->phone_number}}</td>
-                        <td>{{$client->e_mail}}</td>
+                        <td>{{$client->email}}</td>
                         <td class="text-right">
                             <div class="btn-group btn-group-sm">
                                 <a href="{{ route('clients.edit', $client) }}" class="btn btn-link">

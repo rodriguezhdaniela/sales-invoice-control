@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-use App\seller;
+use App\Seller;
 use Illuminate\Foundation\Http\FormRequest;
 
 class SellerStoreRequest extends FormRequest
@@ -23,7 +23,7 @@ class SellerStoreRequest extends FormRequest
      * @param seller $seller
      * @return array
      */
-    public function rules(Seller $seller)
+    public function rules()
     {
         return [
             'type_id' => 'required',
@@ -31,7 +31,7 @@ class SellerStoreRequest extends FormRequest
             'name' => 'required|string|max:50',
             'address' => 'required',
             'phone_number' => 'required|min:7|numeric',
-            'e_mail' => 'required|email|unique:clients,e_mail,'.$seller->id,
+            'email' => 'required|email|unique:clients,email',
         ];
     }
 }

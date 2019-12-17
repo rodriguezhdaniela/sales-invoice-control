@@ -23,12 +23,11 @@ class DetailController extends Controller
      */
     public function create(Invoice $invoice)
     {
-
+        $excludedIds = $invoice->products()->get(['products.id'])->pluck('id')->toArray();
         return view('invoices.details.create', [
                 'invoice' => $invoice,
-                'products' => Product::all(),
+                'products' => Product::whereNotIn('id', $excludedIds)->get(),
         ]);
-
     }
 
 
@@ -41,7 +40,17 @@ class DetailController extends Controller
      */
     public function store(DetailStoreRequest $request, Invoice $invoice)
     {
-        $invoice->products()->attach(request('product_id'), $request->validated());
+        $product = Product::find($request->input('product_id'));
+        $invoice->products()->attach($product, $request->validated());
+
+        $productsPrice = $product->price * $request->quantity;
+        $tax = $productsPrice * .19;
+
+        $invoice->amount += $productsPrice;
+        $invoice->tax += $tax;
+        $invoice->total += $productsPrice + $tax;
+
+        $invoice->save();
 
 
         return redirect()->route('invoices.show', $invoice);
@@ -85,9 +94,22 @@ class DetailController extends Controller
      * @param Product $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Invoice $invoice, Product $product)
+    public function destroy(Invoice $invoice, $id)
     {
-        $invoice->products()->detach($product->id);
+        $product = $invoice->products()->findOrFail($id);
+        $quantity = $product->pivot->quantity;
+
+        $productsPrice = $product->price * $quantity;
+        $tax = $productsPrice * .19;
+
+        $invoice->amount -= $productsPrice;
+        $invoice->tax -= $tax;
+        $invoice->total -= $productsPrice + $tax;
+
+        $invoice->products()->detach($product);
+
+        $invoice->save();
+
 
         return redirect()->route('invoices.show', $invoice);
     }

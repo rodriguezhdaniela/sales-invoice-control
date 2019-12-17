@@ -34,10 +34,10 @@ class ClientUpdateRequest extends FormRequest
             'name' => 'required|string|max:50',
             'address' => 'required',
             'phone_number' => 'required|min:7|numeric',
-            'e_mail' => [
+            'email' => [
                 'required',
                 'email',
-                Rule::unique('clients', 'e_mail')->ignore($this->route('client')->id),
+                Rule::unique('clients', 'email')->ignore($this->route('client')->id),
 
             ]
         ];

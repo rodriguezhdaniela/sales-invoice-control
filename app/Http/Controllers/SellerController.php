@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SellerStoreRequest;
 use App\Http\Requests\SellerUpdateRequest;
-use App\seller;
+use App\Seller;
 use Illuminate\Http\Response;
 
 
-class sellerController extends Controller
+class SellerController extends Controller
 {
     public function __construct()
     {
@@ -20,7 +20,7 @@ class sellerController extends Controller
      */
     public function index()
     {
-        $sellers = seller::all();
+        $sellers = Seller::all();
 
         return view('sellers.index', compact('sellers'));
     }
@@ -32,7 +32,7 @@ class sellerController extends Controller
      */
     public function create()
     {
-        $seller = new seller;
+        $seller = new Seller;
         return view('sellers.create', compact('seller'));
     }
 
@@ -45,7 +45,7 @@ class sellerController extends Controller
 
     public function store(SellerStoreRequest $request)
     {
-        seller::create($request->validated());
+        Seller::create($request->validated());
 
         return redirect()->route('sellers.index');
 
@@ -60,7 +60,7 @@ class sellerController extends Controller
      */
 
 
-    public function edit(seller $seller)
+    public function edit(Seller $seller)
     {
 
         return view('sellers.edit', compact('seller'));
@@ -74,7 +74,7 @@ class sellerController extends Controller
      * @param seller $seller
      * @return Response
      */
-    public function update(SellerUpdateRequest $request, seller $seller)
+    public function update(SellerUpdateRequest $request, Seller $seller)
     {
         $seller->update($request->validated());
 
@@ -88,7 +88,7 @@ class sellerController extends Controller
      * @return Response
      * @throws \Exception
      */
-    public function destroy(seller $seller)
+    public function destroy(Seller $seller)
     {
 
         $seller->delete();

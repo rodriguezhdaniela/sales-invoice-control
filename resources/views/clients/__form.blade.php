@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col form-group">
             <label for="type_id">{{__('Type ID')}} </label>
-            <select class="form-control" name="type_id" id="type_id"  value="{{ old('type_id') }}">
+            <select class="custom-select" name="type_id" id="type_id"  value="{{ old('type_id') }}">
                 <option value="Card ID" selected>Card ID</option>
                 <option value="Foreign ID">Foreign ID</option>
                 <option value="Passport">Passport</option>
@@ -45,9 +45,9 @@
 
         <div class="col-md-6">
             <div class="form-group">
-                <label for="e_mail">{{ __('Email') }}</label>
-                <input type="email" class="form-control {{ $errors->has('e_mail') ? 'is-invalid' : '' }}" name="e_mail" id="e_mail" value="{{ old('e_mail', $client->e_mail) }}" required>
-                @includeWhen($errors->has('e_mail'), 'partials.__invalid_feedback', ['feedback' => $errors->first('e_mail')])
+                <label for="email">{{ __('Email') }}</label>
+                <input type="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" name="email" id="email" value="{{ old('email', $client->email) }}" required>
+                @includeWhen($errors->has('email'), 'partials.__invalid_feedback', ['feedback' => $errors->first('email')])
             </div>
         </div>
     </div>
