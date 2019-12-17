@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="AnalysisUIOptions">
     <option name="SCOPE_TYPE" value="8" />
     <option name="CUSTOM_SCOPE_NAME" value="Project Files" />
@@ -9,17 +10,27 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" afterDir="false" />
     </list>
+=======
+  <component name="ChangeListManager">
+    <list default="true" id="c73f6a82-04bb-426f-b554-b0dbbd33250b" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+>>>>>>> Creación tabla clients
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+=======
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+>>>>>>> Creación tabla clients
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
     </execution>
   </component>
+<<<<<<< HEAD
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
     <option name="GROUP_DATA_SOURCES" value="true" />
@@ -37,6 +48,8 @@
   <component name="FavoritesManager">
     <favorites_list name="invoices" />
   </component>
+=======
+>>>>>>> Creación tabla clients
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -127,6 +140,7 @@
       <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
       <path value="$PROJECT_DIR$/vendor/phar-io/version" />
       <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+<<<<<<< HEAD
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
@@ -156,6 +170,26 @@
       <recent name="D:\Daniela\laragon\www\invoices\resources\js" />
       <recent name="D:\Daniela\laragon\www\invoices\resources\views\partials" />
     </key>
+=======
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1Tq0sd2Aj9zOSwbpo6ZPjdMaY8D" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+>>>>>>> Creación tabla clients
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -163,6 +197,7 @@
       <method v="2" />
     </configuration>
   </component>
+<<<<<<< HEAD
   <component name="ServiceViewManager">
     <option name="viewStates">
       <list>
@@ -175,6 +210,8 @@
       </list>
     </option>
   </component>
+=======
+>>>>>>> Creación tabla clients
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -185,6 +222,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574172525317</updated>
+<<<<<<< HEAD
       <workItem from="1574172526472" duration="31603000" />
       <workItem from="1574243702388" duration="9813000" />
       <workItem from="1574268633129" duration="11702000" />
@@ -222,6 +260,9 @@
       <workItem from="1575818636187" duration="15038000" />
       <workItem from="1575873717611" duration="20315000" />
       <workItem from="1575897055330" duration="1545000" />
+=======
+      <workItem from="1574172526472" duration="2487000" />
+>>>>>>> Creación tabla clients
     </task>
     <servers />
   </component>
@@ -233,15 +274,22 @@
       <map>
         <entry key="MAIN">
           <value>
+<<<<<<< HEAD
             <State>
               <option name="COLUMN_ORDER" />
             </State>
+=======
+            <State />
+>>>>>>> Creación tabla clients
           </value>
         </entry>
       </map>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
+=======
+>>>>>>> Creación tabla clients
 </project>
