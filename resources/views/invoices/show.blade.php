@@ -118,6 +118,31 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="container">
+                    <div class="col-lg-5 col-sm-4 ml-auto">
+                        <table class="table table-hover">
+                            <tbody>
+                            <tr>
+                                <th scope="row">{{ __('Subtotal') }}</th>
+                               {{-- <td class="right">">{{ number_format($invoice->getSubtotalAttribute())  }}</td> --}}
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">{{ __('IVA (19%)') }}</th>
+                               {{-- <td>{{ number_format($invoice->getIvaAttribute()) }}</td>--}}
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">>{{ __('Total') }}</th>
+                               {{-- <td colspan="2">{{ number_format($invoice->getTotalAttribute()) }}</td>--}}
+                                <td></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

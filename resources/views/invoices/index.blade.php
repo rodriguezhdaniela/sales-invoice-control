@@ -15,6 +15,7 @@
                 <th>Expiration date</th>
                 <th>Client</th>
                 <th>Seller</th>
+                <th>Total</th>
                 <th>State</th>
                 <th></th>
             </tr>
@@ -26,6 +27,7 @@
                     <td>{{ $invoice->expiration_date }}</td>
                     <td>{{ $invoice->client->name }}</td>
                     <td>{{ $invoice->seller->name }}</td>
+                    <td></td>
                     <td>{{ $invoice->state }}</td>
                     <td class="text-right">
                         <div class="btn-group btn-group-sm">
