@@ -28,7 +28,7 @@ class Product extends Model
     {
         if ($description != "")
         {
-            return $query->where('name', "LIKE", "%$description%");
+            return $query->where('description', "LIKE", "%$description%");
         }
 
     }
