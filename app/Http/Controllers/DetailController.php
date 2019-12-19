@@ -114,7 +114,4 @@ class DetailController extends Controller
         return redirect()->route('invoices.show', $invoice)->withSuccess(__('Detail deleted sucessfully'));
     }
 
-
-
-
 }

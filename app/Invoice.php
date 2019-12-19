@@ -25,4 +25,11 @@ class Invoice extends Model
         return $this->belongsToMany(Product::class)->withPivot(['quantity']);
     }
 
+    public function scopeSearch($query, $type, $search) {
+        if(($type) && ($search)) {
+            return $query->where($type, 'like', "%$search%");
+        }
+    }
+
+
 }

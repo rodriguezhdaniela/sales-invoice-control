@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Client;
 use App\Http\Requests\ClientStoreRequest;
 use App\Http\Requests\ClientUpdateRequest;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 
@@ -18,11 +19,17 @@ class clientController extends Controller
 
     /**
      * Display a listing of the resource.
+     * @param Request $request
      * @return Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $clients = client::all();
+        $name = $request->get('name');
+        $personal_id = $request->get('personal_id');
+
+        $clients = client::name($name)
+            ->personal_id($personal_id)
+            ->paginate(10);
 
         return view('clients.index', compact('clients'));
     }

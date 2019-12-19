@@ -10,6 +10,15 @@
         </div>
         <div class="container">
             @include('partials.__alerts')
+            <nav class="navbar navbar-light justify-content-lg-end">
+                <form method='GET' action="{{ route('clients.index')}}" class="form-inline">
+                    <input type="search" class="form-control mr-sm-2" name="personal_id" placeholder="ID Number">
+                    <input type="search" class="form-control mr-sm-2" name="name" placeholder="Name">
+                    <div class="btn-group-sm">
+                        <button class="btn btn-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i> {{ __('Search') }}</button>
+                    </div>
+                </form>
+            </nav>
             <table class="table">
                 <thead>
                 <tr>
