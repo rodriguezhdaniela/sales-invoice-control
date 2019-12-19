@@ -22,10 +22,10 @@
      <div class="card-body">
                 <dl class="row">
                     <dt class="col-md-3">{{ __('Expedition date') }}</dt>
-                    <dd class="col-md-3">{{ $invoice->expedition_date }}</dd>
+                    <dd class="col-md-3">{{ $invoice->created_at->toDateString() }}</dd>
 
-                    <dt class="col-md-3">{{ __('Receipt date') }}</dt>
-                    <dd class="col-md-3">{{ $invoice->invoice_date }}</dd>
+                    <dt class="col-md-3">{{ __('Received date') }}</dt>
+                    <dd class="col-md-3">{{ $invoice->updated_at->toDateString() }}</dd>
 
                     <dt class="col-md-3">{{ __('Expiration date') }}</dt>
                     <dd class="col-md-3">{{ $invoice->expiration_date }}</dd>
