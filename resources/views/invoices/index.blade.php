@@ -8,30 +8,26 @@
                 <a class="btn btn-primary btn-sm" href="{{ route('invoices.create') }}"><i class="fas fa-plus"></i> Create</a>
             </div>
         </div>
+        <nav class="navbar navbar-light justify-content-lg-end">
+            <form method='GET' action="{{ route('invoices.index')}}" class="form-inline">
+                <select name="type" class="form-control mr-sm-3"  id="ControlSelect">
+                    <option value="0">Search by type</option>
+                    <option value="1">Expedition date</option>
+                    <option value="2">Expiration date</option>
+                    <option value="3">Client</option>
+                    <option value="4">Seller</option>
+                    <option value="5">Total</option>
+                    <option value="6">Status</option>
+                </select>
+                <input name="search" class="form-control mr-sm-3" type="search" placeholder="Search">
+
+                <div class="btn-group-sm">
+                    <button class="btn btn-success" type="submit"><i class="fas fa-search"></i> {{ __('Search') }}</button>
+                </div>
+            </form>
+        </nav>
         <table class="table">
             @include('partials.__alerts')
-            <div class="container">
-            <nav class="navbar navbar-light justify-content-lg-end">
-                <form method='GET' action="{{ route('invoices.index')}}" class="form-inline">
-                    <select name="type" class="form-control mr-sm-2"  id="ControlSelect">
-                        <option>Search by type</option>
-                        <option>Expedition date</option>
-                        <option>Expiration date</option>
-                        <option>Client</option>
-                        <option>Seller</option>
-                        <option>Total</option>
-                        <option>State</option>
-                    </select>
-
-                    <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search">
-
-                    <div class="btn-group-sm">
-                        <button class="btn btn-success" type="submit"><i class="fas fa-search"></i> {{ __('Search') }}</button>
-                    </div>
-                </form>
-            </nav>
-            </div>
-
             <thead>
             <tr>
                 <th>Expedition date</th>
@@ -41,7 +37,7 @@
                 <th>Tax</th>
                 <th>Amount</th>
                 <th>Total</th>
-                <th>State</th>
+                <th>Status</th>
                 <th></th>
             </tr>
             </thead>

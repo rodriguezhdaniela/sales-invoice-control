@@ -63,7 +63,7 @@ class SellerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Seller $seller
      * @return Response
      */
 

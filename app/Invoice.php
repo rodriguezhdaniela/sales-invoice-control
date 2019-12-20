@@ -26,7 +26,8 @@ class Invoice extends Model
     }
 
     public function scopeSearch($query, $type, $search) {
-        if(($type) && ($search)) {
+
+        if(trim($type) && ($search)) {
             return $query->where($type, 'like', "%$search%");
         }
     }
