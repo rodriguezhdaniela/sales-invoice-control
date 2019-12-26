@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\SellersExport;
 use App\Http\Requests\SellerStoreRequest;
 use App\Http\Requests\SellerUpdateRequest;
 use App\Seller;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Maatwebsite\Excel\Facades\Excel;
 
 
 class SellerController extends Controller
@@ -14,6 +16,11 @@ class SellerController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+    }
+
+    public function export()
+    {
+        return Excel::download(new SellersExport, 'sellers.xlsx');
     }
 
     /**

@@ -1,23 +1,26 @@
 @extends('layouts.app')
 @section('content')
 
+
     <div class="card card-default">
         <div class="card-header d-flex justify-content-between">
             <h5 class="card-title mb-0">Invoices</h5>
-            <div class="btn-group btn-group-sm">
-                <a class="btn btn-primary btn-sm" href="{{ route('invoices.create') }}"><i class="fas fa-plus"></i> Create</a>
+            <div class="btn-group-sm">
+                <a href="{{ route('invoices.create') }}" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Create</a>
+                <a href="{{ route('invoices.excel') }}" class="btn btn-success btn-sm"><i class="fas fa-download"></i> Download</a>
+                <a href="{{ route('import.view') }}" class="btn btn-success btn-sm"><i class="fas fa-upload"></i> Import</a>
             </div>
         </div>
         <nav class="navbar navbar-light justify-content-lg-end">
             <form method='GET' action="{{ route('invoices.index')}}" class="form-inline">
                 <select name="type" class="form-control mr-sm-3"  id="ControlSelect">
-                    <option value="0">Search by type</option>
-                    <option value="1">Expedition date</option>
-                    <option value="2">Expiration date</option>
-                    <option value="3">Client</option>
-                    <option value="4">Seller</option>
-                    <option value="5">Total</option>
-                    <option value="6">Status</option>
+                    <option>Search by type</option>
+                    <option>Expedition date</option>
+                    <option>Expiration date</option>
+                    <option>Client</option>
+                    <option>Seller</option>
+                    <option>Total</option>
+                    <option>Status</option>
                 </select>
                 <input name="search" class="form-control mr-sm-3" type="search" placeholder="Search">
 
@@ -57,7 +60,7 @@
                             <a href="{{ route('invoices.show', $invoice) }}" class="btn btn-link">
                                 <i class="fas fa-eye"></i> view
                             </a>
-                            <a href="{{ route('invoices.edit', $invoice) }}" class="btn btn-link">
+                            <a href="{{ route('invoices.edit', $invoice) }}" class="btn btn-link text-secondary">
                                 <i class="fas fa-edit"></i> Edit
                             </a>
                             <button type="button" class="btn btn-link text-danger" data-route="{{ route('invoices.destroy', $invoice) }}" data-toggle="modal" data-target="#confirmDeleteModal" title="{{ __('Delete') }}">

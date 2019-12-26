@@ -4,7 +4,7 @@
     <div class="card card-default">
         <div class="card-header d-flex justify-content-between">
             <h5 class="card-title mb-0">Clients</h5>
-            <div class="btn-group btn-group-sm">
+            <div class="btn-group-sm">
                 <a class="btn btn-primary btn-sm" href="{{ route('clients.create') }}"><i class="fas fa-plus"></i> Create</a>
             </div>
         </div>
@@ -42,7 +42,7 @@
                         <td>{{$client->email}}</td>
                         <td class="text-right">
                             <div class="btn-group btn-group-sm">
-                                <a href="{{ route('clients.edit', $client) }}" class="btn btn-link">
+                                <a href="{{ route('clients.edit', $client) }}" class="btn btn-link text-secondary">
                                     <i class="fas fa-edit"></i> Edit
                                 </a>
                                 <button type="button" class="btn btn-link text-danger" data-route="{{ route('clients.destroy', $client) }}" data-toggle="modal" data-target="#confirmDeleteModal" title="{{ __('Delete') }}">

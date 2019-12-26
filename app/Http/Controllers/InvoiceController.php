@@ -9,15 +9,24 @@ use App\Seller;
 use App\Client;
 use App\Product;
 use Illuminate\Http\Request;
+use Excel;
+
+use App\Exports\InvoicesExport;
 
 
 class InvoiceController extends Controller
 {
+    public function exportExcel(Excel $excel, InvoicesExport $export)
+    {
+        return $excel->download($export, 'invoices-list.xlsx');
+    }
+
 
     public function __construct()
     {
         $this->middleware('auth');
     }
+
 
     /**
      * Display a listing of the resource.
@@ -129,6 +138,9 @@ class InvoiceController extends Controller
 
         return redirect()->route('invoices.index')->withSuccess(__('Invoice deleted sucessfully'));
     }
+
+
+
 
 
 }
