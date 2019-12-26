@@ -41,7 +41,7 @@
     </div>
 
     <div class="col form-group">
-        <label for="client_id">{{ __('Client') }}</label>
+        <label for="client_id">{{ __('ClientsExport') }}</label>
         <select type="client_id" name="client_id" id="client_id" class="custom-select {{ $errors->has('client_id') ? 'is-invalid' : '' }}" required>
             <option value="">Select name</option>
             @foreach ($clients as $client)

@@ -4,7 +4,7 @@
     <div class="card card-default">
         <div class="card-header d-flex justify-content-between">
             <h5 class="card-title mb-0">Products</h5>
-            <div class="btn-group btn-group-sm">
+            <div class="btn-group-sm">
                 <a class="btn btn-primary btn-sm" href="{{ route('products.create') }}"><i class="fas fa-plus"></i> Create</a>
             </div>
         </div>
@@ -37,7 +37,7 @@
                         <td>{{$product->price}}</td>
                         <td class="text-right">
                             <div class="btn-group btn-group-sm">
-                                <a href="{{ route('products.edit', $product) }}" class="btn btn-link">
+                                <a href="{{ route('products.edit', $product) }}" class="btn btn-link text-secondary">
                                     <i class="fas fa-edit"></i> Edit
                                 </a>
                                 <button type="button" class="btn btn-link text-danger" data-route="{{ route('products.destroy', $product) }}" data-toggle="modal" data-target="#confirmDeleteModal" title="{{ __('Delete') }}">

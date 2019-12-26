@@ -7,12 +7,31 @@ use App\Http\Requests\Products\UpdateRequest;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Exports\ProductsExport;
+use App\Imports\ProductsImport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ProductController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
+    }
+
+    public function view()
+    {
+        return view('import');
+    }
+
+    public function export()
+    {
+        return Excel::download(new ProductsExport, 'products.xlsx');
+    }
+
+    public function import()
+    {
+        Excel::import(new ProductsImport, request()->file('file'));
+        return back();
     }
 
     /**
