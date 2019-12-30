@@ -33,9 +33,5 @@ class Client extends Model
 
     }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 28363c4c22a2c3ec9f43d2f0f9d0d62572744232
 }
 

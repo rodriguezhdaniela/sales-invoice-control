@@ -9,10 +9,7 @@
             </div>
         </div>
         <div class="container">
-<<<<<<< HEAD
             @include('partials.__alerts')
-=======
->>>>>>> 28363c4c22a2c3ec9f43d2f0f9d0d62572744232
             <nav class="navbar navbar-light justify-content-lg-end">
                 <form method='GET' action="{{ route('sellers.index')}}" class="form-inline">
                     <input type="text" class="form-control mr-sm-2" name="personal_id" placeholder="ID Number">
@@ -60,11 +57,7 @@
             </table>
         </div>
         <div class="mt-3 d-flex justify-content-center">
-<<<<<<< HEAD
             {!! $sellers->render() !!}
-=======
-        {!! $sellers->render() !!}
->>>>>>> 28363c4c22a2c3ec9f43d2f0f9d0d62572744232
         </div>
         <div class="card-footer"></div>
     </div>

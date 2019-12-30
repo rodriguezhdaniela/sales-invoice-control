@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="container">
-<<<<<<< HEAD
+
             @include('partials.__alerts')
             <nav class="navbar navbar-light justify-content-lg-end">
                 <form method='GET' action="{{ route('clients.index')}}" class="form-inline">
@@ -17,14 +17,6 @@
                     <input type="search" class="form-control mr-sm-2" name="name" placeholder="Name">
                     <div class="btn-group-sm">
                         <button class="btn btn-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i> {{ __('Search') }}</button>
-=======
-            <nav class="navbar navbar-light justify-content-lg-end">
-                <form method='GET' action="{{ route('clients.index')}}" class="form-inline">
-                    <input type="text" class="form-control mr-sm-2" name="personal_id" placeholder="ID Number">
-                    <input type="text" class="form-control mr-sm-2" name="name" placeholder="Name">
-                    <div class="btn-group-sm">
-                        <button class="btn btn-success" type="submit"><i class="fas fa-search"></i> {{ __('Search') }}</button>
->>>>>>> 28363c4c22a2c3ec9f43d2f0f9d0d62572744232
                     </div>
                 </form>
             </nav>
@@ -65,11 +57,7 @@
             </table>
         </div>
         <div class="mt-3 d-flex justify-content-center">
-<<<<<<< HEAD
             {!! $clients->render() !!}
-=======
-        {!! $clients->render() !!}
->>>>>>> 28363c4c22a2c3ec9f43d2f0f9d0d62572744232
         </div>
         <div class="card-footer"></div>
     </div>

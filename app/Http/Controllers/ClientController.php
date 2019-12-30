@@ -5,16 +5,11 @@ namespace App\Http\Controllers;
 use App\Client;
 use App\Http\Requests\ClientStoreRequest;
 use App\Http\Requests\ClientUpdateRequest;
-<<<<<<< HEAD
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-
-=======
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
->>>>>>> 28363c4c22a2c3ec9f43d2f0f9d0d62572744232
 
 class clientController extends Controller
 {
@@ -27,18 +22,11 @@ class clientController extends Controller
     /**
      * Display a listing of the resource.
      * @param Request $request
-<<<<<<< HEAD
      * @return Response
      */
     public function index(Request $request)
     {
-=======
-     * @return Factory|View
-     */
-    public function index(Request $request)
-    {
 
->>>>>>> 28363c4c22a2c3ec9f43d2f0f9d0d62572744232
         $name = $request->get('name');
         $personal_id = $request->get('personal_id');
 

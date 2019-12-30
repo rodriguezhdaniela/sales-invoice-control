@@ -27,17 +27,11 @@ class InvoiceController extends Controller
      */
     public function index(Request $request)
     {
-<<<<<<< HEAD
 
-        $search =$request->get('search');
-        $type = $request->get('type');
-
-
-=======
         $search = $request->get('search');
         $type = $request->get('type');
 
->>>>>>> 28363c4c22a2c3ec9f43d2f0f9d0d62572744232
+
         $invoices = Invoice::with(['client', 'seller'])
             ->search($type, $search)
             ->paginate(10);

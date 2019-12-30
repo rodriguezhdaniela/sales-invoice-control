@@ -8,7 +8,7 @@
                 <a class="btn btn-primary btn-sm" href="{{ route('invoices.create') }}"><i class="fas fa-plus"></i> Create</a>
             </div>
         </div>
-<<<<<<< HEAD
+
         <nav class="navbar navbar-light justify-content-lg-end">
             <form method='GET' action="{{ route('invoices.index')}}" class="form-inline">
                 <select name="type" class="form-control mr-sm-3"  id="ControlSelect">
@@ -27,28 +27,7 @@
                 </div>
             </form>
         </nav>
-=======
-        <div class="container">
-            <nav class="navbar navbar-light justify-content-lg-end">
-                <form method='GET' action="{{ route('invoices.index')}}" class="form-inline">
-                    <select name="type" class="form-control mr-sm-2"  id="ControlSelect">
-                        <option>Search by type</option>
-                        <option>Expedition date</option>
-                        <option>Expiration date</option>
-                        <option>Client</option>
-                        <option>Seller</option>
-                        <option>Total</option>
-                        <option>State</option>
-                    </select>
 
-                    <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search">
-
-                    <div class="btn-group-sm">
-                        <button class="btn btn-success" type="submit"><i class="fas fa-search"></i> {{ __('Search') }}</button>
-                    </div>
-                </form>
-            </nav>
->>>>>>> 28363c4c22a2c3ec9f43d2f0f9d0d62572744232
         <table class="table">
             @include('partials.__alerts')
             <thead>
@@ -93,11 +72,9 @@
             </tbody>
         </table>
         <div class="mt-3 d-flex justify-content-center">
-<<<<<<< HEAD
+
             {!! $invoices->render() !!}
-=======
-        {!! $invoices->render() !!}
->>>>>>> 28363c4c22a2c3ec9f43d2f0f9d0d62572744232
+
         </div>
         <div class="card-footer"></div>
     </div>
