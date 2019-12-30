@@ -5,9 +5,16 @@ namespace App\Http\Controllers;
 use App\Client;
 use App\Http\Requests\ClientStoreRequest;
 use App\Http\Requests\ClientUpdateRequest;
+<<<<<<< HEAD
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
+=======
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+>>>>>>> 28363c4c22a2c3ec9f43d2f0f9d0d62572744232
 
 class clientController extends Controller
 {
@@ -20,10 +27,18 @@ class clientController extends Controller
     /**
      * Display a listing of the resource.
      * @param Request $request
+<<<<<<< HEAD
      * @return Response
      */
     public function index(Request $request)
     {
+=======
+     * @return Factory|View
+     */
+    public function index(Request $request)
+    {
+
+>>>>>>> 28363c4c22a2c3ec9f43d2f0f9d0d62572744232
         $name = $request->get('name');
         $personal_id = $request->get('personal_id');
 
@@ -37,7 +52,7 @@ class clientController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return Factory|View
      */
     public function create()
     {
@@ -50,7 +65,7 @@ class clientController extends Controller
      * Store a newly created resource in storage.
      *
      * @param ClientStoreRequest $request
-     * @return Response
+     * @return RedirectResponse
      */
     public function store(ClientStoreRequest $request)
     {
@@ -65,7 +80,7 @@ class clientController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param client $client
-     * @return Response
+     * @return Factory|View
      */
     public function edit(client $client)
     {
@@ -79,7 +94,7 @@ class clientController extends Controller
      *
      * @param ClientStoreRequest $request
      * @param client $client
-     * @return Response
+     * @return RedirectResponse
      */
     public function update(ClientUpdateRequest $request, Client $client)
     {
@@ -92,7 +107,7 @@ class clientController extends Controller
      * Remove the specified resource from storage.
      *
      * @param client $client
-     * @return Response
+     * @return RedirectResponse
      * @throws \Exception
      */
     public function destroy(client $client)

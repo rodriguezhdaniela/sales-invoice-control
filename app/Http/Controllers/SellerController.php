@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SellerStoreRequest;
 use App\Http\Requests\SellerUpdateRequest;
+<<<<<<< HEAD
 use App\Seller;
+=======
+use App\seller;
+>>>>>>> 28363c4c22a2c3ec9f43d2f0f9d0d62572744232
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -19,7 +23,11 @@ class SellerController extends Controller
     /**
      * Display a listing of the resource.
      * @param Request $request
+<<<<<<< HEAD
      * @return Response
+=======
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+>>>>>>> 28363c4c22a2c3ec9f43d2f0f9d0d62572744232
      */
     public function index(Request $request)
     {

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c73f6a82-04bb-426f-b554-b0dbbd33250b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Invoice.php" afterDir="false" />
@@ -19,6 +20,8 @@
       <change beforePath="$PROJECT_DIR$/resources/views/invoices/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/sellers/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sellers/index.blade.php" afterDir="false" />
+=======
+>>>>>>> 28363c4c22a2c3ec9f43d2f0f9d0d62572744232
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,9 +135,40 @@
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+<<<<<<< HEAD
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+=======
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Daniela\laragon\www\invoices\app\Http\Requests" />
+      <recent name="D:\Daniela\laragon\www\invoices\app\Http\Requests\Clients" />
+      <recent name="D:\Daniela\laragon\www\invoices\app\Http\Requests\Sellers" />
+      <recent name="D:\Daniela\laragon\www\invoices\app\Http\Requests\Invoices" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Daniela\laragon\www\invoices\resources\views\invoices\details" />
+      <recent name="D:\Daniela\laragon\www\invoices\resources\views\Invoices" />
+      <recent name="D:\Daniela\laragon\www\invoices\public\js" />
+      <recent name="D:\Daniela\laragon\www\invoices\resources\js" />
+      <recent name="D:\Daniela\laragon\www\invoices\resources\views\partials" />
+    </key>
+>>>>>>> 28363c4c22a2c3ec9f43d2f0f9d0d62572744232
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -164,9 +198,55 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574172525317</updated>
+<<<<<<< HEAD
       <workItem from="1574172526472" duration="2487000" />
       <workItem from="1576794184975" duration="3699000" />
       <workItem from="1576852846910" duration="7731000" />
+=======
+      <workItem from="1574172526472" duration="31603000" />
+      <workItem from="1574243702388" duration="9813000" />
+      <workItem from="1574268633129" duration="11702000" />
+      <workItem from="1574346278304" duration="27863000" />
+      <workItem from="1574435608460" duration="16883000" />
+      <workItem from="1574558634176" duration="307000" />
+      <workItem from="1574558952779" duration="31000" />
+      <workItem from="1574560480225" duration="177000" />
+      <workItem from="1574560740136" duration="294000" />
+      <workItem from="1574561118001" duration="2541000" />
+      <workItem from="1574594998834" duration="277000" />
+      <workItem from="1574595285932" duration="35496000" />
+      <workItem from="1574685014100" duration="1644000" />
+      <workItem from="1574686672574" duration="15179000" />
+      <workItem from="1574711035497" duration="12454000" />
+      <workItem from="1574723561409" duration="655000" />
+      <workItem from="1574772013460" duration="1024000" />
+      <workItem from="1574861836324" duration="30484000" />
+      <workItem from="1574941109381" duration="17251000" />
+      <workItem from="1574985978341" duration="318000" />
+      <workItem from="1575008678975" duration="12148000" />
+      <workItem from="1575039860518" duration="1954000" />
+      <workItem from="1575046005737" duration="697000" />
+      <workItem from="1575299655346" duration="2198000" />
+      <workItem from="1575396120253" duration="36354000" />
+      <workItem from="1575472168110" duration="16218000" />
+      <workItem from="1575490752265" duration="266000" />
+      <workItem from="1575492212884" duration="10829000" />
+      <workItem from="1575550190824" duration="23975000" />
+      <workItem from="1575580641214" duration="2756000" />
+      <workItem from="1575638936095" duration="37371000" />
+      <workItem from="1575676965618" duration="200000" />
+      <workItem from="1575732471749" duration="16624000" />
+      <workItem from="1575776538713" duration="13157000" />
+      <workItem from="1575818636187" duration="15038000" />
+      <workItem from="1575873717611" duration="20315000" />
+      <workItem from="1575897055330" duration="1545000" />
+      <workItem from="1576003477119" duration="6288000" />
+      <workItem from="1576082687202" duration="13041000" />
+      <workItem from="1576170144450" duration="9369000" />
+      <workItem from="1576501040546" duration="13687000" />
+      <workItem from="1576595577589" duration="678000" />
+      <workItem from="1576599647081" duration="1680000" />
+>>>>>>> 28363c4c22a2c3ec9f43d2f0f9d0d62572744232
     </task>
     <servers />
   </component>
@@ -195,5 +275,23 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="968" y="247" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1576863896822" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1173" y="338" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1576090842308">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1173" y="338" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1576090842308" />
+    <state x="1285" y="436" key="NewPhpFileDialog" timestamp="1576090876695">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1285" y="436" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576090876695" />
+    <state width="623" height="498" key="SwitcherDM" timestamp="1576173533056">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="623" height="498" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1576173533056" />
+    <state x="1003" y="309" key="com.intellij.ide.util.TipDialog" timestamp="1576501042029">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1003" y="309" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576501042029" />
   </component>
 </project>

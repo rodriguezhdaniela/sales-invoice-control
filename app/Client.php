@@ -4,9 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
+
 class Client extends Model
 {
     protected $guarded = [];
+
 
 
     public function invoices()
@@ -30,4 +33,9 @@ class Client extends Model
 
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 28363c4c22a2c3ec9f43d2f0f9d0d62572744232
 }
+
