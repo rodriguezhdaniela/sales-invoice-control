@@ -11,13 +11,13 @@
         <nav class="navbar navbar-light justify-content-lg-end">
             <form method='GET' action="{{ route('invoices.index')}}" class="form-inline">
                 <select name="type" class="form-control mr-sm-3"  id="ControlSelect">
-                    <option value="0">Search by type</option>
-                    <option value="1">Expedition date</option>
-                    <option value="2">Expiration date</option>
-                    <option value="3">Client</option>
-                    <option value="4">Seller</option>
-                    <option value="5">Total</option>
-                    <option value="6">Status</option>
+                    <option>Search by type</option>
+                    <option>Expedition date</option>
+                    <option>Expiration date</option>
+                    <option>Client</option>
+                    <option>Seller</option>
+                    <option>Total</option>
+                    <option>Status</option>
                 </select>
                 <input name="search" class="form-control mr-sm-3" type="search" placeholder="Search">
 
@@ -35,7 +35,7 @@
                 <th>Client</th>
                 <th>Seller</th>
                 <th>Tax</th>
-                <th>Amount</th>
+                <th>Subtotal</th>
                 <th>Total</th>
                 <th>Status</th>
                 <th></th>
@@ -69,6 +69,9 @@
             @endforeach
             </tbody>
         </table>
+        <div class="mt-3 d-flex justify-content-center">
+            {!! $invoices->render() !!}
+        </div>
         <div class="card-footer"></div>
     </div>
 @endsection

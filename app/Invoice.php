@@ -29,6 +29,7 @@ class Invoice extends Model
 
         if(trim($type) && ($search)) {
             return $query->where($type, 'like', "%$search%");
+
         }
     }
 

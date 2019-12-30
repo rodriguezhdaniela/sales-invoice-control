@@ -55,6 +55,9 @@
                 </tbody>
             </table>
         </div>
+        <div class="mt-3 d-flex justify-content-center">
+            {!! $clients->render() !!}
+        </div>
         <div class="card-footer"></div>
     </div>
 @endsection

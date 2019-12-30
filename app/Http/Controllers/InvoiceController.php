@@ -28,8 +28,9 @@ class InvoiceController extends Controller
     public function index(Request $request)
     {
 
-        $search = $request->get('search');
+        $search =$request->get('search');
         $type = $request->get('type');
+
 
         $invoices = Invoice::with(['client', 'seller'])
             ->search($type, $search)
@@ -72,10 +73,9 @@ class InvoiceController extends Controller
      * Display the specified resource.
      *
      * @param Invoice $invoice
-     * @param Product $product
      * @return void
      */
-    public function show(Invoice $invoice, Product $product)
+    public function show(Invoice $invoice)
     {
 
 
