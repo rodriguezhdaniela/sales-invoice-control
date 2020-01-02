@@ -1,6 +1,48 @@
 @extends('layouts.app')
 @section('content')
 
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">Filters</h5>
+            <form method='GET' action="{{ route('invoices.index')}}">
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="expedition_date">Expedition date</label>
+                        <input
+                            name="search[expedition_date]"
+                            id="expedition_date"
+                            class="form-control"
+                            type="date"
+                            value="{{ request()->input('search.expedition_date') }}">
+                    </div>
+
+                    <div class="form-group col">
+                        <label for="expiration_date">Expiration date</label>
+                        <input
+                            name="search[expiration_date]"
+                            id="expiration_date"
+                            class="form-control"
+                            type="date"
+                            value="{{ request()->input('search.expiration_date') }}">
+                    </div>
+
+                    <div class="form-group col">
+                        <label for="client">Client</label>
+                        <select name="search[client]" id="client" class="custom-select">
+                            <option></option>
+                            @foreach($clients as $client)
+                                <option value="{{ $client->id }}" {{ $client->id == request()->input('search.client') ? 'selected' : ''}}>
+                                    {{ $client->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn-success btn-block" type="submit"><i class="fas fa-search"></i> {{ __('Search') }}</button>
+            </form>
+        </div>
+    </div>
+
     <div class="card card-default">
         <div class="card-header d-flex justify-content-between">
             <h3 class="card-title mb-0">Invoices</h3>
@@ -8,25 +50,6 @@
                 <a class="btn btn-primary btn-sm" href="{{ route('invoices.create') }}"><i class="fas fa-plus"></i> Create</a>
             </div>
         </div>
-
-        <nav class="navbar navbar-light justify-content-lg-end">
-            <form method='GET' action="{{ route('invoices.index')}}" class="form-inline">
-                <select name="type" class="form-control mr-sm-3"  id="ControlSelect">
-                    <option>Search by type</option>
-                    <option>Expedition date</option>
-                    <option>Expiration date</option>
-                    <option>Client</option>
-                    <option>Seller</option>
-                    <option>Total</option>
-                    <option>Status</option>
-                </select>
-                <input name="search" class="form-control mr-sm-3" type="search" placeholder="Search">
-
-                <div class="btn-group-sm">
-                    <button class="btn btn-success" type="submit"><i class="fas fa-search"></i> {{ __('Search') }}</button>
-                </div>
-            </form>
-        </nav>
 
         <table class="table">
             @include('partials.__alerts')
