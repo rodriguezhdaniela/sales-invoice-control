@@ -13,7 +13,7 @@
                 <a href="{{ route('invoices.edit', $invoice) }}" class="btn btn-secondary">
                     <i class="fas fa-edit"></i> {{ __('Edit') }}
                 </a>
-                <a href="{{ route('detail.pdf', [$invoice, $product]) }}" class="btn btn-secondary btn-sm"><i class="fas fa-download"></i> Download</a>
+                <a href="{{ route('invoices.pdf', $invoice) }}" class="btn btn-secondary btn-sm"><i class="fas fa-download"></i> Download</a>
                 <button type="button" class="btn btn-danger" data-route="{{ route('invoices.destroy', $invoice) }}" data-toggle="modal" data-target="#confirmDeleteModal">
                     <i class="fas fa-trash"></i> {{ __('Delete') }}
                 </button>
