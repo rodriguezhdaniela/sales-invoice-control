@@ -28,13 +28,17 @@ class InvoiceController extends Controller
     public function index(Request $request)
     {
         $clients = Client::select(['id', 'name'])->get();
+        $sellers = Seller::select(['id', 'name'])->get();
+
         $invoices = Invoice::with(['client', 'seller'])
             ->ofClient($request->input('search.client'))
+            ->ofSeller($request->input('search.seller'))
+            ->status($request->input('search.status'))
             ->expirationDate($request->input('search.expiration_date'))
             ->expeditionDate($request->input('search.expedition_date'))
             ->paginate(10);
 
-        return response()->view('invoices.index', compact('invoices', 'clients'));
+        return response()->view('invoices.index', compact('invoices', 'clients', 'sellers'));
 
     }
 
@@ -45,7 +49,7 @@ class InvoiceController extends Controller
      */
     public function create()
     {
-        return view('invoices.create', [
+        return response()->view('invoices.create', [
             'invoice' => new Invoice,
             'clients' => Client::all(),
             'sellers' => Seller::all(),

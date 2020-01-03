@@ -43,6 +43,22 @@ class Invoice extends Model
     }
 
     /**
+     * Scope to filter invoices by seller
+     *
+     * @param Builder $query
+     * @param string|null $id
+     * @return Builder
+     */
+    public function scopeOfSeller(Builder $query, ?string $id)
+    {
+        if ($id) {
+            return $query->where('seller_id', $id);
+        }
+
+        return $query;
+    }
+
+    /**
      * Scope to filter invoices by expedition date
      *
      * @param Builder $query
@@ -69,6 +85,23 @@ class Invoice extends Model
     {
         if ($date) {
             return $query->whereDate('expiration_date', $date);
+        }
+
+        return $query;
+    }
+
+
+    /**
+     * Scope to filter invoices by expiration date
+     *
+     * @param Builder $query
+     * @param string|null $status
+     * @return Builder|\Illuminate\Database\Query\Builder
+     */
+    public function scopeStatus(Builder $query, ?string $status)
+    {
+        if ($status) {
+            return $query->where('status', $status);
         }
 
         return $query;

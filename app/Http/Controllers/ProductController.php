@@ -32,7 +32,7 @@ class ProductController extends Controller
             ->description($description)
             ->paginate(10);
 
-        return view('products.index', compact('products'));
+        return response()->view('products.index', compact('products'));
     }
 
     /**
