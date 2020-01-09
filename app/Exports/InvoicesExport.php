@@ -3,15 +3,34 @@
 namespace App\Exports;
 
 use App\Invoice;
-use Maatwebsite\Excel\Concerns\FromCollection;
+use Illuminate\Contracts\Support\Responsable;
+use Maatwebsite\Excel\Concerns\Exportable;
+use Maatwebsite\Excel\Concerns\FromView;
+use Maatwebsite\Excel\Excel;
+use Illuminate\Contracts\View\View;
 
-class InvoicesExport implements FromCollection
+class InvoicesExport implements FromView, Responsable
 {
+    use Exportable;
+
     /**
-    * @return \Illuminate\Support\Collection
-    */
-    public function collection()
+     * It's required to define the fileName within
+     * the export class when making use of Responsable.
+     */
+    private $fileName = 'invoices.xlsx';
+
+    /**
+     * Optional Writer Type
+     */
+    private $writerType = Excel::XLSX;
+
+    /**
+     * @return View
+     */
+    public function view(): View
     {
-        return Invoice::all();
+        return view('exports.invoices', [
+            'invoices' => Invoice::all()
+        ]);
     }
 }

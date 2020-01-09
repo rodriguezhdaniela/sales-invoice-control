@@ -3,33 +3,51 @@
 namespace App\Imports;
 
 use App\Invoice;
-use Maatwebsite\Excel\Concerns\Importable;
 use Maatwebsite\Excel\Concerns\ToModel;
-use Maatwebsite\Excel\Concerns\WithProgressBar;
+use Maatwebsite\Excel\Concerns\Importable;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
+use Maatwebsite\Excel\Concerns\WithValidation;
 
-abstract class InvoicesImport implements ToModel, WithProgressBar
+class InvoicesImport implements ToModel,  WithHeadingRow, WithValidation
 {
     use Importable;
+
     /**
-    * @param array $row
-    *
-    * @return \Illuminate\Database\Eloquent\Model|null
-    */
+     * @param array $row
+     *
+     * @return Invoice|null
+     */
     public function model(array $row)
     {
         return new Invoice([
-
-            'id' => $row[0],
-            'expedition_date' => $row[1],
-            'receipt_date' => $row[2],
-            'expiration_date' => $row[3],
-            'status' => $row[4],
-            'tax' => $row[5],
-            'amount' => $row[6],
-            'total' => $row[7],
-            'client_id' => $row[8],
-            'seller_id' => $row[9],
+            'expiration_date' => $row['expiration_date'],
+            'status' => $row['status'],
+            'tax' => $row['tax'],
+            'amount' => $row['amount'],
+            'total' => $row['total'],
+            'client_id' => $row['client_id'],
+            'seller_id' => $row['seller_id'],
 
         ]);
+    }
+
+
+
+    /**
+     * @inheritDoc
+     */
+    public function rules(): array
+    {
+        return[
+
+            'expiration_date' => 'required|after:tomorrow',
+            'status' => 'required|string|in:new,received,paid,cancelled',
+            'tax' => 'required|numeric|min:50',
+            'amount' => 'required|numeric|min:50',
+            'total' => 'required|numeric|min:50',
+            'client_id' => 'required|numeric|exists:clients,id',
+            'seller_id' => 'required|numeric|exists:sellers,id',
+
+        ];
     }
 }

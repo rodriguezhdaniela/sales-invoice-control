@@ -19,14 +19,17 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/import/view', 'InvoiceController@importView')->name('import.view');
+
+Route::post('invoices/import', 'InvoiceController@importExcel')->name('invoices.import.excel');
+
+Route::get('invoices/export', 'InvoiceController@exportExcel')->name('invoices.excel');
+
 Route::resource('/invoices','InvoiceController');
 
 Route::resource('/invoices/{invoice}/details', 'DetailController');
 
-Route::get('/import', function () {
-    return view('import');
-})->name('import.view');
 
-Route::get('invoice-list-excel', 'InvoiceController@exportExcel')->name('invoices.excel');
+
 
 

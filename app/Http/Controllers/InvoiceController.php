@@ -9,16 +9,40 @@ use App\Seller;
 use App\Client;
 use App\Product;
 use Illuminate\Http\Request;
-use Excel;
-
 use App\Exports\InvoicesExport;
+use App\Imports\InvoicesImport;
+use Maatwebsite\Excel\Facades\Excel;
 
 
 class InvoiceController extends Controller
 {
-    public function exportExcel(Excel $excel, InvoicesExport $export)
+    /**
+     * @param InvoicesExport $export
+     * @return InvoicesExport
+     */
+    public function exportExcel(InvoicesExport $export)
     {
-        return $excel->download($export, 'invoices-list.xlsx');
+        return $export;
+
+    }
+
+    public function importView(){
+        return view('import');
+    }
+
+
+
+    public function importExcel(Request $request) {
+       $this->validate($request, [
+            'file' => 'required|mimes:xls,xlsx,csv'
+       ]);
+
+        $file = $request->file('file')->getRealPath();
+        Excel::import(new InvoicesImport(), $file);
+
+        return back()->withSuccess(__('Invoices imported successfully'));
+
+
     }
 
 
@@ -44,9 +68,13 @@ class InvoiceController extends Controller
             ->search($type, $search)
             ->paginate(10);
 
-        return view('invoices.index', compact('invoices'));
+
+        return response()->view('invoices.index', compact('invoices'));
 
     }
+
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -138,9 +166,6 @@ class InvoiceController extends Controller
 
         return redirect()->route('invoices.index')->withSuccess(__('Invoice deleted sucessfully'));
     }
-
-
-
 
 
 }
