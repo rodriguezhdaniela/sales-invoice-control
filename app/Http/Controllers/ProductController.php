@@ -5,7 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Products\StoreRequest;
 use App\Http\Requests\Products\UpdateRequest;
 use App\Product;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Exports\ProductsExport;
+use App\Imports\ProductsImport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ProductController extends Controller
 {
@@ -13,14 +17,37 @@ class ProductController extends Controller
     {
         $this->middleware('auth');
     }
+
+    public function view()
+    {
+        return view('import');
+    }
+
+    public function export()
+    {
+        return Excel::download(new ProductsExport, 'products.xlsx');
+    }
+
+    public function import()
+    {
+        Excel::import(new ProductsImport, request()->file('file'));
+        return back();
+    }
+
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @return Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::all();
+        $name = $request->get('name');
+        $description = $request->get('description');
+
+        $products = Product::name($name)
+            ->description($description)
+            ->paginate(10);
 
         return view('products.index', compact('products'));
     }

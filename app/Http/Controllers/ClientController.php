@@ -5,10 +5,13 @@ namespace App\Http\Controllers;
 use App\Client;
 use App\Http\Requests\ClientStoreRequest;
 use App\Http\Requests\ClientUpdateRequest;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Exports\ClientsExport;
+use App\Imports\ClientsImport;
+use Maatwebsite\Excel\Facades\Excel;
 
-
-class clientController extends Controller
+class ClientController extends Controller
 {
     public function __construct()
     {
@@ -18,11 +21,17 @@ class clientController extends Controller
 
     /**
      * Display a listing of the resource.
+     * @param Request $request
      * @return Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $clients = client::all();
+        $name = $request->get('name');
+        $personal_id = $request->get('personal_id');
+
+        $clients = client::name($name)
+            ->personal_id($personal_id)
+            ->paginate(10);
 
         return view('clients.index', compact('clients'));
     }
@@ -95,5 +104,24 @@ class clientController extends Controller
         return redirect()->route('clients.index')->withSuccess(__('Client deleted sucessfully'));
     }
 
+
+
+    public function export()
+    {
+        return Excel::download(new ClientsExport, 'clients.xlsx');
+    }
+
+    public function import()
+    {
+        Excel::import(new ClientsImport, request()->file('file'));
+
+        return redirect()->route('clients.index')->withSuccess(__('Clients imported sucessfully'));
+    }
+
+
+    public function importExportView()
+    {
+        return view('import');
+    }
 
 }

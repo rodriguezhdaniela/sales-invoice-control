@@ -4,12 +4,21 @@
     <div class="card card-default">
         <div class="card-header d-flex justify-content-between">
             <h5 class="card-title mb-0">Clients</h5>
-            <div class="btn-group btn-group-sm">
+            <div class="btn-group-sm">
                 <a class="btn btn-primary btn-sm" href="{{ route('clients.create') }}"><i class="fas fa-plus"></i> Create</a>
             </div>
         </div>
         <div class="container">
             @include('partials.__alerts')
+            <nav class="navbar navbar-light justify-content-lg-end">
+                <form method='GET' action="{{ route('clients.index')}}" class="form-inline">
+                    <input type="search" class="form-control mr-sm-2" name="personal_id" placeholder="ID Number">
+                    <input type="search" class="form-control mr-sm-2" name="name" placeholder="Name">
+                    <div class="btn-group-sm">
+                        <button class="btn btn-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i> {{ __('Search') }}</button>
+                    </div>
+                </form>
+            </nav>
             <table class="table">
                 <thead>
                 <tr>
@@ -33,7 +42,7 @@
                         <td>{{$client->email}}</td>
                         <td class="text-right">
                             <div class="btn-group btn-group-sm">
-                                <a href="{{ route('clients.edit', $client) }}" class="btn btn-link">
+                                <a href="{{ route('clients.edit', $client) }}" class="btn btn-link text-secondary">
                                     <i class="fas fa-edit"></i> Edit
                                 </a>
                                 <button type="button" class="btn btn-link text-danger" data-route="{{ route('clients.destroy', $client) }}" data-toggle="modal" data-target="#confirmDeleteModal" title="{{ __('Delete') }}">

@@ -8,29 +8,73 @@ use App\Invoice;
 use App\Seller;
 use App\Client;
 use App\Product;
-
-
+use Illuminate\Http\Request;
+use App\Exports\InvoicesExport;
+use App\Imports\InvoicesImport;
+use Maatwebsite\Excel\Facades\Excel;
 
 
 class InvoiceController extends Controller
 {
+    /**
+     * @param InvoicesExport $export
+     * @return InvoicesExport
+     */
+    public function exportExcel(InvoicesExport $export)
+    {
+        return $export;
+
+    }
+
+    public function importView(){
+        return view('import');
+    }
+
+
+
+    public function importExcel(Request $request) {
+       $this->validate($request, [
+            'file' => 'required|mimes:xls,xlsx,csv'
+       ]);
+
+        $file = $request->file('file')->getRealPath();
+        Excel::import(new InvoicesImport(), $file);
+
+        return back()->withSuccess(__('Invoices imported successfully'));
+
+
+    }
+
 
     public function __construct()
     {
         $this->middleware('auth');
     }
+
+
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $invoices = Invoice::with(['client', 'seller'])->paginate();
 
-        return view('invoices.index', compact('invoices'));
+        $search = $request->get('search');
+        $type = $request->get('type');
+
+        $invoices = Invoice::with(['client', 'seller'])
+            ->search($type, $search)
+            ->paginate(10);
+
+
+        return response()->view('invoices.index', compact('invoices'));
 
     }
+
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -113,6 +157,7 @@ class InvoiceController extends Controller
      * @param Invoice $invoice
      * @param Product $product
      * @return void
+     * @throws \Exception
      */
     public function destroy(Invoice $invoice, product $product)
     {

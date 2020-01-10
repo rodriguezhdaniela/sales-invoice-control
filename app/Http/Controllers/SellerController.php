@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\SellersExport;
 use App\Http\Requests\SellerStoreRequest;
 use App\Http\Requests\SellerUpdateRequest;
 use App\Seller;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Maatwebsite\Excel\Facades\Excel;
 
 
 class SellerController extends Controller
@@ -14,13 +17,25 @@ class SellerController extends Controller
     {
         $this->middleware('auth');
     }
+
+    public function export()
+    {
+        return Excel::download(new SellersExport, 'sellers.xlsx');
+    }
+
     /**
      * Display a listing of the resource.
+     * @param Request $request
      * @return Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $sellers = Seller::all();
+        $name = $request->get('name');
+        $personal_id = $request->get('personal_id');
+
+        $sellers = seller::name($name)
+            ->personal_id($personal_id)
+            ->paginate(10);
 
         return view('sellers.index', compact('sellers'));
     }
@@ -55,7 +70,7 @@ class SellerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Seller $seller
      * @return Response
      */
 

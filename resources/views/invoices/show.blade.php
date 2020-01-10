@@ -35,7 +35,7 @@
                 </dl>
 
                 <div class="card" >
-                    <h5 class="card-header">{{ __('Client') }}</h5>
+                    <h5 class="card-header">{{ __('Clients') }}</h5>
                     <div class="card-body">
                         <dl class="row">
                             <dt class="col-md-3">{{ __('Full name') }}</dt>

@@ -14,4 +14,23 @@ class Product extends Model
     {
         return $this->belongsToMany(Invoice::class);
     }
+
+    public function scopeName($query, $name)
+    {
+        if ($name != "")
+        {
+            return $query->where('name', "LIKE", "%$name%");
+        }
+
+    }
+
+    public function scopeDescription($query, $description)
+    {
+        if ($description != "")
+        {
+            return $query->where('description', "LIKE", "%$description%");
+        }
+
+    }
+
 }
