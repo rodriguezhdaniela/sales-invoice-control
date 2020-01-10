@@ -13,5 +13,3 @@ require('./bootstrap');
  */
 
 require('./components/Example');
-
-require('easy-autocomplete/dist/jquery.easy-autocomplete')

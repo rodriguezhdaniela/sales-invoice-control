@@ -32,7 +32,7 @@
 
                     <ul class="nav nav-pills">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('sales_invoices.index') }}">Sales Invoices</a>
+                            <a class="nav-link" href="{{ route('invoices.index') }}">Sales Invoices</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('clients.index') }}">{{ __('Client') }}</a>
@@ -85,4 +85,6 @@
         </main>
     </div>
 </body>
+<script src="{{ asset('js/app.js') }}"></script>
+@stack('scripts')
 </html>

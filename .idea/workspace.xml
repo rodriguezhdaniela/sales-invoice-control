@@ -1,29 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="8" />
+    <option name="CUSTOM_SCOPE_NAME" value="Project Files" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="c73f6a82-04bb-426f-b554-b0dbbd33250b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/SaleInvoiceRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/salesInvoices/create2.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/clientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/clientController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/productController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/productController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/saleInvoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/saleInvoiceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ProductInvoiceRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ProductInvoiceRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/salesInvoices/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/salesInvoices/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/salesInvoices/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/salesInvoices/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" afterDir="false" />
     </list>
+=======
+  <component name="ChangeListManager">
+    <list default="true" id="c73f6a82-04bb-426f-b554-b0dbbd33250b" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+>>>>>>> Creación tabla clients
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+=======
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+>>>>>>> Creación tabla clients
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
     </execution>
   </component>
+<<<<<<< HEAD
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
     <option name="GROUP_DATA_SOURCES" value="true" />
@@ -41,6 +48,8 @@
   <component name="FavoritesManager">
     <favorites_list name="invoices" />
   </component>
+=======
+>>>>>>> Creación tabla clients
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -131,6 +140,7 @@
       <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
       <path value="$PROJECT_DIR$/vendor/phar-io/version" />
       <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+<<<<<<< HEAD
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
@@ -140,18 +150,33 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Requests" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/invoices/details" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Daniela\laragon\www\invoices\app\Http\Requests" />
-      <recent name="D:\Daniela\laragon\www\invoices\resources\views\salesInvoices" />
-      <recent name="D:\laragon\www\invoices\resources\views\clients" />
-      <recent name="D:\laragon\www\invoices\resources\views\sellers" />
+      <recent name="D:\Daniela\laragon\www\invoices\app\Http\Requests\Clients" />
+      <recent name="D:\Daniela\laragon\www\invoices\app\Http\Requests\Sellers" />
+      <recent name="D:\Daniela\laragon\www\invoices\app\Http\Requests\Invoices" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Daniela\laragon\www\invoices\resources\views\invoices\details" />
+      <recent name="D:\Daniela\laragon\www\invoices\resources\views\Invoices" />
+      <recent name="D:\Daniela\laragon\www\invoices\public\js" />
+      <recent name="D:\Daniela\laragon\www\invoices\resources\js" />
+      <recent name="D:\Daniela\laragon\www\invoices\resources\views\partials" />
+    </key>
+=======
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1Tq0sd2Aj9zOSwbpo6ZPjdMaY8D" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -164,6 +189,7 @@
         </RuleState>
       </list>
     </option>
+>>>>>>> Creación tabla clients
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -171,6 +197,21 @@
       <method v="2" />
     </configuration>
   </component>
+<<<<<<< HEAD
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+=======
+>>>>>>> Creación tabla clients
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -181,6 +222,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574172525317</updated>
+<<<<<<< HEAD
       <workItem from="1574172526472" duration="31603000" />
       <workItem from="1574243702388" duration="9813000" />
       <workItem from="1574268633129" duration="11702000" />
@@ -202,7 +244,25 @@
       <workItem from="1574941109381" duration="17251000" />
       <workItem from="1574985978341" duration="318000" />
       <workItem from="1575008678975" duration="12148000" />
-      <workItem from="1575039860518" duration="1952000" />
+      <workItem from="1575039860518" duration="1954000" />
+      <workItem from="1575046005737" duration="697000" />
+      <workItem from="1575299655346" duration="2198000" />
+      <workItem from="1575396120253" duration="36354000" />
+      <workItem from="1575472168110" duration="16218000" />
+      <workItem from="1575490752265" duration="266000" />
+      <workItem from="1575492212884" duration="10829000" />
+      <workItem from="1575550190824" duration="23975000" />
+      <workItem from="1575580641214" duration="2756000" />
+      <workItem from="1575638936095" duration="37371000" />
+      <workItem from="1575676965618" duration="200000" />
+      <workItem from="1575732471749" duration="16624000" />
+      <workItem from="1575776538713" duration="13157000" />
+      <workItem from="1575818636187" duration="15038000" />
+      <workItem from="1575873717611" duration="20315000" />
+      <workItem from="1575897055330" duration="1545000" />
+=======
+      <workItem from="1574172526472" duration="2487000" />
+>>>>>>> Creación tabla clients
     </task>
     <servers />
   </component>
@@ -214,26 +274,22 @@
       <map>
         <entry key="MAIN">
           <value>
+<<<<<<< HEAD
             <State>
               <option name="COLUMN_ORDER" />
             </State>
+=======
+            <State />
+>>>>>>> Creación tabla clients
           </value>
         </entry>
       </map>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/salesInvoices/create3.blade.php</url>
-          <line>1</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
+=======
+>>>>>>> Creación tabla clients
 </project>

@@ -14,17 +14,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/clients','clientController');
+Route::resource('/clients','ClientController');
 
-Route::get('/clients/{id}/confirmDelete', 'clientController@confirmDelete');
+Route::resource('/sellers','SellerController');
 
-Route::resource('/sellers','sellerController');
-
-Route::get('/sellers/{id}/confirmDelete', 'sellerController@confirmDelete');
-
-Route::resource('/products','productController');
-
-Route::get('/products/{id}/confirmDelete', 'productController@confirmDelete');
+Route::resource('/products','ProductController');
 
 Auth::routes();
 
@@ -34,6 +28,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('/sales_invoices','saleInvoiceController');
+Route::resource('/invoices','InvoiceController');
 
-Route::get('/sales_invoices/{id}/confirmDelete', 'saleInvoiceController@confirmDelete');
+Route::resource('/invoices/{invoice}/details', 'DetailController');
+
