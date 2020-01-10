@@ -3,13 +3,22 @@
 @section('content')
     <div class="card card-default">
         <div class="card-header d-flex justify-content-between">
-            <h5 class="card-title mb-0">Products</h5>
+            <h3 class="card-title mb-0">Products</h3>
             <div class="btn-group btn-group-sm">
                 <a class="btn btn-primary btn-sm" href="{{ route('products.create') }}"><i class="fas fa-plus"></i> Create</a>
             </div>
         </div>
         <div class="container">
             @include('partials.__alerts')
+            </div> <nav class="navbar navbar-light justify-content-lg-end">
+                <form method='GET' action="{{ route('products.index')}}" class="form-inline">
+                    <input type="text" class="form-control mr-sm-2" name="name" placeholder="Name" value="{{ request()->input('name') }}">
+                    <input type="text" class="form-control mr-sm-2" name="description" placeholder="Description" value="{{request()->input('description')}}">
+                    <div class="btn-group-sm">
+                        <button class="btn btn-success" type="submit"><i class="fas fa-search"></i> {{ __('Search') }}</button>
+                    </div>
+                </form>
+            </nav>
             <table class="table">
                 <thead>
                     <tr>
@@ -39,6 +48,9 @@
                     @endforeach
                 </tbody>
             </table>
+        </div>
+        <div class="mt-3 d-flex justify-content-center">
+            {!! $products->render() !!}
         </div>
         <div class="card-footer"></div>
     </div>

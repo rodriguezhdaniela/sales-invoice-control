@@ -3,13 +3,23 @@
 @section('content')
     <div class="card card-default">
         <div class="card-header d-flex justify-content-between">
-            <h5 class="card-title mb-0">Clients</h5>
+            <h3 class="card-title mb-0">Clients</h3>
             <div class="btn-group btn-group-sm">
                 <a class="btn btn-primary btn-sm" href="{{ route('clients.create') }}"><i class="fas fa-plus"></i> Create</a>
             </div>
         </div>
         <div class="container">
+
             @include('partials.__alerts')
+            <nav class="navbar navbar-light justify-content-lg-end">
+                <form method='GET' action="{{ route('clients.index')}}" class="form-inline">
+                    <input type="search" class="form-control mr-sm-2" name="personal_id" placeholder="ID Number" value="{{ request()->input('personal_id')}}">
+                    <input type="search" class="form-control mr-sm-2" name="name" placeholder="Name" value="{{ request()->input('name')}}">
+                    <div class="btn-group-sm">
+                        <button class="btn btn-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i> {{ __('Search') }}</button>
+                    </div>
+                </form>
+            </nav>
             <table class="table">
                 <thead>
                 <tr>
@@ -46,6 +56,9 @@
                 </tbody>
             </table>
         </div>
+        <div class="mt-3 d-flex justify-content-center">
+            {!! $clients->render() !!}
+        </div>
         <div class="card-footer"></div>
     </div>
 @endsection
@@ -55,4 +68,6 @@
 @push('scripts')
     <script src="{{ asset(mix('js/delete-modal.js')) }}"></script>
 @endpush
+
+
 

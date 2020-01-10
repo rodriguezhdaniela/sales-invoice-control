@@ -39,10 +39,10 @@
                     <div class="card-body">
                         <dl class="row">
                             <dt class="col-md-3">{{ __('Full name') }}</dt>
-                            <dd class="col-md-3">{{ $invoice->client->name }}</dd>
+                            <dd class="col-md-3">{{ $invoice->seller->name }}</dd>
 
-                            <dt class="col-md-3">{{ $invoice->client->type_id }}</dt>
-                            <dd class="col-md-3"> {{ $invoice->client->personal_id }}</dd>
+                            <dt class="col-md-3">{{ $invoice->seller->type_id }}</dt>
+                            <dd class="col-md-3"> {{ $invoice->seller->personal_id }}</dd>
                         </dl>
                     </div>
                 </div>
@@ -130,9 +130,7 @@
                  </div>
              </div>
          </div>
-            </div>
-        </div>
-    </div>
+     </div>
 <div class="card-footer"></div>
 @endsection
 @push('modals')

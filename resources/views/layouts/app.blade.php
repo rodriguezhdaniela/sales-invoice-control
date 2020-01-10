@@ -86,5 +86,6 @@
     </div>
 </body>
 <script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset(mix('js/delete-modal.js')) }}"></script>
 @stack('scripts')
 </html>

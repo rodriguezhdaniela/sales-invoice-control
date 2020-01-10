@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 class Invoice extends Model
@@ -23,6 +24,87 @@ class Invoice extends Model
     public function products()
     {
         return $this->belongsToMany(Product::class)->withPivot(['quantity']);
+    }
+
+    /**
+     * Scope to filter invoices by client
+     *
+     * @param Builder $query
+     * @param string|null $id
+     * @return Builder
+     */
+    public function scopeOfClient(Builder $query, ?string $id)
+    {
+        if ($id) {
+            return $query->where('client_id', $id);
+        }
+
+        return $query;
+    }
+
+    /**
+     * Scope to filter invoices by seller
+     *
+     * @param Builder $query
+     * @param string|null $id
+     * @return Builder
+     */
+    public function scopeOfSeller(Builder $query, ?string $id)
+    {
+        if ($id) {
+            return $query->where('seller_id', $id);
+        }
+
+        return $query;
+    }
+
+    /**
+     * Scope to filter invoices by expedition date
+     *
+     * @param Builder $query
+     * @param string|null $date
+     * @return Builder|\Illuminate\Database\Query\Builder
+     */
+    public function scopeExpeditionDate(Builder $query, ?string $date)
+    {
+        if ($date) {
+            return $query->whereDate('created_at', $date);
+        }
+
+        return $query;
+    }
+
+    /**
+     * Scope to filter invoices by expiration date
+     *
+     * @param Builder $query
+     * @param string|null $date
+     * @return Builder|\Illuminate\Database\Query\Builder
+     */
+    public function scopeExpirationDate(Builder $query, ?string $date)
+    {
+        if ($date) {
+            return $query->whereDate('expiration_date', $date);
+        }
+
+        return $query;
+    }
+
+
+    /**
+     * Scope to filter invoices by expiration date
+     *
+     * @param Builder $query
+     * @param string|null $status
+     * @return Builder|\Illuminate\Database\Query\Builder
+     */
+    public function scopeStatus(Builder $query, ?string $status)
+    {
+        if ($status) {
+            return $query->where('status', $status);
+        }
+
+        return $query;
     }
 
 }

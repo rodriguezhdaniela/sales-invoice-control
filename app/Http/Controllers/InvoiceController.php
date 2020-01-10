@@ -8,8 +8,7 @@ use App\Invoice;
 use App\Seller;
 use App\Client;
 use App\Product;
-
-
+use Illuminate\Http\Request;
 
 
 class InvoiceController extends Controller
@@ -19,16 +18,27 @@ class InvoiceController extends Controller
     {
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $invoices = Invoice::with(['client', 'seller'])->paginate();
+        $clients = Client::select(['id', 'name'])->get();
+        $sellers = Seller::select(['id', 'name'])->get();
 
-        return view('invoices.index', compact('invoices'));
+        $invoices = Invoice::with(['client', 'seller'])
+            ->ofClient($request->input('search.client'))
+            ->ofSeller($request->input('search.seller'))
+            ->status($request->input('search.status'))
+            ->expirationDate($request->input('search.expiration_date'))
+            ->expeditionDate($request->input('search.expedition_date'))
+            ->paginate(10);
+
+        return response()->view('invoices.index', compact('invoices', 'clients', 'sellers'));
 
     }
 
@@ -39,7 +49,7 @@ class InvoiceController extends Controller
      */
     public function create()
     {
-        return view('invoices.create', [
+        return response()->view('invoices.create', [
             'invoice' => new Invoice,
             'clients' => Client::all(),
             'sellers' => Seller::all(),
@@ -65,10 +75,9 @@ class InvoiceController extends Controller
      * Display the specified resource.
      *
      * @param Invoice $invoice
-     * @param Product $product
      * @return void
      */
-    public function show(Invoice $invoice, Product $product)
+    public function show(Invoice $invoice)
     {
 
 
@@ -113,6 +122,7 @@ class InvoiceController extends Controller
      * @param Invoice $invoice
      * @param Product $product
      * @return void
+     * @throws \Exception
      */
     public function destroy(Invoice $invoice, product $product)
     {

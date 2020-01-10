@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Products\StoreRequest;
 use App\Http\Requests\Products\UpdateRequest;
 use App\Product;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\View\View;
 
 class ProductController extends Controller
 {
@@ -13,16 +16,23 @@ class ProductController extends Controller
     {
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
-     *
+     * @param Request $request
      * @return Response
      */
-    public function index()
-    {
-        $products = Product::all();
 
-        return view('products.index', compact('products'));
+    public function index(Request $request)
+    {
+        $name = $request->get('name');
+        $description = $request->get('description');
+
+        $products = Product::name($name)
+            ->description($description)
+            ->paginate(10);
+
+        return response()->view('products.index', compact('products'));
     }
 
     /**
