@@ -60,16 +60,18 @@ class InvoiceController extends Controller
      */
     public function index(Request $request)
     {
-
-        $search = $request->get('search');
-        $type = $request->get('type');
+        $clients = Client::select(['id', 'name'])->get();
+        $sellers = Seller::select(['id', 'name'])->get();
 
         $invoices = Invoice::with(['client', 'seller'])
-            ->search($type, $search)
+            ->ofClient($request->input('search.client'))
+            ->ofSeller($request->input('search.seller'))
+            ->status($request->input('search.status'))
+            ->expirationDate($request->input('search.expiration_date'))
+            ->expeditionDate($request->input('search.expedition_date'))
             ->paginate(10);
 
-
-        return response()->view('invoices.index', compact('invoices'));
+        return response()->view('invoices.index', compact('invoices', 'clients', 'sellers'));
 
     }
 
@@ -83,7 +85,7 @@ class InvoiceController extends Controller
      */
     public function create()
     {
-        return view('invoices.create', [
+        return response()->view('invoices.create', [
             'invoice' => new Invoice,
             'clients' => Client::all(),
             'sellers' => Seller::all(),
@@ -109,10 +111,9 @@ class InvoiceController extends Controller
      * Display the specified resource.
      *
      * @param Invoice $invoice
-     * @param Product $product
      * @return void
      */
-    public function show(Invoice $invoice, Product $product)
+    public function show(Invoice $invoice)
     {
 
 

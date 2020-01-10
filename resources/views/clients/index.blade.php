@@ -12,27 +12,28 @@
             @include('partials.__alerts')
             <nav class="navbar navbar-light justify-content-lg-end">
                 <form method='GET' action="{{ route('clients.index')}}" class="form-inline">
-                    <input type="search" class="form-control mr-sm-2" name="personal_id" placeholder="ID Number">
-                    <input type="search" class="form-control mr-sm-2" name="name" placeholder="Name">
+                    <input type="search" class="form-control mr-sm-2" name="personal_id" placeholder="ID Number" value="{{ request()->input('personal_id')}}">
+                    <input type="search" class="form-control mr-sm-2" name="name" placeholder="Name" value="{{ request()->input('name')}}">
                     <div class="btn-group-sm">
-                        <button class="btn btn-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i> {{ __('Search') }}</button>
+                        <button class="btn btn-success" type="submit"><i class="fas fa-search"></i> {{ __('Search') }}</button>
                     </div>
                 </form>
             </nav>
+            <div class="table-responsive">
             <table class="table">
                 <thead>
-                <tr>
-                    <th>Type ID</th>
-                    <th>ID Number</th>
-                    <th>Names</th>
-                    <th>Address</th>
-                    <th>Phone Number</th>
-                    <th>Email</th>
-                    <th></th>
-                </tr>
+                    <tr>
+                        <th>Type ID</th>
+                        <th>ID Number</th>
+                        <th>Names</th>
+                        <th>Address</th>
+                        <th>Phone Number</th>
+                        <th>Email</th>
+                        <th></th>
+                    </tr>
                 </thead>
                 <tbody>
-                @foreach($clients as $client)
+                    @foreach($clients as $client)
                     <tr>
                         <td>{{$client->type_id}}</td>
                         <td>{{$client->personal_id}}</td>
@@ -51,9 +52,12 @@
                             </div>
                         </td>
                     </tr>
-                @endforeach
+                    @endforeach
                 </tbody>
             </table>
+            <div class="mt-3 d-flex justify-content-center">
+                {!! $clients->render() !!}
+            </div>
         </div>
         <div class="card-footer"></div>
     </div>
@@ -64,4 +68,6 @@
 @push('scripts')
     <script src="{{ asset(mix('js/delete-modal.js')) }}"></script>
 @endpush
+
+
 

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Exports\SellersExport;
 use App\Http\Requests\SellerStoreRequest;
 use App\Http\Requests\SellerUpdateRequest;
-use App\Seller;
+use App\seller;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Maatwebsite\Excel\Facades\Excel;
@@ -28,6 +28,7 @@ class SellerController extends Controller
      * @param Request $request
      * @return Response
      */
+
     public function index(Request $request)
     {
         $name = $request->get('name');
