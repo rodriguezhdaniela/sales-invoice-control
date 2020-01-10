@@ -7,11 +7,9 @@ use App\Http\Requests\ClientStoreRequest;
 use App\Http\Requests\ClientUpdateRequest;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use App\Exports\ClientsExport;
-use App\Imports\ClientsImport;
-use Maatwebsite\Excel\Facades\Excel;
 
 class ClientController extends Controller
+
 {
     public function __construct()
     {
@@ -26,6 +24,7 @@ class ClientController extends Controller
      */
     public function index(Request $request)
     {
+
         $name = $request->get('name');
         $personal_id = $request->get('personal_id');
 
@@ -33,13 +32,13 @@ class ClientController extends Controller
             ->personal_id($personal_id)
             ->paginate(10);
 
-        return view('clients.index', compact('clients'));
+        return response()->view('clients.index', compact('clients'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return Factory|View
      */
     public function create()
     {
@@ -52,7 +51,7 @@ class ClientController extends Controller
      * Store a newly created resource in storage.
      *
      * @param ClientStoreRequest $request
-     * @return Response
+     * @return RedirectResponse
      */
     public function store(ClientStoreRequest $request)
     {
@@ -67,7 +66,7 @@ class ClientController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param client $client
-     * @return Response
+     * @return Factory|View
      */
     public function edit(client $client)
     {
@@ -79,9 +78,9 @@ class ClientController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param ClientStoreRequest $request
+     * @param ClientUpdateRequest $request
      * @param client $client
-     * @return Response
+     * @return RedirectResponse
      */
     public function update(ClientUpdateRequest $request, Client $client)
     {
@@ -94,7 +93,7 @@ class ClientController extends Controller
      * Remove the specified resource from storage.
      *
      * @param client $client
-     * @return Response
+     * @return RedirectResponse
      * @throws \Exception
      */
     public function destroy(client $client)
@@ -104,24 +103,5 @@ class ClientController extends Controller
         return redirect()->route('clients.index')->withSuccess(__('Client deleted sucessfully'));
     }
 
-
-
-    public function export()
-    {
-        return Excel::download(new ClientsExport, 'clients.xlsx');
-    }
-
-    public function import()
-    {
-        Excel::import(new ClientsImport, request()->file('file'));
-
-        return redirect()->route('clients.index')->withSuccess(__('Clients imported sucessfully'));
-    }
-
-
-    public function importExportView()
-    {
-        return view('import');
-    }
 
 }

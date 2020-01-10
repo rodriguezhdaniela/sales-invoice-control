@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c73f6a82-04bb-426f-b554-b0dbbd33250b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Console/Commands.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Exports/InvoicesExport.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Imports/InvoicesImport.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/Maatwebsite/Excel/Facades/Excel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/excel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/import.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/invoices/import.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pdf/invoices.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tests/Feature/ClientsTest.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tests/Feature/InvoicesTest.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tests/Feature/ProductsTest.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tests/Feature/SellersTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Iseba.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Iseba.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/invoices.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/invoices.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
@@ -24,14 +17,21 @@
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SellerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SellerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Requests/InvoiceStoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/InvoiceStoreRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Invoice.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/factories/ClientFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ClientFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/factories/InvoiceFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/InvoiceFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/InvoiceFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/ProductFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ProductFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/factories/SellerFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/SellerFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/ClientTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ClientTableSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/InvoiceTableSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/InvoiceTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/InvoiceTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/ProductTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ProductTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/SellerTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/SellerTableSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/clients/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/clients/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/invoices/__form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/__form.blade.php" afterDir="false" />
@@ -165,8 +165,15 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/Feature" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -209,6 +216,51 @@
       <workItem from="1577482319511" duration="11428000" />
       <workItem from="1577548911514" duration="5783000" />
       <workItem from="1577722826811" duration="1749000" />
+      <workItem from="1576794184975" duration="3699000" />
+      <workItem from="1576852846910" duration="7731000" />
+      <workItem from="1574172526472" duration="31603000" />
+      <workItem from="1574243702388" duration="9813000" />
+      <workItem from="1574268633129" duration="11702000" />
+      <workItem from="1574346278304" duration="27863000" />
+      <workItem from="1574435608460" duration="16883000" />
+      <workItem from="1574558634176" duration="307000" />
+      <workItem from="1574558952779" duration="31000" />
+      <workItem from="1574560480225" duration="177000" />
+      <workItem from="1574560740136" duration="294000" />
+      <workItem from="1574561118001" duration="2541000" />
+      <workItem from="1574594998834" duration="277000" />
+      <workItem from="1574595285932" duration="35496000" />
+      <workItem from="1574685014100" duration="1644000" />
+      <workItem from="1574686672574" duration="15179000" />
+      <workItem from="1574711035497" duration="12454000" />
+      <workItem from="1574723561409" duration="655000" />
+      <workItem from="1574772013460" duration="1024000" />
+      <workItem from="1574861836324" duration="30484000" />
+      <workItem from="1574941109381" duration="17251000" />
+      <workItem from="1574985978341" duration="318000" />
+      <workItem from="1575008678975" duration="12148000" />
+      <workItem from="1575039860518" duration="1954000" />
+      <workItem from="1575046005737" duration="697000" />
+      <workItem from="1575299655346" duration="2198000" />
+      <workItem from="1575396120253" duration="36354000" />
+      <workItem from="1575472168110" duration="16218000" />
+      <workItem from="1575490752265" duration="266000" />
+      <workItem from="1575492212884" duration="10829000" />
+      <workItem from="1575550190824" duration="23975000" />
+      <workItem from="1575580641214" duration="2756000" />
+      <workItem from="1575638936095" duration="37371000" />
+      <workItem from="1575676965618" duration="200000" />
+      <workItem from="1575732471749" duration="16624000" />
+      <workItem from="1575776538713" duration="13157000" />
+      <workItem from="1575818636187" duration="15038000" />
+      <workItem from="1575873717611" duration="20315000" />
+      <workItem from="1575897055330" duration="1545000" />
+      <workItem from="1576003477119" duration="6288000" />
+      <workItem from="1576082687202" duration="13041000" />
+      <workItem from="1576170144450" duration="9369000" />
+      <workItem from="1576501040546" duration="13687000" />
+      <workItem from="1576595577589" duration="678000" />
+      <workItem from="1576599647081" duration="1680000" />
     </task>
     <servers />
   </component>
@@ -229,18 +281,6 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="1027" y="336" key="com.intellij.ide.util.TipDialog" timestamp="1577460519477">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1027" y="336" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577460519477" />
-    <state x="968" y="247" key="run.anything.popup" timestamp="1576863896822">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="968" y="247" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1576863896822" />
-    <state x="975" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1576873429619">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="975" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1576873429619" />
     <state x="1030" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1577550492937">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

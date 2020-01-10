@@ -15,7 +15,9 @@ class Seller extends Model
 
     public function scopePersonal_id($query, $personal_id)
     {
-        if ($personal_id != "") {
+
+        if ($personal_id != "")
+        {
             return $query->where('personal_id', $personal_id);
         }
     }
@@ -25,7 +27,6 @@ class Seller extends Model
         if ($name != "") {
             return $query->where('name', "LIKE", "%$name%");
         }
-
 
     }
 

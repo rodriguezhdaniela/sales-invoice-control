@@ -81,11 +81,11 @@
 
     <div class="content">
         <div class="title m-b-md">
-            Challenge
+            Sales Invoices system
         </div>
 
         <div class="links">
-            <a href="/invoices">Sales Invoices</a>
+            <a href="/invoices">Invoices</a>
             <a href="/clients">Clients</a>
             <a href="/sellers">Sellers</a>
             <a href="/products">Products</a>

@@ -7,9 +7,7 @@ use App\Http\Requests\Products\UpdateRequest;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use App\Exports\ProductsExport;
-use App\Imports\ProductsImport;
-use Maatwebsite\Excel\Facades\Excel;
+
 
 class ProductController extends Controller
 {
@@ -23,23 +21,13 @@ class ProductController extends Controller
         return view('import');
     }
 
-    public function export()
-    {
-        return Excel::download(new ProductsExport, 'products.xlsx');
-    }
-
-    public function import()
-    {
-        Excel::import(new ProductsImport, request()->file('file'));
-        return back();
-    }
 
     /**
      * Display a listing of the resource.
-     *
      * @param Request $request
      * @return Response
      */
+
     public function index(Request $request)
     {
         $name = $request->get('name');
@@ -49,7 +37,7 @@ class ProductController extends Controller
             ->description($description)
             ->paginate(10);
 
-        return view('products.index', compact('products'));
+        return response()->view('products.index', compact('products'));
     }
 
     /**
@@ -61,7 +49,7 @@ class ProductController extends Controller
     {
         $product = new product;
 
-        return view('products.create', compact('product'));
+        return response()->view('products.create', compact('product'));
     }
 
     /**
