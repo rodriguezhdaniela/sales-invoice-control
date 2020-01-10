@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="card card-default">
+    @include('partials.__alerts')
     <div class="card-header d-flex justify-content-between">
         <h5 class="mb-0">{{ __('Sale Invoice n°') }} {{ $invoice->id }}</h5>
         <div>
@@ -21,10 +22,10 @@
      <div class="card-body">
                 <dl class="row">
                     <dt class="col-md-3">{{ __('Expedition date') }}</dt>
-                    <dd class="col-md-3">{{ $invoice->expedition_date }}</dd>
+                    <dd class="col-md-3">{{ $invoice->created_at->toDateString() }}</dd>
 
-                    <dt class="col-md-3">{{ __('Receipt date') }}</dt>
-                    <dd class="col-md-3">{{ $invoice->invoice_date }}</dd>
+                    <dt class="col-md-3">{{ __('Received date') }}</dt>
+                    <dd class="col-md-3">{{ $invoice->updated_at->toDateString() }}</dd>
 
                     <dt class="col-md-3">{{ __('Expiration date') }}</dt>
                     <dd class="col-md-3">{{ $invoice->expiration_date }}</dd>
@@ -34,14 +35,14 @@
                 </dl>
 
                 <div class="card" >
-                    <h5 class="card-header">{{ __('Client') }}</h5>
+                    <h5 class="card-header">{{ __('Clients') }}</h5>
                     <div class="card-body">
                         <dl class="row">
                             <dt class="col-md-3">{{ __('Full name') }}</dt>
-                            <dd class="col-md-3">{{ $invoice->client->name }}</dd>
+                            <dd class="col-md-3">{{ $invoice->seller->name }}</dd>
 
-                            <dt class="col-md-3">{{ $invoice->client->type_id }}</dt>
-                            <dd class="col-md-3"> {{ $invoice->client->personal_id }}</dd>
+                            <dt class="col-md-3">{{ $invoice->seller->type_id }}</dt>
+                            <dd class="col-md-3"> {{ $invoice->seller->personal_id }}</dd>
                         </dl>
                     </div>
                 </div>
@@ -120,7 +121,7 @@
                              <td></td>
                          </tr>
                          <tr>
-                             <th scope="row">>{{ __('Total') }}</th>
+                             <th scope="row">{{ __('Total') }}</th>
                              <td colspan="2">{{ number_format($invoice->total) }}</td>
                              <td></td>
                          </tr>
@@ -129,9 +130,7 @@
                  </div>
              </div>
          </div>
-            </div>
-        </div>
-    </div>
+     </div>
 <div class="card-footer"></div>
 @endsection
 @push('modals')

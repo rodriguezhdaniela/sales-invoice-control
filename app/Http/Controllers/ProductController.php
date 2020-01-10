@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Products\StoreRequest;
 use App\Http\Requests\Products\UpdateRequest;
 use App\Product;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+
 
 class ProductController extends Controller
 {
@@ -13,16 +15,29 @@ class ProductController extends Controller
     {
         $this->middleware('auth');
     }
+
+    public function view()
+    {
+        return view('import');
+    }
+
+
     /**
      * Display a listing of the resource.
-     *
+     * @param Request $request
      * @return Response
      */
-    public function index()
-    {
-        $products = Product::all();
 
-        return view('products.index', compact('products'));
+    public function index(Request $request)
+    {
+        $name = $request->get('name');
+        $description = $request->get('description');
+
+        $products = Product::name($name)
+            ->description($description)
+            ->paginate(10);
+
+        return response()->view('products.index', compact('products'));
     }
 
     /**
@@ -34,7 +49,7 @@ class ProductController extends Controller
     {
         $product = new product;
 
-        return view('products.create', compact('product'));
+        return response()->view('products.create', compact('product'));
     }
 
     /**
@@ -47,7 +62,7 @@ class ProductController extends Controller
     {
         Product::create($request->validated());
 
-        return redirect()->route('products.index');
+        return redirect()->route('products.index')->withSuccess(__('Product created sucessfully'));
     }
 
 
@@ -73,7 +88,7 @@ class ProductController extends Controller
     {
         $product->update($request->validated());
 
-        return redirect()->route('products.index');
+        return redirect()->route('products.index')->withSuccess(__('Product updated sucessfully'));
     }
 
     /**
@@ -87,6 +102,6 @@ class ProductController extends Controller
     {
         $product->delete();
 
-        return redirect()->route('products.index');
+        return redirect()->route('products.index')->withSuccess(__('Product deleted sucessfully'));
     }
 }

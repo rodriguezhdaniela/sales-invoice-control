@@ -6,6 +6,7 @@ use App\Product;
 use App\Invoice;
 use App\Http\Requests\DetailStoreRequest;
 use App\Http\Requests\DetailUpdateRequest;
+use Barryvdh\DomPDF\Facade as PDF;
 
 
 class DetailController extends Controller
@@ -53,7 +54,7 @@ class DetailController extends Controller
         $invoice->save();
 
 
-        return redirect()->route('invoices.show', $invoice);
+        return redirect()->route('invoices.show', $invoice)->withSuccess(__('Detail created successfully'));;
     }
 
 
@@ -84,7 +85,7 @@ class DetailController extends Controller
     {
         $invoice->products()->updateExistingPivot($product->id, $request->validated());
 
-        return redirect()->route('invoices.show', $invoice);
+        return redirect()->route('invoices.show', $invoice)->withSuccess(__('Detail updated sucessfully'));;
     }
 
     /**
@@ -111,10 +112,16 @@ class DetailController extends Controller
         $invoice->save();
 
 
-        return redirect()->route('invoices.show', $invoice);
+        return redirect()->route('invoices.show', $invoice)->withSuccess(__('Detail deleted sucessfully'));
     }
 
+    public function exportPdf()
+    {
+        $invoice = Invoice::get();
+        $pdf = PDF::loadView('invoices.details.show', compact('invoice'));
 
+        return $pdf->download('details-list.pdf');
+    }
 
 
 }

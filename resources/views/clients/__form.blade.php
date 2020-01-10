@@ -5,9 +5,10 @@
                 <option value="Card ID" selected>Card ID</option>
                 <option value="Foreign ID">Foreign ID</option>
                 <option value="Passport">Passport</option>
+                <option value="NIT">NIT</option>
                 <option value="Other">Other</option>
             </select>
-            @includeWhen($errors->has('type_id'), 'partials.__invalid_feedback', ['feedback' => $errors->first('city')])
+            @includeWhen($errors->has('type_id'), 'partials.__invalid_feedback', ['feedback' => $errors->first('type_id')])
         </div>
 
     <div class="col-md-6">

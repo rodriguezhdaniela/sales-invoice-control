@@ -1,34 +1,35 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/clients','ClientController');
+Route::resource('/clients','ClientController')->except('show');
 
-Route::resource('/sellers','SellerController');
+Route::resource('/sellers','SellerController')->except('show');
 
-Route::resource('/products','ProductController');
+Route::resource('/products','ProductController')->except('show');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+Route::get('/import/view', 'InvoiceController@importView')->name('import.view');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::post('invoices/import', 'InvoiceController@importExcel')->name('invoices.import.excel');
+
+Route::get('invoices/export', 'InvoiceController@exportExcel')->name('invoices.excel');
 
 Route::resource('/invoices','InvoiceController');
 
 Route::resource('/invoices/{invoice}/details', 'DetailController');
+
+
+
+
 

@@ -4,25 +4,36 @@
     <div class="card card-default">
         <div class="card-header d-flex justify-content-between">
             <h5 class="card-title mb-0">Sellers</h5>
-            <div class="btn-group btn-group-sm">
+            <div class="btn-group-sm">
                 <a class="btn btn-primary btn-sm" href="{{ route('sellers.create') }}"><i class="fas fa-plus"></i> Create</a>
             </div>
         </div>
         <div class="container">
+            @include('partials.__alerts')
+            <nav class="navbar navbar-light justify-content-lg-end">
+                <form method='GET' action="{{ route('sellers.index')}}" class="form-inline">
+                    <input type="text" class="form-control mr-sm-2" name="personal_id" placeholder="ID Number" value="{{ request()->input('personal_id')}}">
+                    <input type="text" class="form-control mr-sm-2" name="name" placeholder="Name" value="{{ request()->input('name')}}">
+                    <div class="btn-group-sm">
+                        <button class="btn btn-success" type="submit"><i class="fas fa-search"></i> {{ __('Search') }}</button>
+                    </div>
+                </form>
+            </nav>
+            <div class="table-responsive">
             <table class="table">
                 <thead>
-                <tr>
-                    <th>Type ID</th>
-                    <th>ID Number</th>
-                    <th>Names</th>
-                    <th>Address</th>
-                    <th>Phone Number</th>
-                    <th>Email</th>
-                    <th></th>
-                </tr>
+                    <tr>
+                        <th>Type ID</th>
+                        <th>ID Number</th>
+                        <th>Names</th>
+                        <th>Address</th>
+                        <th>Phone Number</th>
+                        <th>Email</th>
+                        <th></th>
+                    </tr>
                 </thead>
                 <tbody>
-                @foreach($sellers as $seller)
+                    @foreach($sellers as $seller)
                     <tr>
                         <td>{{$seller->type_id}}</td>
                         <td>{{$seller->personal_id}}</td>
@@ -30,10 +41,9 @@
                         <td>{{$seller->address}}</td>
                         <td>{{$seller->phone_number}}</td>
                         <td>{{$seller->email}}</td>
-
                         <td class="text-right">
                             <div class="btn-group btn-group-sm">
-                                <a href="{{ route('sellers.edit', $seller) }}" class="btn btn-link">
+                                <a href="{{ route('sellers.edit', $seller) }}" class="btn btn-link text-secondary">
                                 <i class="fas fa-edit"></i> Edit
                                 </a>
                                 <button type="button" class="btn btn-link text-danger" data-route="{{ route('sellers.destroy', $seller) }}" data-toggle="modal" data-target="#confirmDeleteModal" title="{{ __('Delete') }}">
@@ -42,11 +52,15 @@
                             </div>
                         </td>
                     </tr>
-                @endforeach
+                    @endforeach
                 </tbody>
             </table>
+                <div class="mt-3 d-flex justify-content-center">
+                    {!! $sellers->render() !!}
+                </div>
+            </div>
+            <div class="card-footer"></div>
         </div>
-        <div class="card-footer"></div>
     </div>
 @endsection
 @push('modals')
@@ -55,53 +69,3 @@
 @push('scripts')
     <script src="{{ asset(mix('js/delete-modal.js')) }}"></script>
 @endpush
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   {{-- <div class=”row”>
-        <div class="col">
-            <h1>Sellers</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <a class="btn btn-primary" href="/sellers/create">Create a new seller</a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <table class="table">
-                <tr>
-                    <td><strong>Type ID</strong></td>
-                    <td><strong>ID Number</strong></td>
-                    <td><strong>Names</strong></td>
-                    <td><strong>Address</strong></td>
-                    <td><strong>Phone Number</strong></td>
-                    <td><strong>Email</strong></td>
-                @foreach($sellers as $seller)
-                    <tr>
-                        <td>{{$seller->type_id}}</td>
-                        <td>{{$seller->personal_id}}</td>
-                        <td>{{$seller->name}}</td>
-                        <td>{{$seller->address}}</td>
-                        <td>{{$seller->phone_number}}</td>
-                        <td>{{$seller->e_mail}}</td>
-                        <td><a href="/sellers/{{ $seller->id }}/edit">Edit</td>
-                        <td><a href="/sellers/{{ $seller->id }}/confirmDelete">Delete</a></td>
-                    </tr>
-                @endforeach
-            </table>
-        </div>
-    </div>
-@endsection--}}
