@@ -8,7 +8,6 @@ class CreateTableClients extends Migration
 {
     /**
      * Run the migrations.
-     *
      * @return void
      */
     public function up()
@@ -18,9 +17,19 @@ class CreateTableClients extends Migration
             $table->string('type_id');
             $table->string('personal_id')->unique();
             $table->string('name');
-            $table->string('address');
             $table->string('phone_number');
             $table->string('email')->unique();
+            $table->string('address');
+
+            $table->unsignedBigInteger('city_id');
+            $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');
+
+            $table->unsignedBigInteger('state_id');
+            $table->foreign('state_id')->references('id')->on('states')->onDelete('cascade');
+
+            $table->unsignedBigInteger('country_id');
+            $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
+
             $table->timestamps();
         });
     }

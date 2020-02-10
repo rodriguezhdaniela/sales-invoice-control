@@ -72,7 +72,6 @@
                 <div class="card-footer"></div>
             </div>
         </div>
-
         <div class="col-md-9 order-md-1">
             <div class="card card-default">
                 <div class="card-header d-flex justify-content-between">

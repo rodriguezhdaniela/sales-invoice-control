@@ -12,8 +12,11 @@ $factory->define(Client::class, function (Faker $faker) {
         'name' => $faker->name(5),
         'email' => $faker->unique()->safeEmail,
         'address' => $faker->address,
-        'phone_number' => $faker->numberBetween(2222222,39999999999)
-
+        'phone_number' => $faker->numberBetween(2222222,39999999999),
+        'country_id' => $faker->numberBetween(1,1),
+        'state_id' => $faker->numberBetween(1, 10),
+        'city_id' => $faker->numberBetween(1, 10),
+        'postal_code' => $faker->numberBetween(11111,99999),
     ];
 });
 
