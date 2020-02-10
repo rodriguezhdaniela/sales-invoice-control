@@ -20,12 +20,12 @@ class DetailController extends Controller
      * Show the form for creating a new resource.
      *
      * @param Invoice $invoice
-     * @return void
+     * @return \Illuminate\Http\Response|void
      */
     public function create(Invoice $invoice)
     {
         $excludedIds = $invoice->products()->get(['products.id'])->pluck('id')->toArray();
-        return view('invoices.details.create', [
+        return response()->view('invoices.details.create', [
                 'invoice' => $invoice,
                 'products' => Product::whereNotIn('id', $excludedIds)->get(),
         ]);
