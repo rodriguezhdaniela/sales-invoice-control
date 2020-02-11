@@ -29,7 +29,9 @@ Route::get('/getStates', 'ClientController@getStates');
 
 Route::get('/getCities', 'ClientController@getCities');
 
-Route::post('/invoices/{invoice}/details/payment', 'PaymentAttemptsController@authenticationPtoP')->name('payment');
+Route::post('/invoices/{invoice}/details/payment', 'PaymentAttemptsController@paymentAttempt')->name('payment');
+
+Route::get('/invoices/{invoice}/details/authentication', 'PaymentAttemptsController@authenticationPtoP')->name('authentication');
 
 Route::get('/invoices/{invoice}/details/history', 'PaymentAttemptsController@paymentHistory')->name('payment.history');
 

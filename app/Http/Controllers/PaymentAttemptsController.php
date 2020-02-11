@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Invoice;
 use App\PaymentAttempts;
+use Dnetix\Redirection\Exceptions\PlacetoPayException;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Dnetix\Redirection\PlacetoPay;
 use Illuminate\Database\Query\Builder;
@@ -11,16 +13,36 @@ use Illuminate\Support\Facades\DB;
 
 class PaymentAttemptsController extends Controller
 {
-    public function authenticationPtoP(Invoice $invoice, Request $request)
-    {
+
+
+
+   public function authenticationPtoP(){
+
         $placetopay = new PlacetoPay([
             'login' => '6dd490faf9cb87a9862245da41170ff2',
             'tranKey' => '024h1IlD',
             'url' => 'https://test.placetopay.com/redirection/',
         ]);
 
+        return $placetopay;
+   }
 
-        $reference = $invoice->id;
+    /**
+     * @param PlacetoPay $placetopay
+     * @param Invoice $invoice
+     * @param Request $request
+     * @return RedirectResponse
+     * @throws PlacetoPayException
+     */
+    public function paymentAttempt(Invoice $invoice, Request $request){
+
+        $placetopay = new PlacetoPay([
+            'login' => '6dd490faf9cb87a9862245da41170ff2',
+            'tranKey' => '024h1IlD',
+            'url' => 'https://test.placetopay.com/redirection/',
+        ]);
+
+       $reference = $invoice->id;
         $request2 = [
             "locale" => "es_CO",
             "buyer" => [
@@ -122,6 +144,7 @@ class PaymentAttemptsController extends Controller
            return redirect()->route('invoices.show', $invoice)->With('error', __('failed transaction, There was some error with the connection'));
         }
     }
+
 
 
 }
