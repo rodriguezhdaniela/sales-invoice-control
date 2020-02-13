@@ -8,55 +8,25 @@ use App\Invoice;
 use App\Seller;
 use App\Client;
 use App\Product;
+use App\PaymentAttempts;
+use Exception;
 use Illuminate\Http\Request;
 use App\Exports\InvoicesExport;
 use App\Imports\InvoicesImport;
+use Illuminate\Http\Response;
 use Maatwebsite\Excel\Facades\Excel;
-
 
 class InvoiceController extends Controller
 {
-    /**
-     * @param InvoicesExport $export
-     * @return InvoicesExport
-     */
-    public function exportExcel(InvoicesExport $export)
-    {
-        return $export;
-
-    }
-
-    public function importView(){
-        return view('import');
-    }
-
-
-
-    public function importExcel(Request $request) {
-       $this->validate($request, [
-            'file' => 'required|mimes:xls,xlsx,csv'
-       ]);
-
-        $file = $request->file('file')->getRealPath();
-        Excel::import(new InvoicesImport(), $file);
-
-        return back()->withSuccess(__('Invoices imported successfully'));
-
-
-    }
-
-
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-
     /**
      * Display a listing of the resource.
-     *
      * @param Request $request
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index(Request $request)
     {
@@ -76,12 +46,10 @@ class InvoiceController extends Controller
     }
 
 
-
-
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -111,14 +79,15 @@ class InvoiceController extends Controller
      * Display the specified resource.
      *
      * @param Invoice $invoice
-     * @return void
+     * @param PaymentAttempts $paymentAttempts
+     * @return Response
      */
-    public function show(Invoice $invoice)
+    public function show(Invoice $invoice, paymentAttempts $paymentAttempts)
     {
+        return response()->view('invoices.show', [
+            'invoice' => $invoice,
+            'paymentAttempts' => $paymentAttempts::all(),
 
-
-        return view('invoices.show', [
-            'invoice' => $invoice
         ]);
     }
 
@@ -126,11 +95,11 @@ class InvoiceController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param Invoice $invoice
-     * @return void
+     * @return Response
      */
     public function edit(Invoice $invoice)
     {
-        return view('invoices.edit', [
+        return response()->view('invoices.edit', [
             'invoice' => $invoice,
             'clients' => Client::all(),
             'sellers' => Seller::all(),
@@ -158,7 +127,7 @@ class InvoiceController extends Controller
      * @param Invoice $invoice
      * @param Product $product
      * @return void
-     * @throws \Exception
+     * @throws Exception
      */
     public function destroy(Invoice $invoice, product $product)
     {
@@ -168,5 +137,32 @@ class InvoiceController extends Controller
         return redirect()->route('invoices.index')->withSuccess(__('Invoice deleted sucessfully'));
     }
 
+    /**
+     * @param InvoicesExport $export
+     * @return InvoicesExport
+     */
+    public function exportExcel(InvoicesExport $export)
+    {
+        return $export;
 
+    }
+
+    public function importView(){
+        return view('import');
+    }
+
+
+
+    public function importExcel(Request $request) {
+        $this->validate($request, [
+            'file' => 'required|mimes:xls,xlsx,csv'
+        ]);
+
+        $file = $request->file('file')->getRealPath();
+        Excel::import(new InvoicesImport(), $file);
+
+        return back()->withSuccess(__('Invoices imported successfully'));
+
+
+    }
 }

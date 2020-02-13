@@ -3,12 +3,17 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Seller extends Model
 {
     protected $guarded = [];
 
-    public function invoices()
+    /**
+     * Relation between sellers and invoices
+     * @return HasMany
+     */
+    public function invoices():HasMany
     {
         return $this->hasMany(Invoice::class);
     }

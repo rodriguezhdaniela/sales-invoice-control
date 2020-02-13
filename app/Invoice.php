@@ -41,6 +41,15 @@ class Invoice extends Model
     }
 
     /**
+     * Relation between invoices and Payment Attempts
+     * @return BelongsToMany
+     */
+    public function PaymentAttempts():BelongsToMany
+    {
+        return $this->belongsToMany(PaymentAttempts::class)->withPivot('requestId', 'processUrl', 'status');
+    }
+
+    /**
      * Scope to filter invoices by client
      *
      * @param Builder $query
@@ -120,5 +129,6 @@ class Invoice extends Model
 
         return $query;
     }
+
 
 }
