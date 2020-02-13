@@ -30,7 +30,6 @@ class SellersTest extends TestCase
     public function testSellerListContainsAListOfSellers()
     {
         $user = factory(User::class)->create();
-        $seller = factory(Seller::class)->create();
 
         $response = $this->actingAs($user)->get(route('sellers.index'));
 
@@ -40,7 +39,28 @@ class SellersTest extends TestCase
 
     }
 
-    public function testUnauthenticatedUserCannotCreateASeller()
+    public function testUnauthenticatedUserCannotCreateSeller()
+    {
+
+        $this->get(route('sellers.create'))
+
+        ->assertRedirect(route('login'));
+
+    }
+
+    public function testSellerCanBeCreated()
+    {
+        $user = factory(User::class)->create();
+
+        $response = $this->actingAs($user)->get(route('sellers.create'));
+
+        $response->assertSuccessful();
+        $response->assertSeeText('Seller');
+        $response->assertViewIs('sellers.create');
+
+    }
+
+    public function testUnauthenticatedUserCannotStoreASeller()
     {
         $this->post(route('sellers.store'), [
             'type_id' => 'Test type id',
@@ -53,7 +73,8 @@ class SellersTest extends TestCase
             ->assertRedirect(route('login'));
     }
 
-    public function testASellerCanBeCreated()
+
+    public function testASellerCanBeStored()
     {
         $user = factory(User::class)->create();
         $seller = factory(Seller::class)->create();
@@ -76,6 +97,30 @@ class SellersTest extends TestCase
                 'email' => $seller->email,
         ]);
     }
+
+    public function testUnauthenticatedUserCannotEditSeller()
+    {
+        $seller = factory(Seller::class)->create();
+
+        $this->get(route('sellers.edit', $seller))
+
+            ->assertRedirect(route('login'));
+
+    }
+
+    public function testSellerCanBeEdited()
+    {
+        $user = factory(User::class)->create();
+        $seller = factory(Seller::class)->create();
+
+        $response = $this->actingAs($user)->get(route('sellers.edit', $seller));
+
+        $response->assertSuccessful();
+        $response->assertSeeText('Edit');
+        $response->assertViewIs('sellers.edit');
+
+    }
+
 
     public function testUnauthenticatedUserCannotUpdateASeller()
     {

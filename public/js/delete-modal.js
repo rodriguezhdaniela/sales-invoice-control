@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -99,26 +99,14 @@ $('#confirmDeleteModal').on('show.bs.modal', function (e) {
 
 /***/ }),
 
-/***/ "./resources/sass/app.scss":
-/*!*********************************!*\
-  !*** ./resources/sass/app.scss ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 0:
-/*!*******************************************************************!*\
-  !*** multi ./resources/js/delete-modal ./resources/sass/app.scss ***!
-  \*******************************************************************/
+/***/ 1:
+/*!*****************************************!*\
+  !*** multi ./resources/js/delete-modal ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/john.ortiz/Workspace/Desarrolladores_Junior/Daniela_Rodriguez/-Sales-Invoice-Control/resources/js/delete-modal */"./resources/js/delete-modal.js");
-module.exports = __webpack_require__(/*! /Users/john.ortiz/Workspace/Desarrolladores_Junior/Daniela_Rodriguez/-Sales-Invoice-Control/resources/sass/app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! D:\Daniela\laragon\www\invoices\resources\js\delete-modal */"./resources/js/delete-modal.js");
 
 
 /***/ })

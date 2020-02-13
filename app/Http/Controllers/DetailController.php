@@ -7,6 +7,7 @@ use App\Invoice;
 use App\Http\Requests\DetailStoreRequest;
 use App\Http\Requests\DetailUpdateRequest;
 use Barryvdh\DomPDF\Facade as PDF;
+use Illuminate\Http\Response;
 
 
 class DetailController extends Controller
@@ -20,12 +21,12 @@ class DetailController extends Controller
      * Show the form for creating a new resource.
      *
      * @param Invoice $invoice
-     * @return void
+     * @return Response|void
      */
     public function create(Invoice $invoice)
     {
         $excludedIds = $invoice->products()->get(['products.id'])->pluck('id')->toArray();
-        return view('invoices.details.create', [
+        return response()->view('invoices.details.create', [
                 'invoice' => $invoice,
                 'products' => Product::whereNotIn('id', $excludedIds)->get(),
         ]);
@@ -54,38 +55,7 @@ class DetailController extends Controller
         $invoice->save();
 
 
-        return redirect()->route('invoices.show', $invoice)->withSuccess(__('Detail created successfully'));;
-    }
-
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param Invoice $invoice
-     * @param Product $product
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(invoice $invoice)
-    {
-        return view('invoices.details.edit', [
-            'invoice' => $invoice,
-            'products' => product::all(),
-        ]);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param DetailUpdateRequest $request
-     * @param Invoice $invoice
-     * @param Product $product
-     * @return void
-     */
-    public function update(DetailUpdateRequest $request, Invoice $invoice, Product $product)
-    {
-        $invoice->products()->updateExistingPivot($product->id, $request->validated());
-
-        return redirect()->route('invoices.show', $invoice)->withSuccess(__('Detail updated sucessfully'));;
+        return redirect()->route('invoices.show', $invoice)->withSuccess(__('Detail created successfully'));
     }
 
     /**
@@ -93,7 +63,7 @@ class DetailController extends Controller
      *
      * @param Invoice $invoice
      * @param Product $product
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function destroy(Invoice $invoice, $id)
     {
@@ -114,14 +84,5 @@ class DetailController extends Controller
 
         return redirect()->route('invoices.show', $invoice)->withSuccess(__('Detail deleted sucessfully'));
     }
-
-    public function exportPdf()
-    {
-        $invoice = Invoice::get();
-        $pdf = PDF::loadView('invoices.details.show', compact('invoice'));
-
-        return $pdf->download('details-list.pdf');
-    }
-
 
 }

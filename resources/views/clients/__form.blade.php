@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col form-group">
             <label for="type_id">{{__('Type ID')}} </label>
-            <select class="custom-select" name="type_id" id="type_id"  value="{{ old('type_id') }}">
+            <select class="custom-select" name="type_id" id="type_id" value="{{ old('type_id', $client->type_id) }}">
                 <option value="Card ID" selected>Card ID</option>
                 <option value="Foreign ID">Foreign ID</option>
                 <option value="Passport">Passport</option>
@@ -27,22 +27,13 @@
         </div>
     </div>
 
-
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="address">{{ __('Address') }}</label>
-                <input type="text" class="form-control {{ $errors->has('address') ? 'is-invalid' : '' }}" name="address" id="address" value="{{ old('address', $client->address) }}" required>
-                @includeWhen($errors->has('address'), 'partials.__invalid_feedback', ['feedback' => $errors->first('address')])
-            </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="phone_number">{{ __('Phone_number') }}</label>
+            <input type="text" class="form-control {{ $errors->has('phone_number') ? 'is-invalid' : '' }}" name="phone_number" id="phone_number" value="{{ old('phone_number', $client->phone_number) }}" required>
+            @includeWhen($errors->has('phone_number'), 'partials.__invalid_feedback', ['feedback' => $errors->first('phone_number')])
         </div>
-
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="phone_number">{{ __('Phone_number') }}</label>
-                <input type="text" class="form-control {{ $errors->has('phone_number') ? 'is-invalid' : '' }}" name="phone_number" id="phone_number" value="{{ old('phone_number', $client->phone_number) }}" required>
-                @includeWhen($errors->has('phone_number'), 'partials.__invalid_feedback', ['feedback' => $errors->first('phone_number')])
-            </div>
-        </div>
+    </div>
 
         <div class="col-md-6">
             <div class="form-group">
@@ -51,5 +42,57 @@
                 @includeWhen($errors->has('email'), 'partials.__invalid_feedback', ['feedback' => $errors->first('email')])
             </div>
         </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="address">{{ __('Address') }}</label>
+            <input type="text" class="form-control {{ $errors->has('address') ? 'is-invalid' : '' }}" name="address" id="address" value="{{ old('address', $client->address) }}" required>
+            @includeWhen($errors->has('address'), 'partials.__invalid_feedback', ['feedback' => $errors->first('address')])
+        </div>
+    </div>
+
+    <div class="col-md-6 form-group">
+        <label for="country_id">{{ __('Country') }}</label>
+        <select type="country_id" name="country_id" id="country_id" class="custom-select {{ $errors->has('country_id') ? 'is-invalid' : '' }}" required>
+            <option value="">Select country</option>
+            @foreach ($countries as $country)
+                <option value="{{  $country->id }}" {{ old('country_id', $country->id) == $country->id ? 'selected' : '' }}> {{ $country->country }}
+                </option>
+            @endforeach
+        </select>
+        @includeWhen($errors->has('country_id'), 'partials.__invalid_feedback', ['feedback' => $errors->first('country_id')])
+    </div>
+
+    <div class="col-md-6 form-group">
+        <label for="state_id">{{ __('State') }}</label>
+        <select type="state_id" name="state_id" id="state_id" class="custom-select {{ $errors->has('state_id') ? 'is-invalid' : '' }}" required>
+            <option value="">Select state</option>
+            @foreach ($states as $state)
+                <option value="{{  $state->id }}" {{ old('state_id', $state->id) == $state->id ? 'selected' : '' }}> {{ $state->state }}
+                </option>
+            @endforeach
+        </select>
+        @includeWhen($errors->has('state_id'), 'partials.__invalid_feedback', ['feedback' => $errors->first('state_id')])
+    </div>
+
+    <div class="col-md-6 form-group">
+        <label for="city_id">{{ __('City') }}</label>
+        <select type="city_id" name="city_id" id="city_id" class="custom-select {{ $errors->has('city_id') ? 'is-invalid' : '' }}" required>
+            <option value="">Select state</option>
+            @foreach ($cities as $city)
+                <option value="{{  $city->id }}" {{ old('city_id', $state->id) == $state->id ? 'selected' : '' }}> {{ $city->city }}
+                </option>
+            @endforeach
+        </select>
+        @includeWhen($errors->has('city_id'), 'partials.__invalid_feedback', ['feedback' => $errors->first('city_id')])
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="postal_code">{{ __('Postal Code') }}</label>
+            <input type="text" class="form-control {{ $errors->has('postal_code') ? 'is-invalid' : '' }}" name="postal_code" id="postal_code" value="{{ old('postal_code', $client->postal_code) }}" required>
+            @includeWhen($errors->has('postal_code'), 'partials.__invalid_feedback', ['feedback' => $errors->first('postal_code')])
+        </div>
     </div>
 </div>
+

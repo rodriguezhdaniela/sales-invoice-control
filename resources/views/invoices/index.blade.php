@@ -4,11 +4,11 @@
         <div class="col-md-3 order-md-2 mb-2">
             <div class="card mb-3">
                 <div class="card-body">
-                    <h5 class="card-title">Filters</h5>
+                    <h5 class="card-title">{{__('Filters')}}</h5>
                     <form method='GET' action="{{ route('invoices.index')}}">
                         <div class="row">
                             <div class="form-group col">
-                                <label for="expedition_date">Expedition date</label>
+                                <label for="expedition_date">{{__('Expedition date')}}</label>
                                 <input
                                     name="search[expedition_date]"
                                     id="expedition_date"
@@ -18,7 +18,7 @@
                             </div>
 
                             <div class="form-group col">
-                                <label for="expiration_date">Expiration date</label>
+                                <label for="expiration_date">{{__('Expiration date')}}</label>
                                 <input
                                     name="search[expiration_date]"
                                     id="expiration_date"
@@ -28,7 +28,7 @@
                             </div>
 
                             <div class="form-group col">
-                                <label for="client">Client</label>
+                                <label for="client">{{__('Client')}}</label>
                                 <select name="search[client]" id="client" class="custom-select">
                                     <option></option>
                                     @foreach($clients as $client)
@@ -41,7 +41,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group col">
-                                <label for="seller">Seller</label>
+                                <label for="seller">{{__('Seller')}}</label>
                                 <select name="search[seller]" id="seller" class="custom-select">
                                     <option></option>
                                     @foreach($sellers as $seller)
@@ -54,13 +54,13 @@
                         </div>
                         <div class="row">
                             <div class="form-group col">
-                                <label for="status">Status</label>
+                                <label for="status">{{__('Status')}}</label>
                                 <select name="search[status]" id="status" class="custom-select" value="{{ old('search.status')}}">
                                     <option value=""></option>
-                                    <option value="new">New</option>
-                                    <option value="received">Received</option>
-                                    <option value="paid">Paid</option>
-                                    <option value="cancelled">Cancelled</option>
+                                    <option value="new">{{__('New')}}</option>
+                                    <option value="received">{{__('Received')}}</option>
+                                    <option value="paid">{{__('Paid')}}</option>
+                                    <option value="cancelled">{{__('Cancelled')}}</option>
                                 </select>
                             </div>
                         </div>
@@ -72,11 +72,10 @@
                 <div class="card-footer"></div>
             </div>
         </div>
-
         <div class="col-md-9 order-md-1">
             <div class="card card-default">
                 <div class="card-header d-flex justify-content-between">
-                    <h3 class="card-title mb-0">Invoices</h3>
+                    <h4 class="card-title mb-0">{{__('Invoice')}}s</h4>
                     <div class="btn-group-sm">
                         <a href="{{ route('invoices.create') }}" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Create</a>
                         <a href="{{ route('invoices.excel') }}" class="btn btn-success btn-sm"><i class="fas fa-download"></i> Download</a>
@@ -88,14 +87,14 @@
                     @include('partials.__alerts')
                     <thead>
                     <tr>
-                        <th>Expedition date</th>
-                        <th>Expiration date</th>
-                        <th>Client</th>
-                        <th>Seller</th>
-                        <th>Tax</th>
-                        <th>Subtotal</th>
-                        <th>Total</th>
-                        <th>Status</th>
+                        <th>{{__('Expedition date')}}</th>
+                        <th>{{__('Expiration date')}}</th>
+                        <th>{{__('Client')}}</th>
+                        <th>{{__('Seller')}}</th>
+                        <th>{{__('Tax')}}</th>
+                        <th>{{__('Subtotal')}}</th>
+                        <th>{{__('Total')}}</th>
+                        <th>{{__('Status')}}</th>
                         <th></th>
                     </tr>
                     </thead>
