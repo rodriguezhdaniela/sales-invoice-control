@@ -78,9 +78,9 @@
     <div class="col-md-6 form-group">
         <label for="city_id">{{ __('City') }}</label>
         <select type="city_id" name="city_id" id="city_id" class="custom-select {{ $errors->has('city_id') ? 'is-invalid' : '' }}" required>
-            <option value="">Select city</option>
+            <option value="">Select state</option>
             @foreach ($cities as $city)
-                <option value="{{  $city->id }}" {{ old('city_id', $city->id) == $city->id ? 'selected' : '' }}> {{ $city->city }}
+                <option value="{{  $city->id }}" {{ old('city_id', $state->id) == $state->id ? 'selected' : '' }}> {{ $city->city }}
                 </option>
             @endforeach
         </select>
