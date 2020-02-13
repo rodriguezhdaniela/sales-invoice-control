@@ -2,14 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c73f6a82-04bb-426f-b554-b0dbbd33250b" name="Default Changelist" comment="">
-<<<<<<< Updated upstream
-      <change afterPath="$PROJECT_DIR$/app/Http/View/composers/CachedStatusList.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/View/composers/CachedType_idClientList.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/View/composers/CachedType_idList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/invoices/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/index.blade.php" afterDir="false" />
-=======
       <change afterPath="$PROJECT_DIR$/app/Http/View/Composer/CachedCitiesList.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/Http/View/Composer/CachedCountriesList.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/Http/View/Composer/CachedStatesList.php" afterDir="false" />
@@ -17,6 +9,14 @@
       <change afterPath="$PROJECT_DIR$/database/seeds/CitiesTableSeeder.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/resources/js/city.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/resources/views/partials/__confirm_payment_modal.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/Maatwebsite/Excel/Facades/Excel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/invoices/import.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pdf/invoices.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/ClientsTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/InvoicesTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/ProductsTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/SellersTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/invoices.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/invoices.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
@@ -67,7 +67,6 @@
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
->>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,24 +216,16 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-<<<<<<< Updated upstream
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/View/composers" />
-=======
-    <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/View/Composer" />
->>>>>>> Stashed changes
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-<<<<<<< Updated upstream
       <recent name="D:\Daniela\laragon\www\invoices\app\Http\View\composers" />
-=======
       <recent name="D:\Daniela\laragon\www\invoices\app\Http\View\Composer" />
       <recent name="D:\Daniela\laragon\www\invoices\database\seeds" />
       <recent name="D:\Daniela\laragon\www\invoices\resources\views\partials" />
->>>>>>> Stashed changes
       <recent name="D:\Daniela\laragon\www\invoices\tests\Feature" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -325,13 +316,6 @@
       <workItem from="1576501040546" duration="13687000" />
       <workItem from="1576595577589" duration="678000" />
       <workItem from="1576599647081" duration="1680000" />
-<<<<<<< Updated upstream
-      <workItem from="1578927098652" duration="19346000" />
-      <workItem from="1578960064932" duration="835000" />
-      <workItem from="1578968042015" duration="97000" />
-      <workItem from="1578969043816" duration="620000" />
-      <workItem from="1579103020128" duration="1505000" />
-=======
       <workItem from="1579734682186" duration="1948000" />
       <workItem from="1579802102261" duration="22944000" />
       <workItem from="1579879700286" duration="19656000" />
@@ -353,7 +337,6 @@
       <workItem from="1581089462709" duration="15786000" />
       <workItem from="1581348945423" duration="1753000" />
       <workItem from="1581351159575" duration="3775000" />
->>>>>>> Stashed changes
     </task>
     <servers />
   </component>
@@ -374,11 +357,6 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="1030" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1580249654315">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1030" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580249654315" />
-    <state x="225" y="218" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1580159603424">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="225" y="218" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580159603424" />
@@ -389,17 +367,6 @@
     <state x="779" y="0" width="1141" height="914" key="SettingsEditor" timestamp="1580164576430">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-<<<<<<< Updated upstream
-    <state x="1030" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577550492937" />
-    <state x="993" y="308" key="com.intellij.ide.util.TipDialog" timestamp="1579103020470">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="993" y="308" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579103020470" />
-    <state x="1171" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1578940350393">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1171" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1578940350393" />
-=======
     <state x="779" y="0" width="1141" height="914" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1580164576430" />
     <state x="952" y="200" key="com.intellij.ide.util.TipDialog" timestamp="1581351163095">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -409,6 +376,8 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1002" y="134" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1580833303480" />
->>>>>>> Stashed changes
+    <state x="1171" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1577490004452" />
+    <state x="1171" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1577490004452" />
   </component>
 </project>
+
