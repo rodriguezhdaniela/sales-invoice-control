@@ -26,10 +26,6 @@ class ClientController extends Controller
      */
     public function index(Request $request)
     {
-        //$countries = Country::select(['id', 'country'])->get();
-        //$states = State::select(['id', 'state'])->get();
-        //$cities = City::select(['id', 'city'])->get();
-
         $name = $request->get('name');
         $personal_id = $request->get('personal_id');
 
@@ -117,7 +113,7 @@ class ClientController extends Controller
         return redirect()->route('clients.index')->withSuccess(__('Client deleted sucessfully'));
     }
 
-    public function getStates()
+    /*public function getStates()
     {
         $data = state::get();
 

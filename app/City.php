@@ -10,14 +10,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class City extends Model
 {
-    protected $fillable = [
-      'city', 'state_id'
-    ];
+    protected $guarded = [];
     /**
      * Relation between city and clients
      * @return HasMany
      */
-    public function client():HasMany
+    public function clients():HasMany
     {
         return $this->hasMany(Client::class);
     }

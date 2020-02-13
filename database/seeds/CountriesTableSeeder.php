@@ -13,7 +13,7 @@ class CountriesTableSeeder extends Seeder
     public function run()
     {
         factory(Country::class)->create([
-            'country' => 'Colombian',
+            'country' => 'Colombia',
         ]);
     }
 }

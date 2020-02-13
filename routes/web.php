@@ -23,7 +23,7 @@ Route::get('invoices/export', 'InvoiceController@exportExcel')->name('invoices.e
 
 Route::resource('/invoices','InvoiceController');
 
-Route::resource('/invoices/{invoice}/details', 'DetailController')->except('show');
+Route::resource('/invoices/{invoice}/details', 'DetailController')->except('show', 'edit', 'update');
 
 Route::get('/getStates', 'ClientController@getStates');
 

@@ -53,17 +53,14 @@
 
     <div class="col-md-6 form-group">
         <label for="country_id">{{ __('Country') }}</label>
-        {{--<select name="country_id" id="country" class="custom-select {{ $errors->has('country_id') ? 'is-invalid' : '' }}" required>
+        <select type="country_id" name="country_id" id="country_id" class="custom-select {{ $errors->has('country_id') ? 'is-invalid' : '' }}" required>
             <option value="">Select country</option>
-            <option value="">Colombia</option>
             @foreach ($countries as $country)
-                <option value="{{  $country->id }}" {{ old('country_id', $country->id) === $country->id ? 'selected' : '' }}> {{ $country->country }}
+                <option value="{{  $country->id }}" {{ old('country_id', $country->id) == $country->id ? 'selected' : '' }}> {{ $country->country }}
                 </option>
             @endforeach
         </select>
         @includeWhen($errors->has('country_id'), 'partials.__invalid_feedback', ['feedback' => $errors->first('country_id')])
-        --}}
-        <input class="form-control" type="text" name="country_id" id="country" value="Colombia" disabled>
     </div>
 
     <div class="col-md-6 form-group">

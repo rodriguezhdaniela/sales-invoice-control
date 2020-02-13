@@ -8,9 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Country extends Model
 {
 
-    protected $fillable = [
-        'country',
-    ];
+    protected $guarded = [];
 
     /**
      * Relation between country and clients

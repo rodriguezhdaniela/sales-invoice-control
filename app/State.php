@@ -11,9 +11,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class State extends Model
 {
-    protected $fillable = [
-        'state', 'country_id'
-    ];
+    protected $guarded = [];
 
 
     /**
