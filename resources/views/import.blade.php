@@ -25,7 +25,6 @@
                     @endif
 
                     <input type="file" name="file" class="form-control">
-                    <input type="file" name="file" class="form-control">
 
                     <button type="submit" name="upload" class="btn btn-primary">{{__('Upload')}}</button>
 

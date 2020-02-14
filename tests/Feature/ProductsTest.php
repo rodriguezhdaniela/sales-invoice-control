@@ -23,6 +23,7 @@ class ProductsTest extends TestCase
     public function testAuthenticatedUserHasAccessToProductList()
     {
         $user = factory(User::class)->create();
+
         $this->actingAs($user)->get(route('products.index'))->assertSuccessful();
         $this->assertAuthenticatedAs($user);
     }
@@ -30,7 +31,6 @@ class ProductsTest extends TestCase
     public function testProductListContainsAListOfProducts()
     {
         $user = factory(User::class)->create();
-        $product = factory(Product::class)->create();
 
         $response = $this->actingAs($user)->get(route('products.index'));
 
@@ -40,7 +40,28 @@ class ProductsTest extends TestCase
 
     }
 
-    public function testUnauthenticatedUserCannotCreateAProduct()
+    public function testUnauthenticatedUserCannotCreateProduct()
+    {
+
+        $this->get(route('products.create'))
+
+            ->assertRedirect(route('login'));
+
+    }
+
+    public function testProductCanBeCreated()
+    {
+        $user = factory(User::class)->create();
+
+        $response = $this->actingAs($user)->get(route('products.create'));
+
+        $response->assertSuccessful();
+        $response->assertSeeText('Product');
+        $response->assertViewIs('products.create');
+
+    }
+
+    public function testUnauthenticatedUserCannotStoreAProduct()
     {
         $this->post(route('products.store'), [
             'type_id' => 'Test type id',
@@ -53,7 +74,7 @@ class ProductsTest extends TestCase
             ->assertRedirect(route('login'));
     }
 
-    public function testAProductCanBeCreated()
+    public function testAProductCanBeStored()
     {
         $user = factory(User::class)->create();
         $product = factory(Product::class)->create();
@@ -106,6 +127,29 @@ class ProductsTest extends TestCase
         ])
             ->assertRedirect()
             ->assertSessionHasNoErrors();
+
+    }
+
+    public function testUnauthenticatedUserCannotEditSeller()
+    {
+        $product = factory(Product::class)->create();
+
+        $this->get(route('products.edit', $product))
+
+            ->assertRedirect(route('login'));
+
+    }
+
+    public function testSellerCanBeEdited()
+    {
+        $user = factory(User::class)->create();
+        $product = factory(Product::class)->create();
+
+        $response = $this->actingAs($user)->get(route('products.edit', $product));
+
+        $response->assertSuccessful();
+        $response->assertSeeText('Edit');
+        $response->assertViewIs('products.edit');
 
     }
 

@@ -15,7 +15,7 @@ class InvoicesTest extends TestCase
     use RefreshDatabase;
     use withFaker;
 
-    public function testUnauthenticatedUserCannotAccessToInvoicesList()
+   public function testUnauthenticatedUserCannotAccessToInvoicesList()
     {
         $response = $this->get(route('invoices.index'));
 
@@ -43,23 +43,44 @@ class InvoicesTest extends TestCase
 
       }
 
-     public function testUnauthenticatedUserCannotCreateAInvoice()
+    public function testUnauthenticatedUserCannotCreateInvoice()
+    {
+
+        $this->get(route('invoices.create'))
+
+            ->assertRedirect(route('login'));
+
+    }
+
+    public function testInvoiceCanBeCreated()
+    {
+        $user = factory(User::class)->create();
+
+        $response = $this->actingAs($user)->get(route('invoices.create'));
+
+        $response->assertSuccessful();
+        $response->assertSeeText('Invoice');
+        $response->assertViewIs('invoices.create');
+    }
+
+
+     public function testUnauthenticatedUserCannotStoreAInvoice()
      {
          $client = factory(Client::class)->create();
          $seller = factory(Seller::class)->create();
 
          $this->post(route('invoices.store'), [
 
-             'expiration_date' => now()->addDays(30)->toDateString(),
              'client_id' => $client->id,
              'seller_id' => $seller->id,
+             'expiration_date' => now()->addDays(30)->toDateString(),
              'status' => 'new',
 
          ])
              ->assertRedirect(route('login'));
      }
 
-     public function testAInvoiceCanBeCreated()
+     public function testAInvoiceCanBeStored()
      {
          $user = factory(User::class)->create();
          $client = factory(Client::class)->create();
@@ -68,91 +89,132 @@ class InvoicesTest extends TestCase
 
          $this->actingAs($user)->post(route('invoices.store'), [
 
-             'expiration_date' => now()->addDays(30)->toDateString(),
              'client_id' => $client->id,
              'seller_id' => $seller->id,
+             'expiration_date' => now()->addDays(30)->toDateString(),
              'status' => 'new',
 
          ])
              ->assertRedirect()
              ->assertSessionHasNoErrors();
-
-         $this->assertDatabaseHas('invoices', [
-             'status' => 'new',
-             'seller_id' => $seller->id,
-         ]);
-     }
-
-     public function testUnAuthenticatedUserCannotUpdateAInvoice()
-     {
-
-
-         $client = factory(Client::class)->create();
-         $seller = factory(Seller::class)->create();
-         $invoice = factory(Invoice::class)->create();
-
-         $this->put(route('invoices.update', $invoice), [
-
-             'expiration_date' => now()->addDays(30)->toDateString(),
-             'status' => 'new',
-             'client_id' => $client->id,
-             'seller_id' => $seller->id,
-
-         ])
-             ->assertRedirect(route('login'));
-
-         $this->assertDatabaseHas('invoices', [
-             'status' => 'new',
-             'seller_id' => $seller->id,
-         ]);
      }
 
 
-    /*public function testAInvoiceCanBeUpdated()
-     {
-         $client = factory(Client::class)->create();
-         $seller = factory(Seller::class)->create();
-         $user = factory(User::class)->create();
-         $invoice = factory(Invoice::class)->create();
-
-         $this->actingAs($user)->put(route('invoices.update', $invoice),[
-             'expiration_date' => now()->addDays(30)->toDateString(),
-             'status' => 'new',
-             'client_id' => $client->id,
-             'seller_id' => $seller->id,
-         ])
-             ->assertRedirect()
-             ->assertSessionHasNoErrors();
-
-         $this->assertDatabaseHas('invoices', [
-             'status' => 'new',
-             'seller_id' => $seller->id,
-         ]);
-     }
-
-     public function testUnauthenticatedUserCannotDeleteAInvoice()
-     {
-
+    public function testUnauthenticatedUserCannotEditInvoice()
+    {
         $invoice = factory(Invoice::class)->create();
 
-        $this->delete(route('invoices.destroy', $invoice))
+        $this->get(route('sellers.edit', $invoice))
+
             ->assertRedirect(route('login'));
 
-     }
+    }
 
-    public function testAInvoiceCanBEDeleted()
+    public function testInvoiceCanBeEdited()
     {
         $user = factory(User::class)->create();
         $invoice = factory(Invoice::class)->create();
 
+        $response = $this->actingAs($user)->get(route('invoices.edit', $invoice));
+
+        $response->assertSuccessful();
+        $response->assertSeeText('Edit');
+        $response->assertViewIs('invoices.edit');
+
+    }
+
+
+     public function testUnanthenticatedUserCannotUpdateAInvoice(){
+
+       $invoice = factory(Invoice::class)->create();
+       $client = factory(Client::class)->create();
+       $seller = factory(Seller::class)->create();
+
+       $this->put(route('invoices.update', $invoice), [
+           'client_id' => $client->id,
+           'seller_id' => $seller->id,
+           'expiration_date' => now()->addDays(30)->toDateString(),
+           'status' => 'new',
+       ])
+           ->assertRedirect()
+           ->assertSessionHasNoErrors();
+
+       $this->assertDatabaseHas('invoices', [
+           'client_id' => $invoice->client_id,
+           'status' => $invoice->status,
+       ]);
+
+     }
+
+     public function testInvoiceCanBeUpdated()
+     {
+
+       $user = factory(User::class)->create();
+       $invoice = factory(Invoice::class)->create();
+       $client = factory(Client::class)->create();
+       $seller = factory(Seller::class)->create();
+
+       $this->actingAs($user)->put(route('invoices.update', $invoice), [
+           'client_id' => $client->id,
+           'seller_id' => $seller->id,
+           'expiration_date' => now()->addDays(30)->toDateString(),
+           'status' => 'new',
+       ])
+           ->assertRedirect()
+           ->assertSessionHasNoErrors();
+     }
+
+     public function testUnautheticatedUserCannotDeleteAInvoice()
+     {
+         $invoice = factory(Invoice::class)->create();
+
+         $this->delete(route('invoices.destroy', $invoice))
+             ->assertRedirect(route('login'));
+
+         $this->assertDatabaseHas('invoices', [
+            'client_id' => $invoice->client_id,
+             'status' => $invoice->status,
+         ]);
+     }
+
+     public function testAInvoiceCanBeDeleted()
+     {
+        $user = factory(User::class)->create();
+        $invoice = factory(Invoice::class)->create();
 
         $this->actingAs($user)->delete(route('invoices.destroy', $invoice))
             ->assertRedirect(route('invoices.index'))
             ->assertSessionHasNoErrors();
 
+        $this->assertDatabaseMissing('invoices', [
+            'client_id' => $invoice->client_id,
+            'status' => $invoice->status,
+        ]);
+     }
 
-    }*/
+     public function testUnauthenticatedUserCannotSeeDetailOfAInvoice()
+    {
 
+       $invoice = factory(Invoice::class)->create();
+
+       $response = $this->get(route('invoices.show', $invoice));
+
+       $response->assertRedirect(route('login'));
+
+    }
+
+     public function testCanSeeDetailsOfAInvoice()
+     {
+         $user = factory(User::class)->create();
+         $invoice = factory(Invoice::class)->create();
+
+         $response = $this->actingAs($user)->get(route('invoices.show', $invoice));
+
+         $response->assertSuccessful();
+         $response->assertSeeText($invoice->client->name);
+         $response->assertSeeText($invoice->seller->name);
+
+     }
 
 }
 

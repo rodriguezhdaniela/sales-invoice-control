@@ -32,14 +32,19 @@ class ClientUpdateRequest extends FormRequest
                 Rule::unique('clients', 'personal_id')->ignore($this->route('client'))
             ],
             'name' => 'required|string|max:50',
-            'address' => 'required',
             'phone_number' => 'required|min:7|numeric',
             'email' => [
                 'required',
                 'email',
                 Rule::unique('clients', 'email')->ignore($this->route('client')->id),
+            ],
+            'address' => 'required',
+            'country_id' => 'required|numeric|exists:countries,id',
+            'state_id' => 'required|numeric|exists:states,id',
+            'city_id' => 'required|numeric|exists:cities,id',
+            'postal_code' => 'required|numeric|digits:6',
 
-            ]
+
         ];
     }
 }
