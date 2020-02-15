@@ -61,16 +61,13 @@ class InvoicesTest extends TestCase
         $response->assertSuccessful();
         $response->assertSeeText('Invoice');
         $response->assertViewIs('invoices.create');
-
     }
 
 
      public function testUnauthenticatedUserCannotStoreAInvoice()
-
      {
          $client = factory(Client::class)->create();
          $seller = factory(Seller::class)->create();
-
 
          $this->post(route('invoices.store'), [
 
@@ -85,9 +82,9 @@ class InvoicesTest extends TestCase
 
      public function testAInvoiceCanBeStored()
      {
+         $user = factory(User::class)->create();
          $client = factory(Client::class)->create();
          $seller = factory(Seller::class)->create();
-         $user = factory(User::class)->create();
 
 
          $this->actingAs($user)->post(route('invoices.store'), [
@@ -101,6 +98,7 @@ class InvoicesTest extends TestCase
              ->assertRedirect()
              ->assertSessionHasNoErrors();
      }
+
 
     public function testUnauthenticatedUserCannotEditInvoice()
     {
@@ -164,8 +162,6 @@ class InvoicesTest extends TestCase
        ])
            ->assertRedirect()
            ->assertSessionHasNoErrors();
-
-
      }
 
      public function testUnautheticatedUserCannotDeleteAInvoice()
@@ -196,7 +192,8 @@ class InvoicesTest extends TestCase
         ]);
      }
 
-     public function testUnauthenticatedUserCannotSeeDetailOfAInvoice(){
+     public function testUnauthenticatedUserCannotSeeDetailOfAInvoice()
+    {
 
        $invoice = factory(Invoice::class)->create();
 
@@ -204,7 +201,7 @@ class InvoicesTest extends TestCase
 
        $response->assertRedirect(route('login'));
 
-     }
+    }
 
      public function testCanSeeDetailsOfAInvoice()
      {
@@ -218,5 +215,6 @@ class InvoicesTest extends TestCase
          $response->assertSeeText($invoice->seller->name);
 
      }
+
 }
 

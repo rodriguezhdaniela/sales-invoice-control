@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Product;
 use App\Invoice;
 use App\Http\Requests\DetailStoreRequest;
-use App\Http\Requests\DetailUpdateRequest;
-use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Response;
 
 

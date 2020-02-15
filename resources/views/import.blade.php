@@ -8,9 +8,9 @@
         <table class="table">
             @include('partials.__alerts')
             <div class="card-body">
-                <form action="{{ route('invoices.import.excel') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    @if(count($errors) > 0)
+                <form action="{{ route('invoices.import.excel') }}" method="POST" enctype="multipart/form-data" id="import-form">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}" form="import-form" />
+                    @if($errors->any())
                         <div class="alert alert-danger">
                             Upload Validation Error<br><br>
                             <ul>
@@ -20,20 +20,18 @@
                             </ul>
                         </div>
                     @endif
-                    @if(Session::has('message'))
-                        <p>{{Session::get('message')}}</p>
-                    @endif
-
-                    <input type="file" name="file" class="form-control">
-
-                    <button type="submit" name="upload" class="btn btn-primary">{{__('Upload')}}</button>
-
-                    <a href="{{ route('invoices.index') }}" class="btn btn-danger">{{ __('Cancel') }}</a>
-
+                    <input type="file" name="file" class="form-control" form="import-form">
                 </form>
             </div>
         </table>
-        <div class="card-footer"></div>
+        <div class="card-footer d-flex justify-content-between">
+            <a href="{{ route('invoices.index') }}" class="btn btn-danger">
+                <i class="fas fa-arrow-left"></i> {{ __('Cancel') }}
+            </a>
+            <button type="submit" class="btn btn-success" form="import-form">
+                <i class="fas fa-upload"></i> {{ __('Upload') }}
+            </button>
+        </div>
     </div>
 
 @endsection

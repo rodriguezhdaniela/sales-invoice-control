@@ -13,7 +13,7 @@ class CreateColumnPostalCode extends Migration
      */
     public function up()
     {
-        Schema::table('Clients', function (Blueprint $table) {
+        Schema::table('clients', function (Blueprint $table) {
             $table->string('postal_code');
         });
     }
@@ -25,8 +25,8 @@ class CreateColumnPostalCode extends Migration
      */
     public function down()
     {
-        Schema::table('Clients', function (Blueprint $table) {
-            $table->dropColumn('PostalCode');
+        Schema::table('clients', function (Blueprint $table) {
+            $table->dropColumn('postal_code');
         });
     }
 }

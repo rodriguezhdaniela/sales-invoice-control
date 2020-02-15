@@ -9,11 +9,13 @@ use Faker\Generator as Faker;
 
 $factory->define(Invoice::class, function (Faker $faker) {
     return [
-        'expiration_date' => $faker->date(),
+        'expiration_date' => $faker->dateTimeThisCentury->format('Y-m-d'),
         'status' => $faker->randomElement(['New']),
         'amount' => $faker->numberBetween(50,999999999),
+        'tax' => $faker->numberBetween(50,999999999),
         'total' => $faker->numberBetween(50,999999999),
         'client_id' => factory(Client::class),
-        'seller_id' => factory(Seller::class)
+        'seller_id' => factory(Seller::class),
+
     ];
 });

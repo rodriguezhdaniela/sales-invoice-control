@@ -40,7 +40,7 @@ class InvoicesImport implements ToModel,  WithHeadingRow, WithValidation
     {
         return[
 
-            'expiration_date' => 'required|after:tomorrow',
+            'expiration_date' => 'required|date_format:Y-m-d|after:tomorrow',
             'status' => 'required|string|in:new,received,paid,cancelled',
             'tax' => 'required|numeric|min:50',
             'amount' => 'required|numeric|min:50',

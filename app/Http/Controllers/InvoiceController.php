@@ -87,7 +87,6 @@ class InvoiceController extends Controller
         return response()->view('invoices.show', [
             'invoice' => $invoice,
             'paymentAttempts' => $paymentAttempts::all(),
-
         ]);
     }
 
@@ -158,7 +157,7 @@ class InvoiceController extends Controller
             'file' => 'required|mimes:xls,xlsx,csv'
         ]);
 
-        $file = $request->file('file')->getRealPath();
+        $file = $request->file('file');
         Excel::import(new InvoicesImport(), $file);
 
         return back()->withSuccess(__('Invoices imported successfully'));
