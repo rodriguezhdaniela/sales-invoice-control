@@ -55,17 +55,17 @@
                         <div class="row">
                             <div class="form-group col">
                                 <label for="status">{{__('Status')}}</label>
-                                <select name="search[status]" id="status" class="custom-select" value="{{ old('search.status')}}">
+                                <select name="search[status]" id="status" class="custom-select">
                                     <option value=""></option>
-                                    <option value="new">{{__('New')}}</option>
-                                    <option value="received">{{__('Received')}}</option>
-                                    <option value="paid">{{__('Paid')}}</option>
-                                    <option value="cancelled">{{__('Cancelled')}}</option>
+                                    <option value="new" {{ 'new' == request()->input('search.status') ? 'selected' : ''}}>{{__('New')}}</option>
+                                    <option value="received" {{ 'received' == request()->input('search.status') ? 'selected' : ''}}>{{__('Received')}}</option>
+                                    <option value="paid" {{ 'paid' == request()->input('search.status') ? 'selected' : ''}}>{{__('Paid')}}</option>
+                                    <option value="cancelled" {{ 'cancelled' == request()->input('search.status') ? 'selected' : ''}}>{{__('Cancelled')}}</option>
                                 </select>
                             </div>
                         </div>
                         <button class="btn btn-success btn-block" type="submit"><i class="fas fa-search"></i> {{ __('Search') }}</button>
-                        <a href="{{route('invoices.index')}}" class="btn btn-secondary btn-block"><i class="fas fa-undo"></i> {{ __('Reset') }}</button>
+                        <a href="{{route('invoices.index')}}" class="btn btn-secondary btn-block"><i class="fas fa-undo"></i> {{ __('Reset') }}
                         </a>
                     </form>
                 </div>
@@ -127,7 +127,7 @@
                     </tbody>
                 </table>
                 <div class="mt-3 d-flex justify-content-center">
-                    {!! $invoices->render() !!}
+                    {{ $invoices->appends(['search.client', 'search.seller', 'search.status', 'search.expiration_date', 'search.expedition_date'])->links() }}
                 </div>
             </div>
             <div class="card-footer"></div>

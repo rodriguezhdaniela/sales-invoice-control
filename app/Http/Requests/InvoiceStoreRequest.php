@@ -27,8 +27,8 @@ class InvoiceStoreRequest extends FormRequest
     {
         return [
             'expiration_date' => 'required|after:today',
-            'client_id' => 'required|number|exists:clients,id',
-            'seller_id' => 'required|number|exists:sellers,id',
+            'client_id' => 'required|numeric|exists:clients,id',
+            'seller_id' => 'required|numeric|exists:sellers,id',
         ];
     }
 }

@@ -13,3 +13,8 @@
         {{ session('info') }}
     </div>
 @endif
+@if(session()->has('message'))
+    <div class="alert alert-message">
+        {{session('message')}}
+    </div>
+@endif

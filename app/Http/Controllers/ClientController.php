@@ -29,11 +29,11 @@ class ClientController extends Controller
         $name = $request->get('name');
         $personal_id = $request->get('personal_id');
 
-        $clients = client::name($name)
+        $clients = Client::name($name)
             ->personal_id($personal_id)
             ->paginate(10);
 
-        return response()->view('clients.index', compact('clients', 'countries', 'cities', 'states'));
+        return response()->view('clients.index', compact('clients'));
     }
 
     /**
@@ -61,7 +61,7 @@ class ClientController extends Controller
     public function store(ClientStoreRequest $request)
     {
 
-        client::create($request->validated());
+        Client::create($request->validated());
 
         return redirect()->route('clients.index')->withSuccess(__('Client created successfully'));
     }
@@ -73,7 +73,7 @@ class ClientController extends Controller
      * @param client $client
      * @return Response
      */
-    public function edit(client $client)
+    public function edit(Client $client)
     {
 
         return response()->view('clients.edit', [
@@ -106,7 +106,7 @@ class ClientController extends Controller
      * @return RedirectResponse
      * @throws \Exception
      */
-    public function destroy(client $client)
+    public function destroy(Client $client)
     {
         $client->delete();
 
