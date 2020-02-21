@@ -33,7 +33,7 @@
         <select type="seller_id" name="seller_id" id="seller_id" class="custom-select {{ $errors->has('seller_id') ? 'is-invalid' : '' }}" required>
             <option value="">Select name</option>
             @foreach ($sellers as $seller)
-                <option value="{{  $seller->id }}" {{ old('seller_id', $invoice->seller_id) == $seller->id ? 'selected' : '' }}> {{ $seller->name }}
+                <option value="{{  $seller->id }}" {{ old('seller_id', $invoice->seller_id) == $seller->id ? 'selected' : '' }}> {{ $seller->fullname }}
                 </option>
             @endforeach
         </select>
@@ -45,7 +45,7 @@
         <select type="client_id" name="client_id" id="client_id" class="custom-select {{ $errors->has('client_id') ? 'is-invalid' : '' }}" required>
             <option value="">Select name</option>
             @foreach ($clients as $client)
-                <option value="{{  $client->id }}" {{ old('client_id', $invoice->client_id) == $client->id ? 'selected' : '' }}> {{ $client->name }}
+                <option value="{{  $client->id }}" {{ old('client_id', $invoice->client_id) == $client->id ? 'selected' : '' }}> {{ $client->fullname }}
                 </option>
             @endforeach
         </select>

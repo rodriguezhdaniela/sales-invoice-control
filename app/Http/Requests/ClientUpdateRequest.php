@@ -32,6 +32,7 @@ class ClientUpdateRequest extends FormRequest
                 Rule::unique('clients', 'personal_id')->ignore($this->route('client'))
             ],
             'name' => 'required|string|max:50',
+            'last_name' => 'required|string|max:50',
             'phone_number' => 'required|min:7|numeric',
             'email' => [
                 'required',

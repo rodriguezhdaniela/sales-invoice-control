@@ -2,21 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c73f6a82-04bb-426f-b554-b0dbbd33250b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentAttemptsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentAttemptController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Invoice.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/PaymentAttempts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/PaymentAttempt.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/PaymentAttemptsFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/PaymentAttemptsFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ClientStoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ClientStoreRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ClientUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ClientUpdateRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/SellerStoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/SellerStoreRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/SellerUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/SellerUpdateRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Seller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Seller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/ClientFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ClientFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/SellerFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/SellerFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_19_144000_create_table_clients.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_19_144000_create_table_clients.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_19_151423_create_table_sellers.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_19_151423_create_table_sellers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/clients/__form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/clients/__form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/clients/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/clients/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/invoices/__form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/__form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/invoices/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/invoices/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Controllers/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Controllers/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/coverage/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sellers/__form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sellers/__form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sellers/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sellers/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,7 +280,7 @@
       <workItem from="1581855573950" duration="7034000" />
       <workItem from="1581929079332" duration="26762000" />
       <workItem from="1581961951817" duration="1597000" />
-      <workItem from="1582285920275" duration="4905000" />
+      <workItem from="1582285920275" duration="13772000" />
     </task>
     <servers />
   </component>

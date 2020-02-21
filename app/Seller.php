@@ -9,6 +9,11 @@ class Seller extends Model
 {
     protected $guarded = [];
 
+    public function getFullNameAttribute()
+    {
+        return ucfirst($this->name) . ' ' . ucfirst($this->last_name);
+    }
+
     /**
      * Relation between sellers and invoices
      * @return HasMany

@@ -26,6 +26,7 @@ class ClientStoreRequest extends FormRequest
             'type_id' => 'required',
             'personal_id' =>'required|unique:clients,personal_id|min:8',
             'name' => 'required|string|max:50',
+            'last_name' => 'required|string|max:50',
             'email' => 'required|email|unique:clients,email',
             'address' => 'required',
             'phone_number' => 'required|min:7|numeric',

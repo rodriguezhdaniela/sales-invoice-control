@@ -42,7 +42,7 @@
                     <div class="card-body">
                         <dl class="row">
                             <dt class="col-md-3">{{ __('Full name') }}</dt>
-                            <dd class="col-md-3">{{ $invoice->client->name }}</dd>
+                            <dd class="col-md-3">{{ $invoice->client->fullname }}</dd>
 
                             <dt class="col-md-3">{{ $invoice->client->type_id }}</dt>
                             <dd class="col-md-3"> {{ $invoice->client->personal_id }}</dd>
@@ -54,7 +54,7 @@
                     <div class="card-body">
                         <dl class="row">
                             <dt class="col-md-3">{{ __('Full name') }}</dt>
-                            <dd class="col-md-3">{{ $invoice->seller->name }}</dd>
+                            <dd class="col-md-3">{{ $invoice->seller->fullname }}</dd>
 
                             <dt class="col-md-3">{{ $invoice->seller->type_id }}</dt>
                             <dd class="col-md-3"> {{ $invoice->seller->personal_id }}</dd>
@@ -201,7 +201,7 @@
                         </h5>
 
                         <div class="row d-flex justify-content-between align-items-center mb-3">
-                            <div class="col">{{ $invoice->client->name }}</div>
+                            <div class="col">{{ $invoice->client->fullname }}</div>
                             <div class="col">{{ $invoice->client->type_id }}</div>
                             <div class="col">{{ $invoice->client->personal_id }}</div>
                         </div>
