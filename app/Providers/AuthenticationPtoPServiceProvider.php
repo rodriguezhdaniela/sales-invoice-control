@@ -14,11 +14,9 @@ class AuthenticationPtoPServiceProvider extends ServiceProvider
      */
     public function register()
     {
-       $this->app->singleton(PlacetoPay::class, function($app){
-
-           return new PlacetoPay(config('services.authentication'));
-       });
-
+        $this->app->singleton(PlacetoPay::class, function ($app) {
+            return new PlacetoPay(config('services.authentication'));
+        });
     }
 
 

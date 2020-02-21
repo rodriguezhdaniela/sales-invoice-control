@@ -31,18 +31,20 @@ class ViewComposerProvider extends ServiceProvider
 
         //Compose a list of cities
         view::composer(
-            'clients.__form', CachedCitiesList::class
+            'clients.__form',
+            CachedCitiesList::class
         );
 
         //Compose a list of countries
         view::composer(
-            'clients.__form', CachedCountriesList::class
+            'clients.__form',
+            CachedCountriesList::class
         );
 
         //Compose a list of states
         view::composer(
-            'clients.__form', CachedStatesList::class
+            'clients.__form',
+            CachedStatesList::class
         );
-
     }
 }

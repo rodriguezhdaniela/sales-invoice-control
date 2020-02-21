@@ -7,7 +7,6 @@ use App\Invoice;
 use App\Http\Requests\DetailStoreRequest;
 use Illuminate\Http\Response;
 
-
 class DetailController extends Controller
 {
     public function __construct()
@@ -82,5 +81,4 @@ class DetailController extends Controller
 
         return redirect()->route('invoices.show', $invoice)->withSuccess(__('Detail deleted sucessfully'));
     }
-
 }

@@ -8,7 +8,7 @@ use Maatwebsite\Excel\Concerns\Importable;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithValidation;
 
-class InvoicesImport implements ToModel,  WithHeadingRow, WithValidation
+class InvoicesImport implements ToModel, WithHeadingRow, WithValidation
 {
     use Importable;
 

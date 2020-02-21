@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-
 class Client extends Model
 {
     protected $guarded = [];
@@ -52,19 +51,14 @@ class Client extends Model
 
     public function scopePersonal_id($query, $personal_id)
     {
-        if ($personal_id != "")
-        {
+        if ($personal_id != "") {
             return $query->where('personal_id', $personal_id);
         }
     }
     public function scopeName($query, $name)
     {
-        if ($name != "")
-        {
+        if ($name != "") {
             return $query->where('name', "LIKE", "%$name%");
         }
-
     }
-
 }
-

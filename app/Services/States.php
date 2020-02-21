@@ -4,7 +4,7 @@ namespace App\Services;
 
 use App\State;
 
-Class States
+class States
 {
     public function get()
     {
@@ -12,9 +12,7 @@ Class States
         $statesArray[''] = 'selected the state';
         foreach ($states as $state) {
             $statesArray[$state->id] = $state->name;
-
         }
         return $statesArray;
     }
-
 }

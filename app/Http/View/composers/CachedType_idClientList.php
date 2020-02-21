@@ -17,7 +17,7 @@ class CachedType_idClientList
 
     public function compose(View $view)
     {
-        $view->with('type_id', Cache::remember('type_id', 600, function(){
+        $view->with('type_id', Cache::remember('type_id', 600, function () {
             return $this->client->type_id;
         }));
     }

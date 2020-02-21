@@ -42,7 +42,6 @@ class InvoiceController extends Controller
             ->paginate(10);
 
         return response()->view('invoices.index', compact('invoices', 'clients', 'sellers'));
-
     }
 
 
@@ -58,7 +57,6 @@ class InvoiceController extends Controller
             'clients' => Client::all(),
             'sellers' => Seller::all(),
         ]);
-
     }
 
     /**
@@ -69,7 +67,6 @@ class InvoiceController extends Controller
      */
     public function store(InvoiceStoreRequest $request)
     {
-
         $invoice = Invoice::create($request->validated());
 
         return redirect()->route('invoices.show', $invoice)->withSuccess(__('Invoice created sucessfully'));
@@ -117,7 +114,6 @@ class InvoiceController extends Controller
         $invoice->update($request->validated());
 
         return redirect()->route('invoices.show', $invoice)->withSuccess(__('Invoice updated sucessfully'));
-
     }
 
     /**
@@ -143,16 +139,17 @@ class InvoiceController extends Controller
     public function exportExcel(InvoicesExport $export)
     {
         return $export;
-
     }
 
-    public function importView(){
+    public function importView()
+    {
         return view('import');
     }
 
 
 
-    public function importExcel(Request $request) {
+    public function importExcel(Request $request)
+    {
         $this->validate($request, [
             'file' => 'required|mimes:xls,xlsx,csv'
         ]);
@@ -161,7 +158,5 @@ class InvoiceController extends Controller
         Excel::import(new InvoicesImport(), $file);
 
         return back()->withSuccess(__('Invoices imported successfully'));
-
-
     }
 }

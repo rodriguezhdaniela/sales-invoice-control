@@ -10,7 +10,6 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Maatwebsite\Excel\Facades\Excel;
 
-
 class SellerController extends Controller
 {
     public function __construct()
@@ -64,7 +63,6 @@ class SellerController extends Controller
         Seller::create($request->validated());
 
         return redirect()->route('sellers.index')->withSuccess(__('Seller created successfully'));
-
     }
 
 
@@ -78,9 +76,7 @@ class SellerController extends Controller
 
     public function edit(Seller $seller)
     {
-
         return view('sellers.edit', compact('seller'));
-
     }
 
     /**
@@ -106,11 +102,8 @@ class SellerController extends Controller
      */
     public function destroy(Seller $seller)
     {
-
         $seller->delete();
 
         return redirect()->route('sellers.index')->withSuccess(__('Seller deleted successfully'));
     }
-
-
 }

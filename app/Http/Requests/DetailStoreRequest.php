@@ -23,7 +23,6 @@ class DetailStoreRequest extends FormRequest
      */
     public function rules()
     {
-
         return [
 
             'product_id' => 'required',

@@ -21,5 +21,4 @@ class State extends Model
     {
         return $this->hasMany(Client::class);
     }
-
 }

@@ -3,7 +3,6 @@
 
 namespace App\Http\View\Composer;
 
-
 use App\Country;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\View\View;
@@ -19,9 +18,8 @@ class CachedCountriesList
 
     public function compose(View $view)
     {
-        $view->with('countries', Cache::remember('countries.enabled', 600, function() {
+        $view->with('countries', Cache::remember('countries.enabled', 600, function () {
             return $this->country->all();
         }));
     }
-
 }

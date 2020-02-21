@@ -2,26 +2,68 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c73f6a82-04bb-426f-b554-b0dbbd33250b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/laravel-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/City.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/City.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Country.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Country.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Exports/InvoicesExport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exports/InvoicesExport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ConfirmPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ConfirmPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DetailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DetailController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentAttemptController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentAttemptController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SellerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SellerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/CheckForMaintenanceMode.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckForMaintenanceMode.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/EncryptCookies.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/EncryptCookies.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/TrimStrings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/TrimStrings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/TrustProxies.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/TrustProxies.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Requests/ClientStoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ClientStoreRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Requests/ClientUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ClientUpdateRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/DetailStoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/DetailStoreRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/DetailUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/DetailUpdateRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/InvoiceStoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/InvoiceStoreRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/InvoiceUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/InvoiceUpdateRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Products/StoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Products/StoreRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Products/UpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Products/UpdateRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Requests/SellerStoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/SellerStoreRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Requests/SellerUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/SellerUpdateRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/View/Composer/CachedCitiesList.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/View/Composer/CachedCitiesList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/View/Composer/CachedCountriesList.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/View/Composer/CachedCountriesList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/View/Composer/CachedStatesList.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/View/Composer/CachedStatesList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/View/composers/CachedStatusList.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/View/composers/CachedStatusList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/View/composers/CachedType_idClientList.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/View/composers/CachedType_idClientList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/View/composers/CachedType_idList.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/View/composers/CachedType_idList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Imports/InvoicesImport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Imports/InvoicesImport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Invoice.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/PaymentAttempt.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/PaymentAttempt.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthenticationPtoPServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthenticationPtoPServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/BroadcastServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/BroadcastServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/ViewComposerProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/ViewComposerProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Seller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Seller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/ClientFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ClientFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/SellerFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/SellerFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_19_144000_create_table_clients.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_19_144000_create_table_clients.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_19_151423_create_table_sellers.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_19_151423_create_table_sellers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/clients/__form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/clients/__form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/clients/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/clients/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/invoices/__form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/__form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/invoices/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/invoices/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/sellers/__form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sellers/__form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/sellers/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sellers/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/States.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/States.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/State.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/State.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +92,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PHPCSFixerProjectConfiguration">
+    <option name="selectedConfigurationId" value="DEFAULT_INTERPRETER" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -171,9 +216,9 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/View/composers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="settings.php.quality.tools" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -281,6 +326,7 @@
       <workItem from="1581929079332" duration="26762000" />
       <workItem from="1581961951817" duration="1597000" />
       <workItem from="1582285920275" duration="13772000" />
+      <workItem from="1582306906682" duration="10547000" />
     </task>
     <servers />
   </component>
@@ -301,25 +347,45 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="50" y="30" key="#PHP_CS_Fixer" timestamp="1582321123219">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="50" y="30" key="#PHP_CS_Fixer/0.0.1920.1040@0.0.1920.1040" timestamp="1582321123219" />
+    <state x="8" y="0" key="#PHP_CS_Fixer_Ignored_Files" timestamp="1582321130125">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="8" y="0" key="#PHP_CS_Fixer_Ignored_Files/0.0.1920.1040@0.0.1920.1040" timestamp="1582321130125" />
     <state x="512" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1581793171232">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="512" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581793171232" />
+    <state x="322" y="251" width="497" height="416" key="#com.intellij.tools.ToolEditorDialog" timestamp="1582312090448">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="322" y="251" width="497" height="416" key="#com.intellij.tools.ToolEditorDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582312090448" />
+    <state x="301" y="158" key="FileChooserDialogImpl" timestamp="1582311923012">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="301" y="158" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582311923012" />
     <state x="251" y="51" key="RollbackChangesDialog" timestamp="1581860131110">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="251" y="51" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581860131110" />
-    <state x="1017" y="287" key="com.intellij.ide.util.TipDialog" timestamp="1582285922943">
+    <state x="779" y="98" width="1141" height="914" key="SettingsEditor" timestamp="1582321138304">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1017" y="287" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582285922943" />
+    <state x="779" y="98" width="1141" height="914" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1582321138304" />
+    <state x="1017" y="287" key="com.intellij.ide.util.TipDialog" timestamp="1582306907717">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1017" y="287" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582306907717" />
     <state x="2" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1581805049583">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="2" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581805049583" />
-    <state x="965" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1581940760986">
+    <state x="505" y="115" width="840" height="1034" key="search.everywhere.popup" timestamp="1582321041863">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="965" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1581940760986" />
+    <state x="505" y="115" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1582321041863" />
   </component>
 </project>

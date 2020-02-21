@@ -8,7 +8,6 @@ use Illuminate\View\View;
 
 class CachedStatusList
 {
-
     private $invoice;
 
     public function __construct(invoice $invoice)
@@ -18,7 +17,7 @@ class CachedStatusList
 
     public function compose(View $view)
     {
-        $view->with('status', Cache::remember('status.enabled', 600, function(){
+        $view->with('status', Cache::remember('status.enabled', 600, function () {
             return $this->invoices->status;
         }));
     }
