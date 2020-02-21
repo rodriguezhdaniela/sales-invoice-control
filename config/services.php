@@ -30,4 +30,10 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'authentication' => [
+        'login' => env('PLACETOPAY_LOGIN'),
+        'tranKey' => env('PLACETOPAY_TRANKEY'),
+        'url' => env('PLACETOPAY_URL'),
+    ],
+
 ];

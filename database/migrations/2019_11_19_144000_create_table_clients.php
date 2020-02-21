@@ -17,6 +17,7 @@ class CreateTableClients extends Migration
             $table->string('type_id');
             $table->string('personal_id')->unique();
             $table->string('name');
+            $table->string('last_name');
             $table->string('phone_number');
             $table->string('email')->unique();
             $table->string('address');

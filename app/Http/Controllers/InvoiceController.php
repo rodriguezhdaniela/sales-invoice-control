@@ -8,7 +8,7 @@ use App\Invoice;
 use App\Seller;
 use App\Client;
 use App\Product;
-use App\PaymentAttempts;
+use App\PaymentAttempt;
 use Exception;
 use Illuminate\Http\Request;
 use App\Exports\InvoicesExport;
@@ -79,10 +79,10 @@ class InvoiceController extends Controller
      * Display the specified resource.
      *
      * @param Invoice $invoice
-     * @param PaymentAttempts $paymentAttempts
+     * @param PaymentAttempt $paymentAttempts
      * @return Response
      */
-    public function show(Invoice $invoice, paymentAttempts $paymentAttempts)
+    public function show(Invoice $invoice, PaymentAttempt $paymentAttempts)
     {
         return response()->view('invoices.show', [
             'invoice' => $invoice,

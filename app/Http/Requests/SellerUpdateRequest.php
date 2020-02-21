@@ -31,6 +31,7 @@ class SellerUpdateRequest extends FormRequest
                 Rule::unique('sellers', 'personal_id')->ignore($this->route('seller')->id),
             ],
             'name' => 'required|string|max:50',
+            'last_name' => 'required|string|max:50',
             'address' => 'required',
             'phone_number' => 'required|min:7|numeric',
             'email' => ['required',

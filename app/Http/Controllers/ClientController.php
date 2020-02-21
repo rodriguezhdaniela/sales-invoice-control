@@ -113,29 +113,6 @@ class ClientController extends Controller
         return redirect()->route('clients.index')->withSuccess(__('Client deleted sucessfully'));
     }
 
-    /*public function getStates()
-    {
-        $data = state::get();
-
-        return response()->json($data);
-    }
-
-    public function getCities(Request $request)
-    {
-        $data = city::where('state_id', $request->state_id)->get();
-        return response()->json($data);
-    }
-
-    /*public function getCities(Request $request, $id)
-    {
-        if($request->ajax()){
-            $cities = City::where('state_id', $request->state_id)->get();
-            foreach ($cities as $city) {
-                $citiesArray[$city->id] = $city->city;
-            }
-            return response()->json($citiesArray);
-        }
-    }*/
 
 
 }

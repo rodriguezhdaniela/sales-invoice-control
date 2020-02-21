@@ -10,6 +10,7 @@ $factory->define(Seller::class, function (Faker $faker) {
         'type_id'=> $faker->randomElement(['Card ID','Foreign ID', 'Passport', 'Other']),
         'personal_id' => $faker->numberBetween(10000000, 99999999),
         'name' => $faker->name(5),
+        'last_name' => $faker->name(4),
         'email' => $faker->unique()->safeEmail,
         'address' => $faker->address,
         'phone_number' => $faker->numberBetween(2222222,39999999999)

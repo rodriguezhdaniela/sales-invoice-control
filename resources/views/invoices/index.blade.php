@@ -33,7 +33,7 @@
                                     <option></option>
                                     @foreach($clients as $client)
                                         <option value="{{ $client->id }}" {{ $client->id == request()->input('search.client') ? 'selected' : ''}}>
-                                            {{ $client->name }}
+                                            {{ $client->fullname }}
                                         </option>
                                     @endforeach
                                 </select>
@@ -46,7 +46,7 @@
                                     <option></option>
                                     @foreach($sellers as $seller)
                                         <option value="{{ $seller->id }}" {{ $seller->id == request()->input('search.seller') ? 'selected' : ''}}>
-                                            {{ $seller->name }}
+                                            {{ $seller->fullname }}
                                         </option>
                                     @endforeach
                                 </select>
@@ -103,8 +103,8 @@
                         <tr>
                             <td nowrap>{{ $invoice->created_at->toDateString() }}</td>
                             <td nowrap>{{ $invoice->expiration_date }}</td>
-                            <td>{{ $invoice->client->name }}</td>
-                            <td>{{ $invoice->seller->name }}</td>
+                            <td>{{ $invoice->client->fullname }}</td>
+                            <td>{{ $invoice->seller->fullname }}</td>
                             <td>{{ $invoice->tax }}</td>
                             <td>{{$invoice->amount }}</td>
                             <td>{{ $invoice->total }}</td>

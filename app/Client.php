@@ -11,6 +11,10 @@ class Client extends Model
 {
     protected $guarded = [];
 
+    public function getFullNameAttribute()
+    {
+        return ucfirst($this->name) . ' ' . ucfirst($this->last_name);
+    }
 
     public function invoices():HasMany
     {

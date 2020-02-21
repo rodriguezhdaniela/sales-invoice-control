@@ -3,11 +3,25 @@
   <component name="ChangeListManager">
     <list default="true" id="c73f6a82-04bb-426f-b554-b0dbbd33250b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/InvoiceFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/InvoiceFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/InvoicesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/InvoicesTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ClientStoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ClientStoreRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ClientUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ClientUpdateRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/SellerStoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/SellerStoreRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/SellerUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/SellerUpdateRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Seller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Seller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/ClientFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ClientFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/SellerFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/SellerFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_19_144000_create_table_clients.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_19_144000_create_table_clients.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_19_151423_create_table_sellers.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_19_151423_create_table_sellers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/clients/__form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/clients/__form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/clients/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/clients/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/invoices/__form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/__form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/invoices/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/invoices/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sellers/__form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sellers/__form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sellers/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sellers/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,6 +276,11 @@
       <workItem from="1579290174564" duration="650000" />
       <workItem from="1579535646106" duration="2961000" />
       <workItem from="1579550083630" duration="6794000" />
+      <workItem from="1581792835864" duration="16429000" />
+      <workItem from="1581855573950" duration="7034000" />
+      <workItem from="1581929079332" duration="26762000" />
+      <workItem from="1581961951817" duration="1597000" />
+      <workItem from="1582285920275" duration="13772000" />
     </task>
     <servers />
   </component>
@@ -282,13 +301,25 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="1017" y="287" key="com.intellij.ide.util.TipDialog" timestamp="1581709905298">
+    <state x="512" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1581793171232">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1017" y="287" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581709905298" />
-    <state x="965" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1581711888048">
+    <state x="512" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581793171232" />
+    <state x="251" y="51" key="RollbackChangesDialog" timestamp="1581860131110">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="965" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1581711888048" />
+    <state x="251" y="51" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581860131110" />
+    <state x="1017" y="287" key="com.intellij.ide.util.TipDialog" timestamp="1582285922943">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1017" y="287" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582285922943" />
+    <state x="2" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1581805049583">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581805049583" />
+    <state x="965" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1581940760986">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="965" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1581940760986" />
   </component>
 </project>

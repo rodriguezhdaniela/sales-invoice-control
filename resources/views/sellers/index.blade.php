@@ -23,12 +23,12 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Type ID</th>
-                        <th>ID Number</th>
-                        <th>Names</th>
-                        <th>Address</th>
-                        <th>Phone Number</th>
-                        <th>Email</th>
+                        <th>{{__('Type ID')}}</th>
+                        <th>{{__('ID Number')}}</th>
+                        <th>{{__('Full name')}}</th>
+                        <th>{{__('Address')}}</th>
+                        <th>{{__('Phone Number')}}</th>
+                        <th>{{__('Email')}}</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -37,7 +37,7 @@
                     <tr>
                         <td>{{$seller->type_id}}</td>
                         <td>{{$seller->personal_id}}</td>
-                        <td>{{$seller->name}}</td>
+                        <td>{{$seller->fullname}}</td>
                         <td>{{$seller->address}}</td>
                         <td>{{$seller->phone_number}}</td>
                         <td>{{$seller->email}}</td>
@@ -56,7 +56,7 @@
                 </tbody>
             </table>
                 <div class="mt-3 d-flex justify-content-center">
-                    {!! $sellers->render() !!}
+                    {{ $sellers->appends(['name', 'personal_id'])->links() }}
                 </div>
             </div>
             <div class="card-footer"></div>

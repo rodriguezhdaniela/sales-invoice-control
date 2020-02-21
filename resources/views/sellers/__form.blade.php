@@ -12,7 +12,7 @@
 
     <div class="col-md-6">
             <div class="form-group">
-                <label for="name">{{ __('personal ID') }}</label>
+                <label for="name">{{ __('Personal ID') }}</label>
                 <input type="text" class="form-control {{ $errors->has('personal_id') ? 'is-invalid' : '' }}" name="personal_id" id="personal_id" value="{{ old('personal_id', $seller->personal_id) }}" required>
                 @includeWhen($errors->has('personal_id'), 'partials.__invalid_feedback', ['feedback' => $errors->first('personal_id')])
             </div>
@@ -26,6 +26,13 @@
         </div>
     </div>
 
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="last_name">{{ __('Last name') }}</label>
+            <input type="text" class="form-control {{ $errors->has('last_name') ? 'is-invalid' : '' }}" name="last_name" id="last_name" value="{{ old('last_name', $seller->last_name) }}" required>
+            @includeWhen($errors->has('last_name'), 'partials.__invalid_feedback', ['feedback' => $errors->first('last_name')])
+        </div>
+    </div>
 
         <div class="col-md-6">
             <div class="form-group">
@@ -37,7 +44,7 @@
 
         <div class="col-md-6">
             <div class="form-group">
-                <label for="phone_number">{{ __('Phone_number') }}</label>
+                <label for="phone_number">{{ __('Phone number') }}</label>
                 <input type="phone_number" class="form-control {{ $errors->has('phone_number') ? 'is-invalid' : '' }}" name="phone_number" id="phone_number" value="{{ old('phone_number', $seller->phone_number) }}" required>
                 @includeWhen($errors->has('phone_number'), 'partials.__invalid_feedback', ['feedback' => $errors->first('phone_number')])
             </div>
