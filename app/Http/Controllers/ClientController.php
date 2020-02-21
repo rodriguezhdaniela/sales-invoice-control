@@ -60,7 +60,6 @@ class ClientController extends Controller
      */
     public function store(ClientStoreRequest $request)
     {
-
         Client::create($request->validated());
 
         return redirect()->route('clients.index')->withSuccess(__('Client created successfully'));
@@ -75,14 +74,12 @@ class ClientController extends Controller
      */
     public function edit(Client $client)
     {
-
         return response()->view('clients.edit', [
             'client' => $client,
             'countries' => Country::all(),
             'states' => State::all(),
             'cities' => City::all(),
         ]);
-
     }
 
     /**
@@ -112,7 +109,4 @@ class ClientController extends Controller
 
         return redirect()->route('clients.index')->withSuccess(__('Client deleted sucessfully'));
     }
-
-
-
 }

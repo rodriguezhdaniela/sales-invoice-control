@@ -17,7 +17,7 @@ class CachedType_idList
 
     public function compose(View $view)
     {
-        $view->with('type_id', Cache::remember('type_id.enabled', 600, function(){
+        $view->with('type_id', Cache::remember('type_id.enabled', 600, function () {
             return $this->seller->type_id;
         }));
     }

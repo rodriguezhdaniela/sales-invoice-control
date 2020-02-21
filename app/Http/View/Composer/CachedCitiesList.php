@@ -3,7 +3,6 @@
 
 namespace App\Http\View\Composer;
 
-
 use App\City;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\View\View;
@@ -19,9 +18,8 @@ class CachedCitiesList
 
     public function compose(View $view)
     {
-        $view->with('cities', Cache::remember('cities.enabled', 600, function() {
+        $view->with('cities', Cache::remember('cities.enabled', 600, function () {
             return $this->city->all();
         }));
     }
-
 }

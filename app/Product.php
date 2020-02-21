@@ -21,20 +21,15 @@ class Product extends Model
 
     public function scopeName($query, $name)
     {
-        if ($name != "")
-        {
+        if ($name != "") {
             return $query->where('name', "LIKE", "%$name%");
         }
-
     }
 
     public function scopeDescription($query, $description)
     {
-        if ($description != "")
-        {
+        if ($description != "") {
             return $query->where('description', "LIKE", "%$description%");
         }
-
     }
-
 }

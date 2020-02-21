@@ -8,7 +8,6 @@ use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-
 class ProductController extends Controller
 {
     public function __construct()

@@ -20,7 +20,6 @@ class PaymentAttemptController extends Controller
      */
     public function paymentAttempt(Invoice $invoice, Request $request, PlacetoPay $placetopay)
     {
-
         $reference = $invoice->id;
         $request2 = [
             "locale" => "es_CO",
@@ -66,17 +65,14 @@ class PaymentAttemptController extends Controller
 
         //dd($response);
         if ($response->isSuccessful()) {
-
             $paymentAttempt->update([
                 'status' => $response->status()->status(),
             ]);
 
             return redirect()->away($response->processUrl());
-
         } else {
             $response->status()->message();
         }
-
     }
 
     public function callBack(PlacetoPay $placetopay, Invoice $invoice)
@@ -105,12 +101,9 @@ class PaymentAttemptController extends Controller
                 ]);
 
                 return redirect()->route('invoices.show', $invoice)->With('success', __('Approved transaction'));
-
             } else {
                 return redirect()->route('invoices.show', $invoice)->With('error', __('failed transaction'));
             }
-
         }
     }
-
 }

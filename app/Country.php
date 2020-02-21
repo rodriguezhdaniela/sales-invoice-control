@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Country extends Model
 {
-
     protected $guarded = [];
 
     /**
@@ -18,5 +17,4 @@ class Country extends Model
     {
         return $this->hasMany(Client::class);
     }
-
 }
