@@ -65,7 +65,17 @@
          <div class="card card-default mt-3">
              <div class="card-header d-flex justify-content-between">
                  <h5 class="card-title mb-0"> {{__('Details')}}</h5>
-                 @if($invoice->status == 'paid')
+
+
+                 @if($invoice->total == 0)
+                     <div>
+                         <div class="btn-group btn-group-sm">
+                             <a href="{{ route('details.create', $invoice) }}" class="btn btn-secondary">
+                                 <i class="fas fa-plus"></i> {{ __('Add product') }}
+                             </a>
+                         </div>
+                     </div>
+                 @elseif($invoice->status == 'paid')
                  @else
                  <div>
                      <div class="btn-group btn-group-sm">
@@ -145,8 +155,6 @@
                      <tr>
                          <th scope="col">{{__('Reference')}}</th>
                          <th scope="col">{{__('Date')}}</th>
-                         {{--<th scope="col">{{__('Bank')}}</th>
-                         <th scope="col">{{__('IP')}}</th>--}}
                          <th scope="col">{{__('Status')}}</th>
                          <th scope="col">{{__('Action')}}</th>
                      </tr>
@@ -160,8 +168,6 @@
                             <tr>
                                 <th scope="row">{{$paymentAttempt->requestId}}</th>
                                 <td>{{$paymentAttempt->created_at->isoFormat('Y-MM-DD')}}</td>
-                                {{--<td>{{ $response->payment()[0]->issuerName() }}</td>
-                                <td>{{$response->request->ipAddress()}}</td>--}}
                                 <td>{{$paymentAttempt->status}}</td>
                                 <td>
                                     <a href={{$paymentAttempt->processUrl}}>See details</a>
@@ -200,19 +206,7 @@
                             <div class="col">{{ $invoice->client->personal_id }}</div>
                         </div>
                         <br>
-                        <div class="row">
-                            <div class="col-md-8">
-                                <h5 class="d-flex justify-content-between align-items-center mb-3">
-                                    <span class="text-muted">{{__('Quantity of Products')}}</span>
-                                </h5>
-                            </div>
-                            <div class="col-md-1">
-                                <h4><span class="badge badge-secondary badge-pill">{{count($invoice->products)}}</span></h4>
-                            </div>
-                        </div>
                     </div>
-
-
                     @foreach($invoice->products as $product)
                         <ul class="list-group mb-3">
                             <li class="list-group-item d-flex justify-content-between lh-condensed">

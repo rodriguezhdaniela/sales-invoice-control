@@ -46,7 +46,7 @@ class Invoice extends Model
      */
     public function PaymentAttempts():BelongsToMany
     {
-        return $this->belongsToMany(PaymentAttempts::class)->withPivot('requestId', 'processUrl', 'status');
+        return $this->belongsToMany(PaymentAttempt::class)->withPivot('requestId', 'processUrl', 'status');
     }
 
     /**

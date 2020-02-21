@@ -5,8 +5,9 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class PaymentAttempts extends Model
+class PaymentAttempt extends Model
 {
+    protected $guarded = [];
     /**
      * Relation between Payment Attempts and Invoices
      * @return BelongsTo

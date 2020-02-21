@@ -177,6 +177,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         App\Providers\ViewComposerProvider::class,
+        App\Providers\AuthenticationPtoPServiceProvider::class,
     ],
 
     /*
