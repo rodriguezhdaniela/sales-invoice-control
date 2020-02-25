@@ -7,6 +7,7 @@ use App\Client;
 use App\Country;
 use App\State;
 use App\User;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -59,9 +60,23 @@ class ClientsTest extends TestCase
 
         $response = $this->actingAs($user)->get(route('clients.create'));
 
-        $response->assertSuccessful();
+        $response->assertOk();
         $response->assertSeeText('Client');
         $response->assertViewIs('clients.create');
+
+    }
+
+    public function testShowTheCreationFormFields()
+    {
+        $user = factory(User::class)->create();
+
+        $response = $this->actingAs($user)->get(route('clients.create'));
+
+        $response->assertSee(__('Type ID'));
+        $response->assertSee(__('Personal ID'));
+        $response->assertSee(__('Name'));
+        $response->assertSee(__('Phone number'));
+        $response->assertSee(route('clients.store'));
 
     }
 
@@ -73,6 +88,7 @@ class ClientsTest extends TestCase
             'type_id' => 'Test type id',
             'personal_id' => 'test personal id',
             'name' => 'Test Client Name',
+            'last_name' => 'Test Client last Name',
             'address' => 'Test Client address',
             'phone_number' =>  '4561234',
             'email' => 'test@email.com',
@@ -97,6 +113,7 @@ class ClientsTest extends TestCase
             'type_id' => 'Test type id',
             'personal_id' => 'test personal id',
             'name' => 'Test Client Name',
+            'last_name' => 'Test Client last Name',
             'address' => 'Test Client address',
             'phone_number' =>  '4561234',
             'email' => 'test@email.com',
@@ -148,6 +165,7 @@ class ClientsTest extends TestCase
             'type_id' => 'Test type id',
             'personal_id' => 'test personal id',
             'name' => 'Test Client Name',
+            'last_name' => 'Test Client last Name',
             'address' => 'Test Client address',
             'phone_number' =>  '4561234',
             'email' => 'test@email.com',
@@ -175,6 +193,7 @@ class ClientsTest extends TestCase
             'type_id' => 'Test type id',
             'personal_id' => 'test personal id',
             'name' => 'Test Client Name',
+            'last_name' => 'Test Client last Name',
             'address' => 'Test Client address',
             'phone_number' =>  '4561234',
             'email' => 'test@email.com',
@@ -219,6 +238,50 @@ class ClientsTest extends TestCase
            'name' => $client->name,
             'email' => $client->email,
         ]);
+    }
+
+    public function testTheIndexOfClientHasClientPaginated()
+    {
+        factory(Client::class, 5)->create();
+        $user = factory(User::class)->create();
+
+        $response = $this->actingAs($user)->get(route('clients.index'));
+
+        $this->assertInstanceof(
+            LengthAwarePaginator::class,
+            $response->original->gatherData()['clients']
+        );
+
+    }
+
+    public function testCanSearchClientsByName()
+    {
+
+        $this->withoutExceptionHandling();
+
+        $user = factory(User::class)->create();
+        $clientA = factory(Client::class)->create(['name' => 'Name client']);
+
+        $response = $this->actingAs($user)->get(route('clients.index', ['search' => 'Name']));
+
+        $viewClients = $response->original->gatherData()['clients'];
+
+        $this->assertTrue($viewClients->contains($clientA));
+
+    }
+
+    public function testCanSearchClientsById()
+    {
+        $this->withoutExceptionHandling();
+
+        $user = factory(User::class)->create();
+        $clientA = factory(Client::class)->create(['personal_id' => '12365489']);
+
+        $response = $this->actingAs($user)->get(route('clients.index', ['search' => '12365']));
+
+        $viewClients = $response->original->gatherData()['clients'];
+
+        $this->assertTrue($viewClients->contains($clientA));
     }
 
 

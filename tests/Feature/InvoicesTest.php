@@ -6,6 +6,7 @@ use App\Client;
 use App\Invoice;
 use App\Seller;
 use App\User;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -63,6 +64,17 @@ class InvoicesTest extends TestCase
         $response->assertViewIs('invoices.create');
     }
 
+    public function testShowTheCreationFormFields()
+    {
+        $user = factory(User::class)->create();
+
+        $response = $this->actingAs($user)->get(route('invoices.create'));
+
+        $response->assertSee(__('Seller'));
+        $response->assertSee(__('Client'));
+        $response->assertSee(route('invoices.store'));
+
+    }
 
      public function testUnauthenticatedUserCannotStoreAInvoice()
      {
@@ -122,7 +134,6 @@ class InvoicesTest extends TestCase
         $response->assertViewIs('invoices.edit');
 
     }
-
 
      public function testUnanthenticatedUserCannotUpdateAInvoice(){
 
@@ -211,10 +222,37 @@ class InvoicesTest extends TestCase
          $response = $this->actingAs($user)->get(route('invoices.show', $invoice));
 
          $response->assertSuccessful();
-         $response->assertSeeText($invoice->client->name);
+         $response->assertSeeText('Seller');
          $response->assertSeeText($invoice->seller->name);
 
      }
 
+    public function testTheIndexOfInvoiceHasInvoicePaginated()
+    {
+        factory(Invoice::class, 5)->create();
+        $user = factory(User::class)->create();
+
+        $response = $this->actingAs($user)->get(route('invoices.index'));
+
+        $this->assertInstanceof(
+            LengthAwarePaginator::class,
+            $response->original->gatherData()['invoices']
+        );
+
+    }
+
+
+    public function testCanSearchInvoicesByStatus()
+    {
+        $user = factory(User::class)->create();
+        $invoiceA = factory(Invoice::class)->create(['status' => 'new']);
+
+        $response = $this->actingAs($user)->get(route('invoices.index', ['search' => 'new']));
+
+        $viewInvoices = $response->original->gatherData()['invoices'];
+
+        $this->assertTrue($viewInvoices->contains($invoiceA));
+
+    }
 }
 

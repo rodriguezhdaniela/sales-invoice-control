@@ -106,13 +106,13 @@ class DetailsTest extends TestCase
 
     }
 
-    /*public function testDetailsCanBeDeleted(){
+   /* public function testDetailsCanBeDeleted(){
 
         $this->withoutExceptionHandling();
 
         $user = factory(User::class)->create();
+        $invoice = factory(Invoice::class)->create();
         $product = factory(Product::class)->create();
-        $invoice = factory(Invoice::class)->create()->attach($product->id);
 
 
         $this->actingAs($user)->delete(route('details.destroy', [$invoice, $product]))

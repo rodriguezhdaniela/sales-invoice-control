@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 class ProductsTest extends TestCase
 {
@@ -58,6 +59,18 @@ class ProductsTest extends TestCase
         $response->assertSuccessful();
         $response->assertSeeText('Product');
         $response->assertViewIs('products.create');
+
+    }
+
+    public function testShowTheCreationFormFields()
+    {
+        $user = factory(User::class)->create();
+
+        $response = $this->actingAs($user)->get(route('products.create'));
+
+        $response->assertSee(__('Name'));
+        $response->assertSee(__('Description'));
+        $response->assertSee(route('products.store'));
 
     }
 
@@ -174,6 +187,47 @@ class ProductsTest extends TestCase
         $this->actingAs($user)->delete(route('products.destroy', $product))
             ->assertRedirect(route('products.index'))
             ->assertSessionHasNoErrors();
+    }
+
+    public function testTheIndexOfProductHasProductPaginated()
+    {
+        factory(Product::class, 5)->create();
+        $user = factory(User::class)->create();
+
+        $response = $this->actingAs($user)->get(route('products.index'));
+
+        $this->assertInstanceof(
+            LengthAwarePaginator::class,
+            $response->original->gatherData()['products']
+        );
+
+    }
+
+    public function testCanSearchProductsByName()
+    {
+        $user = factory(User::class)->create();
+        $productA = factory(Product::class)->create(['name' => 'Test product']);
+
+        $response = $this->actingAs($user)->get(route('products.index', ['search' => 'Test']));
+
+        $viewProducts = $response->original->gatherData()['products'];
+
+        $this->assertTrue($viewProducts->contains($productA));
+
+    }
+
+    public function testCanSearchProductsByDescription()
+    {
+        $user = factory(User::class)->create();
+        $productA = factory(Product::class)->create(['description' => 'negro']);
+
+        $response = $this->actingAs($user)->get(route('products.index', ['search' => 'negro']));
+
+        $viewProducts = $response->original->gatherData()['products'];
+
+        $this->assertTrue($viewProducts->contains($productA));
+
+
     }
 
 

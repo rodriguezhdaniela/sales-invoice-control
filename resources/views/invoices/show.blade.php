@@ -93,12 +93,12 @@
                  <table class="table">
                      <thead>
                      <tr>
-                         <th scope="col" class="text-center">ID</th>
-                         <th scope="col" class="text-center">Name</th>
-                         <th scope="col" class="text-center">Description</th>
-                         <th scope="col" class="text-center">Price</th>
-                         <th scope="col" class="text-center">Quantity</th>
-                         <th scope="col" class="text-center">Amount</th>
+                         <th scope="col" class="text-center">{{__('ID')}}</th>
+                         <th scope="col" class="text-center">{{__('Name')}}</th>
+                         <th scope="col" class="text-center">{{__('Description')}}</th>
+                         <th scope="col" class="text-center">{{__('Price')}}</th>
+                         <th scope="col" class="text-center">{{__('Quantity')}}</th>
+                         <th scope="col" class="text-center">{{__('Amount')}}</th>
                          <th scope="col" class="text-center"></th>
                      </tr>
                      </thead>

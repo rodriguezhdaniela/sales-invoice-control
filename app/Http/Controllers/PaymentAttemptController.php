@@ -11,6 +11,12 @@ use Illuminate\Http\Request;
 
 class PaymentAttemptController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     /**
      * @param Invoice $invoice
      * @param Request $request

@@ -2,68 +2,114 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c73f6a82-04bb-426f-b554-b0dbbd33250b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/laravel-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/ImportInvoiceTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/City.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/City.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Client.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Country.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Country.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exports/InvoicesExport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exports/InvoicesExport.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ConfirmPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ConfirmPasswordController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DetailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DetailController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentAttemptController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentAttemptController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SellerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SellerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/CheckForMaintenanceMode.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckForMaintenanceMode.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/EncryptCookies.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/EncryptCookies.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/TrimStrings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/TrimStrings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/TrustProxies.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/TrustProxies.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ClientStoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ClientStoreRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ClientUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ClientUpdateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/DetailStoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/DetailStoreRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/DetailUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/DetailUpdateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/InvoiceStoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/InvoiceStoreRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/InvoiceUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/InvoiceUpdateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Products/StoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Products/StoreRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Products/UpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Products/UpdateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/SellerStoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/SellerStoreRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/SellerUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/SellerUpdateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/View/Composer/CachedCitiesList.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/View/Composer/CachedCitiesList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/View/Composer/CachedCountriesList.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/View/Composer/CachedCountriesList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/View/Composer/CachedStatesList.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/View/Composer/CachedStatesList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/View/composers/CachedStatusList.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/View/composers/CachedStatusList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/View/composers/CachedType_idClientList.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/View/composers/CachedType_idClientList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/View/composers/CachedType_idList.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/View/composers/CachedType_idList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Imports/InvoicesImport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Imports/InvoicesImport.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Invoice.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/PaymentAttempt.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/PaymentAttempt.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthenticationPtoPServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthenticationPtoPServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/BroadcastServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/BroadcastServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/ViewComposerProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/ViewComposerProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Seller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Seller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/States.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/States.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/State.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/State.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/invoices/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ClientsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ClientsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/DetailsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/DetailsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/InvoicesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/InvoicesTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/PaymentAttemptsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/PaymentAttemptsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ProductsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ProductsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/SellersTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/SellersTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/City.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/City.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Client.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Client.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Console/Commands.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Console/Commands.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Console/Kernel.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Console/Kernel.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Console/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Console/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Console/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Console/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Country.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Country.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Exceptions/Handler.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Exceptions/Handler.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Exceptions/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Exceptions/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Exceptions/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Exceptions/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Exports/InvoicesExport.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Exports/InvoicesExport.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Exports/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Exports/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Exports/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Exports/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Controllers/Auth/ConfirmPasswordController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Controllers/Auth/ConfirmPasswordController.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Controllers/Auth/ForgotPasswordController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Controllers/Auth/ForgotPasswordController.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Controllers/Auth/LoginController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Controllers/Auth/LoginController.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Controllers/Auth/RegisterController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Controllers/Auth/RegisterController.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Controllers/Auth/ResetPasswordController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Controllers/Auth/ResetPasswordController.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Controllers/Auth/VerificationController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Controllers/Auth/VerificationController.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Controllers/Auth/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Controllers/Auth/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Controllers/Auth/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Controllers/Auth/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Controllers/ClientController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Controllers/ClientController.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Controllers/Controller.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Controllers/Controller.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Controllers/DetailController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Controllers/DetailController.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Controllers/HomeController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Controllers/HomeController.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Controllers/InvoiceController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Controllers/InvoiceController.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Controllers/ProductController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Controllers/ProductController.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Controllers/SellerController.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Controllers/SellerController.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Controllers/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Controllers/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Controllers/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Controllers/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Kernel.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Kernel.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Middleware/Authenticate.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Middleware/Authenticate.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Middleware/CheckForMaintenanceMode.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Middleware/CheckForMaintenanceMode.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Middleware/EncryptCookies.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Middleware/EncryptCookies.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Middleware/RedirectIfAuthenticated.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Middleware/RedirectIfAuthenticated.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Middleware/TrimStrings.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Middleware/TrimStrings.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Middleware/TrustProxies.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Middleware/TrustProxies.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Middleware/VerifyCsrfToken.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Middleware/VerifyCsrfToken.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Middleware/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Middleware/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Middleware/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Middleware/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Requests/ClientStoreRequest.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Requests/ClientStoreRequest.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Requests/ClientUpdateRequest.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Requests/ClientUpdateRequest.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Requests/DetailStoreRequest.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Requests/DetailStoreRequest.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Requests/DetailUpdateRequest.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Requests/DetailUpdateRequest.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Requests/InvoiceStoreRequest.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Requests/InvoiceStoreRequest.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Requests/InvoiceUpdateRequest.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Requests/InvoiceUpdateRequest.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Requests/Products/StoreRequest.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Requests/Products/StoreRequest.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Requests/Products/UpdateRequest.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Requests/Products/UpdateRequest.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Requests/Products/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Requests/Products/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Requests/Products/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Requests/Products/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Requests/SellerStoreRequest.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Requests/SellerStoreRequest.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Requests/SellerUpdateRequest.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Requests/SellerUpdateRequest.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Requests/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Requests/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/Requests/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/Requests/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/View/Composer/CachedCitiesList.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/View/Composer/CachedCitiesList.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/View/Composer/CachedCountriesList.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/View/Composer/CachedCountriesList.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/View/Composer/CachedStatesList.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/View/Composer/CachedStatesList.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/View/Composer/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/View/Composer/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/View/Composer/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/View/Composer/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/View/composers/CachedStatusList.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/View/composers/CachedStatusList.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/View/composers/CachedType_idClientList.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/View/composers/CachedType_idClientList.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/View/composers/CachedType_idList.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/View/composers/CachedType_idList.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/View/composers/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/View/composers/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/View/composers/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/View/composers/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/View/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/View/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/View/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/View/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Http/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Http/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Imports/InvoicesImport.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Imports/InvoicesImport.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Imports/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Imports/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Imports/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Imports/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Invoice.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Invoice.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Product.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Product.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Providers/AppServiceProvider.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Providers/AppServiceProvider.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Providers/AuthServiceProvider.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Providers/AuthServiceProvider.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Providers/BroadcastServiceProvider.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Providers/BroadcastServiceProvider.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Providers/EventServiceProvider.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Providers/EventServiceProvider.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Providers/RouteServiceProvider.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Providers/RouteServiceProvider.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Providers/ViewComposerProvider.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Providers/ViewComposerProvider.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Providers/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Providers/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Providers/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Providers/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Seller.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Seller.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Services/States.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Services/States.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Services/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Services/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/Services/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Services/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/State.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/State.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/User.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/User.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/_css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/_css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/_css/octicons.css" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/_css/octicons.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/_css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/_css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/_js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/_js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/_js/d3.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/_js/d3.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/_js/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/_js/file.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/_js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/_js/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/_js/nv.d3.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/_js/nv.d3.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/_js/popper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/_js/popper.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/coverage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,9 +264,15 @@
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="settings.php.quality.tools" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Daniela\laragon\www\invoices\resources\js\components" />
+      <recent name="D:\Daniela\laragon\www\invoices\resources\js" />
+      <recent name="D:\Daniela\laragon\www\invoices\app" />
+      <recent name="D:\Daniela\laragon\www\invoices\app\Entities" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Daniela\laragon\www\invoices\app\Http\View\composers" />
       <recent name="D:\Daniela\laragon\www\invoices\app\Http\View\Composer" />
@@ -228,18 +280,21 @@
       <recent name="D:\Daniela\laragon\www\invoices\resources\views\partials" />
       <recent name="D:\Daniela\laragon\www\invoices\tests\Feature" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Daniela\laragon\www\invoices\resources\js\components" />
-      <recent name="D:\Daniela\laragon\www\invoices\resources\js" />
-      <recent name="D:\Daniela\laragon\www\invoices\app" />
-      <recent name="D:\Daniela\laragon\www\invoices\app\Entities" />
-    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHPUnit.ImportInvoiceTest">
+    <configuration name="ImportInvoiceTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\ImportInvoiceTest" file="$PROJECT_DIR$/tests/Feature/ImportInvoiceTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.ImportInvoiceTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -326,7 +381,10 @@
       <workItem from="1581929079332" duration="26762000" />
       <workItem from="1581961951817" duration="1597000" />
       <workItem from="1582285920275" duration="13772000" />
-      <workItem from="1582306906682" duration="10547000" />
+      <workItem from="1582306906682" duration="16564000" />
+      <workItem from="1582381772784" duration="728000" />
+      <workItem from="1582536037573" duration="27556000" />
+      <workItem from="1582631837603" duration="247000" />
     </task>
     <servers />
   </component>
@@ -347,6 +405,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="1029" y="68" width="744" height="912" key="#ImportInvoiceTest" timestamp="1582552853201">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1029" y="68" width="744" height="912" key="#ImportInvoiceTest/0.0.1920.1040@0.0.1920.1040" timestamp="1582552853201" />
     <state x="50" y="30" key="#PHP_CS_Fixer" timestamp="1582321123219">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -363,22 +425,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="322" y="251" width="497" height="416" key="#com.intellij.tools.ToolEditorDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582312090448" />
+    <state x="285" y="76" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1582550245029">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="285" y="76" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582550245029" />
     <state x="301" y="158" key="FileChooserDialogImpl" timestamp="1582311923012">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="301" y="158" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582311923012" />
+    <state x="1205" y="433" key="NewPhpFileDialog" timestamp="1582551977154">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1205" y="433" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582551977154" />
     <state x="251" y="51" key="RollbackChangesDialog" timestamp="1581860131110">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="251" y="51" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581860131110" />
-    <state x="779" y="98" width="1141" height="914" key="SettingsEditor" timestamp="1582321138304">
+    <state x="779" y="98" width="1141" height="914" key="SettingsEditor" timestamp="1582560661664">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="779" y="98" width="1141" height="914" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1582321138304" />
-    <state x="1017" y="287" key="com.intellij.ide.util.TipDialog" timestamp="1582306907717">
+    <state x="779" y="98" width="1141" height="914" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1582560661664" />
+    <state x="1017" y="287" key="com.intellij.ide.util.TipDialog" timestamp="1582631845335">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1017" y="287" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582306907717" />
+    <state x="1017" y="287" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582631845335" />
     <state x="2" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1581805049583">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
