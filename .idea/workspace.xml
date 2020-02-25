@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c73f6a82-04bb-426f-b554-b0dbbd33250b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/Feature/ImportInvoiceTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Jobs/NotifyUserOfCompletedExport.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/ExportTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentAttemptController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentAttemptController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/invoices/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ClientsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ClientsTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/DetailsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/DetailsTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/InvoicesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/InvoicesTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/PaymentAttemptsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/PaymentAttemptsTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ProductsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ProductsTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/SellersTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/SellersTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/invoices/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/coverage/City.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/City.php.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/coverage/Client.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Client.php.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/coverage/Console/Commands.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Console/Commands.php.html" afterDir="false" />
@@ -99,15 +97,6 @@
       <change beforePath="$PROJECT_DIR$/tests/coverage/Services/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/Services/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/coverage/State.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/State.php.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/coverage/User.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/User.php.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/coverage/_css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/_css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/coverage/_css/octicons.css" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/_css/octicons.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/coverage/_css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/_css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/coverage/_js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/_js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/coverage/_js/d3.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/_js/d3.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/coverage/_js/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/_js/file.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/coverage/_js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/_js/jquery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/coverage/_js/nv.d3.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/_js/nv.d3.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/coverage/_js/popper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/_js/popper.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/coverage/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/coverage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests/coverage/index.html" afterDir="false" />
     </list>
@@ -262,23 +251,23 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/Feature" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Daniela\laragon\www\invoices\tests\Feature" />
+      <recent name="D:\Daniela\laragon\www\invoices\app\Http\View\composers" />
+      <recent name="D:\Daniela\laragon\www\invoices\app\Http\View\Composer" />
+      <recent name="D:\Daniela\laragon\www\invoices\database\seeds" />
+      <recent name="D:\Daniela\laragon\www\invoices\resources\views\partials" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Daniela\laragon\www\invoices\resources\js\components" />
       <recent name="D:\Daniela\laragon\www\invoices\resources\js" />
       <recent name="D:\Daniela\laragon\www\invoices\app" />
       <recent name="D:\Daniela\laragon\www\invoices\app\Entities" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Daniela\laragon\www\invoices\app\Http\View\composers" />
-      <recent name="D:\Daniela\laragon\www\invoices\app\Http\View\Composer" />
-      <recent name="D:\Daniela\laragon\www\invoices\database\seeds" />
-      <recent name="D:\Daniela\laragon\www\invoices\resources\views\partials" />
-      <recent name="D:\Daniela\laragon\www\invoices\tests\Feature" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.ImportInvoiceTest">
@@ -384,7 +373,7 @@
       <workItem from="1582306906682" duration="16564000" />
       <workItem from="1582381772784" duration="728000" />
       <workItem from="1582536037573" duration="27556000" />
-      <workItem from="1582631837603" duration="247000" />
+      <workItem from="1582631837603" duration="25043000" />
     </task>
     <servers />
   </component>
@@ -433,6 +422,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="301" y="158" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582311923012" />
+    <state x="324" y="142" key="NewPhpClassDialog" timestamp="1582660329752">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="324" y="142" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582660329752" />
     <state x="1205" y="433" key="NewPhpFileDialog" timestamp="1582551977154">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\InvoicesExcelExport;
 use App\Http\Requests\InvoiceStoreRequest;
 use App\Http\Requests\InvoiceUpdateRequest;
 use App\Invoice;
+use App\Jobs\NotifyUserOfCompletedExport;
 use App\Seller;
 use App\Client;
 use App\Product;
@@ -146,8 +148,6 @@ class InvoiceController extends Controller
         return view('import');
     }
 
-
-
     public function importExcel(Request $request)
     {
         $this->validate($request, [
@@ -158,5 +158,24 @@ class InvoiceController extends Controller
         Excel::import(new InvoicesImport(), $file);
 
         return back()->withSuccess(__('Invoices imported successfully'));
+    }
+
+    public function export()
+    {
+        (new InvoicesExcelExport)->queue('invoices.xlsx')->chain([
+            new NotifyUserOfCompletedExport(request()->user()),
+        ]);
+
+        return back()->withSuccess('Export started');
+    }
+
+    public function exportCSV()
+    {
+        return Excel::download(new InvoicesExcelExport, 'invoices.csv');
+    }
+
+    public function exportTXT(Invoice $invoice)
+    {
+        //
     }
 }

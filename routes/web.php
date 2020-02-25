@@ -21,6 +21,12 @@ Route::post('invoices/import', 'InvoiceController@importExcel')->name('invoices.
 
 Route::get('invoices/export', 'InvoiceController@exportExcel')->name('invoices.excel');
 
+Route::get('invoices/csv', 'InvoiceController@exportCSV')->name('csv');
+
+Route::get('invoices/txt', 'InvoiceController@exportTXT')->name('txt');
+
+Route::get('invoices/excel', 'InvoiceController@export')->name('excel');
+
 Route::resource('/invoices','InvoiceController');
 
 Route::resource('/invoices/{invoice}/details', 'DetailController')->except('show', 'edit', 'update');
