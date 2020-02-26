@@ -138,9 +138,18 @@ class InvoiceController extends Controller
      * @param InvoicesExport $export
      * @return InvoicesExport
      */
-    public function exportExcel(InvoicesExport $export)
+    /*public function exportExcel(InvoicesExport $export)
     {
         return $export;
+    }*/
+
+    public function exportExcel()
+    {
+        (new InvoicesExport)->queue('invoices.xlsx')->chain([
+            new NotifyUserOfCompletedExport(request()->user()),
+        ]);
+
+        return back()->withSuccess('Export started!');
     }
 
     public function importView()
@@ -171,11 +180,11 @@ class InvoiceController extends Controller
 
     public function exportCSV()
     {
-        return Excel::download(new InvoicesExcelExport, 'invoices.csv');
+        return Excel::download(new InvoicesExport, 'invoices.csv');
     }
 
-    public function exportTXT(Invoice $invoice)
+    public function exportTSV(Invoice $invoice)
     {
-        //
+        return Excel::download(new InvoicesExport, 'invoices.tsv');
     }
 }

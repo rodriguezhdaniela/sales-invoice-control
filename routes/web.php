@@ -23,7 +23,7 @@ Route::get('invoices/export', 'InvoiceController@exportExcel')->name('invoices.e
 
 Route::get('invoices/csv', 'InvoiceController@exportCSV')->name('csv');
 
-Route::get('invoices/txt', 'InvoiceController@exportTXT')->name('txt');
+Route::get('invoices/tsv', 'InvoiceController@exportTSV')->name('tsv');
 
 Route::get('invoices/excel', 'InvoiceController@export')->name('excel');
 

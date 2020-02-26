@@ -33,4 +33,5 @@ class InvoicesExport implements FromView, Responsable
             'invoices' => Invoice::all()
         ]);
     }
+
 }

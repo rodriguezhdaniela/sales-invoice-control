@@ -3,6 +3,7 @@
 
 namespace App\Jobs;
 
+use App\Exports\InvoicesExport;
 use App\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -22,6 +23,6 @@ class NotifyUserOfCompletedExport implements ShouldQueue
 
     public function handle()
     {
-        $this->user->notify(new InvoicesExcelExport());
+        $this->user->notify(new InvoicesExport());
     }
 }

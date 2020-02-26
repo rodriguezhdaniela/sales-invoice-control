@@ -78,9 +78,9 @@
                     <h4 class="card-title mb-0">{{__('Invoice')}}s</h4>
                     <div class="btn-group-sm">
                         <a href="{{ route('invoices.create') }}" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Create</a>
-                        {{--<a href="{{ route('invoices.excel') }}" class="btn btn-success btn-sm"><i class="fas fa-download"></i> Download</a>--}}
+                        <a href="{{ route('invoices.excel') }}" class="btn btn-success btn-sm"><i class="fas fa-download"></i> Download</a>
                         <a href="{{ route('csv') }}" class="btn btn-success btn-sm"><i class="fas fa-download"></i>csv</a>
-                        <a href="{{ route('txt') }}" class="btn btn-success btn-sm"><i class="fas fa-download"></i>txt</a>
+                        <a href="{{ route('tsv') }}" class="btn btn-success btn-sm"><i class="fas fa-download"></i>tsv</a>
                         <a href="{{ route('excel') }}" class="btn btn-success btn-sm"><i class="fas fa-download"></i>xlsx</a>
                         <a href="{{ route('import.view') }}" class="btn btn-success btn-sm"><i class="fas fa-upload"></i> Import</a>
                     </div>
