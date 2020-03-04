@@ -88,6 +88,7 @@
             <a href="/clients">Clients</a>
             <a href="/sellers">Sellers</a>
             <a href="/products">Products</a>
+            {{-- pendiente poner users, roles --}}
             <a href="https://github.com/rodriguezhdaniela/-Sales-Invoice-Control.git">GitHub</a>
         </div>
     </div>

@@ -26,14 +26,17 @@ class ClientController extends Controller
      */
     public function index(Request $request)
     {
+
         $name = $request->get('name');
         $personal_id = $request->get('personal_id');
 
         $clients = Client::name($name)
+            ->name($name)
             ->personal_id($personal_id)
             ->paginate(10);
 
-        return response()->view('clients.index', compact('clients'));
+        return response()->view('clients.index', compact('clients','city', 'country', 'state'));
+
     }
 
     /**
@@ -63,6 +66,12 @@ class ClientController extends Controller
         Client::create($request->validated());
 
         return redirect()->route('clients.index')->withSuccess(__('Client created successfully'));
+    }
+
+
+    public function show(Client $client)
+    {
+        return response()->view('clients.show', ['client' => $client]);
     }
 
 

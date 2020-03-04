@@ -5,7 +5,9 @@
         <div class="card-header d-flex justify-content-between">
             <h5 class="card-title mb-0">Sellers</h5>
             <div class="btn-group-sm">
-                <a class="btn btn-primary btn-sm" href="{{ route('sellers.create') }}"><i class="fas fa-plus"></i> Create</a>
+                @can('sellers.create')
+                    <a class="btn btn-primary btn-sm" href="{{ route('sellers.create') }}"><i class="fas fa-plus"></i> Create</a>
+                @endcan
             </div>
         </div>
         <div class="container">
@@ -43,12 +45,14 @@
                         <td>{{$seller->email}}</td>
                         <td class="text-right">
                             <div class="btn-group btn-group-sm">
-                                <a href="{{ route('sellers.edit', $seller) }}" class="btn btn-link text-secondary">
-                                <i class="fas fa-edit"></i> Edit
-                                </a>
-                                <button type="button" class="btn btn-link text-danger" data-route="{{ route('sellers.destroy', $seller) }}" data-toggle="modal" data-target="#confirmDeleteModal" title="{{ __('Delete') }}">
-                                    <i class="fas fa-trash"></i> Delete
-                                </button>
+                                @can('sellers.edit')
+                                    <a href="{{ route('sellers.edit', $seller) }}" class="btn btn-link text-secondary">
+                                    <i class="fas fa-edit"></i>{{__('Edit')}}</a>
+                                @endcan
+                                @can('sellers.destroy')
+                                    <button type="button" class="btn btn-link text-danger" data-route="{{ route('sellers.destroy', $seller) }}" data-toggle="modal" data-target="#confirmDeleteModal" title="{{ __('Delete') }}">
+                                        <i class="fas fa-trash"></i>{{__('Delete')}}</button>
+                                    @endcan
                             </div>
                         </td>
                     </tr>
@@ -59,8 +63,8 @@
                     {{ $sellers->appends(['name', 'personal_id'])->links() }}
                 </div>
             </div>
-            <div class="card-footer"></div>
         </div>
+        <div class="card-footer"></div>
     </div>
 @endsection
 @push('modals')

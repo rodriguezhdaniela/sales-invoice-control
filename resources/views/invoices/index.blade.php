@@ -77,8 +77,10 @@
                 <div class="card-header d-flex justify-content-between">
                     <h4 class="card-title mb-0">{{__('Invoice')}}s</h4>
                     <div class="btn-group-sm">
+                        @can('invoices.create')
                         <a href="{{ route('invoices.create') }}" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Create</a>
-                        {{--<a href="{{ route('invoices.excel') }}" class="btn btn-success btn-sm"><i class="fas fa-download"></i> Download</a>--}}
+                        @endcan
+                            {{--<a href="{{ route('invoices.excel') }}" class="btn btn-success btn-sm"><i class="fas fa-download"></i> Download</a>--}}
                         <a href="{{ route('csv') }}" class="btn btn-success btn-sm"><i class="fas fa-download"></i>csv</a>
                         <a href="{{ route('txt') }}" class="btn btn-success btn-sm"><i class="fas fa-download"></i>txt</a>
                         <a href="{{ route('excel') }}" class="btn btn-success btn-sm"><i class="fas fa-download"></i>xlsx</a>
@@ -114,15 +116,21 @@
                                 <td>{{ $invoice->status }}</td>
                                 <td class="text-right">
                                     <div class="btn-group btn-group-sm">
-                                        <a href="{{ route('invoices.show', $invoice) }}" class="btn btn-link">
-                                            <i class="fas fa-eye"></i> view
-                                        </a>
-                                        <a href="{{ route('invoices.edit', $invoice) }}" class="btn btn-link">
-                                            <i class="fas fa-edit"></i> Edit
-                                        </a>
-                                        <button type="button" class="btn btn-link text-danger" data-route="{{ route('invoices.destroy', $invoice) }}" data-toggle="modal" data-target="#confirmDeleteModal" title="{{ __('Delete') }}">
-                                            <i class="fas fa-trash"></i> Delete
-                                        </button>
+                                        @can('invoices.show')
+                                            <a href="{{ route('invoices.show', $invoice) }}" class="btn btn-link">
+                                                <i class="fas fa-eye"></i>{{__('View')}}
+                                            </a>
+                                        @endcan
+                                        @can('invoices.edit')
+                                            <a href="{{ route('invoices.edit', $invoice) }}" class="btn btn-link">
+                                                <i class="fas fa-edit"></i>{{__('Edit')}}
+                                            </a>
+                                            @endcan
+                                            @can('invoices.destroy')
+                                                <button type="button" class="btn btn-link text-danger" data-route="{{ route('invoices.destroy', $invoice) }}" data-toggle="modal" data-target="#confirmDeleteModal" title="{{ __('Delete') }}">
+                                                    <i class="fas fa-trash"></i>{{__('Delete')}}
+                                                </button>
+                                            @endcan
                                     </div>
                                 </td>
                             </tr>

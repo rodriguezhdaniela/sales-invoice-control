@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             CitiesTableSeeder::class,
             ClientTableSeeder::class,
             InvoiceTableSeeder::class,
+            PermissionsTableSeeder::class,
         ]);
     }
 

@@ -30,23 +30,38 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    {{--<ul class="navbar-nav mr-auto">
-
-                    </ul>--}}
 
                     <ul class="nav nav-pills">
+                        @can('invoices.index')
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('invoices.index') }}">Sales Invoices</a>
+                            <a class="nav-link" href="{{ route('invoices.index') }}">{{__('Invoices')}}</a>
                         </li>
+                        @endcan
+                        @can('clients.index')
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('clients.index') }}">{{ __('Clients') }}</a>
                         </li>
+                        @endcan
+                        @can('sellers.index')
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('sellers.index') }}">{{ __('Sellers') }}</a>
                         </li>
+                        @endcan
+                        @can('products.index')
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('products.index') }}">{{ __('Products') }}</a>
                         </li>
+                        @endcan
+                        @can('users.index')
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('users.index') }}">{{ __('Users') }}</a>
+                        </li>
+                        @endcan
+                        @can('roles.index')
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('roles.index') }}">{{ __('Roles') }}</a>
+                        </li>
+                        @endcan
                     </ul>
 
                     <!-- Right Side Of Navbar -->
