@@ -54,7 +54,6 @@ class ClientController extends Controller
         ]);
     }
 
-
     /**
      * Store a newly created resource in storage.
      *
@@ -78,13 +77,14 @@ class ClientController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param client $client
+     * @param Client $clients
      * @return Response
      */
-    public function edit(Client $client)
+    public function edit(Client $clients)
     {
+
         return response()->view('clients.edit', [
-            'client' => $client,
+            'client' => $clients,
             'countries' => Country::all(),
             'states' => State::all(),
             'cities' => City::all(),

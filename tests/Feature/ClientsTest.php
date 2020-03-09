@@ -260,7 +260,7 @@ class ClientsTest extends TestCase
         $this->withoutExceptionHandling();
 
         $user = factory(User::class)->create();
-        $clientA = factory(Client::class)->create(['name' => 'Name client']);
+        $clientA = factory(Client::class)->create(['name' => 'Name clients']);
 
         $response = $this->actingAs($user)->get(route('clients.index', ['search' => 'Name']));
 

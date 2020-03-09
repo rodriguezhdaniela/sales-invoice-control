@@ -16,22 +16,46 @@ use Illuminate\Http\Request;
 use App\Exports\InvoicesExport;
 use App\Imports\InvoicesImport;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 
 class InvoiceController extends Controller
 {
+
     public function __construct()
     {
         $this->middleware('auth');
     }
+
 
     /**
      * Display a listing of the resource.
      * @param Request $request
      * @return Response
      */
+
     public function index(Request $request)
     {
+        $user = Auth::user();
+        $client = DB::table('clients')->where('personal_id', $user->personal_id)->get();
+
+        if($user->roles[0]->name == 'Client')
+        {
+            if ($user->personal_id == $client[0]->personal_id)
+            {
+                $invoices = Invoice::with(['client', 'seller'])
+                    ->where('client_id', $client[0]->id)
+                    ->get();
+
+                return response()->view('invoices.clients.index', compact('invoices', 'client'));
+
+            }else{
+                return response()->view('invoices.clients.index')->with('info', 'you have no associated invoices');
+            }
+
+        }else{
+
         $clients = Client::select(['id', 'name'])->get();
         $sellers = Seller::select(['id', 'name'])->get();
 
@@ -44,6 +68,7 @@ class InvoiceController extends Controller
             ->paginate(10);
 
         return response()->view('invoices.index', compact('invoices', 'clients', 'sellers'));
+        }
     }
 
 
@@ -54,11 +79,27 @@ class InvoiceController extends Controller
      */
     public function create()
     {
-        return response()->view('invoices.create', [
-            'invoice' => new Invoice,
-            'clients' => Client::all(),
-            'sellers' => Seller::all(),
-        ]);
+        $user = Auth::user();
+
+        if($user->roles[0]->name == 'Seller')
+        {
+            $sellers = Seller::where('personal_id', $user->personal_id)
+                ->get();
+
+            return response()->view('invoices.create', [
+                'invoice' => new Invoice,
+                'clients' => Client::all(),
+                'sellers' => $sellers
+            ]);
+
+
+        }else {
+            return response()->view('invoices.create', [
+                'invoice' => new Invoice,
+                'clients' => Client::all(),
+                'sellers' => Seller::all(),
+            ]);
+        }
     }
 
     /**
@@ -72,6 +113,7 @@ class InvoiceController extends Controller
         $invoice = Invoice::create($request->validated());
 
         return redirect()->route('invoices.show', $invoice)->withSuccess(__('Invoice created sucessfully'));
+
     }
 
     /**
@@ -97,11 +139,27 @@ class InvoiceController extends Controller
      */
     public function edit(Invoice $invoice)
     {
-        return response()->view('invoices.edit', [
-            'invoice' => $invoice,
-            'clients' => Client::all(),
-            'sellers' => Seller::all(),
-        ]);
+        $user = Auth::user();
+
+        if($user->roles[0]->name == 'Seller')
+        {
+            $sellers = Seller::where('personal_id', $user->personal_id)
+                ->get();
+
+            return response()->view('invoices.edit', [
+                'invoice' => $invoice,
+                'clients' => Client::all(),
+                'sellers' => $sellers
+            ]);
+
+        }else {
+            return response()->view('invoices.edit', [
+                'invoice' => $invoice,
+                'clients' => Client::all(),
+                'sellers' => Seller::all(),
+            ]);
+        }
+
     }
 
     /**

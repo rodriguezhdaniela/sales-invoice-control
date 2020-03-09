@@ -31,9 +31,9 @@
                                 <label for="client">{{__('Client')}}</label>
                                 <select name="search[client]" id="client" class="custom-select">
                                     <option></option>
-                                    @foreach($clients as $client)
-                                        <option value="{{ $client->id }}" {{ $client->id == request()->input('search.client') ? 'selected' : ''}}>
-                                            {{ $client->fullname }}
+                                    @foreach($clients as $value)
+                                        <option value="{{ $value->id }}" {{ $value->id == request()->input('search.clients') ? 'selected' : ''}}>
+                                            {{ $value->fullname }}
                                         </option>
                                     @endforeach
                                 </select>
@@ -138,7 +138,7 @@
                         </tbody>
                     </table>
                     <div class="mt-3 d-flex justify-content-center">
-                        {{ $invoices->appends(['search.client', 'search.seller', 'search.status', 'search.expiration_date', 'search.expedition_date'])->links() }}
+                        {{ $invoices->appends(['search.clients', 'search.seller', 'search.status', 'search.expiration_date', 'search.expedition_date'])->links() }}
                     </div>
                 </div>
             </div>

@@ -12,12 +12,16 @@
                 </a>
                 @if($invoice->status == 'paid')
                 @else
-                <a href="{{ route('invoices.edit', $invoice) }}" class="btn btn-secondary">
-                    <i class="fas fa-edit"></i> {{ __('Edit') }}
-                </a>
-                <button type="button" class="btn btn-danger" data-route="{{ route('invoices.destroy', $invoice) }}" data-toggle="modal" data-target="#confirmDeleteModal">
-                    <i class="fas fa-trash"></i> {{ __('Delete') }}
-                </button>
+                    @can('invoices.edit')
+                        <a href="{{ route('invoices.edit', $invoice) }}" class="btn btn-secondary">
+                            <i class="fas fa-edit"></i> {{ __('Edit') }}
+                        </a>
+                    @endcan
+                    @can('invoices.destroy')
+                        <button type="button" class="btn btn-danger" data-route="{{ route('invoices.destroy', $invoice) }}" data-toggle="modal" data-target="#confirmDeleteModal">
+                            <i class="fas fa-trash"></i> {{ __('Delete') }}
+                        </button>
+                        @endcan
                 @endif
             </div>
         </div>
@@ -70,18 +74,22 @@
                  @if($invoice->total == 0)
                      <div>
                          <div class="btn-group btn-group-sm">
-                             <a href="{{ route('details.create', $invoice) }}" class="btn btn-secondary">
-                                 <i class="fas fa-plus"></i> {{ __('Add product') }}
-                             </a>
+                             @can('details.create')
+                                 <a href="{{ route('details.create', $invoice) }}" class="btn btn-secondary">
+                                     <i class="fas fa-plus"></i> {{ __('Add product') }}
+                                 </a>
+                                 @endcan
                          </div>
                      </div>
                  @elseif($invoice->status == 'paid')
                  @else
                  <div>
                      <div class="btn-group btn-group-sm">
+                         @can('details.create')
                          <a href="{{ route('details.create', $invoice) }}" class="btn btn-secondary">
                              <i class="fas fa-plus"></i> {{ __('Add product') }}
                          </a>
+                         @endcan
                          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
                              <i class="fas fa-money-bill-wave-alt"></i> {{ __('Pay Invoice') }}
                          </button>
@@ -115,9 +123,11 @@
                              @else
                              <td class="td-button">
                                  <div class="btn-group btn-group-sm">
+                                     @can('details.destroy')
                                      <button type="button" class="btn btn-link text-danger" data-route="{{ route('details.destroy', [$invoice, $product]) }}" data-toggle="modal" data-target="#confirmDeleteModal" title="{{ __('Delete') }}">
                                          <i class="fas fa-trash"></i> Delete
                                      </button>
+                                         @endcan
                                  </div>
                              </td>
                             @endif
@@ -240,7 +250,9 @@
                         <div>
                             <form action="{{ route('payment', $invoice) }}" method="POST">
                                 @csrf
+                                @can('payment')
                                 <button type="submit" class="btn btn-success" >{{__('Make payment')}}</button>
+                                @endcan
                             </form>
                         </div>
                     </div>

@@ -84,11 +84,24 @@
         </div>
 
         <div class="links">
-            <a href="/invoices">Invoices</a>
-            <a href="/clients">Clients</a>
-            <a href="/sellers">Sellers</a>
-            <a href="/products">Products</a>
-            {{-- pendiente poner users, roles --}}
+            @can('invoices.index')
+            <a href="{{ route('invoices.index') }}">{{__('Invoices')}} </a>
+            @endcan
+            @can('clients.index')
+                    <a href="{{ route('clients.index') }}">{{__('Clients')}}</a>
+                @endcan
+                @can('sellers.index')
+                    <a href="{{ route('sellers.index') }}">{{__('Sellers')}}</a>
+                @endcan
+                @can('products.index')
+                    <a href="{{ route('products.index') }}">{{__('Products')}}</a>
+                @endcan
+                @can('users.index')
+                    <a href="{{ route('users.index') }}">{{__('Users')}}</a>
+                @endcan
+                @can('roles.index')
+                    <a href="{{ route('roles.index') }}">{{__('Roles')}}</a>
+                @endcan
             <a href="https://github.com/rodriguezhdaniela/-Sales-Invoice-Control.git">GitHub</a>
         </div>
     </div>
