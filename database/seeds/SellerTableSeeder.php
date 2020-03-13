@@ -13,7 +13,7 @@ class SellerTableSeeder extends Seeder
     public function run()
     {
         //Seller
-        seller::create([
+        Seller::create([
             'name' => 'Liliana',
             'last_name' => 'Lopera',
             'type_id' => 'Card ID',

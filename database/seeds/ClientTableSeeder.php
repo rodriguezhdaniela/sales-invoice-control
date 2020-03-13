@@ -13,7 +13,7 @@ class ClientTableSeeder extends Seeder
     public function run()
     {
         //Client
-        client::create([
+        Client::create([
             'name' => 'Manuela',
             'last_name' => 'Arboleda',
             'type_id' => 'Card ID',
