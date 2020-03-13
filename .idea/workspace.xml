@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c73f6a82-04bb-426f-b554-b0dbbd33250b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Exports/InvoicesExport1.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Exports/InvoicesExport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exports/InvoicesExport.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Invoice.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Jobs/NotifyUserOfCompletedExport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jobs/NotifyUserOfCompletedExport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/invoices/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/invoices/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/invoices/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -146,6 +150,7 @@
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
       <path value="$PROJECT_DIR$/vendor/league/commonmark-ext-table" />
       <path value="$PROJECT_DIR$/vendor/league/commonmark" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
     </include_path>
   </component>
   <component name="ProjectId" id="1Tq0sd2Aj9zOSwbpo6ZPjdMaY8D" />
@@ -160,17 +165,17 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/Feature" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Exports" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Daniela\laragon\www\invoices\app\Exports" />
+      <recent name="D:\Daniela\laragon\www\invoices\app\Http\Requests" />
       <recent name="D:\Daniela\laragon\www\invoices\tests\Feature" />
       <recent name="D:\Daniela\laragon\www\invoices\app\Http\View\composers" />
       <recent name="D:\Daniela\laragon\www\invoices\app\Http\View\Composer" />
-      <recent name="D:\Daniela\laragon\www\invoices\database\seeds" />
-      <recent name="D:\Daniela\laragon\www\invoices\resources\views\partials" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Daniela\laragon\www\invoices\resources\js\components" />
@@ -284,6 +289,11 @@
       <workItem from="1582536037573" duration="27556000" />
       <workItem from="1582631837603" duration="26209000" />
       <workItem from="1582728909217" duration="10796000" />
+      <workItem from="1583851539768" duration="21599000" />
+      <workItem from="1583883880138" duration="3453000" />
+      <workItem from="1583944244951" duration="25630000" />
+      <workItem from="1584025970898" duration="9515000" />
+      <workItem from="1584112575591" duration="11326000" />
     </task>
     <servers />
   </component>
@@ -324,10 +334,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="322" y="251" width="497" height="416" key="#com.intellij.tools.ToolEditorDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582312090448" />
-    <state x="285" y="76" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1582550245029">
+    <state x="285" y="76" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1583957150898">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="285" y="76" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582550245029" />
+    <state x="285" y="76" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583957150898" />
     <state x="301" y="158" key="FileChooserDialogImpl" timestamp="1582311923012">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -336,10 +346,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="324" y="142" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582733971834" />
-    <state x="1205" y="433" key="NewPhpFileDialog" timestamp="1582551977154">
+    <state x="1205" y="433" key="NewPhpFileDialog" timestamp="1583790671406">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1205" y="433" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582551977154" />
+    <state x="1205" y="433" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583790671406" />
     <state x="251" y="51" key="RollbackChangesDialog" timestamp="1581860131110">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -348,17 +358,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="779" y="98" width="1141" height="914" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1582560661664" />
-    <state x="1017" y="287" key="com.intellij.ide.util.TipDialog" timestamp="1582728912129">
+    <state x="1017" y="287" key="com.intellij.ide.util.TipDialog" timestamp="1584112742492">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1017" y="287" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582728912129" />
+    <state x="1017" y="287" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584112742492" />
     <state x="2" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1581805049583">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="2" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581805049583" />
-    <state x="505" y="115" width="840" height="1034" key="search.everywhere.popup" timestamp="1582743486350">
+    <state x="505" y="115" width="840" height="1034" key="search.everywhere.popup" timestamp="1583769444726">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="505" y="115" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1582743486350" />
+    <state x="505" y="115" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583769444726" />
   </component>
 </project>

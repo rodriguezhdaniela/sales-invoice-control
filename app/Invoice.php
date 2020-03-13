@@ -129,4 +129,5 @@ class Invoice extends Model
 
         return $query;
     }
+
 }

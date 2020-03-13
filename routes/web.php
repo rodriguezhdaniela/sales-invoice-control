@@ -19,13 +19,13 @@ Route::get('/import/view', 'InvoiceController@importView')->name('import.view');
 
 Route::post('invoices/import', 'InvoiceController@importExcel')->name('invoices.import.excel');
 
-Route::get('invoices/export', 'InvoiceController@exportExcel')->name('invoices.excel');
+Route::get('invoices/export', 'InvoiceController@export')->name('invoices.excel');
 
 Route::get('invoices/csv', 'InvoiceController@exportCSV')->name('csv');
 
 Route::get('invoices/tsv', 'InvoiceController@exportTSV')->name('tsv');
 
-Route::get('invoices/excel', 'InvoiceController@export')->name('excel');
+Route::get('invoices/excel', 'InvoiceController@exportExcel')->name('excel');
 
 Route::resource('/invoices','InvoiceController');
 
@@ -38,5 +38,4 @@ Route::get('/getCities', 'ClientController@getCities');
 Route::post('/invoices/{invoice}/details/payment', 'PaymentAttemptController@paymentAttempt')->name('payment');
 
 Route::get('/invoices/{invoice}/details/callback', 'PaymentAttemptController@callBack')->name('payment.callback');
-
 

@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Exports\InvoicesExcelExport;
+
+use App\Exports\InvoicesExport1;
 use App\Http\Requests\InvoiceStoreRequest;
 use App\Http\Requests\InvoiceUpdateRequest;
 use App\Invoice;
@@ -17,6 +18,7 @@ use App\Exports\InvoicesExport;
 use App\Imports\InvoicesImport;
 use Illuminate\Http\Response;
 use Maatwebsite\Excel\Facades\Excel;
+
 
 class InvoiceController extends Controller
 {
@@ -44,8 +46,8 @@ class InvoiceController extends Controller
             ->paginate(10);
 
         return response()->view('invoices.index', compact('invoices', 'clients', 'sellers'));
-    }
 
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -134,24 +136,6 @@ class InvoiceController extends Controller
         return redirect()->route('invoices.index')->withSuccess(__('Invoice deleted sucessfully'));
     }
 
-    /**
-     * @param InvoicesExport $export
-     * @return InvoicesExport
-     */
-    /*public function exportExcel(InvoicesExport $export)
-    {
-        return $export;
-    }*/
-
-    public function exportExcel()
-    {
-        (new InvoicesExport)->queue('invoices.xlsx')->chain([
-            new NotifyUserOfCompletedExport(request()->user()),
-        ]);
-
-        return back()->withSuccess('Export started!');
-    }
-
     public function importView()
     {
         return view('import');
@@ -169,21 +153,65 @@ class InvoiceController extends Controller
         return back()->withSuccess(__('Invoices imported successfully'));
     }
 
-    public function export()
-    {
-        (new InvoicesExcelExport)->queue('invoices.xlsx')->chain([
-            new NotifyUserOfCompletedExport(request()->user()),
-        ]);
+    //XLSX
 
-        return back()->withSuccess('Export started');
+    public function export(Request $request)
+    {
+
+        $invoices = Invoice::with(['client', 'seller'])
+            ->ofClient($request->input('search.client'))
+            ->ofSeller($request->input('search.seller'))
+            ->status($request->input('search.status'))
+            ->expirationDate($request->input('search.expiration_date'))
+            ->expeditionDate($request->input('search.expedition_date'));
+
+        $extension = $request->input('extension');
+
+        if ($extension == 'xslx')
+        {
+            return (new InvoicesExport1($invoices))->download('invoices.xlsx');
+
+            /*(new InvoicesExport1($invoices))->store('invoices.xlsx')
+            ->chain([new NotifyUserOfCompletedExport(request()->user()),
+            ]);
+
+            return back()->withSuccess('Export started!');*/
+
+        }elseif ($extension == 'csv')
+        {
+            return (new InvoicesExport1($invoices))->download('invoices.csv');
+
+            /*(new InvoicesExport1($invoices))->store('invoices.csv')
+            ->chain([new NotifyUserOfCompletedExport(request()->user()),
+            ]);
+
+            return back()->withSuccess('Export started!');*/
+
+        }elseif ($extension == 'tsv')
+        {
+            return (new InvoicesExport1($invoices))->download('invoices.tsv');
+
+            /*(new InvoicesExport1($invoices))->store('invoices.tsv')
+            ->chain([new NotifyUserOfCompletedExport(request()->user()),
+            ]);
+
+            return back()->withSuccess('Export started!');*/
+        }
+
     }
+
+    public function exportExcel()
+    {
+        return Excel::download(new InvoicesExport, 'invoices.xlsx');
+    }
+
 
     public function exportCSV()
     {
         return Excel::download(new InvoicesExport, 'invoices.csv');
     }
 
-    public function exportTSV(Invoice $invoice)
+    public function exportTSV()
     {
         return Excel::download(new InvoicesExport, 'invoices.tsv');
     }
