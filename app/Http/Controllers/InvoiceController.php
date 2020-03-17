@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Exports\InvoicesExport1;
 use App\Http\Requests\InvoiceStoreRequest;
 use App\Http\Requests\InvoiceUpdateRequest;

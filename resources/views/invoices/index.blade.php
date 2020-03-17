@@ -79,11 +79,15 @@
                     <div class="btn-group-sm">
                         @can('invoices.create')
                         <a href="{{ route('invoices.create') }}" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Create</a>
-                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#downloadModal">
-                            <i class="fas fa-download"></i> {{ __('Download') }}
-                        </button>
                         @endcan
-                        <a href="{{ route('import.view') }}" class="btn btn-success btn-sm"><i class="fas fa-upload"></i> Import</a>
+                        @can('excel')
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#downloadModal">
+                            <i class="fas fa-download"></i> {{ __('Download') }}
+                            </button>
+                            @endcan
+                            @can('import.view')
+                                <a href="{{ route('import.view') }}" class="btn btn-success btn-sm"><i class="fas fa-upload"></i> Import</a>
+                            @endcan
                     </div>
                 </div>
                 <div class="table-responsive">
@@ -255,7 +259,6 @@
                             <div class="form-group col">
                                 <label for="extension">{{__('Extension')}}</label>
                                 <select name="extension" id="extension" class="custom-select">
-                                    <option value=""></option>
                                     <option value="xslx" {{ 'xlsx' == request()->input('extension') ? 'selected' : ''}}>{{__('XLSX')}}</option>
                                     <option value="csv" {{ 'csv' == request()->input('extension') ? 'selected' : ''}}>{{__('CSV')}}</option>
                                     <option value="tsv" {{ 'tsv' == request()->input('extension') ? 'selected' : ''}}>{{__('TSV')}}</option>

@@ -67,6 +67,16 @@ class PermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'clients.edit']);
         Permission::create(['name' => 'clients.destroy']);
 
+        //Import
+        Permission::create(['name' => 'import.view']);
+        Permission::create(['name' => 'invoices.import.excel']);
+
+        //Export
+        Permission::create(['name' => 'invoices.excel']);
+        Permission::create(['name' => 'csv']);
+        Permission::create(['name' => 'tsv']);
+        Permission::create(['name' => 'excel']);
+
         //Admin
         $admin = Role::create(['name' => 'Admin']);
 
@@ -104,7 +114,14 @@ class PermissionsTableSeeder extends Seeder
             'details.create',
             'details.destroy',
             'payment',
-            'payment.callback'
+            'payment.callback',
+            'import.view',
+            'invoices.import.excel',
+            'invoices.excel',
+            'csv',
+            'tsv',
+            'excel'
+
         ]);
 
 
@@ -138,7 +155,13 @@ class PermissionsTableSeeder extends Seeder
             'details.create',
             'details.destroy',
             'payment',
-            'payment.callback'
+            'payment.callback',
+            'import.view',
+            'invoices.import.excel',
+            'invoices.excel',
+            'csv',
+            'tsv',
+            'excel'
         ]);
 
         //Seller
@@ -175,19 +198,19 @@ class PermissionsTableSeeder extends Seeder
 
 
         //User Admin
-        $user = User::find(1); //Daniela
+        $user = User::find(1); //Daniela dani-rodriguez-95@hotmail.com
         $user->assignRole('Admin');
 
         //User Client
-        $user = User::find(2); //Manuela
+        $user = User::find(2); //Manuela manu@gmail.com
         $user->assignRole('Client');
 
         //User Supervisor
-        $user = User::find(3); //Ana Maria
+        $user = User::find(3); //Ana Maria ana@hotmail.com
         $user->assignRole('Supervisor');
 
         //User Seller
-        $user = User::find(4); //Liliana
+        $user = User::find(4); //Liliana lili@hotmail.com
         $user->assignRole('Seller');
 
 
