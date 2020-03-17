@@ -5,7 +5,9 @@
         <div class="card-header d-flex justify-content-between">
             <h5 class="card-title mb-0">{{__('Clients')}}</h5>
             <div class="btn-group-sm">
-                <a class="btn btn-primary btn-sm" href="{{ route('clients.create') }}"><i class="fas fa-plus"></i>{{__('Create')}}</a>
+                @can('clients.create')
+                    <a class="btn btn-primary btn-sm" href="{{ route('clients.create') }}"><i class="fas fa-plus"></i>{{__('Create')}}</a>
+                @endcan
             </div>
         </div>
         <div class="container">
@@ -26,9 +28,6 @@
                         <th>{{__('Type ID')}}</th>
                         <th>{{__('ID Number')}}</th>
                         <th>{{__('Full Name')}}</th>
-                        <th>{{__('Address')}}</th>
-                        <th>{{__('Phone Number')}}</th>
-                        <th>{{__('Email')}}</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -38,17 +37,23 @@
                         <td>{{$client->type_id}}</td>
                         <td>{{$client->personal_id}}</td>
                         <td>{{$client->fullname}}</td>
-                        <td>{{$client->address}}</td>
-                        <td>{{$client->phone_number}}</td>
-                        <td>{{$client->email}}</td>
                         <td class="text-right">
                             <div class="btn-group btn-group-sm">
-                                <a href="{{ route('clients.edit', $client) }}" class="btn btn-link text-secondary">
-                                    <i class="fas fa-edit"></i>{{__('Edit')}}
-                                </a>
-                                <button type="button" class="btn btn-link text-danger" data-route="{{ route('clients.destroy', $client) }}" data-toggle="modal" data-target="#confirmDeleteModal" title="{{ __('Delete') }}">
-                                    <i class="fas fa-trash"></i>{{__('Delete')}}
-                                </button>
+                                @can('clients.show')
+                                    <a href="{{route('clients.show', $client)}}" class="btn btn-link">
+                                        <i class="fas fa-eye"></i>{{__('View')}}
+                                    </a>
+                                @endcan
+                                @can('clients.edit')
+                                    <a href="{{ route('clients.edit', $client) }}" class="btn btn-link text-secondary">
+                                        <i class="fas fa-edit"></i>{{__('Edit')}}
+                                    </a>
+                                    @endcan
+                                  @can('clients.destroy')
+                                    <button type="button" class="btn btn-link text-danger" data-route="{{ route('clients.destroy', $client) }}" data-toggle="modal" data-target="#confirmDeleteModal" title="{{ __('Delete') }}">
+                                        <i class="fas fa-trash"></i>{{__('Delete')}}
+                                    </button>
+                                    @endcan
                             </div>
                         </td>
                     </tr>
@@ -59,8 +64,8 @@
                 {{ $clients->appends(['name', 'personal_id'])->links() }}
             </div>
         </div>
-        <div class="card-footer"></div>
     </div>
+        <div class="card-footer"></div>
 @endsection
 @push('modals')
     @include('partials.__confirm_delete_modal')

@@ -28,18 +28,17 @@
             <input class="form-control" type="text" name="status" id="status" value="New" disabled>
     @endif
     </div>
-    <div class="col form-group">
-        <label for="seller_id">{{ __('Seller') }}</label>
-        <select type="seller_id" name="seller_id" id="seller_id" class="custom-select {{ $errors->has('seller_id') ? 'is-invalid' : '' }}" required>
-            <option value="">Select name</option>
-            @foreach ($sellers as $seller)
-                <option value="{{  $seller->id }}" {{ old('seller_id', $invoice->seller_id) == $seller->id ? 'selected' : '' }}> {{ $seller->fullname }}
-                </option>
-            @endforeach
-        </select>
-        @includeWhen($errors->has('seller_id'), 'partials.__invalid_feedback', ['feedback' => $errors->first('seller_id')])
-    </div>
-
+        <div class="col form-group">
+            <label for="seller_id">{{ __('Seller') }}</label>
+            <select type="seller_id" name="seller_id" id="seller_id" class="custom-select {{ $errors->has('seller_id') ? 'is-invalid' : '' }}" required>
+                <option value="">Select name</option>
+                @foreach ($sellers as $seller)
+                    <option value="{{  $seller->id }}" {{ old('seller_id', $invoice->seller_id) == $seller->id ? 'selected' : '' }}> {{ $seller->fullname }}
+                    </option>
+                @endforeach
+            </select>
+            @includeWhen($errors->has('seller_id'), 'partials.__invalid_feedback', ['feedback' => $errors->first('seller_id')])
+        </div>
     <div class="col form-group">
         <label for="client_id">{{ __('Clients') }}</label>
         <select type="client_id" name="client_id" id="client_id" class="custom-select {{ $errors->has('client_id') ? 'is-invalid' : '' }}" required>

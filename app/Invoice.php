@@ -50,7 +50,7 @@ class Invoice extends Model
     }
 
     /**
-     * Scope to filter invoices by client
+     * Scope to filter invoices by clients
      *
      * @param Builder $query
      * @param string|null $id

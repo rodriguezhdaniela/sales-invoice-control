@@ -31,9 +31,9 @@
                                 <label for="client">{{__('Client')}}</label>
                                 <select name="search[client]" id="client" class="custom-select">
                                     <option></option>
-                                    @foreach($clients as $client)
-                                        <option value="{{ $client->id }}" {{ $client->id == request()->input('search.client') ? 'selected' : ''}}>
-                                            {{ $client->fullname }}
+                                    @foreach($clients as $value)
+                                        <option value="{{ $value->id }}" {{ $value->id == request()->input('search.clients') ? 'selected' : ''}}>
+                                            {{ $value->fullname }}
                                         </option>
                                     @endforeach
                                 </select>
@@ -77,10 +77,12 @@
                 <div class="card-header d-flex justify-content-between">
                     <h4 class="card-title mb-0">{{__('Invoice')}}s</h4>
                     <div class="btn-group-sm">
+                        @can('invoices.create')
                         <a href="{{ route('invoices.create') }}" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Create</a>
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#downloadModal">
                             <i class="fas fa-download"></i> {{ __('Download') }}
                         </button>
+                        @endcan
                         <a href="{{ route('import.view') }}" class="btn btn-success btn-sm"><i class="fas fa-upload"></i> Import</a>
                     </div>
                 </div>
@@ -113,15 +115,21 @@
                                 <td>{{ $invoice->status }}</td>
                                 <td class="text-right">
                                     <div class="btn-group btn-group-sm">
-                                        <a href="{{ route('invoices.show', $invoice) }}" class="btn btn-link">
-                                            <i class="fas fa-eye"></i> view
-                                        </a>
-                                        <a href="{{ route('invoices.edit', $invoice) }}" class="btn btn-link">
-                                            <i class="fas fa-edit"></i> Edit
-                                        </a>
-                                        <button type="button" class="btn btn-link text-danger" data-route="{{ route('invoices.destroy', $invoice) }}" data-toggle="modal" data-target="#confirmDeleteModal" title="{{ __('Delete') }}">
-                                            <i class="fas fa-trash"></i> Delete
-                                        </button>
+                                        @can('invoices.show')
+                                            <a href="{{ route('invoices.show', $invoice) }}" class="btn btn-link">
+                                                <i class="fas fa-eye"></i>{{__('View')}}
+                                            </a>
+                                        @endcan
+                                        @can('invoices.edit')
+                                            <a href="{{ route('invoices.edit', $invoice) }}" class="btn btn-link">
+                                                <i class="fas fa-edit"></i>{{__('Edit')}}
+                                            </a>
+                                            @endcan
+                                            @can('invoices.destroy')
+                                                <button type="button" class="btn btn-link text-danger" data-route="{{ route('invoices.destroy', $invoice) }}" data-toggle="modal" data-target="#confirmDeleteModal" title="{{ __('Delete') }}">
+                                                    <i class="fas fa-trash"></i>{{__('Delete')}}
+                                                </button>
+                                            @endcan
                                     </div>
                                 </td>
                             </tr>
@@ -129,7 +137,7 @@
                         </tbody>
                     </table>
                     <div class="mt-3 d-flex justify-content-center">
-                        {{ $invoices->appends(['search.client', 'search.seller', 'search.status', 'search.expiration_date', 'search.expedition_date'])->links() }}
+                        {{ $invoices->appends(['search.clients', 'search.seller', 'search.status', 'search.expiration_date', 'search.expedition_date'])->links() }}
                     </div>
                 </div>
             </div>
