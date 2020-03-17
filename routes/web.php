@@ -167,33 +167,15 @@ Route::middleware(['auth'])->group(function() {
 
     //Export
 
-    Route::get('invoices/export', 'InvoiceController@exportExcel')->name('invoices.excel')
+    Route::get('invoices/export', 'InvoiceController@export')->name('invoices.excel')
         ->middleware('permission:invoices.excel');
 
     Route::get('invoices/csv', 'InvoiceController@exportCSV')->name('csv')
     ->middleware('permission:csv');
 
-    Route::get('invoices/txt', 'InvoiceController@exportTXT')->name('txt')
-    ->middleware('permission:txt');
+    Route::get('invoices/tsv', 'InvoiceController@exportTSV')->name('tsv');
+    
 
-    Route::get('invoices/excel', 'InvoiceController@export')->name('excel')
+    Route::get('invoices/excel', 'InvoiceController@exportExcel')->name('excel')
     ->middleware('permission:excel');
 });
-
-/*Route::resource('/clients', 'ClientController');*/
-
-/*Route::resource('/users', 'UserController')->except('create','store');*/
-
-/*Route::resource('/roles', 'RoleController');*/
-
-/*Route::resource('/sellers','SellerController')->except('show');*/
-
-/*Route::resource('/products','ProductController')->except('show');*/
-
-/*Route::resource('/invoices','InvoiceController');*/
-
-
-
-
-
-

@@ -119,7 +119,14 @@ return [
 
     'redis' => [
 
-        'clients' => env('REDIS_CLIENT', 'phpredis'),
+        'driver' => 'redis',
+        'connection' => 'default',
+        'queue' => '{default}',
+        'retry_after' => 90,
+        'block_for' => 5,
+
+        'client' => env('REDIS_CLIENT', 'phpredis'),
+
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
