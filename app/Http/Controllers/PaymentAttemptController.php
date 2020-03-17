@@ -37,18 +37,18 @@ class PaymentAttemptController extends Controller
                 "mobile" => $invoice->client->phone_number,
                 "address" => [
                     "street" => $invoice->client->address,
-                    "city" => $invoice->client->city,
+                    "city" => strval($invoice->client->city),
                     "state" => $invoice->client->state,
                     "postalCode" => $invoice->client->postal_code,
-                    "country" => $invoice->client->country,
+                    "country" => strval($invoice->client->country),
                 ]
             ],
 
             'payment' => [
-                'reference' => $reference,
+                'reference' => strval($reference),
                 'amount' => [
                     'currency' => 'COP',
-                    'total' => $invoice->total,
+                    'total' =>$invoice->total,
                 ],
             ],
             'expiration' => date('c', strtotime('+2 days')),
@@ -57,9 +57,9 @@ class PaymentAttemptController extends Controller
             'userAgent' => $request->header('User-Agent'),
         ];
 
-
         //store new instance of model PaymentAttempt
         $response = $placetopay->request($request2);
+        //dd($response);
 
         $paymentAttempt = new PaymentAttempt;
         $paymentAttempt->invoice_id = $invoice->id;
