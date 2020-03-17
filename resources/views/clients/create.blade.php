@@ -3,7 +3,7 @@
 @section('content')
     <div class="card card-default">
         <div class="card-header pb-0">
-            <h4 class="card-title">{{ __('New client') }}</h4>
+            <h4 class="card-title">{{ __('New clients') }}</h4>
         </div>
         <div class="card-body">
             <form method="POST" action="{{ route('clients.store') }}" id="clients-form">

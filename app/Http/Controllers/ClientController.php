@@ -26,14 +26,17 @@ class ClientController extends Controller
      */
     public function index(Request $request)
     {
+
         $name = $request->get('name');
         $personal_id = $request->get('personal_id');
 
         $clients = Client::name($name)
+            ->name($name)
             ->personal_id($personal_id)
             ->paginate(10);
 
-        return response()->view('clients.index', compact('clients'));
+        return response()->view('clients.index', compact('clients','city', 'country', 'state'));
+
     }
 
     /**
@@ -51,7 +54,6 @@ class ClientController extends Controller
         ]);
     }
 
-
     /**
      * Store a newly created resource in storage.
      *
@@ -66,16 +68,23 @@ class ClientController extends Controller
     }
 
 
+    public function show(Client $client)
+    {
+        return response()->view('clients.show', ['client' => $client]);
+    }
+
+
     /**
      * Show the form for editing the specified resource.
      *
-     * @param client $client
+     * @param Client $clients
      * @return Response
      */
-    public function edit(Client $client)
+    public function edit(Client $clients)
     {
+
         return response()->view('clients.edit', [
-            'client' => $client,
+            'client' => $clients,
             'countries' => Country::all(),
             'states' => State::all(),
             'cities' => City::all(),
