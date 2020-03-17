@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c73f6a82-04bb-426f-b554-b0dbbd33250b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -154,17 +153,6 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/invoices/seller" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Daniela\laragon\www\invoices\resources\views\invoices\seller" />
-      <recent name="D:\Daniela\laragon\www\invoices\resources\views\invoices\clients" />
-      <recent name="D:\Daniela\laragon\www\invoices\resources\views\clients" />
-      <recent name="D:\Daniela\laragon\www\invoices\resources\views\users" />
-      <recent name="D:\Daniela\laragon\www\invoices\resources\views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Daniela\laragon\www\invoices\resources\views\invoices\seller" />
@@ -330,22 +318,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="322" y="251" width="497" height="416" key="#com.intellij.tools.ToolEditorDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582312090448" />
-    <state x="285" y="76" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1583512926408">
+    <state x="324" y="142" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582733971834" />
+    <state x="1205" y="433" key="NewPhpFileDialog" timestamp="1583790671406">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="285" y="76" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583512926408" />
-    <state x="301" y="158" key="FileChooserDialogImpl" timestamp="1582311923012">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="301" y="158" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582311923012" />
-    <state x="324" y="142" key="NewPhpClassDialog" timestamp="1582660329752">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="324" y="142" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582660329752" />
-    <state x="1228" y="435" key="NewPhpFileDialog" timestamp="1583168270669">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1228" y="435" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583168270669" />
+    <state x="1205" y="433" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583790671406" />
     <state x="251" y="51" key="RollbackChangesDialog" timestamp="1581860131110">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -354,17 +331,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="779" y="98" width="1141" height="914" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1582560661664" />
-    <state x="1017" y="287" key="com.intellij.ide.util.TipDialog" timestamp="1583768094347">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1017" y="287" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583768094347" />
     <state x="2" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1581805049583">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="2" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581805049583" />
-    <state x="749" y="191" width="840" height="1034" key="search.everywhere.popup" timestamp="1583355043198">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="749" y="191" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583355043198" />
   </component>
 </project>

@@ -3,34 +3,40 @@
 namespace App\Exports;
 
 use App\Invoice;
-use Illuminate\Contracts\Support\Responsable;
 use Maatwebsite\Excel\Concerns\Exportable;
-use Maatwebsite\Excel\Concerns\FromView;
-use Maatwebsite\Excel\Excel;
-use Illuminate\Contracts\View\View;
+use Maatwebsite\Excel\Concerns\FromQuery;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class InvoicesExport implements FromView, Responsable
+    class InvoicesExport implements FromQuery, WithHeadings
 {
     use Exportable;
 
-    /**
-     * It's required to define the fileName within
-     * the export class when making use of Responsable.
-     */
-    private $fileName = 'invoices.xlsx';
 
-    /**
-     * Optional Writer Type
-     */
-    private $writerType = Excel::XLSX;
-
-    /**
-     * @return View
-     */
-    public function view(): View
+    public function query()
     {
-        return view('exports.invoices', [
-            'invoices' => Invoice::all()
-        ]);
+        return Invoice::query();
     }
+
+
+    /**
+     * @return array
+     */
+    public function headings(): array
+    {
+        return [
+          'id',
+            '',
+          'Expiration Date',
+          'Status',
+          'Tax',
+            'Amount',
+            'total',
+            'client id',
+            'seller id',
+            'created at',
+            'updated at'
+
+        ];
+    }
+
 }
