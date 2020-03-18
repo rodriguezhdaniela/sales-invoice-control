@@ -29,8 +29,8 @@ class ClientUpdateRequest extends FormRequest
             'personal_id' => [
                 'required',
                 'min:8',
-                Rule::unique('clients', 'personal_id')->ignore($this->route('client')->id),
-            ],
+                Rule::unique('clients', 'personal_id')->ignore($this->route('client')->id)
+                ],
             'name' => 'required|string|max:50',
             'last_name' => 'required|string|max:50',
             'phone_number' => 'required|min:7|numeric',
