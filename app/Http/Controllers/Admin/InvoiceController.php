@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Exports\InvoicesExport1;
 use App\Http\Requests\InvoiceStoreRequest;

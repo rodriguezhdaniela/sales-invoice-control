@@ -55,7 +55,7 @@
                         @endforeach
                     </tbody>
                 </table>
-            <div class="mt-3 d-flex justify-content-center">
+                <div class="mt-3 d-flex justify-content-center">
                 {{ $products->appends(['name', 'description'])->links() }}
             </div>
         </div>
