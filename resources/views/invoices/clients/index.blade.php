@@ -7,10 +7,6 @@
                 <div class="btn-group-sm">
                     @can('invoices.create')<a href="{{ route('invoices.create') }}" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Create</a>
                     @endcan
-                        <a href="{{ route('invoices.excel') }}" class="btn btn-success btn-sm"><i class="fas fa-download"></i> Download</a>
-                        <a href="{{ route('csv') }}" class="btn btn-success btn-sm"><i class="fas fa-download"></i>csv</a>
-                        <a href="{{ route('txt') }}" class="btn btn-success btn-sm"><i class="fas fa-download"></i>txt</a>
-                        <a href="{{ route('excel') }}" class="btn btn-success btn-sm"><i class="fas fa-download"></i>xlsx</a>
                 </div>
             </div>
             <div class="table-responsive">

@@ -25,7 +25,6 @@ use Maatwebsite\Excel\Concerns\WithHeadings;
     {
         return [
           'id',
-            '',
           'Expiration Date',
           'Status',
           'Tax',
@@ -33,8 +32,8 @@ use Maatwebsite\Excel\Concerns\WithHeadings;
             'total',
             'client id',
             'seller id',
-            'created at',
-            'updated at'
+            'expedition date',
+            'received date'
 
         ];
     }

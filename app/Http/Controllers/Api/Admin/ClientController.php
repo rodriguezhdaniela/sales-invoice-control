@@ -24,6 +24,7 @@ class ClientController extends Controller
         return $action->execute($client, $request);
     }
 
+
     public function update(ClientUpdateRequest $request, Client $client, UpdateClientAction $action)
     {
         return $action->execute($client, $request);
@@ -38,6 +39,6 @@ class ClientController extends Controller
     {
         $client->delete();
 
-        return __('The Client was successfully deleted');
+        return response()->json(__('The Client was successfully deleted'));
     }
 }

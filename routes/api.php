@@ -17,6 +17,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Auth::routes();
+
 Route::resource('products', 'Api\Admin\ProductController')->except(['edit', 'create']);
 
 Route::resource('clients', 'Api\Admin\ClientController')->except(['edit', 'create']);
@@ -26,3 +28,6 @@ Route::resource('sellers', 'Api\Admin\SellerController')->except(['edit', 'creat
 Route::resource('invoices', 'Api\Admin\InvoiceController')->except(['edit', 'create']);
 
 Route::resource('details', 'Api\Admin\DetailController')->except(['edit', 'create', 'index', 'show']);
+
+Route::resource('invoices.details', 'Api\Admin\DetailController')->only(['index', 'store']);
+

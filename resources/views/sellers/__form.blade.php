@@ -37,7 +37,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="address">{{ __('Address') }}</label>
-                <input type="address" class="form-control {{ $errors->has('address') ? 'is-invalid' : '' }}" name="address" id="address" value="{{ old('address', $seller->address) }}" required>
+                <input type="text" class="form-control {{ $errors->has('address') ? 'is-invalid' : '' }}" name="address" id="address" value="{{ old('address', $seller->address) }}" required>
                 @includeWhen($errors->has('address'), 'partials.__invalid_feedback', ['feedback' => $errors->first('address')])
             </div>
         </div>
@@ -45,7 +45,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="phone_number">{{ __('Phone number') }}</label>
-                <input type="phone_number" class="form-control {{ $errors->has('phone_number') ? 'is-invalid' : '' }}" name="phone_number" id="phone_number" value="{{ old('phone_number', $seller->phone_number) }}" required>
+                <input type="text" class="form-control {{ $errors->has('phone_number') ? 'is-invalid' : '' }}" name="phone_number" id="phone_number" value="{{ old('phone_number', $seller->phone_number) }}" required>
                 @includeWhen($errors->has('phone_number'), 'partials.__invalid_feedback', ['feedback' => $errors->first('phone_number')])
             </div>
         </div>
@@ -58,4 +58,3 @@
             </div>
         </div>
     </div>
-</div>

@@ -23,16 +23,20 @@ class SellerController extends Controller
         return $action->execute($seller, $request);
     }
 
-
     public function update(SellerUpdateRequest $request, Seller $seller, UpdateSellerAction $action)
     {
         return $action->execute($seller, $request);
+    }
+
+    public function show(Seller $seller)
+    {
+        return $seller;
     }
 
     public function destroy(Seller $seller)
     {
         $seller->delete();
 
-        return __('The Seller was successfully deleted');
+        return response()->json(__('The Seller was successfully deleted'));
     }
 }

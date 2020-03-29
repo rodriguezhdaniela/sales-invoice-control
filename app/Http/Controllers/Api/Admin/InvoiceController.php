@@ -19,10 +19,12 @@ class InvoiceController extends Controller
         return Invoice::all();
     }
 
+
     public function store(InvoiceStoreRequest $request, Invoice $invoice, StoreInvoiceAction $action)
     {
         return $action->execute($invoice, $request);
     }
+
 
     public function update(InvoiceUpdateRequest $request, Invoice $invoice, UpdateInvoiceAction $action)
     {
@@ -38,6 +40,6 @@ class InvoiceController extends Controller
     {
         $invoice->delete();
 
-        return __('The Invoice was successfully deleted');
+        return response()->json(__('The Invoice was successfully deleted'));
     }
 }

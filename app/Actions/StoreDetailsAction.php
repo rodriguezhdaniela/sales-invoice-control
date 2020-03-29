@@ -9,7 +9,7 @@ class StoreDetailsAction extends Action
 {
     public function storeModel(Model $invoice, Request $request): Model
     {
-        $invoice->product->id = $request->input('product_id');
+        $invoice->product->product_id = $request->input('product_id');
         $invoice->pivot->quantity = $request->input('quantity');
 
         $invoice->save();

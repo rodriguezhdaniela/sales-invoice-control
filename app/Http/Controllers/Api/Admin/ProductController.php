@@ -24,6 +24,7 @@ class ProductController extends Controller
         return $action->execute($product, $request);
     }
 
+
     public function update(UpdateRequest $request, Product $product, UpdateProductAction $action)
     {
         return $action->execute($product, $request);
@@ -38,6 +39,6 @@ class ProductController extends Controller
     {
         $product->delete();
 
-        return __('The Product was successfully deleted');
+        return response()->json(__('The Product was successfully deleted'));
     }
 }

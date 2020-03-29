@@ -76,14 +76,14 @@ class ClientController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param Client $clients
+     * @param Client $client
      * @return Response
      */
-    public function edit(Client $clients)
+    public function edit(Client $client)
     {
 
         return response()->view('clients.edit', [
-            'client' => $clients,
+            'client' => $client,
             'countries' => Country::all(),
             'states' => State::all(),
             'cities' => City::all(),

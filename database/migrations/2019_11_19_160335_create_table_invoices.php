@@ -16,7 +16,6 @@ class CreateTableInvoices extends Migration
         Schema::create('invoices', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
-            $table->date('receipt_date')->nullable();
             $table->date('expiration_date');
             $table->enum('status', ['new', 'received', 'paid', 'cancelled']);
             $table->integer('tax')->default(0);

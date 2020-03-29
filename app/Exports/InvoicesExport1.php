@@ -34,10 +34,6 @@ class InvoicesExport1 implements FromQuery, shouldQueue, WithHeadings
         $this->invoices = app()->make(Invoice::class);
     }
 
-    /**
-     * Optional Writer Type
-     */
-    private $writerType = Excel::XLSX;
 
     public function query()
     {
@@ -53,7 +49,6 @@ class InvoicesExport1 implements FromQuery, shouldQueue, WithHeadings
     {
         return [
           'id',
-            '',
           'Expiration Date',
           'Status',
           'Tax',
@@ -61,8 +56,8 @@ class InvoicesExport1 implements FromQuery, shouldQueue, WithHeadings
             'total',
             'client id',
             'seller id',
-            'created at',
-            'updated at'
+            'expedition date',
+            'received date'
 
         ];
     }

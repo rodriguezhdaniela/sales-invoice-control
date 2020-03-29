@@ -6,7 +6,6 @@ use App\Exports\InvoicesExport1;
 use App\Http\Requests\InvoiceStoreRequest;
 use App\Http\Requests\InvoiceUpdateRequest;
 use App\Invoice;
-use App\Jobs\NotifyUserOfCompletedExport;
 use App\Seller;
 use App\Client;
 use App\Product;
