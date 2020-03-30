@@ -72,21 +72,15 @@ class PaymentAttemptsTest extends TestCase
         $response->assertRedirect(route('login'));
     }
 
-   /* public function testAuthenticatedUserCanAccessToCallback()
-    {
-        $this->withoutExceptionHandling();
+    /* public function testAuthenticatedUserCanAccessToCallback()
+     {
+         $this->withoutExceptionHandling();
 
-        $invoice = factory(Invoice::class)->create();
-        $user = factory(User::class)->create();
+         $invoice = factory(Invoice::class)->create();
+         $user = factory(User::class)->create();
 
-        $response = $this->actingAs($user)->get(route('payment.callback', $invoice));
+         $response = $this->actingAs($user)->get(route('payment.callback', $invoice));
 
-        $response->assertOk();
-    }*/
-
-
-
-
-
+         $response->assertOk();
+     }*/
 }
-

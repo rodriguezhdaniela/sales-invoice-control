@@ -38,16 +38,13 @@ class ProductsTest extends TestCase
         $response->assertSuccessful();
         $response->assertViewHas('products');
         $response->assertViewIs('products.index');
-
     }
 
     public function testUnauthenticatedUserCannotCreateProduct()
     {
-
         $this->get(route('products.create'))
 
             ->assertRedirect(route('login'));
-
     }
 
     public function testProductCanBeCreated()
@@ -59,7 +56,6 @@ class ProductsTest extends TestCase
         $response->assertSuccessful();
         $response->assertSeeText('Product');
         $response->assertViewIs('products.create');
-
     }
 
     public function testShowTheCreationFormFields()
@@ -71,7 +67,6 @@ class ProductsTest extends TestCase
         $response->assertSee(__('Name'));
         $response->assertSee(__('Description'));
         $response->assertSee(route('products.store'));
-
     }
 
     public function testUnauthenticatedUserCannotStoreAProduct()
@@ -140,7 +135,6 @@ class ProductsTest extends TestCase
         ])
             ->assertRedirect()
             ->assertSessionHasNoErrors();
-
     }
 
     public function testUnauthenticatedUserCannotEditSeller()
@@ -150,7 +144,6 @@ class ProductsTest extends TestCase
         $this->get(route('products.edit', $product))
 
             ->assertRedirect(route('login'));
-
     }
 
     public function testSellerCanBeEdited()
@@ -163,7 +156,6 @@ class ProductsTest extends TestCase
         $response->assertSuccessful();
         $response->assertSeeText('Edit');
         $response->assertViewIs('products.edit');
-
     }
 
     public function testUnauthenticatedUserCannotDeleteAProduct()
@@ -200,7 +192,6 @@ class ProductsTest extends TestCase
             LengthAwarePaginator::class,
             $response->original->gatherData()['products']
         );
-
     }
 
     public function testCanSearchProductsByName()
@@ -213,7 +204,6 @@ class ProductsTest extends TestCase
         $viewProducts = $response->original->gatherData()['products'];
 
         $this->assertTrue($viewProducts->contains($productA));
-
     }
 
     public function testCanSearchProductsByDescription()
@@ -226,10 +216,5 @@ class ProductsTest extends TestCase
         $viewProducts = $response->original->gatherData()['products'];
 
         $this->assertTrue($viewProducts->contains($productA));
-
-
     }
-
-
 }
-

@@ -42,16 +42,13 @@ class ClientsTest extends TestCase
         $response->assertSuccessful();
         $response->assertViewHas('clients');
         $response->assertViewIs('clients.index');
-
     }
 
     public function testUnauthenticatedUserCannotCreateClient()
     {
-
         $this->get(route('clients.create'))
 
             ->assertRedirect(route('login'));
-
     }
 
     public function testClientCanBeCreated()
@@ -63,7 +60,6 @@ class ClientsTest extends TestCase
         $response->assertOk();
         $response->assertSeeText('Client');
         $response->assertViewIs('clients.create');
-
     }
 
     public function testShowTheCreationFormFields()
@@ -77,13 +73,11 @@ class ClientsTest extends TestCase
         $response->assertSee(__('Name'));
         $response->assertSee(__('Phone number'));
         $response->assertSee(route('clients.store'));
-
     }
 
 
     public function testUnauthenticatedUserCannotStoreAClient()
     {
-
         $this->post(route('clients.store'), [
             'type_id' => 'Test type id',
             'personal_id' => 'test personal id',
@@ -139,7 +133,6 @@ class ClientsTest extends TestCase
         $this->get(route('clients.edit', $client))
 
             ->assertRedirect(route('login'));
-
     }
 
     public function testClientCanBeEdited()
@@ -152,7 +145,6 @@ class ClientsTest extends TestCase
         $response->assertSuccessful();
         $response->assertSeeText('Edit');
         $response->assertViewIs('clients.edit');
-
     }
 
 
@@ -213,17 +205,17 @@ class ClientsTest extends TestCase
     }
 
     public function testUnauthenticatedUserCannotDeleteAClient()
-     {
-         $client = factory(Client::class)->create();
+    {
+        $client = factory(Client::class)->create();
 
-         $this->delete(route('clients.destroy', $client))
+        $this->delete(route('clients.destroy', $client))
              ->assertRedirect(route('login'));
 
-         $this->assertDatabaseHas('clients', [
+        $this->assertDatabaseHas('clients', [
              'name' => $client->name,
              'email' => $client->email,
          ]);
-     }
+    }
 
     public function testAClientCanBeDeleted()
     {
@@ -251,12 +243,10 @@ class ClientsTest extends TestCase
             LengthAwarePaginator::class,
             $response->original->gatherData()['clients']
         );
-
     }
 
     public function testCanSearchClientsByName()
     {
-
         $this->withoutExceptionHandling();
 
         $user = factory(User::class)->create();
@@ -267,7 +257,6 @@ class ClientsTest extends TestCase
         $viewClients = $response->original->gatherData()['clients'];
 
         $this->assertTrue($viewClients->contains($clientA));
-
     }
 
     public function testCanSearchClientsById()
@@ -283,7 +272,4 @@ class ClientsTest extends TestCase
 
         $this->assertTrue($viewClients->contains($clientA));
     }
-
-
 }
-

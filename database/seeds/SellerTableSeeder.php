@@ -23,6 +23,6 @@ class SellerTableSeeder extends Seeder
             'phone_number' => '3653652'
         ]);
 
-        factory(Seller::class,20)->create();
+        factory(Seller::class, 20)->create();
     }
 }

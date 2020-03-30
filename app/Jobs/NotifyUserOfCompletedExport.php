@@ -3,14 +3,11 @@
 
 namespace App\Jobs;
 
-
 use App\Exports\InvoicesExport1;
 use App\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\SerializesModels;
-
-
 
 class NotifyUserOfCompletedExport implements ShouldQueue
 {

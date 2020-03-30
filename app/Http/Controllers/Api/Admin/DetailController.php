@@ -7,10 +7,8 @@ use App\Http\Requests\DetailStoreRequest;
 use App\Invoice;
 use App\Product;
 
-
 class DetailController extends Controller
 {
-
     public function index(Invoice $invoice)
     {
         $details = $invoice->products;

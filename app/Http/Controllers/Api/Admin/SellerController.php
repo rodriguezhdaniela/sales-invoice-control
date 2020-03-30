@@ -3,7 +3,6 @@
 
 namespace App\Http\Controllers\Api\Admin;
 
-
 use App\Actions\StoreSellerAction;
 use App\Actions\UpdateSellerAction;
 use App\Http\Controllers\Controller;

@@ -21,7 +21,6 @@ class DetailsTest extends TestCase
         $this->get(route('details.create', $invoice))
 
             ->assertRedirect(route('login'));
-
     }
 
     public function testDetailCanBeCreated()
@@ -34,11 +33,10 @@ class DetailsTest extends TestCase
         $response->assertSuccessful();
         $response->assertSeeText('Products');
         $response->assertViewIs('invoices.details.create');
-
     }
 
-    public function testUnauthenticatedUserCannotAddDetails(){
-
+    public function testUnauthenticatedUserCannotAddDetails()
+    {
         $invoice = factory(Invoice::class)->create();
         $product = factory(Product::class)->create();
 
@@ -53,13 +51,13 @@ class DetailsTest extends TestCase
             ->assertRedirect(route('login'));
     }
 
-    public function testDetailsCanBeAdded(){
-
+    public function testDetailsCanBeAdded()
+    {
         $user = factory(User::class)->create();
         $invoice = factory(Invoice::class)->create();
         $product = factory(Product::class)->create();
 
-        $this->actingAs($user)->post(route('details.store', $invoice),[
+        $this->actingAs($user)->post(route('details.store', $invoice), [
 
             'invoice_id' => $invoice->id,
             'product_id' => $product->id,
@@ -78,8 +76,8 @@ class DetailsTest extends TestCase
 
 
 
-    public function testInvoiceContainsAListOfDetails(){
-
+    public function testInvoiceContainsAListOfDetails()
+    {
         $invoice = factory(Invoice::class)->create();
         $user = factory(User::class)->create();
 
@@ -88,11 +86,10 @@ class DetailsTest extends TestCase
         $response->assertSuccessful();
         $response->assertSeeText('Details');
         $response->assertViewIs('invoices.show');
-
     }
 
-    public function testUnauthenticatedUserCannotDeleteDetails (){
-
+    public function testUnauthenticatedUserCannotDeleteDetails()
+    {
         $invoice = factory(Invoice::class)->create();
         $product = factory(Product::class)->create();
 
@@ -103,31 +100,26 @@ class DetailsTest extends TestCase
            'invoice_id' => $invoice->id,
            'quantity' => '1',
         ]);
-
     }
 
-   /* public function testDetailsCanBeDeleted(){
+    /* public function testDetailsCanBeDeleted(){
 
-        $this->withoutExceptionHandling();
+         $this->withoutExceptionHandling();
 
-        $user = factory(User::class)->create();
-        $invoice = factory(Invoice::class)->create();
-        $product = factory(Product::class)->create();
-
-
-        $this->actingAs($user)->delete(route('details.destroy', [$invoice, $product]))
-            ->assertRedirect(route('invoices.show', $invoice))
-            ->assertSessionHasNoErrors();
-
-        $this->assertDatabaseMissing('invoice_product', [
-            'invoice_id' => $invoice->id,
-            'product_id' => $product->id,
-            'quantity' => '1',
-        ]);
-
-    }*/
+         $user = factory(User::class)->create();
+         $invoice = factory(Invoice::class)->create();
+         $product = factory(Product::class)->create();
 
 
+         $this->actingAs($user)->delete(route('details.destroy', [$invoice, $product]))
+             ->assertRedirect(route('invoices.show', $invoice))
+             ->assertSessionHasNoErrors();
 
+         $this->assertDatabaseMissing('invoice_product', [
+             'invoice_id' => $invoice->id,
+             'product_id' => $product->id,
+             'quantity' => '1',
+         ]);
 
+     }*/
 }

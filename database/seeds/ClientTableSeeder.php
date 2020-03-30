@@ -27,6 +27,6 @@ class ClientTableSeeder extends Seeder
             'postal_code' => '456231'
         ]);
 
-        factory(Client::class,20)->create();
+        factory(Client::class, 20)->create();
     }
 }

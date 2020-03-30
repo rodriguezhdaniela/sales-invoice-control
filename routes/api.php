@@ -30,4 +30,3 @@ Route::resource('invoices', 'Api\Admin\InvoiceController')->except(['edit', 'cre
 Route::resource('details', 'Api\Admin\DetailController')->except(['edit', 'create', 'index', 'show']);
 
 Route::resource('invoices.details', 'Api\Admin\DetailController')->only(['index', 'store']);
-

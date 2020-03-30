@@ -19,10 +19,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 
-
 class InvoiceController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('auth');
@@ -40,26 +38,21 @@ class InvoiceController extends Controller
         $user = Auth::user();
         $client = DB::table('clients')->where('personal_id', $user->personal_id)->get();
 
-        if($user->roles[0]->name == 'Client')
-        {
-            if ($user->personal_id == $client[0]->personal_id)
-            {
+        if ($user->roles[0]->name == 'Client') {
+            if ($user->personal_id == $client[0]->personal_id) {
                 $invoices = Invoice::with(['client', 'seller'])
                     ->where('client_id', $client[0]->id)
                     ->get();
 
                 return response()->view('invoices.clients.index', compact('invoices', 'client'));
-
-            }else{
+            } else {
                 return response()->view('invoices.clients.index')->with('info', 'you have no associated invoices');
             }
+        } else {
+            $clients = Client::select(['id', 'name'])->get();
+            $sellers = Seller::select(['id', 'name'])->get();
 
-        }else{
-
-        $clients = Client::select(['id', 'name'])->get();
-        $sellers = Seller::select(['id', 'name'])->get();
-
-        $invoices = Invoice::with(['client', 'seller'])
+            $invoices = Invoice::with(['client', 'seller'])
             ->ofClient($request->input('search.client'))
             ->ofSeller($request->input('search.seller'))
             ->status($request->input('search.status'))
@@ -67,7 +60,7 @@ class InvoiceController extends Controller
             ->expeditionDate($request->input('search.expedition_date'))
             ->paginate(10);
 
-        return response()->view('invoices.index', compact('invoices', 'clients', 'sellers'));
+            return response()->view('invoices.index', compact('invoices', 'clients', 'sellers'));
         }
     }
 
@@ -80,8 +73,7 @@ class InvoiceController extends Controller
     {
         $user = Auth::user();
 
-        if($user->roles[0]->name == 'Seller')
-        {
+        if ($user->roles[0]->name == 'Seller') {
             $sellers = Seller::where('personal_id', $user->personal_id)
                 ->get();
 
@@ -90,9 +82,7 @@ class InvoiceController extends Controller
                 'clients' => Client::all(),
                 'sellers' => $sellers
             ]);
-
-
-        }else {
+        } else {
             return response()->view('invoices.create', [
                 'invoice' => new Invoice,
                 'clients' => Client::all(),
@@ -112,7 +102,6 @@ class InvoiceController extends Controller
         $invoice = Invoice::create($request->validated());
 
         return redirect()->route('invoices.show', $invoice)->withSuccess(__('Invoice created sucessfully'));
-
     }
 
     /**
@@ -140,8 +129,7 @@ class InvoiceController extends Controller
     {
         $user = Auth::user();
 
-        if($user->roles[0]->name == 'Seller')
-        {
+        if ($user->roles[0]->name == 'Seller') {
             $sellers = Seller::where('personal_id', $user->personal_id)
                 ->get();
 
@@ -150,15 +138,13 @@ class InvoiceController extends Controller
                 'clients' => Client::all(),
                 'sellers' => $sellers
             ]);
-
-        }else {
+        } else {
             return response()->view('invoices.edit', [
                 'invoice' => $invoice,
                 'clients' => Client::all(),
                 'sellers' => Seller::all(),
             ]);
         }
-
     }
 
     /**
@@ -212,7 +198,6 @@ class InvoiceController extends Controller
 
     public function export(Request $request)
     {
-
         $invoices = Invoice::with(['client', 'seller'])
             ->ofClient($request->input('search.client'))
             ->ofSeller($request->input('search.seller'))
@@ -222,28 +207,23 @@ class InvoiceController extends Controller
 
         $extension = $request->input('extension');
 
-        if ($extension == 'xslx')
-        {
+        if ($extension == 'xslx') {
             return (new InvoicesExport1($invoices))->download('invoices.xlsx');
 
-            /*(new InvoicesExport1($invoices))->store('invoices.xlsx')
-            ->chain([new NotifyUserOfCompletedExport(request()->user()),
-            ]);
+        /*(new InvoicesExport1($invoices))->store('invoices.xlsx')
+        ->chain([new NotifyUserOfCompletedExport(request()->user()),
+        ]);
 
-            return back()->withSuccess('Export started!');*/
-
-        }elseif ($extension == 'csv')
-        {
+        return back()->withSuccess('Export started!');*/
+        } elseif ($extension == 'csv') {
             return (new InvoicesExport1($invoices))->download('invoices.csv');
 
-            /*(new InvoicesExport1($invoices))->store('invoices.csv')
-            ->chain([new NotifyUserOfCompletedExport(request()->user()),
-            ]);
+        /*(new InvoicesExport1($invoices))->store('invoices.csv')
+        ->chain([new NotifyUserOfCompletedExport(request()->user()),
+        ]);
 
-            return back()->withSuccess('Export started!');*/
-
-        }elseif ($extension == 'tsv')
-        {
+        return back()->withSuccess('Export started!');*/
+        } elseif ($extension == 'tsv') {
             return (new InvoicesExport1($invoices))->download('invoices.tsv');
 
             /*(new InvoicesExport1($invoices))->store('invoices.tsv')
@@ -252,7 +232,6 @@ class InvoiceController extends Controller
 
             return back()->withSuccess('Export started!');*/
         }
-
     }
 
     public function exportExcel()

@@ -14,20 +14,20 @@ class ImportInvoiceTest extends TestCase
 
     public function testAuthorizedUserCanImportProducts()
     {
-       /* $user = factory(User::class)->create();
+        /* $user = factory(User::class)->create();
 
-        $file = UploadedFile::fake()->createWithContent(
-            'file.xlsx',
-            file_get_contents(
-                base_path('test/stubs/file.xlsx')
-            )
-        );
+         $file = UploadedFile::fake()->createWithContent(
+             'file.xlsx',
+             file_get_contents(
+                 base_path('test/stubs/file.xlsx')
+             )
+         );
 
-        $response = $this
-            ->actingAs($user)
-            ->post(route('invoices.import.excel'), ['import_file' => $file]);
+         $response = $this
+             ->actingAs($user)
+             ->post(route('invoices.import.excel'), ['import_file' => $file]);
 
-        $response->assertRedirect();
-        $response->assertSessionHasNoErrors();*/
+         $response->assertRedirect();
+         $response->assertSessionHasNoErrors();*/
     }
 }

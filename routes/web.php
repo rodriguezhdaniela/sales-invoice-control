@@ -11,11 +11,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Routes
 
-Route::middleware(['auth'])->group(function() {
+Route::middleware(['auth'])->group(function () {
 
     //Roles
 
-   Route::post('roles/store', 'Admin\RoleController@store')->name('roles.store')
+    Route::post('roles/store', 'Admin\RoleController@store')->name('roles.store')
     ->middleware('permission:roles.create');
 
     Route::get('roles', 'Admin\RoleController@index')->name('roles.index')
@@ -179,9 +179,3 @@ Route::middleware(['auth'])->group(function() {
     Route::get('invoices/excel', 'Admin\InvoiceController@exportExcel')->name('excel')
     ->middleware('permission:excel');
 });
-
-
-
-
-
-

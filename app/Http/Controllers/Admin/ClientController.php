@@ -26,7 +26,6 @@ class ClientController extends Controller
      */
     public function index(Request $request)
     {
-
         $name = $request->get('name');
         $personal_id = $request->get('personal_id');
 
@@ -35,8 +34,7 @@ class ClientController extends Controller
             ->personal_id($personal_id)
             ->paginate(10);
 
-        return response()->view('clients.index', compact('clients','city', 'country', 'state'));
-
+        return response()->view('clients.index', compact('clients', 'city', 'country', 'state'));
     }
 
     /**
@@ -81,7 +79,6 @@ class ClientController extends Controller
      */
     public function edit(Client $client)
     {
-
         return response()->view('clients.edit', [
             'client' => $client,
             'countries' => Country::all(),

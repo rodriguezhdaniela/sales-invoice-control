@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Traits\HasRoles;
 
-
 class User extends Authenticatable
 {
     use Notifiable;
@@ -54,19 +53,14 @@ class User extends Authenticatable
     }
 
 
-    function getRoleOfClient(User $user)
+    public function getRoleOfClient(User $user)
     {
-
-        if(DB::table('clients')->where('personal_id', $user->personal_id)->exists())
-        {
+        if (DB::table('clients')->where('personal_id', $user->personal_id)->exists()) {
             $user->assignRole('Client');
-
-        }elseif (DB::table('sellers')->where('personal_id', $user->personal_id)->exists())
-        {
+        } elseif (DB::table('sellers')->where('personal_id', $user->personal_id)->exists()) {
             $user->assignRole('Seller');
-        }else{
+        } else {
             $user->assignRole('Guest');
         }
     }
-
 }

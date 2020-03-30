@@ -37,9 +37,7 @@ class InvoicesExport1 implements FromQuery, shouldQueue, WithHeadings
 
     public function query()
     {
-
         return $this->invoices;
-
     }
 
     /**
@@ -61,5 +59,4 @@ class InvoicesExport1 implements FromQuery, shouldQueue, WithHeadings
 
         ];
     }
-
 }

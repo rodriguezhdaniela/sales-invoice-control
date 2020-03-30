@@ -22,6 +22,6 @@ class InvoiceTableSeeder extends Seeder
             'seller_id' => '1'
         ]);
 
-        factory(Invoice::class,20)->create();
+        factory(Invoice::class, 20)->create();
     }
 }

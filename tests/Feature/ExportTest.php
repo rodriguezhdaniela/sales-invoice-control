@@ -22,7 +22,6 @@ class ExportTest extends TestCase
         $this->actingAs($user)->get(route('excel'));
 
         Excel::assertDownloaded('invoices.xlsx', function (InvoicesExcelExport $export) {
-
             return $export->collection()->contains('#2020-25');
         });
     }
@@ -36,10 +35,8 @@ class ExportTest extends TestCase
 
         Excel::assertQueued('invoices.xlsx');
 
-        Excel::assertQueued('invoices.xlsx', function(InvoicesExcelExport $export) {
+        Excel::assertQueued('invoices.xlsx', function (InvoicesExcelExport $export) {
             return true;
         });
     }
-
 }
-

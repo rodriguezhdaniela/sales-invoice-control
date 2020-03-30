@@ -2,11 +2,10 @@
 
 namespace App\Actions;
 
-
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 
-abstract class Action Implements ActionContract
+abstract class Action implements ActionContract
 {
     public function execute(Model $model, Request $request)
     {

@@ -37,16 +37,13 @@ class SellersTest extends TestCase
         $response->assertSuccessful();
         $response->assertViewHas('sellers');
         $response->assertViewIs('sellers.index');
-
     }
 
     public function testUnauthenticatedUserCannotCreateSeller()
     {
-
         $this->get(route('sellers.create'))
 
         ->assertRedirect(route('login'));
-
     }
 
     public function testSellerCanBeCreated()
@@ -58,7 +55,6 @@ class SellersTest extends TestCase
         $response->assertSuccessful();
         $response->assertSeeText('Seller');
         $response->assertViewIs('sellers.create');
-
     }
 
     public function testShowTheCreationFormFields()
@@ -72,7 +68,6 @@ class SellersTest extends TestCase
         $response->assertSee(__('Name'));
         $response->assertSee(__('Last name'));
         $response->assertSee(route('sellers.store'));
-
     }
 
     public function testUnauthenticatedUserCannotStoreASeller()
@@ -122,7 +117,6 @@ class SellersTest extends TestCase
         $this->get(route('sellers.edit', $seller))
 
             ->assertRedirect(route('login'));
-
     }
 
     public function testSellerCanBeEdited()
@@ -135,7 +129,6 @@ class SellersTest extends TestCase
         $response->assertSuccessful();
         $response->assertSeeText('Edit');
         $response->assertViewIs('sellers.edit');
-
     }
 
 
@@ -179,7 +172,6 @@ class SellersTest extends TestCase
         ])
             ->assertRedirect()
             ->assertSessionHasNoErrors();
-
     }
 
     public function testUnauthenticatedUserCannotDeleteASeller()
@@ -216,7 +208,6 @@ class SellersTest extends TestCase
             LengthAwarePaginator::class,
             $response->original->gatherData()['sellers']
         );
-
     }
 
     public function testCanSearchSellersByName()
@@ -241,7 +232,5 @@ class SellersTest extends TestCase
         $viewSellers = $response->original->gatherData()['sellers'];
 
         $this->assertTrue($viewSellers->contains($sellerA));
-
     }
 }
-

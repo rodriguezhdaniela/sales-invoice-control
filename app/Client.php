@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Client extends Model
 {
-
     protected $guarded = [];
 
     public function getFullNameAttribute()

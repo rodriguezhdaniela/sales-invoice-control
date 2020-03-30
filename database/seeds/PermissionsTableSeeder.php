@@ -6,7 +6,6 @@ use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use App\User;
 
-
 class PermissionsTableSeeder extends Seeder
 {
     /**
@@ -127,7 +126,7 @@ class PermissionsTableSeeder extends Seeder
 
         //Supervisor
         $supervisor = Role::create(['name' => 'Supervisor']);
-            //agregar impotacion,exportacion
+        //agregar impotacion,exportacion
         $supervisor->givePermissionTo([
             'users.index',
             'users.edit',
@@ -212,9 +211,5 @@ class PermissionsTableSeeder extends Seeder
         //User Seller
         $user = User::find(4); //Liliana lili@hotmail.com
         $user->assignRole('Seller');
-
-
-
     }
-
 }
