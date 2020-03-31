@@ -13,6 +13,6 @@ $factory->define(Seller::class, function (Faker $faker) {
         'last_name' => $faker->name(4),
         'email' => $faker->unique()->safeEmail,
         'address' => $faker->address,
-        'phone_number' => $faker->numberBetween(2222222,39999999999)
+        'phone_number' => $faker->numberBetween(2222222, 39999999999)
     ];
 });

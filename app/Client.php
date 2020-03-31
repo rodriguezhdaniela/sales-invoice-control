@@ -25,7 +25,7 @@ class Client extends Model
      * Relation between Clients and countries
      * @return BelongsTo
      */
-    public function countries():BelongsTo
+    public function country():BelongsTo
     {
         return $this->belongsTo(Country::class);
     }
@@ -34,7 +34,7 @@ class Client extends Model
      * Relation between Clients and states
      * @return BelongsTo
      */
-    public function states():BelongsTo
+    public function state():BelongsTo
     {
         return $this->belongsTo(State::class);
     }
@@ -43,7 +43,7 @@ class Client extends Model
      * Relation between Clients and cities
      * @return BelongsTo
      */
-    public function cities():BelongsTo
+    public function city():BelongsTo
     {
         return $this->belongsTo(City::class);
     }

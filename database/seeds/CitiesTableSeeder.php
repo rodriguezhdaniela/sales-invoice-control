@@ -55,7 +55,5 @@ class CitiesTableSeeder extends Seeder
         factory(City::class)->create([
             'city' => 'Acevedo',
         ]);
-
-
     }
 }

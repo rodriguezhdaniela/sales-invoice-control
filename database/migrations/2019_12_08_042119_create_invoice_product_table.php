@@ -14,7 +14,6 @@ class CreateInvoiceProductTable extends Migration
     public function up()
     {
         Schema::create('invoice_product', function (Blueprint $table) {
-
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->integer('quantity');

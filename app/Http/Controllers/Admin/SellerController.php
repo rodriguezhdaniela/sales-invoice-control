@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Exports\SellersExport;
 use App\Http\Requests\SellerStoreRequest;
 use App\Http\Requests\SellerUpdateRequest;
 use App\seller;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Maatwebsite\Excel\Facades\Excel;
 
 class SellerController extends Controller
 {
@@ -17,10 +15,6 @@ class SellerController extends Controller
         $this->middleware('auth');
     }
 
-    public function export()
-    {
-        return Excel::download(new SellersExport, 'sellers.xlsx');
-    }
 
     /**
      * Display a listing of the resource.

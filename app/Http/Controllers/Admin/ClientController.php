@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Client;
 use App\Country;
@@ -30,10 +30,11 @@ class ClientController extends Controller
         $personal_id = $request->get('personal_id');
 
         $clients = Client::name($name)
+            ->name($name)
             ->personal_id($personal_id)
             ->paginate(10);
 
-        return response()->view('clients.index', compact('clients'));
+        return response()->view('clients.index', compact('clients', 'city', 'country', 'state'));
     }
 
     /**
@@ -51,7 +52,6 @@ class ClientController extends Controller
         ]);
     }
 
-
     /**
      * Store a newly created resource in storage.
      *
@@ -61,15 +61,20 @@ class ClientController extends Controller
     public function store(ClientStoreRequest $request)
     {
         Client::create($request->validated());
-
         return redirect()->route('clients.index')->withSuccess(__('Client created successfully'));
+    }
+
+
+    public function show(Client $client)
+    {
+        return response()->view('clients.show', ['client' => $client]);
     }
 
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param client $client
+     * @param Client $client
      * @return Response
      */
     public function edit(Client $client)
@@ -91,6 +96,7 @@ class ClientController extends Controller
      */
     public function update(ClientUpdateRequest $request, Client $client)
     {
+        //dd($request);
         $client->update($request->validated());
 
         return redirect()->route('clients.index')->withSuccess(__('Client updated sucessfully'));

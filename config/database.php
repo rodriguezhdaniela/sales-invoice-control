@@ -119,6 +119,12 @@ return [
 
     'redis' => [
 
+        'driver' => 'redis',
+        'connection' => 'default',
+        'queue' => '{default}',
+        'retry_after' => 90,
+        'block_for' => 5,
+
         'client' => env('REDIS_CLIENT', 'phpredis'),
 
         'options' => [

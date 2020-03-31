@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 class SellersTest extends TestCase
 {
@@ -36,16 +37,13 @@ class SellersTest extends TestCase
         $response->assertSuccessful();
         $response->assertViewHas('sellers');
         $response->assertViewIs('sellers.index');
-
     }
 
     public function testUnauthenticatedUserCannotCreateSeller()
     {
-
         $this->get(route('sellers.create'))
 
         ->assertRedirect(route('login'));
-
     }
 
     public function testSellerCanBeCreated()
@@ -57,7 +55,19 @@ class SellersTest extends TestCase
         $response->assertSuccessful();
         $response->assertSeeText('Seller');
         $response->assertViewIs('sellers.create');
+    }
 
+    public function testShowTheCreationFormFields()
+    {
+        $user = factory(User::class)->create();
+
+        $response = $this->actingAs($user)->get(route('sellers.create'));
+
+        $response->assertSee(__('Type ID'));
+        $response->assertSee(__('Personal ID'));
+        $response->assertSee(__('Name'));
+        $response->assertSee(__('Last name'));
+        $response->assertSee(route('sellers.store'));
     }
 
     public function testUnauthenticatedUserCannotStoreASeller()
@@ -66,6 +76,7 @@ class SellersTest extends TestCase
             'type_id' => 'Test type id',
             'personal_id' => 'test personal id',
             'name' => 'Test Seller Name',
+            'last_name' => 'Test Client last Name',
             'address' => 'Test Seller address',
             'phone_number' =>  '4561234',
             'email' => 'test@email.com',
@@ -84,6 +95,7 @@ class SellersTest extends TestCase
             'type_id' => 'Test type id',
             'personal_id' => 'test personal id',
             'name' => 'Test Seller Name',
+            'last_name' => 'Test Client last Name',
             'address' => 'Test Seller address',
             'phone_number' =>  '4561234',
             'email' => 'test@email.com',
@@ -105,7 +117,6 @@ class SellersTest extends TestCase
         $this->get(route('sellers.edit', $seller))
 
             ->assertRedirect(route('login'));
-
     }
 
     public function testSellerCanBeEdited()
@@ -118,7 +129,6 @@ class SellersTest extends TestCase
         $response->assertSuccessful();
         $response->assertSeeText('Edit');
         $response->assertViewIs('sellers.edit');
-
     }
 
 
@@ -131,6 +141,7 @@ class SellersTest extends TestCase
             'type_id' => 'Test type id',
             'personal_id' => 'test personal id',
             'name' => 'Test Seller Name',
+            'last_name' => 'Test Client last Name',
             'address' => 'Test Seller address',
             'phone_number' =>  '4561234',
             'email' => 'test@email.com',
@@ -153,6 +164,7 @@ class SellersTest extends TestCase
             'type_id' => 'Test type id',
             'personal_id' => 'test personal id',
             'name' => 'Test Seller Name',
+            'last_name' => 'Test Client last Name',
             'address' => 'Test Seller address',
             'phone_number' =>  '4561234',
             'email' => 'test@email.com',
@@ -160,7 +172,6 @@ class SellersTest extends TestCase
         ])
             ->assertRedirect()
             ->assertSessionHasNoErrors();
-
     }
 
     public function testUnauthenticatedUserCannotDeleteASeller()
@@ -186,6 +197,40 @@ class SellersTest extends TestCase
             ->assertSessionHasNoErrors();
     }
 
+    public function testTheIndexOfSellerHasSellerPaginated()
+    {
+        factory(Seller::class, 5)->create();
+        $user = factory(User::class)->create();
 
+        $response = $this->actingAs($user)->get(route('sellers.index'));
+
+        $this->assertInstanceof(
+            LengthAwarePaginator::class,
+            $response->original->gatherData()['sellers']
+        );
+    }
+
+    public function testCanSearchSellersByName()
+    {
+        $user = factory(User::class)->create();
+        $sellerA = factory(Seller::class)->create(['name' => 'Test seller']);
+
+        $response = $this->actingAs($user)->get(route('sellers.index', ['search' => 'Test']));
+
+        $viewSellers = $response->original->gatherData()['sellers'];
+
+        $this->assertTrue($viewSellers->contains($sellerA));
+    }
+
+    public function testCanSearchSellersById()
+    {
+        $user = factory(User::class)->create();
+        $sellerA = factory(Seller::class)->create(['personal_id' => '12365489']);
+
+        $response = $this->actingAs($user)->get(route('sellers.index', ['search' => '12365489']));
+
+        $viewSellers = $response->original->gatherData()['sellers'];
+
+        $this->assertTrue($viewSellers->contains($sellerA));
+    }
 }
-

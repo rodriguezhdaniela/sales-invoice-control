@@ -7,6 +7,7 @@ use App\Client;
 use App\Country;
 use App\State;
 use App\User;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -41,16 +42,13 @@ class ClientsTest extends TestCase
         $response->assertSuccessful();
         $response->assertViewHas('clients');
         $response->assertViewIs('clients.index');
-
     }
 
     public function testUnauthenticatedUserCannotCreateClient()
     {
-
         $this->get(route('clients.create'))
 
             ->assertRedirect(route('login'));
-
     }
 
     public function testClientCanBeCreated()
@@ -59,20 +57,32 @@ class ClientsTest extends TestCase
 
         $response = $this->actingAs($user)->get(route('clients.create'));
 
-        $response->assertSuccessful();
+        $response->assertOk();
         $response->assertSeeText('Client');
         $response->assertViewIs('clients.create');
+    }
 
+    public function testShowTheCreationFormFields()
+    {
+        $user = factory(User::class)->create();
+
+        $response = $this->actingAs($user)->get(route('clients.create'));
+
+        $response->assertSee(__('Type ID'));
+        $response->assertSee(__('Personal ID'));
+        $response->assertSee(__('Name'));
+        $response->assertSee(__('Phone number'));
+        $response->assertSee(route('clients.store'));
     }
 
 
     public function testUnauthenticatedUserCannotStoreAClient()
     {
-
         $this->post(route('clients.store'), [
             'type_id' => 'Test type id',
             'personal_id' => 'test personal id',
             'name' => 'Test Client Name',
+            'last_name' => 'Test Client last Name',
             'address' => 'Test Client address',
             'phone_number' =>  '4561234',
             'email' => 'test@email.com',
@@ -97,6 +107,7 @@ class ClientsTest extends TestCase
             'type_id' => 'Test type id',
             'personal_id' => 'test personal id',
             'name' => 'Test Client Name',
+            'last_name' => 'Test Client last Name',
             'address' => 'Test Client address',
             'phone_number' =>  '4561234',
             'email' => 'test@email.com',
@@ -122,7 +133,6 @@ class ClientsTest extends TestCase
         $this->get(route('clients.edit', $client))
 
             ->assertRedirect(route('login'));
-
     }
 
     public function testClientCanBeEdited()
@@ -135,7 +145,6 @@ class ClientsTest extends TestCase
         $response->assertSuccessful();
         $response->assertSeeText('Edit');
         $response->assertViewIs('clients.edit');
-
     }
 
 
@@ -148,6 +157,7 @@ class ClientsTest extends TestCase
             'type_id' => 'Test type id',
             'personal_id' => 'test personal id',
             'name' => 'Test Client Name',
+            'last_name' => 'Test Client last Name',
             'address' => 'Test Client address',
             'phone_number' =>  '4561234',
             'email' => 'test@email.com',
@@ -175,6 +185,7 @@ class ClientsTest extends TestCase
             'type_id' => 'Test type id',
             'personal_id' => 'test personal id',
             'name' => 'Test Client Name',
+            'last_name' => 'Test Client last Name',
             'address' => 'Test Client address',
             'phone_number' =>  '4561234',
             'email' => 'test@email.com',
@@ -194,17 +205,17 @@ class ClientsTest extends TestCase
     }
 
     public function testUnauthenticatedUserCannotDeleteAClient()
-     {
-         $client = factory(Client::class)->create();
+    {
+        $client = factory(Client::class)->create();
 
-         $this->delete(route('clients.destroy', $client))
+        $this->delete(route('clients.destroy', $client))
              ->assertRedirect(route('login'));
 
-         $this->assertDatabaseHas('clients', [
+        $this->assertDatabaseHas('clients', [
              'name' => $client->name,
              'email' => $client->email,
          ]);
-     }
+    }
 
     public function testAClientCanBeDeleted()
     {
@@ -221,6 +232,44 @@ class ClientsTest extends TestCase
         ]);
     }
 
+    public function testTheIndexOfClientHasClientPaginated()
+    {
+        factory(Client::class, 5)->create();
+        $user = factory(User::class)->create();
 
+        $response = $this->actingAs($user)->get(route('clients.index'));
+
+        $this->assertInstanceof(
+            LengthAwarePaginator::class,
+            $response->original->gatherData()['clients']
+        );
+    }
+
+    public function testCanSearchClientsByName()
+    {
+        $this->withoutExceptionHandling();
+
+        $user = factory(User::class)->create();
+        $clientA = factory(Client::class)->create(['name' => 'Name clients']);
+
+        $response = $this->actingAs($user)->get(route('clients.index', ['search' => 'Name']));
+
+        $viewClients = $response->original->gatherData()['clients'];
+
+        $this->assertTrue($viewClients->contains($clientA));
+    }
+
+    public function testCanSearchClientsById()
+    {
+        $this->withoutExceptionHandling();
+
+        $user = factory(User::class)->create();
+        $clientA = factory(Client::class)->create(['personal_id' => '12365489']);
+
+        $response = $this->actingAs($user)->get(route('clients.index', ['search' => '12365']));
+
+        $viewClients = $response->original->gatherData()['clients'];
+
+        $this->assertTrue($viewClients->contains($clientA));
+    }
 }
-

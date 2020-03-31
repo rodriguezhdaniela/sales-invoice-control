@@ -178,6 +178,8 @@ return [
         Maatwebsite\Excel\ExcelServiceProvider::class,
         App\Providers\ViewComposerProvider::class,
         App\Providers\AuthenticationPtoPServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
+
     ],
 
     /*
