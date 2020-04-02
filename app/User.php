@@ -5,16 +5,16 @@ namespace App;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
+use Laravel\Passport\HasApiTokens;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Traits\HasRoles;
 
+
 class User extends Authenticatable
 {
-    use Notifiable;
+    use HasApiTokens, Notifiable;
     use HasRoles;
+
 
     /**
      * The attributes that are mass assignable.
@@ -52,15 +52,4 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class);
     }
 
-
-    public function getRoleOfClient(User $user)
-    {
-        if (DB::table('clients')->where('personal_id', $user->personal_id)->exists()) {
-            $user->assignRole('Client');
-        } elseif (DB::table('sellers')->where('personal_id', $user->personal_id)->exists()) {
-            $user->assignRole('Seller');
-        } else {
-            $user->assignRole('Guest');
-        }
-    }
 }
