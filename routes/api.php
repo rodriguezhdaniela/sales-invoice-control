@@ -19,14 +19,32 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Auth::routes();
 
-Route::resource('products', 'Api\Admin\ProductController')->except(['edit', 'create']);
+Route::resource('products', 'Api\Admin\ProductController')->except(['edit', 'create'])
+        ->middleware('auth:api');
 
-Route::resource('clients', 'Api\Admin\ClientController')->except(['edit', 'create']);
+Route::resource('clients', 'Api\Admin\ClientController')->except(['edit', 'create'])
+    ->middleware('auth:api');
 
-Route::resource('sellers', 'Api\Admin\SellerController')->except(['edit', 'create']);
+Route::resource('sellers', 'Api\Admin\SellerController')->except(['edit', 'create'])
+    ->middleware('auth:api');
 
-Route::resource('invoices', 'Api\Admin\InvoiceController')->except(['edit', 'create']);
+Route::resource('invoices', 'Api\Admin\InvoiceController')->except(['edit', 'create'])
+    ->middleware('auth:api');
 
-Route::resource('details', 'Api\Admin\DetailController')->except(['edit', 'create', 'index', 'show']);
+Route::resource('details', 'Api\Admin\DetailController')->except(['edit', 'create', 'index', 'show'])
+    ->middleware('auth:api');
 
-Route::resource('invoices.details', 'Api\Admin\DetailController')->only(['index', 'store']);
+Route::resource('invoices.details', 'Api\Admin\DetailController')->only(['index', 'store'])
+    ->middleware('auth:api');
+
+Route::group(['prefix' => 'auth'], function ()
+{
+    Route::post('login', 'Api\Admin\AuthController@login');
+    Route::post('signup', 'Api\Admin\AuthController@signup');
+
+    Route::group(['middleware' => 'auth:api'], function (){
+        Route::get('logout', 'Api\Admin\AuthController@logout');
+        Route::get('user', 'Api\Admin\AuthController@user');
+
+    });
+});

@@ -13,10 +13,8 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         //Admin
-        User::create([
+       User::create([
            'name' => 'Daniela Rodriguez',
-           'type_id' => 'Card ID',
-           'personal_id' => '12345678',
            'email' => 'dani-rodriguez-95@hotmail.com',
            'password' => bcrypt('12345678'),
         ]);
@@ -24,8 +22,6 @@ class UsersTableSeeder extends Seeder
         //Client
         User::create([
             'name' => 'Manuela Arboleda',
-            'type_id' => 'Card ID',
-            'personal_id' => '22222222',
             'email' => 'manu@gmail.com',
             'password' => bcrypt('12345678'),
         ]);
@@ -33,8 +29,6 @@ class UsersTableSeeder extends Seeder
         //Supervisor
         User::create([
             'name' => 'Ana Maria Berrio',
-            'type_id' => 'Card ID',
-            'personal_id' => '33333333',
             'email' => 'ana@hotmail.com',
             'password' => bcrypt('12345678'),
         ]);
@@ -42,8 +36,6 @@ class UsersTableSeeder extends Seeder
         //Seller
         User::create([
             'name' => 'Liliana Lopera',
-            'type_id' => 'Card ID',
-            'personal_id' => '44444444',
             'email' => 'lili@hotmail.com',
             'password' => bcrypt('12345678'),
         ]);

@@ -26,34 +26,6 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Type ID') }}</label>
-
-                            <div class="col-md-6">
-                                <select class="custom-select" name="type_id" id="type_id"  value="{{ old('type_id') }}">
-                                    <option value="Card ID" selected>Card ID</option>
-                                    <option value="Foreign ID">Foreign ID</option>
-                                    <option value="Passport">Passport</option>
-                                    <option value="Other">Other</option>
-                                </select>
-                                @includeWhen($errors->has('type_id'), 'partials.__invalid_feedback', ['feedback' => $errors->first('type_id')])
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="personal_id" class="col-md-4 col-form-label text-md-right">{{ __('Personal Id') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="personal_id" type="text" class="form-control @error('personal_id') is-invalid @enderror" name="personal_id" value="{{ old('personal_id') }}" required autocomplete="personal_id" autofocus>
-
-                                @error('personal_id')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
