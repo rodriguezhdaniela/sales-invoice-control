@@ -34,8 +34,12 @@ Route::resource('invoices', 'Api\Admin\InvoiceController')->except(['edit', 'cre
 Route::resource('details', 'Api\Admin\DetailController')->except(['edit', 'create', 'index', 'show'])
     ->middleware('auth:api');
 
-Route::resource('invoices.details', 'Api\Admin\DetailController')->only(['index', 'store'])
+Route::resource('invoices.details', 'Api\Admin\DetailController')->only(['index', 'store', 'delete'])
     ->middleware('auth:api');
+
+Route::delete('/invoices/{invoice}/details/{product}', 'Api\Admin\DetailController@destroy');
+
+Route::put('/invoices/{invoice}/details/{product}', 'Api\Admin\DetailController@update');
 
 Route::group(['prefix' => 'auth'], function ()
 {
